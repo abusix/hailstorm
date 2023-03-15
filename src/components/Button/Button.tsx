@@ -25,43 +25,17 @@ const iconVariants = {
 };
 
 export interface ButtonProps {
-    className?: string;
-    children: string;
-    type: ButtonType;
-    onClick: () => void;
-    loading?: boolean;
-    leftIcon?: any;
-    rightIcon?: any;
-    disabled?: boolean;
+
 }
 
 export default function Button({
-    className,
-    children,
-    onClick,
-    loading,
-    leftIcon,
-    rightIcon,
-    disabled = false,
-    type = 'primary',
+
 }: ButtonProps) {
     return (
         <button
-            type="button"
-            onClick={onClick}
-            disabled={disabled}
+
         >
-            {loading ? <p>Loading</p> : null}
-
-            {leftIcon && !loading ? (
-                <p>Icon Left Here</p>
-            ) : null}
-
-            {children}
-
-            {rightIcon ? (
-                <p>Icon Right Here</p>
-            ) : null}
+            HAILSTORMBUTTON
         </button>
     );
 }
