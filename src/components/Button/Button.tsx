@@ -24,13 +24,7 @@ const iconVariants = {
     'danger-secondary': '',
 };
 
-export interface ButtonProps {
-
-}
-
-export default function Button({
-
-}: ButtonProps) {
+export default function Button(){
     return (
         <button
 
