@@ -1,7 +1,7 @@
 {
-  "name": "@laoshanlungo/hailstorm-poc",
+  "name": "@abusix/hailstorm",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/laoshanlungo"
+    "registry": "https://npm.pkg.github.com/@abusix/hailstorm"
   },
   "version": "0.0.5",
   "description": "our own design/component library",
