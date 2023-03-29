@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import TestButton from "./TestButton";
+import TestButton from "./Button";
 
 describe("TestButton", () => {
   test("renders the TestButton component", () => {

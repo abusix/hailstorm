@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/laoshanlungo"
   },
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "our own design/component library",
   "scripts": {
     "rollup": "NODE_ENV=production rollup -c",
@@ -11,8 +11,8 @@
     "clean": "rimraf ./dist",
     "test": "jest",
     "build:storybook": "build-storybook",
-    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/tailwind.css --minify",
-    "build": "npm run clean && npm run build:tailwind && npm run rollup"
+    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify",
+    "build": "npm run clean && npm run rollup"
   },
   "repository": {
     "type": "git",

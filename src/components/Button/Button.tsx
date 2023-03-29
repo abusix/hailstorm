@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from '../../util/class-names';
 
 const buttonVariants = {
     primary:
@@ -14,22 +15,29 @@ const buttonVariants = {
 
 export type ButtonType = keyof typeof buttonVariants;
 
-const iconVariants = {
-    primary: 'text-neutral-0',
-    secondary:
-        'fill-neutral-600 group-hover:text-neutral-700 group-focus:text-neutral-700 group-disabled:text-neutral-400',
-    minimal:
-        'fill-neutral-600 group-hover:text-neutral-700 group-focus:text-neutral-700 group-disabled:text-neutral-400',
-    danger: '',
-    'danger-secondary': '',
-};
+interface ButtonProps {
+    /**
+     * What background color to use
+     */
+    variant?: ButtonType;
+    /**
+     * Button contents
+     */
+    label: string;
+    /**
+     * Optional click handler
+     */
+    onClick?: () => void;
+  }
 
-export default function Button(){
+export default function Button({variant = 'primary', label, onClick = () => {}}:ButtonProps){
     return (
         <button
-
+            className={classNames( `group flex h-8 items-center gap-2 rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
+            buttonVariants[variant])}
+            onClick={onClick}
         >
-            HAILSTORMBUTTON
+            {label}
         </button>
     );
 }
