@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/abusix/internal/hailstorm.git"
+    "url": "git+https://github.com/abusix/hailstorm.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/abusix/internal/hailstorm/issues"
+    "url": "https://github.com/abusix/hailstorm/issues"
   },
-  "homepage": "https://gitlab.com/abusix/internal/hailstorm#readme",
+  "homepage": "https://github.com/abusix/hailstorm",
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
