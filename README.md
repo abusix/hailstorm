@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Hailstorm is a design system for Abusix. It is a collection of reusable components, guidelines, and best practices that can be used to build consistent user interfaces across all of Abusix's products.
+Hailstorm is a design system for Abusix. It is a collection of reusable components, guidelines, and best practices that can be used to build consistent user interfaces across all of our products.
 
 ## Getting Started
 
