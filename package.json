@@ -1,6 +1,6 @@
 {
   "name": "@abusix/hailstorm",
-  "version": "0.0.5",
+  "version": "1.2.2",
   "description": "our own design/component library",
   "scripts": {
     "rollup": "NODE_ENV=production rollup -c",
