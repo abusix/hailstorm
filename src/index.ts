@@ -1,2 +1,3 @@
-import './index.css';
-export * from './components';
+import "./index.css";
+export * from "./icons";
+export * from "./components";

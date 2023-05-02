@@ -7,9 +7,10 @@
     "storybook": "start-storybook -p 6006",
     "clean": "rimraf ./dist",
     "test": "jest",
+    "build": "npm run clean && npm run build:icons && npm run rollup",
+    "build:icons": "svgr -- assets/icons",
     "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify",
-    "build": "npm run clean && npm run rollup"
+    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "@storybook/manager-webpack4": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/cli": "7.0.0",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.0",
     "@types/react": "^18.0.28",
