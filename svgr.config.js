@@ -23,5 +23,8 @@ module.exports = {
   typescript: true,
   filenameCase: "kebab",
   outDir: "./src/icons",
+  svgProps: {
+    className: "h-4 w-4",
+  },
   expandProps: "end",
 };
