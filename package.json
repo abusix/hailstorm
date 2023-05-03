@@ -7,7 +7,7 @@
     "storybook": "start-storybook -p 6006",
     "clean": "rimraf ./dist",
     "test": "jest",
-    "build": "npm run clean && npm run build:icons && npm run rollup",
+    "build": "npm run clean && npm run rollup",
     "build:icons": "svgr -- assets/icons",
     "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify"
