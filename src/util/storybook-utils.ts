@@ -1,5 +1,6 @@
 import type { Parameters } from "@storybook/react";
 
+export const hiddenArgControl = { table: { disable: true } };
 /**
  * Add a description text to a storybook docs page.
  *

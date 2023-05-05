@@ -2,7 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Alert, AlertProps } from "./alert";
 import React from "react";
-import { getStoryDescription } from "../../util/storybook-utils";
+import {
+  getStoryDescription,
+  hiddenArgControl,
+} from "../../util/storybook-utils";
 
 const intents: AlertProps["intent"][] = [
   "info",
@@ -12,6 +15,7 @@ const intents: AlertProps["intent"][] = [
 ];
 
 const meta: Meta<typeof Alert> = {
+  title: "Alert",
   component: Alert,
   parameters: {
     layout: "fullscreen",
@@ -32,13 +36,11 @@ type Story = StoryObj<typeof Alert>;
 export const Basic: Story = {};
 
 export const Intents: Story = {
-  argTypes: {
-    intent: { table: { disable: true } },
-  },
+  argTypes: { intent: hiddenArgControl },
   render: ({ children, ...args }) => (
     <div className="flex flex-col gap-4">
       {intents.map((intent) => (
-        <Alert {...args} intent={intent}>
+        <Alert key={intent} {...args} intent={intent}>
           {children}
         </Alert>
       ))}
@@ -49,8 +51,5 @@ export const Intents: Story = {
 export const OnlyTitles: Story = {
   ...Intents,
   args: { children: undefined },
-  argTypes: {
-    ...Intents.argTypes,
-    children: { table: { disable: true } },
-  },
+  argTypes: { ...Intents.argTypes, children: hiddenArgControl },
 };

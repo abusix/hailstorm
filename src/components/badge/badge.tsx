@@ -21,7 +21,7 @@ const shapeVariants = {
 
 export type BadgeType = keyof typeof buttonVariants;
 
-interface BadgeProps {
+export interface BadgeProps {
   type?: BadgeType;
   shape?: keyof typeof shapeVariants;
   children: ReactNode;

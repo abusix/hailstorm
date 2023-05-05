@@ -1,9 +1,11 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import type { Meta, StoryObj } from "@storybook/react";
 import type { AvatarProps } from "./avatar";
 import { Avatar } from "./avatar";
 import React from "react";
-import { getStoryDescription } from "../../util/storybook-utils";
+import {
+  getStoryDescription,
+  hiddenArgControl,
+} from "../../util/storybook-utils";
 
 const colors: AvatarProps["color"][] = [
   "primary",
@@ -14,6 +16,7 @@ const colors: AvatarProps["color"][] = [
 ];
 
 const meta: Meta<typeof Avatar> = {
+  title: "Avatar",
   component: Avatar,
   parameters: getStoryDescription(
     "Circular user icon. It displays first 2 characters from the passed children text "
@@ -24,7 +27,7 @@ const meta: Meta<typeof Avatar> = {
   },
   argTypes: {
     color: { options: colors },
-    onClick: { table: { disable: true } },
+    onClick: hiddenArgControl,
   },
 };
 
@@ -35,12 +38,12 @@ export const Default: Story = {};
 
 export const Colors: Story = {
   argTypes: {
-    color: { table: { disable: true } },
+    color: hiddenArgControl,
   },
   render: ({ children, ...args }) => (
     <div className="flex flex-col gap-4">
       {colors.map((color) => (
-        <Avatar {...args} color={color}>
+        <Avatar key={color} {...args} color={color}>
           {children}
         </Avatar>
       ))}

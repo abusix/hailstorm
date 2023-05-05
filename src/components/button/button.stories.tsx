@@ -1,25 +1,65 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./button";
+import { Button, ButtonProps } from "./button";
 import React from "react";
+import { ChatIcon, DiagramTreeIcon, LockIcon } from "../../icons";
+import { hiddenArgControl } from "../../util/storybook-utils";
+
+const types: ButtonProps["type"][] = [
+  "primary",
+  "secondary",
+  "minimal",
+  "danger",
+  "danger-secondary",
+];
+const icons = { undefined, ChatIcon, DiagramTreeIcon, LockIcon };
+const iconArg = {
+  description: "Icon component",
+  options: Object.keys(icons),
+  mapping: icons,
+};
 
 const meta: Meta<typeof Button> = {
   title: "Button",
   component: Button,
+  args: {
+    children: "Badge Label",
+    LeftIcon: undefined,
+    RightIcon: undefined,
+    loading: false,
+  },
+  argTypes: {
+    onClick: hiddenArgControl,
+    LeftIcon: iconArg,
+    RightIcon: iconArg,
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {
-  render: (args) => (
-    <Button
-      onClick={() => {
-        return null;
-      }}
-      {...args}
-    >
-      Label
-    </Button>
+export const Base: Story = {};
+export const WithIcons: Story = {
+  args: {
+    LeftIcon: icons["ChatIcon"],
+    RightIcon: icons["LockIcon"],
+  },
+};
+export const Loading: Story = {
+  args: { loading: true },
+};
+export const Disabled: Story = {
+  args: { disabled: true },
+};
+
+export const Types: Story = {
+  argTypes: { type: hiddenArgControl },
+  render: ({ children, ...args }) => (
+    <div className="flex flex-col gap-4">
+      {types.map((type) => (
+        <Button key={type} {...args} type={type}>
+          {children}
+        </Button>
+      ))}
+    </div>
   ),
 };

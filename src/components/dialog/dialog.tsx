@@ -6,7 +6,7 @@ import React from "react";
 import classNames from "../../util/class-names";
 import { CrossIcon, TickIcon } from "../../icons";
 
-interface DialogProps {
+export interface DialogProps {
   isShown?: boolean;
   title?: string;
   onClose?: (submitted: boolean) => void;
