@@ -7,6 +7,7 @@ const avatarVariants = {
   warning: "bg-warning-100 text-warning-700",
   danger: "bg-danger-100 text-danger-600",
 };
+
 interface AvatarProps {
   children: string;
   onClick?: () => void;

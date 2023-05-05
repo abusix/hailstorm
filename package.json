@@ -69,6 +69,11 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
+    "@headlessui/react": "^1.7.14",
+    "@tanstack/react-table": "^8.9.1",
+    "@tanstack/react-virtual": "^3.0.0-beta.54",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "tslib": "^2.5.0"
   },
   "peerDependencies": {
