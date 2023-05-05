@@ -1,0 +1,21 @@
+import React from "react";
+import classNames from "../../util/class-names";
+import { getAbusixDateString } from "../../util/date";
+
+interface LastChangedInfoProps {
+  changedDate: Date;
+  changedBy: string;
+  className?: string;
+}
+
+export const LastChangedInfo = ({
+  changedDate,
+  changedBy,
+  className,
+}: LastChangedInfoProps) => {
+  return (
+    <p className={classNames("paragraph-100 mt-5 text-neutral-700", className)}>
+      Last changed on {getAbusixDateString(changedDate)} by {changedBy}
+    </p>
+  );
+};

@@ -1,23 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Avatar } from './avatar';
+import { Avatar } from "./avatar";
+import React from "react";
 
 const meta: Meta<typeof Avatar> = {
-    title: 'Avatar',
-    component: Avatar,
+  title: "Avatar",
+  component: Avatar,
 };
 
 export default meta;
 type Story = StoryObj<typeof Avatar>;
 
 export const Default: Story = {
-    argTypes: {
-        color: {
-            options: ['blue', 'violet', 'green', 'neutral', 'yellow', 'teal', 'orange', 'pink', 'red'],
-            control: 'select',
-            defaultValue: 'blue',
-        },
-    },
-    render: (args) => <Avatar {...args}>Label</Avatar>,
+  render: (args) => <Avatar color="primary">Label</Avatar>,
 };
