@@ -33,10 +33,7 @@ export const Default: Story = {
       type: "boolean",
       defaultValue: false,
     },
-    leftIcon: {
-      type: "string",
-      defaultValue: "",
-    },
+
   },
   render: (args) => (
     <div className="w-52">

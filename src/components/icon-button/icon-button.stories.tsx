@@ -27,10 +27,10 @@ export const Default: Story = {
       control: "boolean",
       defaultValue: false,
     },
-    icon: {
-      options: ["chat"],
-      control: "text",
-      defaultValue: "chat",
-    },
+    // icon: {
+    //   options: ["chat"],
+    //   control: "text",
+    //   defaultValue: "chat",
+    // },
   },
 };
