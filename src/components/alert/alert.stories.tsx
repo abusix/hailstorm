@@ -1,32 +1,56 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Alert } from "./alert";
+import { Alert, AlertProps } from "./alert";
 import React from "react";
+import { getStoryDescription } from "../../util/storybook-utils";
+
+const intents: AlertProps["intent"][] = [
+  "info",
+  "success",
+  "warning",
+  "danger",
+];
 
 const meta: Meta<typeof Alert> = {
-  title: "Alert",
   component: Alert,
+  parameters: {
+    layout: "fullscreen",
+    ...getStoryDescription(
+      "Wide and big alert bar to inform user about important things"
+    ),
+  },
+  args: {
+    title: "Alert Title",
+    children: "Alert content",
+    intent: "info",
+  },
 };
 
 export default meta;
-
 type Story = StoryObj<typeof Alert>;
 
-export const Default: Story = {
-  render: () => (
+export const Basic: Story = {};
+
+export const Intents: Story = {
+  argTypes: {
+    intent: { table: { disable: true } },
+  },
+  render: ({ children, ...args }) => (
     <div className="flex flex-col gap-4">
-      <Alert intent="info" title="Title">
-        Alert Text
-      </Alert>
-      <Alert intent="warning" title="Title">
-        Alert Text
-      </Alert>
-      <Alert intent="danger" title="Title">
-        Alert Text
-      </Alert>
-      <Alert intent="success" title="Title">
-        Alert Text
-      </Alert>
+      {intents.map((intent) => (
+        <Alert {...args} intent={intent}>
+          {children}
+        </Alert>
+      ))}
     </div>
   ),
+};
+
+export const OnlyTitles: Story = {
+  ...Intents,
+  args: { children: undefined },
+  argTypes: {
+    ...Intents.argTypes,
+    children: { table: { disable: true } },
+  },
 };

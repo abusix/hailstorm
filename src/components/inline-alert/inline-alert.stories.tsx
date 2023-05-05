@@ -1,24 +1,49 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { InlineAlert } from "./inline-alert";
+import { InlineAlert, InlineAlertProps } from "./inline-alert";
 import React from "react";
+import { getStoryDescription } from "../../util/storybook-utils";
+
+const intents: InlineAlertProps["intent"][] = [
+  "info",
+  "success",
+  "warning",
+  "danger",
+];
 
 const meta: Meta<typeof InlineAlert> = {
-  title: "InlineAlert",
   component: InlineAlert,
+  parameters: getStoryDescription(
+    "Inline alert text to inform user about contextual things"
+  ),
+  args: {
+    title: "Alert title",
+    children: "Alert text",
+  },
 };
 
 export default meta;
 
 type Story = StoryObj<typeof InlineAlert>;
 
-export const Default: Story = {
-  render: () => (
-    <>
-      <InlineAlert intent="info" title="Title" className="mb-2" />
-      <InlineAlert intent="warning" title="Title" className="mb-2" />
-      <InlineAlert intent="danger" title="Title" className="mb-2" />
-      <InlineAlert intent="success" title="Title" className="mb-2" />
-    </>
+export const Basic: Story = {};
+
+export const Intents: Story = {
+  argTypes: {
+    intent: { table: { disable: true } },
+  },
+  render: ({ children, ...args }) => (
+    <div className="flex flex-col gap-4">
+      {intents.map((intent) => (
+        <InlineAlert {...args} intent={intent}>
+          {children}
+        </InlineAlert>
+      ))}
+    </div>
   ),
+};
+
+export const OnlyTitles: Story = {
+  ...Intents,
+  args: { children: undefined },
 };

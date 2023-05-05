@@ -8,7 +8,7 @@ const avatarVariants = {
   danger: "bg-danger-100 text-danger-600",
 };
 
-interface AvatarProps {
+export interface AvatarProps {
   children: string;
   onClick?: () => void;
   color: keyof typeof avatarVariants;
