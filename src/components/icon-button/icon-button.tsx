@@ -17,7 +17,7 @@ const iconButtonVariants = {
     "bg-neutral-0 text-danger-500 border border-danger-500 hover:bg-danger-50 hover:text-danger-600 active:border-danger-700 active:text-danger-700 active:bg-danger-100 focus:ring-2 focus:ring-danger-100 focus:text-danger-600 disabled:border-danger-100 disabled:text-danger-100 disabled:bg-neutral-0 fill-danger-600",
 };
 
-interface IconButtonProps {
+export interface IconButtonProps {
   Icon: React.ElementType;
   type: keyof typeof iconButtonVariants;
   onClick: () => void;
