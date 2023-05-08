@@ -14,7 +14,7 @@ export const Default: Story = {
   render: () => (
     <div className="w-52">
       <Menu>
-        <Menu.Button className="IShouldBeOptional">Open Menu</Menu.Button>
+        <Menu.Button>Open Menu</Menu.Button>
         <Menu.Items>
           <Menu.Title>TITLE</Menu.Title>
           <Menu.Item disabled={false}>Label</Menu.Item>
