@@ -1,0 +1,17 @@
+import{j as r,a as e}from"./jsx-runtime-a888423b.js";import{c as s}from"./class-names-2bb0c168.js";import{S as f,a as v,b,c as C}from"./zoom-to-fit-icon-f9dbb4bf.js";import"./index-8db94870.js";import"./_commonjsHelpers-042e6b4d.js";const x={info:"border-primary-400 bg-primary-50 text-primary-600",danger:"border-danger-400 bg-danger-50 text-danger-500",warning:"border-warning-500 bg-warning-50 text-warning-600",success:"border-success-400 bg-success-50 text-success-500"},T={info:f,success:v,warning:b,danger:C},h={info:"fill-primary-500",danger:"fill-danger-400",success:"fill-success-400",warning:"fill-warning-500"},d={info:"hover:bg-primary-200 active:bg-primary-300 fill-primary-500",danger:"hover:bg-danger-100 active:bg-danger-200 fill-danger-500",success:"hover:bg-success-200 active:bg-success-300 fill-success-500",warning:"hover:bg-warning-100 active:bg-warning-200 fill-warning-500"},n=({title:l,intent:t,children:o,onClose:p,isClosable:i=!0})=>{const c=T[t];return r("div",{role:"alert",className:s("pt-4.5 relative flex flex-row gap-4 rounded-lg border px-4 py-3 text-neutral-800",i&&"pr-14",x[t]),children:[e("div",{className:"pt-0.5",children:e(c,{className:h[t]})}),i?e("div",{className:"absolute right-0 top-0 hidden pr-4 pt-2 sm:block",children:r("button",{type:"button",className:s("rounded p-2.5",d[t]),onClick:p,children:[e("span",{className:"sr-only",children:"Close"}),e(c,{name:"cross",className:s("h-3 w-3",d[t])})]})}):null,r("div",{children:[e("div",{className:"text-sm font-medium",children:l}),o?e("div",{className:"w-full pt-1 text-sm text-neutral-800",children:o}):null]})]})};try{n.displayName="Toast",n.__docgenInfo={description:"",displayName:"Toast",props:{title:{defaultValue:null,description:"",name:"title",required:!0,type:{name:"string"}},intent:{defaultValue:null,description:"",name:"intent",required:!0,type:{name:"enum",value:[{value:'"success"'},{value:'"info"'},{value:'"warning"'},{value:'"danger"'}]}},isClosable:{defaultValue:{value:"true"},description:"",name:"isClosable",required:!1,type:{name:"boolean"}},onClose:{defaultValue:null,description:"",name:"onClose",required:!0,type:{name:"() => void"}}}}}catch{}const S={title:"Toast",component:n},a={render:()=>r("div",{className:"mx-auto flex w-120 flex-col gap-4",children:[e(n,{intent:"info",title:"Title",onClose:()=>alert("You clicked me!"),children:"Content"}),e(n,{intent:"warning",title:"Title",onClose:()=>alert("You clicked me!"),children:"Content"}),e(n,{intent:"danger",title:"Title",onClose:()=>alert("You clicked me!"),children:"Content"}),e(n,{intent:"success",title:"Title",onClose:()=>alert("You clicked me!"),children:"Content"})]})};var u,m,g;a.parameters={...a.parameters,docs:{...(u=a.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  render: () => <div className="mx-auto flex w-120 flex-col gap-4">
+      <Toast intent="info" title="Title" onClose={() => alert("You clicked me!")}>
+        Content
+      </Toast>
+      <Toast intent="warning" title="Title" onClose={() => alert("You clicked me!")}>
+        Content
+      </Toast>
+      <Toast intent="danger" title="Title" onClose={() => alert("You clicked me!")}>
+        Content
+      </Toast>
+      <Toast intent="success" title="Title" onClose={() => alert("You clicked me!")}>
+        Content
+      </Toast>
+    </div>
+}`,...(g=(m=a.parameters)==null?void 0:m.docs)==null?void 0:g.source}}};const Y=["Default"];export{a as Default,Y as __namedExportsOrder,S as default};
+//# sourceMappingURL=toast.stories-ade7e1bd.js.map
