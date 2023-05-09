@@ -1,23 +1,13 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import { Menu } from "@headlessui/react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ChatIcon } from "../../../icons";
 
-import { MenuItem } from "./menu-item";
 import React from "react";
+import { MenuItem } from "./menu-item";
+import { Menu } from "../menu";
 
 const meta: Meta<typeof MenuItem> = {
   title: "Menu/MenuItem",
   component: MenuItem,
-  decorators: [
-    (Story) => {
-      return (
-        <Menu>
-          <Story />
-        </Menu>
-      );
-    },
-  ],
 };
 
 export default meta;
@@ -33,13 +23,14 @@ export const Default: Story = {
       type: "boolean",
       defaultValue: false,
     },
-
   },
   render: (args) => (
     <div className="w-52">
-      <MenuItem LeftIcon={ChatIcon} {...args}>
-        Label
-      </MenuItem>
+      <Menu>
+        <MenuItem LeftIcon={ChatIcon} {...args}>
+          Label
+        </MenuItem>
+      </Menu>
     </div>
   ),
 };
