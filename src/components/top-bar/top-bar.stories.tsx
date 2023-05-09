@@ -18,7 +18,7 @@ type Story = StoryObj<typeof TopBar>;
 export const Default: Story = {
   render: () => (
     <TopBar>
-      <TopBar.Logo />
+      <TopBar.Logo src="https://placekitten.com/80/80"/>
       <TopBar.NavLinks>
         <TopBar.NavLink isActive>Dashboard</TopBar.NavLink>
         <TopBar.NavLink>Cases</TopBar.NavLink>

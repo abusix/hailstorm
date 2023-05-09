@@ -3,7 +3,7 @@ import { Menu as HeadlessMenu } from "@headlessui/react";
 
 export interface MenuButtonProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 export const MenuButton = ({ children, className }: MenuButtonProps) => {

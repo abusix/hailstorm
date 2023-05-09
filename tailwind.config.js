@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/components/**/*.{html,js,ts,tsx}"],  
+  content: ["./src/components/**/*.{html,js,ts,tsx}"],
   theme: {
     colors: {
         abusix: {
@@ -74,8 +74,8 @@ module.exports = {
     },
     extend: {
         fontFamily: {
-            display: ['Fabriga'],
-            sans: ['Inter'],
+          display: ["Fabriga", "serif"],
+          sans: ["Inter", "sans-serif"],
         },
         maxWidth: {
             285: '71.25rem',

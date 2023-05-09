@@ -2,26 +2,44 @@
   "name": "@abusix/hailstorm",
   "version": "1.5.0",
   "description": "our own design/component library",
-  "scripts": {
-    "rollup": "NODE_ENV=production rollup -c",
-    "storybook": "start-storybook -p 6006",
-    "clean": "rimraf ./dist",
-    "test": "jest",
-    "build": "npm run clean && npm run rollup",
-    "build:icons": "svgr -- assets/icons",
-    "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify"
+  "homepage": "https://github.com/abusix/hailstorm",
+  "author": "abusix",
+  "license": "ISC",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abusix/hailstorm.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/abusix/hailstorm/issues"
   },
-  "homepage": "https://github.com/abusix/hailstorm",
+  "scripts": {
+    "rollup": "NODE_ENV=production rollup -c",
+    "storybook": "storybook dev -p 6006",
+    "clean": "rimraf ./dist",
+    "type-check": "tsc --project tsconfig.json",
+    "test": "jest",
+    "build": "npm run clean && npm run rollup",
+    "build:icons": "svgr -- assets/icons",
+    "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build",
+    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.14",
+    "@tanstack/react-table": "^8.9.1",
+    "@tanstack/react-virtual": "^3.0.0-beta.54",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "tslib": "^2.5.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
@@ -32,15 +50,15 @@
     "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-typescript": "^11.0.0",
     "@semantic-release/git": "^10.0.1",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-interactions": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-docs": "^7.0.8",
+    "@storybook/addon-essentials": "^7.0.8",
+    "@storybook/addon-interactions": "^7.0.8",
+    "@storybook/addon-links": "^7.0.8",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/builder-webpack4": "^6.5.16",
-    "@storybook/manager-webpack4": "^6.5.16",
-    "@storybook/react": "^6.5.16",
-    "@storybook/testing-library": "^0.0.13",
+    "@storybook/blocks": "^7.0.8",
+    "@storybook/react": "^7.0.8",
+    "@storybook/react-vite": "^7.0.8",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@svgr/cli": "7.0.0",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.0",
@@ -50,6 +68,7 @@
     "babel-loader": "^8.3.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^4.4.0",
@@ -58,29 +77,14 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "semantic-release": "^21.0.1",
+    "storybook": "^7.0.8",
     "tailwind-merge": "^1.10.0",
     "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.5"
-  },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts",
-  "dependencies": {
-    "@headlessui/react": "^1.7.14",
-    "@tanstack/react-table": "^8.9.1",
-    "@tanstack/react-virtual": "^3.0.0-beta.54",
-    "react-dnd": "^16.0.1",
-    "react-dnd-html5-backend": "^16.0.1",
-    "tslib": "^2.5.0"
+    "typescript": "^5.0.4",
+    "vite": "^4.3.5"
   },
   "peerDependencies": {
     "react": ">=17.0.1",
     "react-dom": ">=17.0.1"
-  },
-  "engines": {
-    "node": ">=18"
   }
 }
