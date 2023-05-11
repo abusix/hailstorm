@@ -44,6 +44,12 @@ export const DraggableRow = <TableData,>({
       offsetX: 16,
       offsetY: 16,
     },
+    isDragging: () => {
+      if (row.getIsExpanded()) {
+        row.toggleExpanded();
+      }
+      return true;
+    },
   });
 
   const [firstCell, ...restVisibleCells] = row.getVisibleCells();
