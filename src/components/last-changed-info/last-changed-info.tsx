@@ -4,7 +4,7 @@ import { getAbusixDateString } from "../../util/date";
 
 interface LastChangedInfoProps {
   changedDate: Date;
-  changedBy: string;
+  changedBy: string | null;
   className?: string;
 }
 
@@ -13,9 +13,9 @@ export const LastChangedInfo = ({
   changedBy,
   className,
 }: LastChangedInfoProps) => {
-  return (
-    <p className={classNames("paragraph-100 mt-5 text-neutral-700", className)}>
-      Last changed on {getAbusixDateString(changedDate)} by {changedBy}
-    </p>
-  );
+  const date = getAbusixDateString(changedDate);
+  const changedByAppendix = changedBy ? `by ${changedBy}` : '';
+  const lastChangeText = `Last changed on ${date} ${changedByAppendix}`;
+  
+  return <p className={classNames('paragraph-100 mt-5 text-neutral-700', className)}>{lastChangeText}</p>;
 };
