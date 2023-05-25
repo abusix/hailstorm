@@ -13,5 +13,8 @@ export default meta;
 type Story = StoryObj<typeof Spinner>;
 
 export const Default: Story = {
-  render: () => <Spinner />,
+  render: (args) => <Spinner {...args} />,
+  args: {
+    size: "small",
+  },
 };

@@ -3,7 +3,7 @@ import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Toggle } from "./toggle";
+import { Toggle, ToggleProps } from "./toggle";
 
 const meta: Meta<typeof Toggle> = {
   title: "Toggle",
@@ -13,13 +13,17 @@ const meta: Meta<typeof Toggle> = {
 export default meta;
 type Story = StoryObj<typeof Toggle>;
 
-const ToggleWithHook = ({ disabled }: { disabled?: boolean }) => {
+const ToggleWithHook = (args: ToggleProps) => {
   const [checked, setChecked] = React.useState(false);
+
+  React.useEffect(() => {
+    setChecked(args.checked);
+  }, [args.checked]);
 
   return (
     <Toggle
       checked={checked}
-      disabled={disabled}
+      disabled={args.disabled}
       onChange={() => setChecked(!checked)}
       ariaLabel="Enable notifications"
     />
@@ -27,11 +31,9 @@ const ToggleWithHook = ({ disabled }: { disabled?: boolean }) => {
 };
 
 export const Default: Story = {
-  argTypes: {
-    disabled: {
-      control: "boolean",
-      defaultValue: false,
-    },
-  },
   render: (args) => <ToggleWithHook {...args} />,
+  args: {
+    checked: false,
+    disabled: false,
+  },
 };

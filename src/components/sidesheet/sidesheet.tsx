@@ -5,7 +5,7 @@ import { SidesheetPanel } from "./sidesheet-panel";
 import { SidesheetPanelContent } from "./sidesheet-panel-content";
 import { SidesheetPanelHeader } from "./sidesheet-panel-header";
 
-interface SidesheetProps {
+export interface SidesheetProps {
   children: React.ReactNode;
   isOpen: boolean;
   onClose: () => void;
@@ -24,11 +24,11 @@ const Sidesheet = ({
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
+          enterFrom="opacity-0 z-0"
+          enterTo="opacity-100 z-10"
           leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+          leaveFrom="opacity-100 z-10"
+          leaveTo="opacity-0 z-0"
         >
           <div
             className="fixed inset-0 bg-modal-background"
@@ -45,7 +45,7 @@ const Sidesheet = ({
           leaveFrom="-translate-x-0"
           leaveTo="translate-x-full"
         >
-          <HeadlessDialog.Panel className="fixed inset-y-0 right-0 w-184 overflow-y-auto bg-neutral-0">
+          <HeadlessDialog.Panel className="fixed inset-y-0 right-0 w-184 overflow-y-auto bg-neutral-0 z-10">
             {children}
           </HeadlessDialog.Panel>
         </Transition.Child>

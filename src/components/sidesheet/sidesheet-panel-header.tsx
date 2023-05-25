@@ -9,7 +9,7 @@ export interface SidesheetPanelHeaderProps {
 const SidesheetPanelHeader = ({ children }: SidesheetPanelHeaderProps) => {
   return (
     <>
-      <div className="flex items-center justify-between px-8 py-5">
+      <div className="flex items-center justify-between gap-2 px-8 py-5">
         {children}
       </div>
       <hr className="border-neutral-300" />
