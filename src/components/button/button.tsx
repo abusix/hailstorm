@@ -67,12 +67,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {loading ? <Spinner size="small" /> : null}
 
         {LeftIcon && !loading ? (
-          <LeftIcon className={iconVariants[type]} />
+          <LeftIcon className={`${iconVariants[type]} w-3 h-3`} />
         ) : null}
 
         {children}
 
-        {RightIcon ? <RightIcon className={iconVariants[type]} /> : null}
+        {RightIcon ? (
+          <RightIcon className={`${iconVariants[type]} w-3 h-3`} />
+        ) : null}
       </button>
     );
   }
