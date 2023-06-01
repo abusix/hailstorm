@@ -3,6 +3,16 @@ import React from "react";
 import { ListboxOptions } from "./listbox-options";
 import { ListboxOption } from "./listbox-option";
 import { ListboxButton } from "./listbox-button";
+import classNames from '../../../util/class-names';
+
+const attachmentStyles = classNames(
+  // first element
+  '[.group.attached-form-fields_&:first-child_button]:rounded-r-none [.group.attached-form-fields_&:first-child_button]:border-r-0',
+  // elements in between
+  '[.group.attached-form-fields_&:not(:first-child):not(:last-child)_button]:rounded-none [.group.attached-form-fields_&:not(:first-child):not(:last-child)_button]:border-r-0',
+  // last element
+  '[.group.attached-form-fields_&:last-child_button]:rounded-l-none'
+);
 
 export interface ListboxProps<TValue> {
   children: React.ReactNode;
@@ -17,7 +27,7 @@ const Listbox = <TValue,>({
 }: ListboxProps<TValue>) => {
   return (
     <HeadlessListbox value={value} onChange={onChange}>
-      <div className="relative">{children}</div>
+      <div className={classNames("relative w-full", attachmentStyles)}>{children}</div>
     </HeadlessListbox>
   );
 };

@@ -10,6 +10,7 @@ import { Listbox } from "./listbox/listbox";
 import { MultiCombobox } from "./multi-combobox/multi-combobox";
 import { SingleCombobox } from "./single-combobox/single-combobox";
 import React from "react";
+import { FormFieldAttachedFieldsGroup } from './form-field-attached-fields-group';
 
 interface FormFieldProps {
   children: React.ReactNode;
@@ -30,5 +31,6 @@ FormField.NumberInput = NumberInput;
 FormField.Listbox = Listbox;
 FormField.MultiCombobox = MultiCombobox;
 FormField.SingleCombobox = SingleCombobox;
+FormField.AttachedFieldsGroup = FormFieldAttachedFieldsGroup;
 
 export { FormField };
