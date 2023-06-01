@@ -76,14 +76,14 @@ export const TextInput = ({
         type={type}
         className={classNames(
           targetAttachmentIdentifier,
-          "paragraph-100 block w-full h-8 rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
+          "relative paragraph-100 block w-full h-8 rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
           LeftIcon && "pl-9",
           readOnly && "bg-neutral-100",
           disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",
           !error &&
           !disabled &&
-          'hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200',
-          error && !disabled && 'border-danger-500'
+          'hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200 focus:z-10',
+          error && !disabled && 'border-danger-500',
         )}
         disabled={disabled}
       />
