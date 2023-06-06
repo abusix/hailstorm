@@ -7,11 +7,11 @@ import classNames from '../../../util/class-names';
 
 const attachmentStyles = classNames(
   // first element
-  '[.group.attached-form-fields_&:first-child_button]:rounded-r-none [.group.attached-form-fields_&:first-child_button]:border-r-0',
+  '[.group.form-field-group_&:first-child_button]:rounded-r-none [.group.form-field-group_&:first-child_button]:border-r-0',
   // elements in between
-  '[.group.attached-form-fields_&:not(:first-child):not(:last-child)_button]:rounded-none [.group.attached-form-fields_&:not(:first-child):not(:last-child)_button]:border-r-0',
+  '[.group.form-field-group_&:not(:first-child):not(:last-child)_button]:rounded-none [.group.form-field-group_&:not(:first-child):not(:last-child)_button]:border-r-0',
   // last element
-  '[.group.attached-form-fields_&:last-child_button]:rounded-l-none'
+  '[.group.form-field-group_&:last-child_button]:rounded-l-none'
 );
 
 export interface ListboxProps<TValue> {

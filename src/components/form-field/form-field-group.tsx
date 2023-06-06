@@ -5,5 +5,5 @@ interface FormFieldAttachedFieldsGroupProps {
 }
 
 export const FormFieldGroup = ({ children }: FormFieldAttachedFieldsGroupProps) => {
-  return <div className="attached-form-fields group w-full flex flex-row">{children}</div>;
+  return <div className="form-field-group group w-full flex flex-row">{children}</div>;
 };

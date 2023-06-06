@@ -8,11 +8,11 @@ const targetAttachmentIdentifier = 'target-field';
 // so we can’t use ${targetAttachmentIdentifier} here
 const attachmentStyles = classNames(
   // first element
-  `[.group.attached-form-fields_&:first-child_.target-field]:rounded-r-none [.group.attached-form-fields_&:first-child_.target-field]:border-r-0`,
+  `[.group.form-field-group_&:first-child_.target-field]:rounded-r-none [.group.form-field-group_&:first-child_.target-field]:border-r-0`,
   // elements in between
-  `[.group.attached-form-fields_&:not(:first-child):not(:last-child)_.target-field]:rounded-none [.group.attached-form-fields_&:not(:first-child):not(:last-child)_.target-field]:border-r-0`,
+  `[.group.form-field-group_&:not(:first-child):not(:last-child)_.target-field]:rounded-none [.group.form-field-group_&:not(:first-child):not(:last-child)_.target-field]:border-r-0`,
   // last element
-  `[.group.attached-form-fields_&:last-child_.target-field]:border-l-1 [.group.attached-form-fields_&:last-child_.target-field]:rounded-l-none`
+  `[.group.form-field-group_&:last-child_.target-field]:border-l-1 [.group.form-field-group_&:last-child_.target-field]:rounded-l-none`
 );
 
 export interface TextInputProps {
