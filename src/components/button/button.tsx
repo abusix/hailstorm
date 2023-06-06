@@ -1,6 +1,6 @@
-import React, { SVGProps } from "react";
+import React from "react";
 import classNames from "../../util/class-names";
-import { Spinner } from "../spinner/spinner";
+import { Spinner } from "../spinner";
 
 const buttonVariants = {
   primary:
