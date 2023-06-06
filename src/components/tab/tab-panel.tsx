@@ -1,10 +1,10 @@
-import React from "react";
-import { Tab as HeadlessTab } from "@headlessui/react";
+import { Tab as HeadlessTab } from '@headlessui/react';
+import React from 'react';
 
-export interface TabPanelProps {
+interface TabPanelsProps {
   children: React.ReactNode;
 }
 
-export const TabPanel = ({ children }: TabPanelProps) => {
-  return <HeadlessTab.Panel>{children}</HeadlessTab.Panel>;
+export const TabPanels = ({ children }: TabPanelsProps) => {
+  return <HeadlessTab.Panels as={React.Fragment}>{children}</HeadlessTab.Panels>;
 };
