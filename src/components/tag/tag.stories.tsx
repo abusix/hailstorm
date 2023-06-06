@@ -12,11 +12,14 @@ export default meta;
 type Story = StoryObj<typeof Tag>;
 
 export const Default: Story = {
-  render: () => (
+  render: (args) => (
     <div className="flex">
-      <Tag>Label</Tag>
+      <Tag {...args}>Label</Tag>
     </div>
   ),
+  args: {
+    disabled: false,
+  },
 };
 
 export const Interactive: Story = {

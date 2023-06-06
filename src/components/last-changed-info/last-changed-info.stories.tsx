@@ -12,5 +12,10 @@ export default meta;
 type Story = StoryObj<typeof LastChangedInfo>;
 
 export const Default: Story = {
-  render: () => <LastChangedInfo changedBy="By_You" changedDate={new Date()} />,
+  render: (args) => <LastChangedInfo {...args} />,
+  args: {
+    changedDate: new Date(),
+    changedBy: "By_You",
+    className: "",
+  },
 };

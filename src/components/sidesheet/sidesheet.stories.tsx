@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Sidesheet } from "./sidesheet";
-import { Button } from "../button/button";
+import { Sidesheet, SidesheetProps } from "./sidesheet";
+import { Button } from "../button";
 
 const meta: Meta<typeof Sidesheet> = {
   title: "Sidesheet",
@@ -11,8 +11,12 @@ const meta: Meta<typeof Sidesheet> = {
 export default meta;
 type Story = StoryObj<typeof Sidesheet>;
 
-const SidesheetWithHooks = () => {
-  const [isOpen, setIsOpen] = React.useState(true);
+const SidesheetWithHooks = (args: SidesheetProps) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsOpen(args.isOpen);
+  }, [args.isOpen]);
 
   function handleCloseModal() {
     setIsOpen(false);
@@ -40,8 +44,6 @@ const SidesheetWithHooks = () => {
             </Sidesheet.PanelHeader.Title>
             <Sidesheet.PanelHeader.ActionGroup>
               <Button onClick={() => null}>Button 1</Button>
-              <Button onClick={() => null}>Button 2</Button>
-              <Button onClick={() => null}>Button 3</Button>
             </Sidesheet.PanelHeader.ActionGroup>
           </Sidesheet.PanelHeader>
           <Sidesheet.PanelContent>
@@ -54,5 +56,19 @@ const SidesheetWithHooks = () => {
 };
 
 export const Default: Story = {
-  render: () => <SidesheetWithHooks />,
+  render: (args) => (
+    <SidesheetWithHooks {...args}>
+      <p>Hello</p>
+    </SidesheetWithHooks>
+  ),
+  args: {
+    isOpen: false
+  },
+  argTypes: {
+    initialFocus: {
+      control: {
+        type: null,
+      },
+    },
+  },
 };

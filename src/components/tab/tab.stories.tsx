@@ -1,11 +1,15 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Tab } from './tab';
+import { getStoryDescription, noControl } from '../../util/storybook-utils';
 import { TabType } from './tab-context';
 
 const meta: Meta<typeof Tab> = {
   title: 'Tab',
   component: Tab,
+  parameters: getStoryDescription(
+    "Tab component. For a detailed explanation on props, please visit the Headless UI [tab-group documentation](https://headlessui.com/react/tabs#tab-group)"
+  ),
 };
 
 export default meta;
@@ -50,15 +54,18 @@ export const Primary: Story = {
   ),
 };
 
-export const Seconday: Story = {
-  render: () => (
-    <TabsExample type="secondary"/>
+export const Secondary: Story = {
+  render: (args) => (
+    <TabsExample {...args}/>
   ),
+  args: {
+    type: "secondary",
+  },
 };
 
 export const NestedTabs: Story = {
-  render: () => (
-    <Tab>
+  render: (args) => (
+    <Tab {...args}>
       <Tab.List>
         <Tab.Button onClick={() => null}>Tab 1</Tab.Button>
         <Tab.Button onClick={() => null}>Tab 2</Tab.Button>
@@ -86,4 +93,19 @@ export const NestedTabs: Story = {
       </Tab.Panels>
     </Tab>
   ),
+  args: {
+    type: "primary",
+    vertical: false,
+    manual: false,
+    defaultIndex: 0,
+  },
+  argTypes: {
+    as: noControl,
+    refName: noControl,
+    className: {
+      control: {
+        type: "text",
+      },
+    },
+  },
 };
