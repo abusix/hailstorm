@@ -23,19 +23,19 @@ const TabsExample = ({ type = 'primary' }: { type?: TabType }) => {
       
       <Tab.Panels>
         <Tab.Panel>
-          <p className={'p-4 paragraph-200'}>
+          <p className={'pt-2 paragraph-200'}>
             Content 1
           </p>
         </Tab.Panel>
         
         <Tab.Panel>
-          <p className={'p-4 paragraph-200'}>
+          <p className={'pt-2 paragraph-200'}>
             Content 2
           </p>
         </Tab.Panel>
         
         <Tab.Panel>
-          <p className={'p-4 paragraph-200'}>
+          <p className={'pt-2 paragraph-200'}>
             Content 3
           </p>
         </Tab.Panel>
@@ -67,19 +67,19 @@ export const NestedTabs: Story = {
       
       <Tab.Panels>
         <Tab.Panel>
-          <div className="p-2">
+          <div className="pt-2">
             <TabsExample/>
           </div>
         </Tab.Panel>
         
         <Tab.Panel>
-          <div className="p-2">
+          <div className="pt-2">
             <TabsExample/>
           </div>
         </Tab.Panel>
         
         <Tab.Panel>
-          <div className="p-2">
+          <div className="pt-2">
             <TabsExample/>
           </div>
         </Tab.Panel>
