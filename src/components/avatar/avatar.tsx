@@ -22,7 +22,7 @@ export const Avatar = ({
   const label = children.substring(0, 2);
   return (
     <div
-      className={`inline-flex h-8 w-8 items-center justify-center rounded-full font-sans text-xs ${avatarVariants[color]}`}
+      className={`inline-flex shrink-0 h-8 w-8 items-center justify-center rounded-full font-sans text-xs ${avatarVariants[color]}`}
       onClick={onClick}
       onKeyDown={onClick}
       tabIndex={0}
