@@ -1,17 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { FormFieldAttachedFieldsGroup } from './form-field-attached-fields-group';
+import { FormFieldGroup } from './form-field-group';
 import { FormField } from './form-field';
 
-const meta: Meta<typeof FormFieldAttachedFieldsGroup> = {
+const meta: Meta<typeof FormFieldGroup> = {
   title: 'Input / Combined Fields',
-  component: FormFieldAttachedFieldsGroup,
+  component: FormFieldGroup,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof FormFieldAttachedFieldsGroup>;
+type Story = StoryObj<typeof FormFieldGroup>;
 
 const TextInputFields = ({ error = false, disabled = false }: { error?: boolean; disabled?: boolean }) => {
   return (
@@ -22,7 +22,7 @@ const TextInputFields = ({ error = false, disabled = false }: { error?: boolean;
           <FormField.Description id="value-description">A group with only textfields</FormField.Description>
         </FormField.LabelGroup>
         
-        <FormField.AttachedFieldsGroup>
+        <FormField.Group>
           <FormField.TextInput
             id="value"
             value="I"
@@ -52,7 +52,7 @@ const TextInputFields = ({ error = false, disabled = false }: { error?: boolean;
             error={error}
             disabled={disabled}
           />
-        </FormField.AttachedFieldsGroup>
+        </FormField.Group>
       </FormField>
       
       <FormField>
@@ -61,7 +61,7 @@ const TextInputFields = ({ error = false, disabled = false }: { error?: boolean;
           <FormField.Description id="value-description">A group with mixed fields (textfields and listboxes)</FormField.Description>
         </FormField.LabelGroup>
         
-        <FormField.AttachedFieldsGroup>
+        <FormField.Group>
           <FormField.TextInput
             id="value"
             value="I"
@@ -109,7 +109,7 @@ const TextInputFields = ({ error = false, disabled = false }: { error?: boolean;
               </FormField.Listbox.Options>
             </div>
           </FormField.Listbox>
-        </FormField.AttachedFieldsGroup>
+        </FormField.Group>
       </FormField>
     </div>
   );

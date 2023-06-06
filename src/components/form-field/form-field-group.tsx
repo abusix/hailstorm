@@ -4,6 +4,6 @@ interface FormFieldAttachedFieldsGroupProps {
   children: React.ReactNode;
 }
 
-export const FormFieldAttachedFieldsGroup = ({ children }: FormFieldAttachedFieldsGroupProps) => {
+export const FormFieldGroup = ({ children }: FormFieldAttachedFieldsGroupProps) => {
   return <div className="attached-form-fields group w-full flex flex-row">{children}</div>;
 };
