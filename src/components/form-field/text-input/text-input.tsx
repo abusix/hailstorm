@@ -1,6 +1,20 @@
 import React, { useRef } from 'react';
 import classNames from '../../../util/class-names';
 
+const targetAttachmentIdentifier = 'target-field';
+
+// note: these strings need to be static,
+// template literals aren’t recognized by tailwind,
+// so we can’t use ${targetAttachmentIdentifier} here
+const formFieldGroupStyles = classNames(
+  // first element
+  `[.group.form-field-group_&:first-child_.target-field]:rounded-r-none [.group.form-field-group_&:first-child_.target-field]:border-r-0`,
+  // elements in between
+  `[.group.form-field-group_&:not(:first-child):not(:last-child)_.target-field]:rounded-none [.group.form-field-group_&:not(:first-child):not(:last-child)_.target-field]:border-r-0`,
+  // last element
+  `[.group.form-field-group_&:last-child_.target-field]:border-l-1 [.group.form-field-group_&:last-child_.target-field]:rounded-l-none`
+);
+
 export interface TextInputProps {
   id: string;
   placeholder: string;
@@ -37,7 +51,7 @@ export const TextInput = ({
   }
   
   return (
-    <div className="relative w-full">
+    <div className={classNames("relative w-full", formFieldGroupStyles)}>
       {LeftIcon ? (
         <div
           className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
@@ -61,14 +75,15 @@ export const TextInput = ({
         onClick={autoSelect ? handleAutoSelection : undefined}
         type={type}
         className={classNames(
-          "paragraph-100 block w-full h-8 rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
+          targetAttachmentIdentifier,
+          "relative paragraph-100 block w-full h-8 rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
           LeftIcon && "pl-9",
           readOnly && "bg-neutral-100",
           disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",
           !error &&
           !disabled &&
-          'hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200',
-          error && !disabled && 'border-danger-500'
+          'hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200 focus:z-10',
+          error && !disabled && 'border-danger-500',
         )}
         disabled={disabled}
       />

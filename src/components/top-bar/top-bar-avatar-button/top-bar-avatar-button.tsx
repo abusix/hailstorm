@@ -1,7 +1,7 @@
 import React from "react";
 import { ChevronDownIcon } from "../../../icons";
-import { Avatar } from "../../avatar/avatar";
-import { Menu } from "../../menu/menu";
+import { Avatar } from "../../avatar";
+import { Menu } from "../../menu";
 
 export interface TopBarAvatarButtonProps {
   children: string;

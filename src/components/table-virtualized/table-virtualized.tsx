@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ColumnDef,
   flexRender,
@@ -10,52 +9,45 @@ import {
   Row as RowType,
   SortingState,
   useReactTable,
-} from "@tanstack/react-table";
-import { useVirtualizer, VirtualizerOptions } from "@tanstack/react-virtual";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-import { TableUnvirtualized } from "../table-unvirtualized/table-unvirtualized";
-import { DraggableRow } from "./draggable-row/draggable-row";
-import { VirtualizedHeaderGroup } from "./header-group/header-group";
-import { ExpandableButtonCell } from "./expandable-button-cell/expandable-button-cell";
-import classNames from "../../util/class-names";
+} from '@tanstack/react-table';
+import { useVirtualizer, VirtualizerOptions } from '@tanstack/react-virtual';
+import React from 'react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import { DraggableRow } from './draggable-row/draggable-row';
+import { VirtualizedHeaderGroup } from './header-group/header-group';
+import { ExpandableButtonCell } from './expandable-button-cell/expandable-button-cell';
+import { TableUnvirtualized } from '../table-unvirtualized';
+import classNames from '../../util/class-names';
 
 export interface TableVirtualizedProps<TableData> {
   data: TableData[];
-  columnDefs: ColumnDef<TableData, string>[];
+  columnDefs: ColumnDef<TableData, any>[];
   showPlaceholder?: boolean;
   placeholder?: React.ReactNode;
   isDraggableRowsEnabled?: boolean;
   isExpandableRowsEnabled?: boolean;
-  getExpandableContent?: (
-    row: RowType<TableData>,
-    index: number
-  ) => React.ReactNode;
+  getExpandableContent?: (row: RowType<TableData>, index: number) => React.ReactNode;
   virtualizerOptions?: PartialKeys<
     VirtualizerOptions<HTMLDivElement, Element>,
-    | "observeElementRect"
-    | "observeElementOffset"
-    | "scrollToFn"
-    | "count"
-    | "getScrollElement"
-    | "estimateSize"
+    'observeElementRect' | 'observeElementOffset' | 'scrollToFn' | 'count' | 'getScrollElement' | 'estimateSize'
   >;
 }
 
-export const TableVirtualized = <TableData,>({
-  isDraggableRowsEnabled = false,
-  isExpandableRowsEnabled = false,
-  getExpandableContent,
-  data,
-  showPlaceholder = false,
-  placeholder,
-  columnDefs,
-  virtualizerOptions = {},
-}: TableVirtualizedProps<TableData>) => {
+export const TableVirtualized = <TableData, >({
+                                                isDraggableRowsEnabled = false,
+                                                isExpandableRowsEnabled = false,
+                                                getExpandableContent,
+                                                data,
+                                                showPlaceholder = false,
+                                                placeholder,
+                                                columnDefs,
+                                                virtualizerOptions = {},
+                                              }: TableVirtualizedProps<TableData>) => {
   const virtualContainerRef = React.useRef<HTMLDivElement>(null);
   const [tableData, setTableData] = React.useState([...data]);
   const [sorting, setSorting] = React.useState<SortingState>([]);
-
+  
   const table = useReactTable({
     data: tableData,
     columns: columnDefs,
@@ -64,19 +56,17 @@ export const TableVirtualized = <TableData,>({
     },
     getRowCanExpand: () => isExpandableRowsEnabled,
     onSortingChange: setSorting,
-    getExpandedRowModel: isExpandableRowsEnabled
-      ? getExpandedRowModel()
-      : undefined,
+    getExpandedRowModel: isExpandableRowsEnabled ? getExpandedRowModel() : undefined,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
-
+  
   React.useEffect(() => {
     setTableData(data);
   }, [data]);
-
-  const { rows } = table.getRowModel();
-
+  
+  const {rows} = table.getRowModel();
+  
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => virtualContainerRef.current,
@@ -84,24 +74,19 @@ export const TableVirtualized = <TableData,>({
     overscan: 10,
     ...virtualizerOptions,
   });
-
+  
   const virtualRows = rowVirtualizer.getVirtualItems();
   const rowsLength = virtualRows.length;
   const totalSize = rows.length;
-
+  
   const paddingTop = rowsLength > 0 ? virtualRows[0].start || 0 : 0;
-  const paddingBottom =
-    rowsLength > 0 ? totalSize - (virtualRows[rowsLength - 1].end || 0) : 0;
-
+  const paddingBottom = rowsLength > 0 ? totalSize - (virtualRows[rowsLength - 1].end || 0) : 0;
+  
   const reorderRow = (draggedRowIndex: number, targetRowIndex: number) => {
-    tableData.splice(
-      targetRowIndex,
-      0,
-      tableData.splice(draggedRowIndex, 1)[0] as TableData
-    );
+    tableData.splice(targetRowIndex, 0, tableData.splice(draggedRowIndex, 1)[0] as TableData);
     setTableData([...tableData]);
   };
-
+  
   const tableHeader = table
     .getHeaderGroups()
     .map((group: HeaderGroup<TableData>) => (
@@ -112,11 +97,11 @@ export const TableVirtualized = <TableData,>({
         isExpandableColumnEnabled={isExpandableRowsEnabled}
       />
     ));
-
+  
   const tableBody = virtualRows.map((virtualRow) => {
     const row = rows[virtualRow.index] as RowType<TableData>;
     const isExpanded = row.getIsExpanded();
-
+    
     if (isDraggableRowsEnabled) {
       return (
         <DraggableRow<TableData>
@@ -128,19 +113,16 @@ export const TableVirtualized = <TableData,>({
         />
       );
     }
-
+    
     return (
       <React.Fragment key={row.id}>
         <TableUnvirtualized.Body.Row key={row.id} isExpanded={isExpanded}>
           {row.getVisibleCells().map((cell) => (
-            <TableUnvirtualized.Body.Cell
-              key={cell.id}
-              style={cell.column.columnDef.meta}
-            >
+            <TableUnvirtualized.Body.Cell key={cell.id} style={cell.column.columnDef.meta}>
               {flexRender(cell.column.columnDef.cell, cell.getContext())}
             </TableUnvirtualized.Body.Cell>
           ))}
-
+          
           {isExpandableRowsEnabled ? (
             <ExpandableButtonCell
               key={`${row.id}-expandable-icon`}
@@ -149,7 +131,7 @@ export const TableVirtualized = <TableData,>({
             />
           ) : null}
         </TableUnvirtualized.Body.Row>
-
+        
         {isExpanded && getExpandableContent ? (
           <TableUnvirtualized.Body.Row key={`${row.id}-expandable-content`}>
             <TableUnvirtualized.Body.Cell colSpan={columnDefs.length}>
@@ -160,13 +142,11 @@ export const TableVirtualized = <TableData,>({
       </React.Fragment>
     );
   });
-
+  
   return (
     <div
       ref={virtualContainerRef}
-      className={classNames(
-        "h-full overflow-y-auto rounded-lg border border-neutral-300 bg-neutral-0"
-      )}
+      className={classNames('h-full overflow-y-auto rounded-lg border border-neutral-300 bg-neutral-0')}
     >
       <TableUnvirtualized
         isContainerBordersShown={false}
@@ -174,7 +154,7 @@ export const TableVirtualized = <TableData,>({
         hasFixedTableLayout
       >
         <TableUnvirtualized.Header>{tableHeader}</TableUnvirtualized.Header>
-
+        
         <TableUnvirtualized.Body>
           {data.length && !showPlaceholder ? (
             <>
@@ -187,9 +167,9 @@ export const TableVirtualized = <TableData,>({
                   />
                 </tr>
               ) : null}
-
+              
               {tableBody}
-
+              
               {paddingBottom > 0 ? (
                 <tr>
                   <td
@@ -209,11 +189,10 @@ export const TableVirtualized = <TableData,>({
   );
 };
 
-export const WithDragAndDrop = <TableData,>({
-  ...props
-}: TableVirtualizedProps<TableData>) => {
+export const WithDragAndDrop = <TableData, >({...props}: TableVirtualizedProps<TableData>) => {
   return (
     <DndProvider backend={HTML5Backend}>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <TableVirtualized<TableData> isDraggableRowsEnabled {...props} />
     </DndProvider>
   );
