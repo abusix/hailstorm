@@ -5,7 +5,7 @@ import { ListboxOption } from "./listbox-option";
 import { ListboxButton } from "./listbox-button";
 import classNames from '../../../util/class-names';
 
-const attachmentStyles = classNames(
+const formFieldGroupStyles = classNames(
   // first element
   '[.group.form-field-group_&:first-child_button]:rounded-r-none [.group.form-field-group_&:first-child_button]:border-r-0',
   // elements in between
@@ -27,7 +27,7 @@ const Listbox = <TValue,>({
 }: ListboxProps<TValue>) => {
   return (
     <HeadlessListbox value={value} onChange={onChange}>
-      <div className={classNames("relative w-full", attachmentStyles)}>{children}</div>
+      <div className={classNames("relative w-full", formFieldGroupStyles)}>{children}</div>
     </HeadlessListbox>
   );
 };

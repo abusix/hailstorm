@@ -6,7 +6,7 @@ const targetAttachmentIdentifier = 'target-field';
 // note: these strings need to be static,
 // template literals aren’t recognized by tailwind,
 // so we can’t use ${targetAttachmentIdentifier} here
-const attachmentStyles = classNames(
+const formFieldGroupStyles = classNames(
   // first element
   `[.group.form-field-group_&:first-child_.target-field]:rounded-r-none [.group.form-field-group_&:first-child_.target-field]:border-r-0`,
   // elements in between
@@ -51,7 +51,7 @@ export const TextInput = ({
   }
   
   return (
-    <div className={classNames("relative w-full", attachmentStyles)}>
+    <div className={classNames("relative w-full", formFieldGroupStyles)}>
       {LeftIcon ? (
         <div
           className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
