@@ -35,15 +35,15 @@ export interface TableVirtualizedProps<TableData> {
 }
 
 export const TableVirtualized = <TableData, >({
-                                                isDraggableRowsEnabled = false,
-                                                isExpandableRowsEnabled = false,
-                                                getExpandableContent,
-                                                data,
-                                                showPlaceholder = false,
-                                                placeholder,
-                                                columnDefs,
-                                                virtualizerOptions = {},
-                                              }: TableVirtualizedProps<TableData>) => {
+  isDraggableRowsEnabled = false,
+  isExpandableRowsEnabled = false,
+  getExpandableContent,
+  data,
+  showPlaceholder = false,
+  placeholder,
+  columnDefs,
+  virtualizerOptions = {},
+}: TableVirtualizedProps<TableData>) => {
   const virtualContainerRef = React.useRef<HTMLDivElement>(null);
   const [tableData, setTableData] = React.useState([...data]);
   const [sorting, setSorting] = React.useState<SortingState>([]);
