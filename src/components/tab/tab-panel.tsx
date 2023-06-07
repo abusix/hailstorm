@@ -1,7 +1,7 @@
 import { Tab as HeadlessTab } from '@headlessui/react';
 import React from 'react';
 
-interface TabPanelProps {
+export interface TabPanelProps {
   children: React.ReactNode;
 }
 
