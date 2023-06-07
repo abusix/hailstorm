@@ -26,7 +26,7 @@ export const TabButton = <TTag extends React.ElementType>({
     <HeadlessTab {...(props as any)} className="focus-visible:outline-none">
       <div
         className={classNames(
-          'rounded text-xs font-medium ui-not-selected:text-neutral-700 outline-none ui-selected:text-primary-500',
+          "rounded text-xs font-medium ui-not-selected:text-neutral-700 outline-none ui-selected:text-primary-500",
           buttonVariants[type]
         )}
       >

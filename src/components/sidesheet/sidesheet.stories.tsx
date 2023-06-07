@@ -1,8 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Sidesheet, SidesheetProps } from "./sidesheet";
-import { hiddenArgControl } from "../../util/storybook-utils";
-import { Button } from "../button/button";
+import { Button } from "../button";
 
 const meta: Meta<typeof Sidesheet> = {
   title: "Sidesheet",
@@ -57,9 +56,13 @@ const SidesheetWithHooks = (args: SidesheetProps) => {
 };
 
 export const Default: Story = {
-  render: (args) => <SidesheetWithHooks {...args} />,
+  render: (args) => (
+    <SidesheetWithHooks {...args}>
+      <p>Hello</p>
+    </SidesheetWithHooks>
+  ),
   args: {
-    isOpen: false,
+    isOpen: false
   },
   argTypes: {
     initialFocus: {
