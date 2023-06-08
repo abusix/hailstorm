@@ -1,4 +1,4 @@
-name: Format Check
+name: Lint
 
 on: push
 
@@ -7,19 +7,6 @@ env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
-  format-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: "npm"
-      - run: npm ci
-      - run: npm run format:check
   lint:
     runs-on: ubuntu-latest
     steps:
