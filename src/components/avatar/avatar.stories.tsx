@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import type { AvatarProps } from './avatar';
 import { Avatar } from './avatar';
-import React from 'react';
 import { getStoryDescription, hiddenArgControl } from '../../util/storybook-utils';
 
 const colors: AvatarProps['color'][] = ['primary', 'success', 'neutral', 'warning', 'danger'];

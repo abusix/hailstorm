@@ -27,15 +27,15 @@ const TabsExample = ({ type = 'primary' }: { type?: TabType }) => {
 
             <Tab.Panels>
                 <Tab.Panel>
-                    <p className={'paragraph-200 pt-2'}>Content 1</p>
+                    <p className="paragraph-200 pt-2">Content 1</p>
                 </Tab.Panel>
 
                 <Tab.Panel>
-                    <p className={'paragraph-200 pt-2'}>Content 2</p>
+                    <p className="paragraph-200 pt-2">Content 2</p>
                 </Tab.Panel>
 
                 <Tab.Panel>
-                    <p className={'paragraph-200 pt-2'}>Content 3</p>
+                    <p className="paragraph-200 pt-2">Content 3</p>
                 </Tab.Panel>
             </Tab.Panels>
         </Tab>

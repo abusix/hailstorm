@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { Meta } from '@storybook/react';
-import { useEffect, useMemo, useState } from 'react';
 import { TableUnvirtualized } from './table-unvirtualized';
 import { Button } from '../button/button';
 
@@ -19,7 +18,7 @@ interface ExampleData {
 export default meta;
 
 function createExampleData(): ExampleData[] {
-    let data: ExampleData[] = [];
+    const data: ExampleData[] = [];
 
     for (let i = 0; i < 20; i++) {
         const element: ExampleData = {

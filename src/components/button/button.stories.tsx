@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, ButtonProps } from './button';
 import React from 'react';
+import { Button, ButtonProps } from './button';
 import { ChatIcon, DiagramTreeIcon, LockIcon } from '../../icons';
 import { hiddenArgControl } from '../../util/storybook-utils';
 
@@ -34,8 +34,8 @@ type Story = StoryObj<typeof Button>;
 export const Base: Story = {};
 export const WithIcons: Story = {
     args: {
-        LeftIcon: icons['ChatIcon'],
-        RightIcon: icons['LockIcon'],
+        LeftIcon: icons.ChatIcon,
+        RightIcon: icons.LockIcon,
     },
 };
 export const Loading: Story = {

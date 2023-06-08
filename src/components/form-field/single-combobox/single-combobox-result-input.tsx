@@ -1,6 +1,6 @@
 import { Combobox as HeadlessCombobox } from '@headlessui/react';
-import { Tag } from '../../tag/tag';
 import React from 'react';
+import { Tag } from '../../tag/tag';
 import { CaretDownIcon } from '../../../icons';
 
 export interface SingleComboboxResultInputProps {

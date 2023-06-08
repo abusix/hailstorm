@@ -1,8 +1,7 @@
 import { Dialog as HeadlessDialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Button } from '../button/button';
 import { IconButton } from '../icon-button/icon-button';
-import React from 'react';
 import classNames from '../../util/class-names';
 import { CrossIcon, TickIcon } from '../../icons';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { FormFieldDescription } from './form-field-description';
 import { FormFieldErrorMessage } from './form-field-error-message';
 import { FormFieldLabel } from './form-field-label';
@@ -9,7 +10,6 @@ import { NumberInput } from './number-input/number-input';
 import { Listbox } from './listbox/listbox';
 import { MultiCombobox } from './multi-combobox/multi-combobox';
 import { SingleCombobox } from './single-combobox/single-combobox';
-import React from 'react';
 import { FormFieldGroup } from './form-field-group';
 
 interface FormFieldProps {

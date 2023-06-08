@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { LastChangedInfo } from './last-changed-info';
 import React from 'react';
+import { LastChangedInfo } from './last-changed-info';
 
 const meta: Meta<typeof LastChangedInfo> = {
     title: 'Last Changed Info',

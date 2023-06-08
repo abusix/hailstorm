@@ -1,5 +1,4 @@
-import React from 'react';
-import { CSSProperties, ReactNode } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 import classNames from '../../../../util/class-names';
 
 type TableCellAlign = 'left' | 'center' | 'right';
