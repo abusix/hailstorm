@@ -44,7 +44,9 @@ module.exports = {
         {
             files: ['*.stories.tsx'],
             rules: {
+                'no-plusplus': 0,
                 'no-restricted-exports': 0,
+                'react/no-unstable-nested-components': 0,
                 'react/jsx-props-no-spreading': 0,
             },
         },
