@@ -1,4 +1,4 @@
-export { Alert } from "./alert";
+export { Alert, AlertIntent } from "./alert";
 export { InlineAlert } from "./inline-alert";
 export { Avatar } from "./avatar";
 export { Badge } from "./badge";
@@ -19,7 +19,7 @@ export { Spinner } from "./spinner";
 export { SpinnerOverlay } from "./spinner-overlay";
 export { Tab } from "./tab";
 export { TableUnvirtualized } from "./table-unvirtualized";
-export { TableVirtualized } from "./table-virtualized";
+export { TableVirtualized, TableVirtualizedProps } from "./table-virtualized";
 export { Tag } from "./tag";
 export { Toast } from "./toast";
 export { Toggle } from "./toggle";
