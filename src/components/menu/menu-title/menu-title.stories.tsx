@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import type { Meta, StoryObj } from '@storybook/react';
-import { MenuTitle } from './menu-title';
 import React from 'react';
+import { MenuTitle } from './menu-title';
 
 const meta: Meta<typeof MenuTitle> = {
     title: 'Menu/MenuTitle',

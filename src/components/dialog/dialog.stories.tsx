@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Dialog } from './dialog';
 import React, { useState } from 'react';
+import { Dialog } from './dialog';
 import { getStoryDescription, hiddenArgControl } from '../../util/storybook-utils';
 
 const SpanFooter = () => <span>test footer 🍭</span>;

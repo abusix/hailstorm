@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Section } from './section';
 import { Button } from '../button/button';
-import React from 'react';
 
 const meta: Meta<typeof Section> = {
     title: 'Section',

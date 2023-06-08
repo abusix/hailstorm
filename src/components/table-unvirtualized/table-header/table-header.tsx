@@ -1,7 +1,6 @@
-import { ForwardedRef, forwardRef, ReactNode } from 'react';
+import React, { ForwardedRef, forwardRef, ReactNode } from 'react';
 import { TableHeaderCell } from './table-header-cell/table-header-cell';
 import { TableHeaderRow } from './table-header-row/table-header-row';
-import React from 'react';
 import classNames from '../../../util/class-names';
 
 export interface TableHeaderProps {

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Badge, BadgeProps } from './badge';
 import React from 'react';
+import { Badge, BadgeProps } from './badge';
 import { hiddenArgControl } from '../../util/storybook-utils';
 
 const types: BadgeProps['type'][] = [
@@ -38,7 +38,7 @@ export const TypesAndShapes: Story = {
         shape: hiddenArgControl,
     },
     render: ({ children, ...args }) => (
-        <div className={`container grid grid-cols-2 gap-4`}>
+        <div className="container grid grid-cols-2 gap-4">
             {shapes.map((shape) => (
                 <div key={shape} className="grid gap-4">
                     <header>{shape}</header>

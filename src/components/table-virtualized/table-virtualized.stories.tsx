@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { createColumnHelper } from '@tanstack/react-table';
-import { useEffect, useMemo, useState } from 'react';
 import { TableVirtualized, WithDragAndDrop } from './table-virtualized';
 import { Button } from '../button/button';
 import { IconButton } from '../icon-button/icon-button';
@@ -25,7 +24,7 @@ export default meta;
 type Story = StoryObj<typeof TableVirtualized>;
 
 function createExampleData(): ExampleData[] {
-    let data: ExampleData[] = [];
+    const data: ExampleData[] = [];
 
     for (let i = 0; i < 20; i++) {
         const element: ExampleData = {

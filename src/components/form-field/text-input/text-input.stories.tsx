@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FormField } from '../form-field';
-import React from 'react';
 
 const meta: Meta<typeof FormField.TextInput> = {
     title: 'Input/TextInput',

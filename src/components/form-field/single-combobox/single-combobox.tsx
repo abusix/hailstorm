@@ -1,11 +1,11 @@
 import { Combobox as HeadlessCombobox } from '@headlessui/react';
+import React from 'react';
 import { SingleComboboxInput } from './single-combobox-input';
 import { SingleComboboxOptions } from './single-combobox-options';
 import { SingleComboboxOption } from './single-combobox.option';
 import { SingleComboboxResultInput } from './single-combobox-result-input';
 import { SingleComboboxCustomOption } from './single-combobox-custom-option';
 import { SingleComboboxEmptyOption } from './single-combobox-empty-option';
-import React from 'react';
 
 export interface SingleComboboxProps<TValue> {
     value: TValue;

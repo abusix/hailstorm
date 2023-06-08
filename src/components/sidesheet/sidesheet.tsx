@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Dialog as HeadlessDialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
 import { SidesheetPanel } from './sidesheet-panel';
 import { SidesheetPanelContent } from './sidesheet-panel-content';
 import { SidesheetPanelHeader } from './sidesheet-panel-header';

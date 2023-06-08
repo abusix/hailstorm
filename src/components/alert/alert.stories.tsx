@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Alert, AlertProps } from './alert';
 import React from 'react';
+import { Alert, AlertProps } from './alert';
 import { getStoryDescription, hiddenArgControl } from '../../util/storybook-utils';
 
 const intents: AlertProps['intent'][] = ['info', 'success', 'warning', 'danger'];

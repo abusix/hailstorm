@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { ChatIcon } from '../../../icons';
 
-import React from 'react';
 import { MenuItem } from './menu-item';
 import { Menu } from '../menu';
 

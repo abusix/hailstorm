@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { InlineAlert, InlineAlertProps } from './inline-alert';
 import React from 'react';
+import { InlineAlert, InlineAlertProps } from './inline-alert';
 import { getStoryDescription } from '../../util/storybook-utils';
 
 const intents: InlineAlertProps['intent'][] = ['info', 'success', 'warning', 'danger'];
