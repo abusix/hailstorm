@@ -1,9 +1,10 @@
-import React, { ReactNode } from 'react';
+import React from "react";
+import { ReactNode } from "react";
 
 export interface TableHeaderRowProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 export const TableHeaderRow = ({ children }: TableHeaderRowProps) => {
-    return <tr>{children}</tr>;
+  return <tr>{children}</tr>;
 };

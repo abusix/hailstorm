@@ -1,72 +1,74 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { Sidesheet, SidesheetProps } from './sidesheet';
-import { Button } from '../button';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Sidesheet, SidesheetProps } from "./sidesheet";
+import { Button } from "../button";
 
 const meta: Meta<typeof Sidesheet> = {
-    title: 'Sidesheet',
-    component: Sidesheet,
+  title: "Sidesheet",
+  component: Sidesheet,
 };
 
 export default meta;
 type Story = StoryObj<typeof Sidesheet>;
 
 const SidesheetWithHooks = (args: SidesheetProps) => {
-    const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
-    React.useEffect(() => {
-        setIsOpen(args.isOpen);
-    }, [args.isOpen]);
+  React.useEffect(() => {
+    setIsOpen(args.isOpen);
+  }, [args.isOpen]);
 
-    function handleCloseModal() {
-        setIsOpen(false);
-    }
+  function handleCloseModal() {
+    setIsOpen(false);
+  }
 
-    function handleClickOpenModal() {
-        setIsOpen(true);
-    }
+  function handleClickOpenModal() {
+    setIsOpen(true);
+  }
 
-    return (
-        <div>
-            <Button
-                onClick={() => {
-                    handleClickOpenModal();
-                }}
-            >
-                Open Sidesheet
-            </Button>
+  return (
+    <div>
+      <Button
+        onClick={() => {
+          handleClickOpenModal();
+        }}
+      >
+        Open Sidesheet
+      </Button>
 
-            <Sidesheet isOpen={isOpen} onClose={() => handleCloseModal()}>
-                <Sidesheet.Panel>
-                    <Sidesheet.PanelHeader>
-                        <Sidesheet.PanelHeader.Title>Modal Title</Sidesheet.PanelHeader.Title>
-                        <Sidesheet.PanelHeader.ActionGroup>
-                            <Button onClick={() => null}>Button 1</Button>
-                        </Sidesheet.PanelHeader.ActionGroup>
-                    </Sidesheet.PanelHeader>
-                    <Sidesheet.PanelContent>
-                        <p>Sidesheet Content</p>
-                    </Sidesheet.PanelContent>
-                </Sidesheet.Panel>
-            </Sidesheet>
-        </div>
-    );
+      <Sidesheet isOpen={isOpen} onClose={() => handleCloseModal()}>
+        <Sidesheet.Panel>
+          <Sidesheet.PanelHeader>
+            <Sidesheet.PanelHeader.Title>
+              Modal Title
+            </Sidesheet.PanelHeader.Title>
+            <Sidesheet.PanelHeader.ActionGroup>
+              <Button onClick={() => null}>Button 1</Button>
+            </Sidesheet.PanelHeader.ActionGroup>
+          </Sidesheet.PanelHeader>
+          <Sidesheet.PanelContent>
+            <p>Sidesheet Content</p>
+          </Sidesheet.PanelContent>
+        </Sidesheet.Panel>
+      </Sidesheet>
+    </div>
+  );
 };
 
 export const Default: Story = {
-    render: (args) => (
-        <SidesheetWithHooks {...args}>
-            <p>Hello</p>
-        </SidesheetWithHooks>
-    ),
-    args: {
-        isOpen: false,
+  render: (args) => (
+    <SidesheetWithHooks {...args}>
+      <p>Hello</p>
+    </SidesheetWithHooks>
+  ),
+  args: {
+    isOpen: false
+  },
+  argTypes: {
+    initialFocus: {
+      control: {
+        type: null,
+      },
     },
-    argTypes: {
-        initialFocus: {
-            control: {
-                type: null,
-            },
-        },
-    },
+  },
 };

@@ -5,11 +5,11 @@ import { getStoryDescription, noControl } from '../../util/storybook-utils';
 import { TabType } from './tab-context';
 
 const meta: Meta<typeof Tab> = {
-    title: 'Tab',
-    component: Tab,
-    parameters: getStoryDescription(
-        'Tab component. For a detailed explanation on props, please visit the Headless UI [tab-group documentation](https://headlessui.com/react/tabs#tab-group)'
-    ),
+  title: 'Tab',
+  component: Tab,
+  parameters: getStoryDescription(
+    "Tab component. For a detailed explanation on props, please visit the Headless UI [tab-group documentation](https://headlessui.com/react/tabs#tab-group)"
+  ),
 };
 
 export default meta;
@@ -17,85 +17,95 @@ export default meta;
 type Story = StoryObj<typeof Tab>;
 
 const TabsExample = ({ type = 'primary' }: { type?: TabType }) => {
-    return (
-        <Tab type={type}>
-            <Tab.List>
-                <Tab.Button onClick={() => null}>Tab 1</Tab.Button>
-                <Tab.Button onClick={() => null}>Tab 2</Tab.Button>
-                <Tab.Button onClick={() => null}>Tab 3</Tab.Button>
-            </Tab.List>
-
-            <Tab.Panels>
-                <Tab.Panel>
-                    <p className="paragraph-200 pt-2">Content 1</p>
-                </Tab.Panel>
-
-                <Tab.Panel>
-                    <p className="paragraph-200 pt-2">Content 2</p>
-                </Tab.Panel>
-
-                <Tab.Panel>
-                    <p className="paragraph-200 pt-2">Content 3</p>
-                </Tab.Panel>
-            </Tab.Panels>
-        </Tab>
-    );
-};
+  return (
+    <Tab type={type}>
+      <Tab.List>
+        <Tab.Button onClick={() => null}>Tab 1</Tab.Button>
+        <Tab.Button onClick={() => null}>Tab 2</Tab.Button>
+        <Tab.Button onClick={() => null}>Tab 3</Tab.Button>
+      </Tab.List>
+      
+      <Tab.Panels>
+        <Tab.Panel>
+          <p className={'pt-2 paragraph-200'}>
+            Content 1
+          </p>
+        </Tab.Panel>
+        
+        <Tab.Panel>
+          <p className={'pt-2 paragraph-200'}>
+            Content 2
+          </p>
+        </Tab.Panel>
+        
+        <Tab.Panel>
+          <p className={'pt-2 paragraph-200'}>
+            Content 3
+          </p>
+        </Tab.Panel>
+      </Tab.Panels>
+    </Tab>
+  )
+}
 
 export const Primary: Story = {
-    render: () => <TabsExample />,
+  render: () => (
+    <TabsExample/>
+  ),
 };
 
 export const Secondary: Story = {
-    render: (args) => <TabsExample {...args} />,
-    args: {
-        type: 'secondary',
-    },
+  render: (args) => (
+    <TabsExample {...args}/>
+  ),
+  args: {
+    type: "secondary",
+  },
 };
 
 export const NestedTabs: Story = {
-    render: (args) => (
-        <Tab {...args}>
-            <Tab.List>
-                <Tab.Button onClick={() => null}>Tab 1</Tab.Button>
-                <Tab.Button onClick={() => null}>Tab 2</Tab.Button>
-                <Tab.Button onClick={() => null}>Tab 3</Tab.Button>
-            </Tab.List>
-
-            <Tab.Panels>
-                <Tab.Panel>
-                    <div className="pt-2">
-                        <TabsExample />
-                    </div>
-                </Tab.Panel>
-
-                <Tab.Panel>
-                    <div className="pt-2">
-                        <TabsExample />
-                    </div>
-                </Tab.Panel>
-
-                <Tab.Panel>
-                    <div className="pt-2">
-                        <TabsExample />
-                    </div>
-                </Tab.Panel>
-            </Tab.Panels>
-        </Tab>
-    ),
-    args: {
-        type: 'primary',
-        vertical: false,
-        manual: false,
-        defaultIndex: 0,
+  render: (args) => (
+    <Tab {...args}>
+      <Tab.List>
+        <Tab.Button onClick={() => null}>Tab 1</Tab.Button>
+        <Tab.Button onClick={() => null}>Tab 2</Tab.Button>
+        <Tab.Button onClick={() => null}>Tab 3</Tab.Button>
+      </Tab.List>
+      
+      <Tab.Panels>
+        <Tab.Panel>
+          <div className="pt-2">
+            <TabsExample/>
+          </div>
+        </Tab.Panel>
+        
+        <Tab.Panel>
+          <div className="pt-2">
+            <TabsExample/>
+          </div>
+        </Tab.Panel>
+        
+        <Tab.Panel>
+          <div className="pt-2">
+            <TabsExample/>
+          </div>
+        </Tab.Panel>
+      </Tab.Panels>
+    </Tab>
+  ),
+  args: {
+    type: "primary",
+    vertical: false,
+    manual: false,
+    defaultIndex: 0,
+  },
+  argTypes: {
+    as: noControl,
+    refName: noControl,
+    className: {
+      control: {
+        type: "text",
+      },
     },
-    argTypes: {
-        as: noControl,
-        refName: noControl,
-        className: {
-            control: {
-                type: 'text',
-            },
-        },
-    },
+  },
 };
