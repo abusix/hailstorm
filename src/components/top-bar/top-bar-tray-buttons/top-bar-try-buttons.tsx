@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export interface TTrayButtonsProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 export const TrayButtons = ({ children }: TTrayButtonsProps) => {
-  return <div className="flex items-center gap-2 px-2">{children}</div>;
+    return <div className="flex items-center gap-2 px-2">{children}</div>;
 };

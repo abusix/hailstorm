@@ -1,1 +1,1 @@
-export { TableVirtualized } from "./table-virtualized";
+export { TableVirtualized } from './table-virtualized';
