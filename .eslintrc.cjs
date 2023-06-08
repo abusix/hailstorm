@@ -45,7 +45,22 @@ module.exports = {
             files: ['*.stories.tsx'],
             rules: {
                 'no-restricted-exports': 0,
+                'react/jsx-props-no-spreading': 0,
             },
         },
+        {
+            files: ['src/icons/**/*.tsx'],
+            rules: {
+                'no-restricted-exports': 0,
+                'react/jsx-props-no-spreading': 0,
+                'import/prefer-default-export': 'off',
+            }
+        },
+        {
+            files: ['src/util/class-names.tsx'],
+            rules: {
+                'import/no-extraneous-dependencies': 0,
+            }
+        }
     ],
 };

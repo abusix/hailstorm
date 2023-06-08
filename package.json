@@ -27,7 +27,7 @@
     "type-check": "tsc --project tsconfig.json",
     "test": "jest",
     "lint:check": "eslint src --ext .ts,.tsx",
-    "lint:write": "eslint src --ext .ts,.tsx --fix-dry-run",
+    "lint:write": "eslint src --ext .ts,.tsx --fix",
     "format:check": "prettier --check src",
     "format:write": "prettier --write src",
     "build": "npm run clean && npm run rollup",
