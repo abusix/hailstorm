@@ -30,7 +30,7 @@
     "lint:write": "eslint src --ext .ts,.tsx --fix",
     "format:check": "prettier --check src",
     "format:write": "prettier --write src",
-    "build": "npm run clean && npm run rollup",
+    "build": "npm run clean && npm run build:rollup",
     "build:rollup": "NODE_ENV=production rollup -c",
     "build:icons": "svgr -- assets/icons",
     "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build",
