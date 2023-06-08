@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch as HeadlessSwitch } from '@headlessui/react';
-import classNames from '../../util/class-names';
+import { classNames } from '../../util/class-names';
 
 export interface ToggleProps {
     checked: boolean;

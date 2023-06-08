@@ -1,5 +1,5 @@
 import React, { forwardRef, HTMLProps, ReactNode } from 'react';
-import classNames from '../../../../util/class-names';
+import { classNames } from '../../../../util/class-names';
 
 export interface RowProps extends HTMLProps<HTMLTableRowElement> {
     children: ReactNode;

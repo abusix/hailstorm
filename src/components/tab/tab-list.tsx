@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tab as HeadlessTab } from '@headlessui/react';
 import { TabType, useTabContext } from './tab-context';
-import classNames from '../../util/class-names';
+import { classNames } from '../../util/class-names';
 
 export interface TabListProps {
     children: React.ReactNode;

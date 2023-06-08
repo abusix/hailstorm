@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from '../../util/class-names';
+import { classNames } from '../../util/class-names';
 
 const spinnerVariants = {
     small: 'h-4 w-4',

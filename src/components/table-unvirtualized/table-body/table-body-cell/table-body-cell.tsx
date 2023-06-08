@@ -1,5 +1,5 @@
 import React, { CSSProperties, forwardRef, ReactNode } from 'react';
-import classNames from '../../../../util/class-names';
+import { classNames } from '../../../../util/class-names';
 
 export interface CellProps {
     // cells can be children-less (for e.g. placeholder columns)

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TableBody } from './table-body/table-body';
 import { TableHeader } from './table-header/table-header';
-import classNames from '../../util/class-names';
+import { classNames } from '../../util/class-names';
 
 interface TableUnvirtualizedProps {
     children: React.ReactNode;

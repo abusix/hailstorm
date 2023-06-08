@@ -3,7 +3,7 @@ import React from 'react';
 import { ListboxOptions } from './listbox-options';
 import { ListboxOption } from './listbox-option';
 import { ListboxButton } from './listbox-button';
-import classNames from '../../../util/class-names';
+import { classNames } from '../../../util/class-names';
 
 const formFieldGroupStyles = classNames(
     // first element

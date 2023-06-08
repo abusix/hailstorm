@@ -1,6 +1,6 @@
 import { RadioGroup } from '@headlessui/react';
 import React from 'react';
-import classNames from '../../../util/class-names';
+import { classNames } from '../../../util/class-names';
 
 export interface RadioInputOptionProps {
     children: React.ReactNode;

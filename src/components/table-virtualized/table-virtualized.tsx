@@ -18,7 +18,7 @@ import { DraggableRow } from './draggable-row/draggable-row';
 import { VirtualizedHeaderGroup } from './header-group/header-group';
 import { ExpandableButtonCell } from './expandable-button-cell/expandable-button-cell';
 import { TableUnvirtualized } from '../table-unvirtualized';
-import classNames from '../../util/class-names';
+import { classNames } from '../../util/class-names';
 
 export interface TableVirtualizedProps<TableData> {
     data: TableData[];

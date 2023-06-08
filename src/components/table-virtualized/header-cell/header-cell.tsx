@@ -3,7 +3,7 @@ import { flexRender } from '@tanstack/react-table';
 import type { Header } from '@tanstack/react-table';
 import { SortIndicator, SortDirection } from '../header-sort-indicator/header-sort-indicator';
 import { TableUnvirtualized } from '../../table-unvirtualized/table-unvirtualized';
-import classNames from '../../../util/class-names';
+import { classNames } from '../../../util/class-names';
 
 export interface VirtualizedHeaderCellProps<TableData> {
     header: Header<TableData, unknown>;

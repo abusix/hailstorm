@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import classNames from '../../../util/class-names';
+import { classNames } from '../../../util/class-names';
 
 const targetAttachmentIdentifier = 'target-field';
 

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import classNames from '../../util/class-names';
+import { classNames } from '../../util/class-names';
 
 const buttonVariants = {
     primary: 'bg-primary-100 text-primary-500',

@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from '../../util/class-names';
+import { classNames } from '../../util/class-names';
 import { ErrorIcon, InfoSignIcon, TickCircleIcon, WarningSignIcon } from '../../icons';
 
 const toastVariants = {

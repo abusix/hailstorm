@@ -2,7 +2,7 @@ import { Dialog as HeadlessDialog, Transition } from '@headlessui/react';
 import React, { Fragment } from 'react';
 import { Button } from '../button/button';
 import { IconButton } from '../icon-button/icon-button';
-import classNames from '../../util/class-names';
+import { classNames } from '../../util/class-names';
 import { CrossIcon, TickIcon } from '../../icons';
 
 export interface DialogProps {

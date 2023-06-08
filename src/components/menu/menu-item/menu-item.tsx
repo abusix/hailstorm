@@ -1,6 +1,6 @@
 import { Menu as HeadlessMenu } from '@headlessui/react';
 import React from 'react';
-import classNames from '../../../util/class-names';
+import { classNames } from '../../../util/class-names';
 
 export interface MenuItemProps {
     children: React.ReactNode;
