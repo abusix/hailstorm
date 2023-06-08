@@ -22,7 +22,6 @@
     "url": "https://github.com/abusix/hailstorm/issues"
   },
   "scripts": {
-    "rollup": "NODE_ENV=production rollup -c",
     "storybook": "storybook dev -p 6006",
     "clean": "rimraf ./dist",
     "type-check": "tsc --project tsconfig.json",
@@ -31,6 +30,7 @@
     "format:check": "prettier --check src",
     "format:write": "prettier --write src",
     "build": "npm run clean && npm run rollup",
+    "build:rollup": "NODE_ENV=production rollup -c",
     "build:icons": "svgr -- assets/icons",
     "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build",
     "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify"
