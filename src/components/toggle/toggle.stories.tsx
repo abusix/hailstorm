@@ -13,18 +13,18 @@ const meta: Meta<typeof Toggle> = {
 export default meta;
 type Story = StoryObj<typeof Toggle>;
 
-const ToggleWithHook = (args: ToggleProps) => {
-    const [checked, setChecked] = React.useState(false);
+const ToggleWithHook = ({ checked, disabled }: ToggleProps) => {
+    const [isChecked, setIsChecked] = React.useState(false);
 
     React.useEffect(() => {
-        setChecked(args.checked);
-    }, [args.checked]);
+        setIsChecked(checked);
+    }, [checked]);
 
     return (
         <Toggle
-            checked={checked}
-            disabled={args.disabled}
-            onChange={() => setChecked(!checked)}
+            checked={isChecked}
+            disabled={disabled}
+            onChange={() => setIsChecked(!isChecked)}
             ariaLabel="Enable notifications"
         />
     );

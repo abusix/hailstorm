@@ -2,10 +2,10 @@ import React, { useEffect, useMemo, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { createColumnHelper } from '@tanstack/react-table';
 import { TableVirtualized, WithDragAndDrop } from './table-virtualized';
-import { Button } from '../button/button';
-import { IconButton } from '../icon-button/icon-button';
-import { TableUnvirtualized } from '../table-unvirtualized/table-unvirtualized';
-import { DividerLine } from '../divider-line/divider-line';
+import { Button } from '../button';
+import { IconButton } from '../icon-button';
+import { TableUnvirtualized } from '../table-unvirtualized';
+import { DividerLine } from '../divider-line';
 import { TrashIcon } from '../../icons';
 
 const meta: Meta<typeof TableVirtualized> = {

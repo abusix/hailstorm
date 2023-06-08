@@ -12,5 +12,6 @@ export const SortIndicator = ({ direction }: SortIndicatorProps) => {
     const Icon =
         direction === 'asc' ? <CaretUpIcon className={iconClassName} /> : <CaretDownIcon className={iconClassName} />;
 
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{Icon}</>;
 };

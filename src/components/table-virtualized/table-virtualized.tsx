@@ -22,6 +22,8 @@ import { classNames } from '../../util/class-names';
 
 export interface TableVirtualizedProps<TableData> {
     data: TableData[];
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     columnDefs: ColumnDef<TableData, any>[];
     showPlaceholder?: boolean;
     placeholder?: React.ReactNode;
