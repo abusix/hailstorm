@@ -16,12 +16,14 @@ export const VirtualizedHeaderGroup = <TableData,>({
 }: VirtualizedHeaderGroupProps<TableData>) => {
     return (
         <TableUnvirtualized.Header.Row key={group.id}>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
             {isDraggableColumnEnabled ? <th className="w-16 bg-neutral-50" /> : null}
 
             {group.headers.map((header) => (
                 <HeaderCell<TableData> key={header.id} header={header} />
             ))}
 
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
             {isExpandableColumnEnabled ? <th className="w-16 bg-neutral-50" /> : null}
         </TableUnvirtualized.Header.Row>
     );
