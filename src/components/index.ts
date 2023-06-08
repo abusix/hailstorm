@@ -1,4 +1,4 @@
-export { Alert } from "./alert";
+export { Alert, AlertIntent } from "./alert";
 export { InlineAlert } from "./inline-alert";
 export { Avatar } from "./avatar";
 export { Badge } from "./badge";
