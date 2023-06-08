@@ -43,6 +43,7 @@ export const TypesAndShapes: Story = {
                 <div key={shape} className="grid gap-4">
                     <header>{shape}</header>
                     {types.map((type) => (
+                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                         <Badge key={shape! + type} {...args} shape={shape} type={type}>
                             {children}
                         </Badge>

@@ -30,11 +30,13 @@ const meta: Meta<typeof Dialog> = {
         footer: footerArgs,
     },
     render: ({ children, ...args }) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const [isShown, setIsShown] = useState(false);
         const toggleBtn = () => setIsShown((val) => !val);
+
         return (
             <div className="body-font">
-                <button onClick={toggleBtn} className="bg-neutral-100 py-2 px-4 shadow">
+                <button type="button" onClick={toggleBtn} className="bg-neutral-100 py-2 px-4 shadow">
                     show Modal
                 </button>
 

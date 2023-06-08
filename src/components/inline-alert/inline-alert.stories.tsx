@@ -28,7 +28,7 @@ export const Intents: Story = {
     render: ({ children, ...args }) => (
         <div className="flex flex-col gap-4">
             {intents.map((intent) => (
-                <InlineAlert {...args} intent={intent}>
+                <InlineAlert key={intent} {...args} intent={intent}>
                     {children}
                 </InlineAlert>
             ))}

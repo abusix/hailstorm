@@ -11,19 +11,19 @@ const meta: Meta<typeof Sidesheet> = {
 export default meta;
 type Story = StoryObj<typeof Sidesheet>;
 
-const SidesheetWithHooks = (args: SidesheetProps) => {
-    const [isOpen, setIsOpen] = React.useState(false);
+const SidesheetWithHooks = ({ isOpen }: SidesheetProps) => {
+    const [internalIsOpen, setInternalIsOpen] = React.useState(false);
 
     React.useEffect(() => {
-        setIsOpen(args.isOpen);
-    }, [args.isOpen]);
+        setInternalIsOpen(isOpen);
+    }, [isOpen]);
 
     function handleCloseModal() {
-        setIsOpen(false);
+        setInternalIsOpen(false);
     }
 
     function handleClickOpenModal() {
-        setIsOpen(true);
+        setInternalIsOpen(true);
     }
 
     return (
@@ -36,7 +36,7 @@ const SidesheetWithHooks = (args: SidesheetProps) => {
                 Open Sidesheet
             </Button>
 
-            <Sidesheet isOpen={isOpen} onClose={() => handleCloseModal()}>
+            <Sidesheet isOpen={internalIsOpen} onClose={() => handleCloseModal()}>
                 <Sidesheet.Panel>
                     <Sidesheet.PanelHeader>
                         <Sidesheet.PanelHeader.Title>Modal Title</Sidesheet.PanelHeader.Title>

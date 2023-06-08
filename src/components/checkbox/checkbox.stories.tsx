@@ -17,6 +17,7 @@ const meta: Meta<typeof Checkbox> = {
         onChange: hiddenArgControl,
     },
     render: (args) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const [checked, setChecked] = useState(false);
         const toggleCheck = () => setChecked((val) => !val);
 

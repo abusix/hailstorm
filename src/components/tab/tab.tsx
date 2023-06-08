@@ -16,6 +16,7 @@ const Tab = ({ type = 'primary', children, ...props }: TabProps) => {
 
     return (
         <TabContext.Provider value={value}>
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <HeadlessTab.Group {...props}>{children}</HeadlessTab.Group>
         </TabContext.Provider>
     );
