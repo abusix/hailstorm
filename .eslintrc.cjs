@@ -22,17 +22,17 @@ module.exports = {
     rules: {
         'import/prefer-default-export': 'off',
         'no-restricted-exports': ['error', { restrictDefaultExports: { direct: true } }],
-        'react/react-in-jsx-scope': 0,
-        'react/require-default-props': 0,
-        'no-alert': 0,
+        'react/react-in-jsx-scope': 'off',
+        'react/require-default-props': 'off',
+        'no-alert': 'off',
         'react/function-component-definition': [
-            2,
+            'error',
             {
                 namedComponents: ['arrow-function'],
                 unnamedComponents: ['arrow-function'],
             },
         ],
-        'react/display-name': 0,
+        'react/display-name': 'off',
         'import/no-extraneous-dependencies': [
             'error',
             {
@@ -44,24 +44,24 @@ module.exports = {
         {
             files: ['*.stories.tsx'],
             rules: {
-                'no-plusplus': 0,
-                'no-restricted-exports': 0,
-                'react/no-unstable-nested-components': 0,
-                'react/jsx-props-no-spreading': 0,
+                'no-plusplus': 'off',
+                'no-restricted-exports': 'off',
+                'react/no-unstable-nested-components': 'off',
+                'react/jsx-props-no-spreading': 'off',
             },
         },
         {
             files: ['src/icons/**/*.tsx'],
             rules: {
-                'no-restricted-exports': 0,
-                'react/jsx-props-no-spreading': 0,
+                'no-restricted-exports': 'off',
+                'react/jsx-props-no-spreading': 'off',
                 'import/prefer-default-export': 'off',
             }
         },
         {
             files: ['src/util/class-names.tsx'],
             rules: {
-                'import/no-extraneous-dependencies': 0,
+                'import/no-extraneous-dependencies': 'off',
             }
         }
     ],
