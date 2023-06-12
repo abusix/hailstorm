@@ -26,7 +26,7 @@
     "clean": "rimraf ./dist",
     "type-check": "tsc --project tsconfig.json",
     "test": "jest",
-    "lint:check": "eslint src --ext .ts,.tsx",
+    "lint": "eslint src --ext .ts,.tsx",
     "lint:write": "eslint src --ext .ts,.tsx --fix",
     "format:check": "prettier --check src",
     "format:write": "prettier --write src",
