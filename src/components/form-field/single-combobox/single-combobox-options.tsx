@@ -1,5 +1,5 @@
-import { Combobox as HeadlessCombobox } from '@headlessui/react';
-import React from 'react';
+import { Combobox as HeadlessCombobox } from "@headlessui/react";
+import React from "react";
 
 export interface SingleComboboxOptionsProps {
     children: React.ReactNode;

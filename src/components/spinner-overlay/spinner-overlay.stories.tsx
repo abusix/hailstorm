@@ -1,9 +1,9 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { SpinnerOverlay } from './spinner-overlay';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { SpinnerOverlay } from "./spinner-overlay";
 
 const meta: Meta<typeof SpinnerOverlay> = {
-    title: 'SpinnerOverlay',
+    title: "SpinnerOverlay",
     component: SpinnerOverlay,
 };
 

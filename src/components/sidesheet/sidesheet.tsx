@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
-import { Dialog as HeadlessDialog, Transition } from '@headlessui/react';
-import { SidesheetPanel } from './sidesheet-panel';
-import { SidesheetPanelContent } from './sidesheet-panel-content';
-import { SidesheetPanelHeader } from './sidesheet-panel-header';
+import React, { Fragment } from "react";
+import { Dialog as HeadlessDialog, Transition } from "@headlessui/react";
+import { SidesheetPanel } from "./sidesheet-panel";
+import { SidesheetPanelContent } from "./sidesheet-panel-content";
+import { SidesheetPanelHeader } from "./sidesheet-panel-header";
 
 export interface SidesheetProps {
     children: React.ReactNode;

@@ -1,8 +1,8 @@
-import React from 'react';
-import { MultiComboboxResultsBadges } from './multi-combobox-results-badges';
-import { MultiComboboxResultsLabel } from './multi-combobox-results-label';
-import { MultiComboboxResultsTags } from './multi-combobox-results-tags';
-import { MultiComboboxResultsText } from './multi-combobox-results-text';
+import React from "react";
+import { MultiComboboxResultsBadges } from "./multi-combobox-results-badges";
+import { MultiComboboxResultsLabel } from "./multi-combobox-results-label";
+import { MultiComboboxResultsTags } from "./multi-combobox-results-tags";
+import { MultiComboboxResultsText } from "./multi-combobox-results-text";
 
 export interface MultiComboboxResultsProps {
     children: React.ReactNode;

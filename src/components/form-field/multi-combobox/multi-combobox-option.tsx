@@ -1,13 +1,16 @@
-import React from 'react';
-import { Combobox as HeadlessCombobox } from '@headlessui/react';
-import { SmallTickIcon } from '../../../icons';
+import React from "react";
+import { Combobox as HeadlessCombobox } from "@headlessui/react";
+import { SmallTickIcon } from "../../../icons";
 
 export interface MultiComboboxOptionProps<TValue> {
     value: TValue;
     children: React.ReactNode;
 }
 
-export const MultiComboboxOption = <TValue,>({ value, children }: MultiComboboxOptionProps<TValue>) => {
+export const MultiComboboxOption = <TValue,>({
+    value,
+    children,
+}: MultiComboboxOptionProps<TValue>) => {
     return (
         <HeadlessCombobox.Option
             value={value}

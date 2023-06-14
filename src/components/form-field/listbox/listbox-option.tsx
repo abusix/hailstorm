@@ -1,7 +1,7 @@
-import { Listbox } from '@headlessui/react';
-import React, { Fragment } from 'react';
-import { ListboxBadgeOption } from './listbox-badge-option';
-import { ListboxTextOption } from './listbox-text-option';
+import { Listbox } from "@headlessui/react";
+import React, { Fragment } from "react";
+import { ListboxBadgeOption } from "./listbox-badge-option";
+import { ListboxTextOption } from "./listbox-text-option";
 
 export interface ListboxOptionProps<TValue> {
     value: TValue;

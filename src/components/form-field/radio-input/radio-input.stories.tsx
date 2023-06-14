@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
-import { FormField } from '../form-field';
+import type { Meta, StoryObj } from "@storybook/react";
+import React, { useState } from "react";
+import { FormField } from "../form-field";
 
 const meta: Meta<typeof FormField.RadioInput> = {
-    title: 'Input/RadioInput',
+    title: "Input/RadioInput",
     component: FormField.RadioInput,
 };
 
@@ -12,7 +12,7 @@ export default meta;
 type Story = StoryObj<typeof FormField.RadioInput>;
 
 const RadioInputWithHooks = () => {
-    const [value, setValue] = useState('value_1');
+    const [value, setValue] = useState("value_1");
 
     return (
         <FormField>

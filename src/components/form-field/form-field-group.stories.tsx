@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { FormFieldGroup } from './form-field-group';
-import { FormField } from './form-field';
+import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
+import { FormFieldGroup } from "./form-field-group";
+import { FormField } from "./form-field";
 
 const meta: Meta<typeof FormFieldGroup> = {
-    title: 'Input / Combined Fields',
+    title: "Input / Combined Fields",
     component: FormFieldGroup,
 };
 
@@ -13,13 +13,21 @@ export default meta;
 
 type Story = StoryObj<typeof FormFieldGroup>;
 
-const TextInputFields = ({ error = false, disabled = false }: { error?: boolean; disabled?: boolean }) => {
+const TextInputFields = ({
+    error = false,
+    disabled = false,
+}: {
+    error?: boolean;
+    disabled?: boolean;
+}) => {
     return (
         <div className="flex flex-col gap-5">
             <FormField>
                 <FormField.LabelGroup>
                     <FormField.Label htmlFor="value">Textfields Only</FormField.Label>
-                    <FormField.Description id="value-description">A group with only textfields</FormField.Description>
+                    <FormField.Description id="value-description">
+                        A group with only textfields
+                    </FormField.Description>
                 </FormField.LabelGroup>
 
                 <FormField.Group>
@@ -102,11 +110,15 @@ const TextInputFields = ({ error = false, disabled = false }: { error?: boolean;
                         <div className="relative z-10">
                             <FormField.Listbox.Options>
                                 <FormField.Listbox.Option value="Option 1">
-                                    <FormField.Listbox.Option.TextOption>Option 1</FormField.Listbox.Option.TextOption>
+                                    <FormField.Listbox.Option.TextOption>
+                                        Option 1
+                                    </FormField.Listbox.Option.TextOption>
                                 </FormField.Listbox.Option>
 
                                 <FormField.Listbox.Option value="Option 2">
-                                    <FormField.Listbox.Option.TextOption>Option 2</FormField.Listbox.Option.TextOption>
+                                    <FormField.Listbox.Option.TextOption>
+                                        Option 2
+                                    </FormField.Listbox.Option.TextOption>
                                 </FormField.Listbox.Option>
                             </FormField.Listbox.Options>
                         </div>

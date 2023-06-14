@@ -1,8 +1,8 @@
-import { Listbox } from '@headlessui/react';
-import React from 'react';
-import { ListboxButtonBadgeValue } from './listbox-button-badge-value';
-import { ListboxButtonTextValue } from './listbox-button-text-value';
-import { CaretDownIcon } from '../../../icons';
+import { Listbox } from "@headlessui/react";
+import React from "react";
+import { ListboxButtonBadgeValue } from "./listbox-button-badge-value";
+import { ListboxButtonTextValue } from "./listbox-button-text-value";
+import { CaretDownIcon } from "../../../icons";
 
 export interface ListboxButtonProps {
     children: React.ReactNode;

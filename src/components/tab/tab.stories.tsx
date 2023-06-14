@@ -1,14 +1,14 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { Tab } from './tab';
-import { getStoryDescription, noControl } from '../../util/storybook-utils';
-import { TabType } from './tab-context';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Tab } from "./tab";
+import { getStoryDescription, noControl } from "../../util/storybook-utils";
+import { TabType } from "./tab-context";
 
 const meta: Meta<typeof Tab> = {
-    title: 'Tab',
+    title: "Tab",
     component: Tab,
     parameters: getStoryDescription(
-        'Tab component. For a detailed explanation on props, please visit the Headless UI [tab-group documentation](https://headlessui.com/react/tabs#tab-group)'
+        "Tab component. For a detailed explanation on props, please visit the Headless UI [tab-group documentation](https://headlessui.com/react/tabs#tab-group)"
     ),
 };
 
@@ -16,7 +16,7 @@ export default meta;
 
 type Story = StoryObj<typeof Tab>;
 
-const TabsExample = ({ type = 'primary' }: { type?: TabType }) => {
+const TabsExample = ({ type = "primary" }: { type?: TabType }) => {
     return (
         <Tab type={type}>
             <Tab.List>
@@ -49,7 +49,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
     render: (args) => <TabsExample {...args} />,
     args: {
-        type: 'secondary',
+        type: "secondary",
     },
 };
 
@@ -84,7 +84,7 @@ export const NestedTabs: Story = {
         </Tab>
     ),
     args: {
-        type: 'primary',
+        type: "primary",
         vertical: false,
         manual: false,
         defaultIndex: 0,
@@ -94,7 +94,7 @@ export const NestedTabs: Story = {
         refName: noControl,
         className: {
             control: {
-                type: 'text',
+                type: "text",
             },
         },
     },

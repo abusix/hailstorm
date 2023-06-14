@@ -1,8 +1,14 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from "react";
+import { SVGProps } from "react";
 
 const SvgTargetIcon = (props: SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" {...props}>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        className="h-4 w-4"
+        {...props}
+    >
         <path d="M9 5a1 1 0 0 1 2 0v3a1 1 0 0 1-2 0V5Zm3 4a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2h-3Zm-8 1a1 1 0 0 1 1-1h3a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1Zm6 1a1 1 0 0 0-1 1v3a1 1 0 0 0 2 0v-3a1 1 0 0 0-1-1Z" />
         <path
             fillRule="evenodd"

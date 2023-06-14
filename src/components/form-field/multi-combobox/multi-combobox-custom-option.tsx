@@ -1,12 +1,15 @@
-import React from 'react';
-import { Combobox as HeadlessCombobox } from '@headlessui/react';
+import React from "react";
+import { Combobox as HeadlessCombobox } from "@headlessui/react";
 
 export interface MultiComboboxCustomOptionProps<TValue> {
     value: TValue;
     children: React.ReactNode;
 }
 
-export const MultiComboboxCustomOption = <TValue,>({ value, children }: MultiComboboxCustomOptionProps<TValue>) => {
+export const MultiComboboxCustomOption = <TValue,>({
+    value,
+    children,
+}: MultiComboboxCustomOptionProps<TValue>) => {
     return (
         <HeadlessCombobox.Option
             value={value}

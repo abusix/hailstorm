@@ -1,26 +1,26 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import React from 'react';
-import { Badge, BadgeProps } from './badge';
-import { hiddenArgControl } from '../../util/storybook-utils';
+import React from "react";
+import { Badge, BadgeProps } from "./badge";
+import { hiddenArgControl } from "../../util/storybook-utils";
 
-const types: BadgeProps['type'][] = [
-    'primary',
-    'violet',
-    'green',
-    'neutral',
-    'yellow',
-    'teal',
-    'orange',
-    'pink',
-    'red',
+const types: BadgeProps["type"][] = [
+    "primary",
+    "violet",
+    "green",
+    "neutral",
+    "yellow",
+    "teal",
+    "orange",
+    "pink",
+    "red",
 ];
-const shapes: BadgeProps['shape'][] = ['default', 'rounded'];
+const shapes: BadgeProps["shape"][] = ["default", "rounded"];
 
 const meta: Meta<typeof Badge> = {
-    title: 'Badge',
+    title: "Badge",
     component: Badge,
-    args: { children: 'Badge Label' },
+    args: { children: "Badge Label" },
     argTypes: { onClick: hiddenArgControl },
 };
 

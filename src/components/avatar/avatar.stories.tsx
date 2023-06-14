@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import type { AvatarProps } from './avatar';
-import { Avatar } from './avatar';
-import { getStoryDescription, hiddenArgControl } from '../../util/storybook-utils';
+import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
+import type { AvatarProps } from "./avatar";
+import { Avatar } from "./avatar";
+import { getStoryDescription, hiddenArgControl } from "../../util/storybook-utils";
 
-const colors: AvatarProps['color'][] = ['primary', 'success', 'neutral', 'warning', 'danger'];
+const colors: AvatarProps["color"][] = ["primary", "success", "neutral", "warning", "danger"];
 
 const meta: Meta<typeof Avatar> = {
-    title: 'Avatar',
+    title: "Avatar",
     component: Avatar,
     parameters: getStoryDescription(
-        'Circular user icon. It displays first 2 characters from the passed children text '
+        "Circular user icon. It displays first 2 characters from the passed children text "
     ),
     args: {
-        children: 'Name Lastname',
+        children: "Name Lastname",
         color: colors[0],
     },
     argTypes: {

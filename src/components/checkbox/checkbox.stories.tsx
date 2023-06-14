@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
+import type { Meta, StoryObj } from "@storybook/react";
+import React, { useState } from "react";
 
-import { Checkbox } from './checkbox';
-import { hiddenArgControl } from '../../util/storybook-utils';
+import { Checkbox } from "./checkbox";
+import { hiddenArgControl } from "../../util/storybook-utils";
 
 const meta: Meta<typeof Checkbox> = {
-    title: 'Checkbox',
+    title: "Checkbox",
     component: Checkbox,
     args: {
-        id: 'checkbox-id',
-        label: 'Checkbox label',
+        id: "checkbox-id",
+        label: "Checkbox label",
         disabled: false,
     },
     argTypes: {

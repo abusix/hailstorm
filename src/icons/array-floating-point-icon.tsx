@@ -1,8 +1,14 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from "react";
+import { SVGProps } from "react";
 
 const SvgArrayFloatingPointIcon = (props: SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" {...props}>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        className="h-4 w-4"
+        {...props}
+    >
         <path d="M19.992 1.104A1.25 1.25 0 0 0 18.75 0H15c-.47 0-1 .359-1 1s.5 1 1.023 1h3L18 18h-3c-.5 0-1 .359-1 1 0 .69.5 1 1 1h3.75l.146-.008A1.25 1.25 0 0 0 20 18.75V1.25l-.008-.146ZM6 1c0-.69-.5-1-1-1H1.25l-.146.008A1.25 1.25 0 0 0 0 1.25v17.5l.008.146A1.25 1.25 0 0 0 1.25 20H5c.5 0 1-.359 1-1s-.5-1-1-1H2V2h3c.5 0 1-.359 1-1Z" />
         <path d="M5.434 7.325c-.222.039-.45.058-.684.058v.88h1.68v4.825h1.221V6.25h-.908c-.04.208-.124.384-.254.528a1.46 1.46 0 0 1-.46.351 2.067 2.067 0 0 1-.595.196Z" />
         <path

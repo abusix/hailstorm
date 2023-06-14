@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import type { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
-import { FormField } from '../form-field';
+import type { Meta, StoryObj } from "@storybook/react";
+import React, { useState } from "react";
+import { FormField } from "../form-field";
 
 const meta: Meta<typeof FormField.Textarea> = {
-    title: 'Input/Textarea',
+    title: "Input/Textarea",
     component: FormField.Textarea,
 };
 
@@ -12,8 +12,14 @@ export default meta;
 
 type Story = StoryObj<typeof FormField.Textarea>;
 
-const TextareaWithHooks = ({ error = false, disabled = false }: { error?: boolean; disabled?: boolean }) => {
-    const [value, setValue] = useState('');
+const TextareaWithHooks = ({
+    error = false,
+    disabled = false,
+}: {
+    error?: boolean;
+    disabled?: boolean;
+}) => {
+    const [value, setValue] = useState("");
 
     return (
         <FormField>

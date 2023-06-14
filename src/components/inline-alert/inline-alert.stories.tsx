@@ -1,17 +1,17 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import React from 'react';
-import { InlineAlert, InlineAlertProps } from './inline-alert';
-import { getStoryDescription } from '../../util/storybook-utils';
+import React from "react";
+import { InlineAlert, InlineAlertProps } from "./inline-alert";
+import { getStoryDescription } from "../../util/storybook-utils";
 
-const intents: InlineAlertProps['intent'][] = ['info', 'success', 'warning', 'danger'];
+const intents: InlineAlertProps["intent"][] = ["info", "success", "warning", "danger"];
 
 const meta: Meta<typeof InlineAlert> = {
     component: InlineAlert,
-    parameters: getStoryDescription('Inline alert text to inform user about contextual things'),
+    parameters: getStoryDescription("Inline alert text to inform user about contextual things"),
     args: {
-        title: 'Alert title',
-        children: 'Alert text',
+        title: "Alert title",
+        children: "Alert text",
     },
 };
 

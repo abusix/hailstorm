@@ -1,9 +1,9 @@
-import { Dialog as HeadlessDialog, Transition } from '@headlessui/react';
-import React, { Fragment } from 'react';
-import { Button } from '../button/button';
-import { IconButton } from '../icon-button/icon-button';
-import { classNames } from '../../util/class-names';
-import { CrossIcon, TickIcon } from '../../icons';
+import { Dialog as HeadlessDialog, Transition } from "@headlessui/react";
+import React, { Fragment } from "react";
+import { Button } from "../button/button";
+import { IconButton } from "../icon-button/icon-button";
+import { classNames } from "../../util/class-names";
+import { CrossIcon, TickIcon } from "../../icons";
 
 export interface DialogProps {
     isShown?: boolean;
@@ -15,9 +15,9 @@ export interface DialogProps {
     className?: string;
     children: React.ReactNode;
     footer?: React.ReactNode | null;
-    footerPosition?: 'end' | 'start';
+    footerPosition?: "end" | "start";
     hasBackground?: boolean;
-    position?: 'center' | 'bottom-right';
+    position?: "center" | "bottom-right";
 }
 
 export const Dialog = ({
@@ -26,13 +26,13 @@ export const Dialog = ({
     className,
     isCloseable = true,
     footer,
-    footerPosition = 'end',
+    footerPosition = "end",
     onClose,
     height,
     width,
     title,
     hasBackground = true,
-    position = 'center',
+    position = "center",
 }: DialogProps): JSX.Element | null => {
     const handleClose = (submitted = false) => {
         if (!isCloseable) {
@@ -68,8 +68,8 @@ export const Dialog = ({
                 <div
                     className={classNames(
                         `fixed inset-0 flex overflow-y-auto p-8`,
-                        position === 'bottom-right' && 'items-end justify-end',
-                        position === 'center' && 'items-center justify-center'
+                        position === "bottom-right" && "items-end justify-end",
+                        position === "center" && "items-center justify-center"
                     )}
                 >
                     <Transition.Child
@@ -83,9 +83,9 @@ export const Dialog = ({
                     >
                         <HeadlessDialog.Panel
                             className={classNames(
-                                'flex transform flex-col overflow-y-auto rounded-md bg-neutral-0 shadow-lg transition-all',
-                                height ? `h-[${height}px]` : 'max-h-full',
-                                width ? `w-[${width}px]` : 'w-[592px]',
+                                "flex transform flex-col overflow-y-auto rounded-md bg-neutral-0 shadow-lg transition-all",
+                                height ? `h-[${height}px]` : "max-h-full",
+                                width ? `w-[${width}px]` : "w-[592px]",
                                 className
                             )}
                         >
@@ -102,14 +102,16 @@ export const Dialog = ({
                                         onClick={() => handleClose(false)}
                                     />
                                 )}
-                                <HeadlessDialog.Description as="div">{children}</HeadlessDialog.Description>
+                                <HeadlessDialog.Description as="div">
+                                    {children}
+                                </HeadlessDialog.Description>
                             </div>
 
                             <div
                                 id="dialog-footer"
                                 className={classNames(
-                                    'sticky bottom-0 left-0 flex flex-row gap-2 bg-neutral-0 px-10 pb-8 pt-8',
-                                    footerPosition === 'end' ? 'justify-end' : 'justify-start'
+                                    "sticky bottom-0 left-0 flex flex-row gap-2 bg-neutral-0 px-10 pb-8 pt-8",
+                                    footerPosition === "end" ? "justify-end" : "justify-start"
                                 )}
                             >
                                 {footer === undefined ? (

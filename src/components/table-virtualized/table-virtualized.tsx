@@ -9,16 +9,16 @@ import {
     Row as RowType,
     SortingState,
     useReactTable,
-} from '@tanstack/react-table';
-import { useVirtualizer, VirtualizerOptions } from '@tanstack/react-virtual';
-import React from 'react';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
-import { DraggableRow } from './draggable-row/draggable-row';
-import { VirtualizedHeaderGroup } from './header-group/header-group';
-import { ExpandableButtonCell } from './expandable-button-cell/expandable-button-cell';
-import { TableUnvirtualized } from '../table-unvirtualized';
-import { classNames } from '../../util/class-names';
+} from "@tanstack/react-table";
+import { useVirtualizer, VirtualizerOptions } from "@tanstack/react-virtual";
+import React from "react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { DraggableRow } from "./draggable-row/draggable-row";
+import { VirtualizedHeaderGroup } from "./header-group/header-group";
+import { ExpandableButtonCell } from "./expandable-button-cell/expandable-button-cell";
+import { TableUnvirtualized } from "../table-unvirtualized";
+import { classNames } from "../../util/class-names";
 
 export interface TableVirtualizedProps<TableData> {
     data: TableData[];
@@ -32,7 +32,12 @@ export interface TableVirtualizedProps<TableData> {
     getExpandableContent?: (row: RowType<TableData>, index: number) => React.ReactNode;
     virtualizerOptions?: PartialKeys<
         VirtualizerOptions<HTMLDivElement, Element>,
-        'observeElementRect' | 'observeElementOffset' | 'scrollToFn' | 'count' | 'getScrollElement' | 'estimateSize'
+        | "observeElementRect"
+        | "observeElementOffset"
+        | "scrollToFn"
+        | "count"
+        | "getScrollElement"
+        | "estimateSize"
     >;
 }
 
@@ -120,7 +125,10 @@ export const TableVirtualized = <TableData,>({
             <React.Fragment key={row.id}>
                 <TableUnvirtualized.Body.Row key={row.id} isExpanded={isExpanded}>
                     {row.getVisibleCells().map((cell) => (
-                        <TableUnvirtualized.Body.Cell key={cell.id} style={cell.column.columnDef.meta}>
+                        <TableUnvirtualized.Body.Cell
+                            key={cell.id}
+                            style={cell.column.columnDef.meta}
+                        >
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                         </TableUnvirtualized.Body.Cell>
                     ))}
@@ -148,7 +156,9 @@ export const TableVirtualized = <TableData,>({
     return (
         <div
             ref={virtualContainerRef}
-            className={classNames('h-full overflow-y-auto rounded-lg border border-neutral-300 bg-neutral-0')}
+            className={classNames(
+                "h-full overflow-y-auto rounded-lg border border-neutral-300 bg-neutral-0"
+            )}
         >
             <TableUnvirtualized
                 isContainerBordersShown={false}

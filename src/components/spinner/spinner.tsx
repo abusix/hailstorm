@@ -1,17 +1,17 @@
-import React from 'react';
-import { classNames } from '../../util/class-names';
+import React from "react";
+import { classNames } from "../../util/class-names";
 
 const spinnerVariants = {
-    small: 'h-4 w-4',
-    medium: 'h-6 w-6',
-    large: 'h-10 w-10',
+    small: "h-4 w-4",
+    medium: "h-6 w-6",
+    large: "h-10 w-10",
 };
 
 interface SpinnerProps {
     size?: keyof typeof spinnerVariants;
 }
 
-export const Spinner = ({ size = 'large' }: SpinnerProps) => {
+export const Spinner = ({ size = "large" }: SpinnerProps) => {
     return (
         <svg
             className={classNames(`animate-spin`, spinnerVariants[size])}

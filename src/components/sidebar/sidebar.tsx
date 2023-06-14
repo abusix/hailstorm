@@ -1,8 +1,8 @@
-import React from 'react';
-import { SidebarHeader } from './sidebar-header/sidebar-header';
-import { SidebarMenu } from './sidebar-menu/sidebar-menu';
-import { SidebarMenuHeader } from './sidebar-menu/sidebar-menu-header/sidebar-menu-header';
-import { SidebarMenuLink } from './sidebar-menu/sidebar-menu-link/sidebar-menu-link';
+import React from "react";
+import { SidebarHeader } from "./sidebar-header/sidebar-header";
+import { SidebarMenu } from "./sidebar-menu/sidebar-menu";
+import { SidebarMenuHeader } from "./sidebar-menu/sidebar-menu-header/sidebar-menu-header";
+import { SidebarMenuLink } from "./sidebar-menu/sidebar-menu-link/sidebar-menu-link";
 
 interface SidebarProps {
     children: React.ReactNode;

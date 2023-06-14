@@ -1,26 +1,32 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import React from 'react';
-import { Tag } from '../../tag/tag';
-import { FormField } from '../form-field';
-import { SingleCombobox } from './single-combobox';
+import React from "react";
+import { Tag } from "../../tag/tag";
+import { FormField } from "../form-field";
+import { SingleCombobox } from "./single-combobox";
 
 const meta: Meta<typeof SingleCombobox> = {
-    title: 'Input/SingleCombobox',
+    title: "Input/SingleCombobox",
     component: SingleCombobox,
 };
 
 export default meta;
 type Story = StoryObj<typeof SingleCombobox>;
 
-const people = ['Durward Reynolds', 'Kenton Towne', 'Therese Wunsch', 'Benedict Kessler', 'Katelyn Rohan'];
+const people = [
+    "Durward Reynolds",
+    "Kenton Towne",
+    "Therese Wunsch",
+    "Benedict Kessler",
+    "Katelyn Rohan",
+];
 
 const SingleComboboxWithHooks = () => {
-    const [selectedPerson, setSelectedPerson] = React.useState<string>('');
-    const [query, setQuery] = React.useState('');
+    const [selectedPerson, setSelectedPerson] = React.useState<string>("");
+    const [query, setQuery] = React.useState("");
 
     const filteredPeople =
-        query === ''
+        query === ""
             ? people
             : people.filter((person) => {
                   return person.toLowerCase().includes(query.toLowerCase());
@@ -30,7 +36,7 @@ const SingleComboboxWithHooks = () => {
         <FormField.SingleCombobox
             value={selectedPerson}
             onChange={(value) => {
-                setQuery('');
+                setQuery("");
                 setSelectedPerson(value);
             }}
         >
@@ -59,11 +65,11 @@ const SingleComboboxWithHooks = () => {
 };
 
 const SingleComboboxCustomValueWithHooks = () => {
-    const [selectedPerson, setSelectedPerson] = React.useState<string>('');
-    const [query, setQuery] = React.useState('');
+    const [selectedPerson, setSelectedPerson] = React.useState<string>("");
+    const [query, setQuery] = React.useState("");
 
     const filteredPeople =
-        query === ''
+        query === ""
             ? people
             : people.filter((person) => {
                   return person.toLowerCase().includes(query.toLowerCase());
@@ -73,7 +79,7 @@ const SingleComboboxCustomValueWithHooks = () => {
         <FormField.SingleCombobox
             value={selectedPerson}
             onChange={(value) => {
-                setQuery('');
+                setQuery("");
                 setSelectedPerson(value);
             }}
         >

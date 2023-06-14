@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
-import { classNames } from '../../../util/class-names';
+import React, { useRef } from "react";
+import { classNames } from "../../../util/class-names";
 
-const targetAttachmentIdentifier = 'target-field';
+const targetAttachmentIdentifier = "target-field";
 
 // note: these strings need to be static,
 // template literals aren’t recognized by tailwind,
@@ -21,7 +21,7 @@ export interface TextInputProps {
     value: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     readOnly?: boolean;
-    type?: 'text' | 'password' | 'email';
+    type?: "text" | "password" | "email";
     autoSelect?: boolean;
     ariaDescribedBy?: string;
     LeftIcon?: React.ElementType;
@@ -35,7 +35,7 @@ export const TextInput = ({
     value,
     onChange,
     ariaDescribedBy,
-    type = 'text',
+    type = "text",
     LeftIcon,
     readOnly,
     autoSelect,
@@ -51,7 +51,7 @@ export const TextInput = ({
     }
 
     return (
-        <div className={classNames('relative w-full', formFieldGroupStyles)}>
+        <div className={classNames("relative w-full", formFieldGroupStyles)}>
             {LeftIcon ? (
                 <div
                     className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
@@ -76,14 +76,14 @@ export const TextInput = ({
                 type={type}
                 className={classNames(
                     targetAttachmentIdentifier,
-                    'paragraph-100 relative block h-8 w-full rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none',
-                    LeftIcon && 'pl-9',
-                    readOnly && 'bg-neutral-100',
-                    disabled && 'cursor-not-allowed bg-neutral-100 text-neutral-600',
+                    "paragraph-100 relative block h-8 w-full rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
+                    LeftIcon && "pl-9",
+                    readOnly && "bg-neutral-100",
+                    disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",
                     !error &&
                         !disabled &&
-                        'hover:border-neutral-600 focus:z-10 focus:border-primary-400 focus:ring-2 focus:ring-primary-200',
-                    error && !disabled && 'border-danger-500'
+                        "hover:border-neutral-600 focus:z-10 focus:border-primary-400 focus:ring-2 focus:ring-primary-200",
+                    error && !disabled && "border-danger-500"
                 )}
                 disabled={disabled}
             />

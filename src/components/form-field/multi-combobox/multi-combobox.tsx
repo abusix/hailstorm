@@ -1,11 +1,11 @@
-import { Combobox as HeadlessCombobox } from '@headlessui/react';
-import React from 'react';
-import { MultiComboboxCustomOption } from './multi-combobox-custom-option';
-import { MultiComboboxEmptyOption } from './multi-combobox-empty-option';
-import { MultiComboboxInput } from './multi-combobox-input';
-import { MultiComboboxOption } from './multi-combobox-option';
-import { MultiComboboxOptions } from './multi-combobox-options';
-import { MultiComboboxResults } from './multi-combobox-results';
+import { Combobox as HeadlessCombobox } from "@headlessui/react";
+import React from "react";
+import { MultiComboboxCustomOption } from "./multi-combobox-custom-option";
+import { MultiComboboxEmptyOption } from "./multi-combobox-empty-option";
+import { MultiComboboxInput } from "./multi-combobox-input";
+import { MultiComboboxOption } from "./multi-combobox-option";
+import { MultiComboboxOptions } from "./multi-combobox-options";
+import { MultiComboboxResults } from "./multi-combobox-results";
 
 export interface MultiComboboxProps<TValue> {
     value: TValue[];

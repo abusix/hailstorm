@@ -1,14 +1,14 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { TopBar } from './top-bar';
-import { Menu } from '../menu/menu';
-import { ArrowTopRightIcon } from '../../icons';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { TopBar } from "./top-bar";
+import { Menu } from "../menu/menu";
+import { ArrowTopRightIcon } from "../../icons";
 
 const meta: Meta<typeof TopBar> = {
-    title: 'TopBar',
+    title: "TopBar",
     component: TopBar,
     parameters: {
-        layout: 'fullscreen',
+        layout: "fullscreen",
     },
 };
 

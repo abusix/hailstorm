@@ -1,22 +1,28 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { Button, ButtonProps } from './button';
-import { ChatIcon, DiagramTreeIcon, LockIcon } from '../../icons';
-import { hiddenArgControl } from '../../util/storybook-utils';
+import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
+import { Button, ButtonProps } from "./button";
+import { ChatIcon, DiagramTreeIcon, LockIcon } from "../../icons";
+import { hiddenArgControl } from "../../util/storybook-utils";
 
-const types: ButtonProps['type'][] = ['primary', 'secondary', 'minimal', 'danger', 'danger-secondary'];
+const types: ButtonProps["type"][] = [
+    "primary",
+    "secondary",
+    "minimal",
+    "danger",
+    "danger-secondary",
+];
 const icons = { undefined, ChatIcon, DiagramTreeIcon, LockIcon };
 const iconArg = {
-    description: 'Icon component',
+    description: "Icon component",
     options: Object.keys(icons),
     mapping: icons,
 };
 
 const meta: Meta<typeof Button> = {
-    title: 'Button',
+    title: "Button",
     component: Button,
     args: {
-        children: 'Badge Label',
+        children: "Badge Label",
         LeftIcon: undefined,
         RightIcon: undefined,
         loading: false,

@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React from "react";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Toggle, ToggleProps } from './toggle';
+import { Toggle, ToggleProps } from "./toggle";
 
 const meta: Meta<typeof Toggle> = {
-    title: 'Toggle',
+    title: "Toggle",
     component: Toggle,
 };
 

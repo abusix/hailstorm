@@ -1,6 +1,6 @@
-import React from 'react';
-import { TableBodyCell } from '../table-body-cell/table-body-cell';
-import { TableBodyRow } from '../table-body-row/table-body-row';
+import React from "react";
+import { TableBodyCell } from "../table-body-cell/table-body-cell";
+import { TableBodyRow } from "../table-body-row/table-body-row";
 
 export interface EmptyPlaceholderProps {
     title: string;
@@ -9,7 +9,12 @@ export interface EmptyPlaceholderProps {
     children?: React.ReactNode;
 }
 
-export const TableEmptyPlaceholder = ({ title, description, colSpan, children }: EmptyPlaceholderProps) => {
+export const TableEmptyPlaceholder = ({
+    title,
+    description,
+    colSpan,
+    children,
+}: EmptyPlaceholderProps) => {
     return (
         <TableBodyRow aria-label="No data available in this table">
             <TableBodyCell colSpan={colSpan} className="h-80">

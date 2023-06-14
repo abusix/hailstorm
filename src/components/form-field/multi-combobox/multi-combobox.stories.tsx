@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { FormField } from '../form-field';
-import { Badge } from '../../badge/badge';
-import { Tag } from '../../tag/tag';
+import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
+import { FormField } from "../form-field";
+import { Badge } from "../../badge/badge";
+import { Tag } from "../../tag/tag";
 
 const meta: Meta<typeof FormField.MultiCombobox> = {
-    title: 'Input/MultiCombobox',
+    title: "Input/MultiCombobox",
     component: FormField.MultiCombobox,
 };
 
@@ -14,14 +14,20 @@ export default meta;
 
 type Story = StoryObj<typeof FormField.MultiCombobox>;
 
-const people = ['Durward Reynolds', 'Kenton Towne', 'Therese Wunsch', 'Benedict Kessler', 'Katelyn Rohan'];
+const people = [
+    "Durward Reynolds",
+    "Kenton Towne",
+    "Therese Wunsch",
+    "Benedict Kessler",
+    "Katelyn Rohan",
+];
 
 const MultiComboboxWithHooks = () => {
     const [selectedPersons, setSelectedPersons] = React.useState<string[]>([]);
-    const [query, setQuery] = React.useState('');
+    const [query, setQuery] = React.useState("");
 
     const filteredPeople =
-        query === ''
+        query === ""
             ? people
             : people.filter((person) => {
                   return person.toLowerCase().includes(query.toLowerCase());
@@ -33,7 +39,10 @@ const MultiComboboxWithHooks = () => {
                 <FormField.Label htmlFor="value">Label</FormField.Label>
                 <FormField.Description id="value-description">Description</FormField.Description>
             </FormField.LabelGroup>
-            <FormField.MultiCombobox value={selectedPersons} onChange={(value) => setSelectedPersons(value)}>
+            <FormField.MultiCombobox
+                value={selectedPersons}
+                onChange={(value) => setSelectedPersons(value)}
+            >
                 <FormField.MultiCombobox.Input
                     id="value"
                     displayValue={query}
@@ -56,9 +65,11 @@ const MultiComboboxWithHooks = () => {
                 </FormField.MultiCombobox.Options>
                 {selectedPersons.length > 0 ? (
                     <FormField.MultiCombobox.Results>
-                        <FormField.MultiCombobox.Results.Label>Selected values:</FormField.MultiCombobox.Results.Label>
+                        <FormField.MultiCombobox.Results.Label>
+                            Selected values:
+                        </FormField.MultiCombobox.Results.Label>
                         <FormField.MultiCombobox.Results.Text>
-                            {selectedPersons.map((person) => person).join(', ')}
+                            {selectedPersons.map((person) => person).join(", ")}
                         </FormField.MultiCombobox.Results.Text>
                     </FormField.MultiCombobox.Results>
                 ) : null}
@@ -69,10 +80,10 @@ const MultiComboboxWithHooks = () => {
 
 const MultiComboboxBadgeWithHooks = () => {
     const [selectedPersons, setSelectedPersons] = React.useState<string[]>([]);
-    const [query, setQuery] = React.useState('');
+    const [query, setQuery] = React.useState("");
 
     const filteredPeople =
-        query === ''
+        query === ""
             ? people
             : people.filter((person) => {
                   return person.toLowerCase().includes(query.toLowerCase());
@@ -84,7 +95,10 @@ const MultiComboboxBadgeWithHooks = () => {
                 <FormField.Label htmlFor="value">Label</FormField.Label>
                 <FormField.Description id="value-description">Description</FormField.Description>
             </FormField.LabelGroup>
-            <FormField.MultiCombobox value={selectedPersons} onChange={(value) => setSelectedPersons(value)}>
+            <FormField.MultiCombobox
+                value={selectedPersons}
+                onChange={(value) => setSelectedPersons(value)}
+            >
                 <FormField.MultiCombobox.Input
                     id="value"
                     displayValue={query}
@@ -107,7 +121,9 @@ const MultiComboboxBadgeWithHooks = () => {
                 </FormField.MultiCombobox.Options>
                 {selectedPersons.length > 0 ? (
                     <FormField.MultiCombobox.Results>
-                        <FormField.MultiCombobox.Results.Label>Selected values:</FormField.MultiCombobox.Results.Label>
+                        <FormField.MultiCombobox.Results.Label>
+                            Selected values:
+                        </FormField.MultiCombobox.Results.Label>
                         <FormField.MultiCombobox.Results.Badges>
                             {selectedPersons.map((person) => {
                                 return <Badge key={person}>{person}</Badge>;
@@ -130,10 +146,10 @@ export const Badges: Story = {
 
 const MultiComboboxTagWithHooks = () => {
     const [selectedPersons, setSelectedPersons] = React.useState<string[]>([]);
-    const [query, setQuery] = React.useState('');
+    const [query, setQuery] = React.useState("");
 
     const filteredPeople =
-        query === ''
+        query === ""
             ? people
             : people.filter((person) => {
                   return person.toLowerCase().includes(query.toLowerCase());
@@ -145,7 +161,10 @@ const MultiComboboxTagWithHooks = () => {
                 <FormField.Label htmlFor="value">Label</FormField.Label>
                 <FormField.Description id="value-description">Description</FormField.Description>
             </FormField.LabelGroup>
-            <FormField.MultiCombobox value={selectedPersons} onChange={(value) => setSelectedPersons(value)}>
+            <FormField.MultiCombobox
+                value={selectedPersons}
+                onChange={(value) => setSelectedPersons(value)}
+            >
                 <FormField.MultiCombobox.Input
                     id="value"
                     displayValue={query}
@@ -168,14 +187,18 @@ const MultiComboboxTagWithHooks = () => {
                 </FormField.MultiCombobox.Options>
                 {selectedPersons.length > 0 ? (
                     <FormField.MultiCombobox.Results>
-                        <FormField.MultiCombobox.Results.Label>Selected values:</FormField.MultiCombobox.Results.Label>
+                        <FormField.MultiCombobox.Results.Label>
+                            Selected values:
+                        </FormField.MultiCombobox.Results.Label>
                         <FormField.MultiCombobox.Results.Tags>
                             {selectedPersons.map((person) => {
                                 return (
                                     <Tag
                                         key={person}
                                         onClick={() => {
-                                            setSelectedPersons(selectedPersons.filter((p) => p !== person));
+                                            setSelectedPersons(
+                                                selectedPersons.filter((p) => p !== person)
+                                            );
                                         }}
                                     >
                                         {person}
@@ -192,10 +215,10 @@ const MultiComboboxTagWithHooks = () => {
 
 const MultiComboboxCustomValueWithHooks = () => {
     const [selectedPersons, setSelectedPersons] = React.useState<string[]>([]);
-    const [query, setQuery] = React.useState('');
+    const [query, setQuery] = React.useState("");
 
     const filteredPeople =
-        query === ''
+        query === ""
             ? people
             : people.filter((person) => {
                   return person.toLowerCase().includes(query.toLowerCase());
@@ -207,7 +230,10 @@ const MultiComboboxCustomValueWithHooks = () => {
                 <FormField.Label htmlFor="value">Label</FormField.Label>
                 <FormField.Description id="value-description">Description</FormField.Description>
             </FormField.LabelGroup>
-            <FormField.MultiCombobox value={selectedPersons} onChange={(value) => setSelectedPersons(value)}>
+            <FormField.MultiCombobox
+                value={selectedPersons}
+                onChange={(value) => setSelectedPersons(value)}
+            >
                 <FormField.MultiCombobox.Input
                     id="value"
                     displayValue={query}
@@ -228,14 +254,18 @@ const MultiComboboxCustomValueWithHooks = () => {
                 </FormField.MultiCombobox.Options>
                 {selectedPersons.length > 0 ? (
                     <FormField.MultiCombobox.Results>
-                        <FormField.MultiCombobox.Results.Label>Selected values:</FormField.MultiCombobox.Results.Label>
+                        <FormField.MultiCombobox.Results.Label>
+                            Selected values:
+                        </FormField.MultiCombobox.Results.Label>
                         <FormField.MultiCombobox.Results.Tags>
                             {selectedPersons.map((person) => {
                                 return (
                                     <Tag
                                         key={person}
                                         onClick={() => {
-                                            setSelectedPersons(selectedPersons.filter((p) => p !== person));
+                                            setSelectedPersons(
+                                                selectedPersons.filter((p) => p !== person)
+                                            );
                                         }}
                                     >
                                         {person}

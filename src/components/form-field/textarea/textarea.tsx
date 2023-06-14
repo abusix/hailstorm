@@ -1,5 +1,5 @@
-import React from 'react';
-import { classNames } from '../../../util/class-names';
+import React from "react";
+import { classNames } from "../../../util/class-names";
 
 export interface TextareaProps {
     id: string;
@@ -33,12 +33,12 @@ export const Textarea = ({
             placeholder={placeholder}
             aria-describedby={ariaDescribedBy}
             className={classNames(
-                'paragraph-100 block w-full rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none',
-                disabled && 'cursor-not-allowed bg-neutral-100 text-neutral-600',
+                "paragraph-100 block w-full rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
+                disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",
                 !error &&
                     !disabled &&
-                    'hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200',
-                error && !disabled && 'border-danger-500'
+                    "hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200",
+                error && !disabled && "border-danger-500"
             )}
             disabled={disabled}
             rows={rows}

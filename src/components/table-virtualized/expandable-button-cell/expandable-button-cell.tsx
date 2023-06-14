@@ -1,6 +1,6 @@
-import React from 'react';
-import { TableUnvirtualized } from '../../table-unvirtualized/table-unvirtualized';
-import { ChevronDownIcon, ChevronUpIcon } from '../../../icons';
+import React from "react";
+import { TableUnvirtualized } from "../../table-unvirtualized/table-unvirtualized";
+import { ChevronDownIcon, ChevronUpIcon } from "../../../icons";
 
 interface ExpandableButtonCellProps {
     onClick: () => void;

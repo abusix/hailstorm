@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import React, { useState } from 'react';
-import { Dialog } from './dialog';
-import { getStoryDescription, hiddenArgControl } from '../../util/storybook-utils';
+import React, { useState } from "react";
+import { Dialog } from "./dialog";
+import { getStoryDescription, hiddenArgControl } from "../../util/storybook-utils";
 
 const SpanFooter = () => <span>test footer 🍭</span>;
 const footerOptions = { undefined, SpanFooter: <SpanFooter /> };
@@ -12,15 +12,15 @@ const footerArgs = {
 };
 
 const meta: Meta<typeof Dialog> = {
-    title: 'Dialog',
+    title: "Dialog",
     component: Dialog,
     parameters: {
-        ...getStoryDescription('Modal showing on top of the screen'),
+        ...getStoryDescription("Modal showing on top of the screen"),
         inlineStories: false, // keep controls interactive
     },
     args: {
-        title: 'Dialog Title',
-        children: 'Dialog Description',
+        title: "Dialog Title",
+        children: "Dialog Description",
         isShown: false,
         footer: undefined,
     },
@@ -36,7 +36,11 @@ const meta: Meta<typeof Dialog> = {
 
         return (
             <div className="body-font">
-                <button type="button" onClick={toggleBtn} className="bg-neutral-100 py-2 px-4 shadow">
+                <button
+                    type="button"
+                    onClick={toggleBtn}
+                    className="bg-neutral-100 py-2 px-4 shadow"
+                >
                     show Modal
                 </button>
 

@@ -1,8 +1,14 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from "react";
+import { SVGProps } from "react";
 
 const SvgPlaybookIcon = (props: SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" {...props}>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        className="h-4 w-4"
+        {...props}
+    >
         <g clipPath="url(#clip0_328_94)">
             <path d="M1.707.293A1 1 0 0 0 .293 1.707L2.086 3.5.293 5.293a1 1 0 0 0 1.414 1.414L3.5 4.914l1.793 1.793a1 1 0 0 0 1.414-1.414L4.914 3.5l1.793-1.793A1 1 0 0 0 5.293.293L3.5 2.086 1.707.293Z" />
             <path

@@ -1,15 +1,15 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { createColumnHelper } from '@tanstack/react-table';
-import { TableVirtualized, WithDragAndDrop } from './table-virtualized';
-import { Button } from '../button';
-import { IconButton } from '../icon-button';
-import { TableUnvirtualized } from '../table-unvirtualized';
-import { DividerLine } from '../divider-line';
-import { TrashIcon } from '../../icons';
+import React, { useEffect, useMemo, useState } from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { createColumnHelper } from "@tanstack/react-table";
+import { TableVirtualized, WithDragAndDrop } from "./table-virtualized";
+import { Button } from "../button";
+import { IconButton } from "../icon-button";
+import { TableUnvirtualized } from "../table-unvirtualized";
+import { DividerLine } from "../divider-line";
+import { TrashIcon } from "../../icons";
 
 const meta: Meta<typeof TableVirtualized> = {
-    title: 'Table / Virtualized',
+    title: "Table / Virtualized",
     component: TableVirtualized,
 };
 
@@ -44,12 +44,12 @@ const DefaultStory = () => {
     const [data, setData] = useState<ExampleData[]>(exampleData);
 
     const columnDefs = [
-        columnHelper.accessor('name', {
-            header: 'Team Members',
+        columnHelper.accessor("name", {
+            header: "Team Members",
             enableSorting: true,
         }),
-        columnHelper.accessor('description', {
-            header: 'Description',
+        columnHelper.accessor("description", {
+            header: "Description",
             enableSorting: true,
         }),
     ];
@@ -61,7 +61,9 @@ const DefaultStory = () => {
                     data={data}
                     columnDefs={columnDefs}
                     isExpandableRowsEnabled
-                    getExpandableContent={(row) => <p className="paragraph-100">{row.original.description}</p>}
+                    getExpandableContent={(row) => (
+                        <p className="paragraph-100">{row.original.description}</p>
+                    )}
                 />
             </div>
 
@@ -86,31 +88,37 @@ export const Draggable = () => {
     const [data, setData] = useState<ExampleData[]>(exampleData);
 
     const columnDefs = [
-        columnHelper.accessor('name', {
-            header: 'Team Members',
+        columnHelper.accessor("name", {
+            header: "Team Members",
             enableSorting: true,
             meta: {
-                width: '200px',
+                width: "200px",
             },
         }),
-        columnHelper.accessor('description', {
-            header: 'Description',
+        columnHelper.accessor("description", {
+            header: "Description",
             enableSorting: true,
         }),
-        columnHelper.accessor('action', {
-            header: 'Action',
+        columnHelper.accessor("action", {
+            header: "Action",
             enableSorting: false,
             meta: {
-                textAlign: 'right',
+                textAlign: "right",
                 width: 80,
             },
-            cell: (row) => <IconButton onClick={() => row.getValue()} Icon={TrashIcon} type="danger" />,
+            cell: (row) => (
+                <IconButton onClick={() => row.getValue()} Icon={TrashIcon} type="danger" />
+            ),
         }),
     ];
 
     return (
         <>
-            <WithDragAndDrop<ExampleData> isDraggableRowsEnabled data={data} columnDefs={columnDefs} />
+            <WithDragAndDrop<ExampleData>
+                isDraggableRowsEnabled
+                data={data}
+                columnDefs={columnDefs}
+            />
 
             <DividerLine />
 
@@ -129,15 +137,15 @@ export const DraggableAndExpandable = () => {
     const [data, setData] = useState<ExampleData[]>(exampleData);
 
     const columnDefs = [
-        columnHelper.accessor('name', {
-            header: 'Team Members',
+        columnHelper.accessor("name", {
+            header: "Team Members",
             enableSorting: true,
             meta: {
-                width: '200px',
+                width: "200px",
             },
         }),
-        columnHelper.accessor('description', {
-            header: 'Description',
+        columnHelper.accessor("description", {
+            header: "Description",
             enableSorting: true,
         }),
     ];
@@ -148,7 +156,9 @@ export const DraggableAndExpandable = () => {
                 isDraggableRowsEnabled
                 isExpandableRowsEnabled
                 // eslint-disable-next-line react/no-unstable-nested-components
-                getExpandableContent={(row) => <p className="paragraph-100">{row.original.description}</p>}
+                getExpandableContent={(row) => (
+                    <p className="paragraph-100">{row.original.description}</p>
+                )}
                 data={data}
                 columnDefs={columnDefs}
             />
@@ -169,15 +179,15 @@ export const EmptyTable = () => {
     const exampleData: ExampleData[] = [];
 
     const columnDefs = [
-        columnHelper.accessor('name', {
-            header: 'Team Members',
+        columnHelper.accessor("name", {
+            header: "Team Members",
             enableSorting: true,
             meta: {
-                width: '200px',
+                width: "200px",
             },
         }),
-        columnHelper.accessor('description', {
-            header: 'Description',
+        columnHelper.accessor("description", {
+            header: "Description",
             enableSorting: true,
         }),
     ];
@@ -189,7 +199,9 @@ export const EmptyTable = () => {
             columnDefs={columnDefs}
             isExpandableRowsEnabled
             // eslint-disable-next-line react/no-unstable-nested-components
-            getExpandableContent={(row) => <p className="paragraph-100">{row.original.description}</p>}
+            getExpandableContent={(row) => (
+                <p className="paragraph-100">{row.original.description}</p>
+            )}
             placeholder={
                 <TableUnvirtualized.Body.EmptyPlaceholder
                     title="Empty table"
@@ -197,7 +209,7 @@ export const EmptyTable = () => {
                     // +1 because of the additional drag column
                     colSpan={columnDefs.length + 1}
                 >
-                    <Button type="secondary" onClick={() => alert('clicked')}>
+                    <Button type="secondary" onClick={() => alert("clicked")}>
                         Add New Item
                     </Button>
                 </TableUnvirtualized.Body.EmptyPlaceholder>
@@ -221,15 +233,15 @@ export const LoadingTable = () => {
     }, []);
 
     const columnDefs = [
-        columnHelper.accessor('name', {
-            header: 'Team Members',
+        columnHelper.accessor("name", {
+            header: "Team Members",
             enableSorting: true,
             meta: {
-                width: '200px',
+                width: "200px",
             },
         }),
-        columnHelper.accessor('description', {
-            header: 'Description',
+        columnHelper.accessor("description", {
+            header: "Description",
             enableSorting: true,
         }),
     ];

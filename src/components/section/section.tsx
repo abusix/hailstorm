@@ -1,8 +1,8 @@
-import React from 'react';
-import { SectionDescription } from './section-description';
-import { SectionPanel } from './section-panel';
-import { SectionTitle } from './section-title';
-import { SectionTitleGroup } from './section-title-group';
+import React from "react";
+import { SectionDescription } from "./section-description";
+import { SectionPanel } from "./section-panel";
+import { SectionTitle } from "./section-title";
+import { SectionTitleGroup } from "./section-title-group";
 
 interface SectionProps {
     children: React.ReactNode;

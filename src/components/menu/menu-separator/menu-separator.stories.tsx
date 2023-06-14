@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import React from 'react';
-import { MenuSeparator } from './menu-separator';
+import React from "react";
+import { MenuSeparator } from "./menu-separator";
 
 const meta: Meta<typeof MenuSeparator> = {
-    title: 'Menu/MenuSeparator',
+    title: "Menu/MenuSeparator",
     component: MenuSeparator,
 };
 

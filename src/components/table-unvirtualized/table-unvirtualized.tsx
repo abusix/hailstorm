@@ -1,7 +1,7 @@
-import React from 'react';
-import { TableBody } from './table-body/table-body';
-import { TableHeader } from './table-header/table-header';
-import { classNames } from '../../util/class-names';
+import React from "react";
+import { TableBody } from "./table-body/table-body";
+import { TableHeader } from "./table-header/table-header";
+import { classNames } from "../../util/class-names";
 
 interface TableUnvirtualizedProps {
     children: React.ReactNode;
@@ -19,12 +19,14 @@ const TableUnvirtualized = ({
     return (
         <div
             className={classNames(
-                'rounded-lg bg-neutral-0',
-                isContainerBordersShown && 'overflow-y-auto rounded-lg border border-neutral-300'
+                "rounded-lg bg-neutral-0",
+                isContainerBordersShown && "overflow-y-auto rounded-lg border border-neutral-300"
             )}
             style={{ height }}
         >
-            <table className={classNames(hasFixedTableLayout && 'table-fixed', 'w-full text-sm')}>{children}</table>
+            <table className={classNames(hasFixedTableLayout && "table-fixed", "w-full text-sm")}>
+                {children}
+            </table>
         </div>
     );
 };

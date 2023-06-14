@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { FormField } from '../form-field';
+import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
+import { FormField } from "../form-field";
 
 const meta: Meta<typeof FormField.Listbox> = {
-    title: 'Input/Listbox',
+    title: "Input/Listbox",
     component: FormField.Listbox,
 };
 
@@ -18,11 +18,11 @@ interface Person {
 }
 
 const people: Person[] = [
-    { id: 1, name: 'Durward Reynolds' },
-    { id: 2, name: 'Kenton Towne' },
-    { id: 3, name: 'Therese Wunsch' },
-    { id: 4, name: 'Benedict Kessler' },
-    { id: 5, name: 'Katelyn Rohan' },
+    { id: 1, name: "Durward Reynolds" },
+    { id: 2, name: "Kenton Towne" },
+    { id: 3, name: "Therese Wunsch" },
+    { id: 4, name: "Benedict Kessler" },
+    { id: 5, name: "Katelyn Rohan" },
 ];
 
 const ListboxTextWithHooks = () => {
@@ -36,12 +36,17 @@ const ListboxTextWithHooks = () => {
             </FormField.LabelGroup>
             <FormField.Listbox value={selectedPerson} onChange={setSelectedPerson}>
                 <FormField.Listbox.Button>
-                    <FormField.Listbox.Button.TextValue value={selectedPerson?.name ?? null} placeholder="Select..." />
+                    <FormField.Listbox.Button.TextValue
+                        value={selectedPerson?.name ?? null}
+                        placeholder="Select..."
+                    />
                 </FormField.Listbox.Button>
                 <FormField.Listbox.Options>
                     {people.map((person) => (
                         <FormField.Listbox.Option value={person} key={person.id}>
-                            <FormField.Listbox.Option.TextOption>{person.name}</FormField.Listbox.Option.TextOption>
+                            <FormField.Listbox.Option.TextOption>
+                                {person.name}
+                            </FormField.Listbox.Option.TextOption>
                         </FormField.Listbox.Option>
                     ))}
                 </FormField.Listbox.Options>
@@ -61,12 +66,17 @@ const ListboxBadgeWithHooks = () => {
             </FormField.LabelGroup>
             <FormField.Listbox value={selectedPerson} onChange={setSelectedPerson}>
                 <FormField.Listbox.Button>
-                    <FormField.Listbox.Button.BadgeValue value={selectedPerson?.name ?? null} placeholder="Select..." />
+                    <FormField.Listbox.Button.BadgeValue
+                        value={selectedPerson?.name ?? null}
+                        placeholder="Select..."
+                    />
                 </FormField.Listbox.Button>
                 <FormField.Listbox.Options>
                     {people.map((person) => (
                         <FormField.Listbox.Option value={person} key={person.id}>
-                            <FormField.Listbox.Option.BadgeOption>{person.name}</FormField.Listbox.Option.BadgeOption>
+                            <FormField.Listbox.Option.BadgeOption>
+                                {person.name}
+                            </FormField.Listbox.Option.BadgeOption>
                         </FormField.Listbox.Option>
                     ))}
                 </FormField.Listbox.Options>

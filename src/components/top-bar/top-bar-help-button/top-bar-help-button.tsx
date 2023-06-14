@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChevronDownIcon, HelpIcon } from '../../../icons';
+import React from "react";
+import { ChevronDownIcon, HelpIcon } from "../../../icons";
 
 export const TopBarHelpButton = () => {
     return (

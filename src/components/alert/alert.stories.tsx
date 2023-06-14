@@ -1,22 +1,22 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import React from 'react';
-import { Alert, AlertProps } from './alert';
-import { getStoryDescription, hiddenArgControl } from '../../util/storybook-utils';
+import React from "react";
+import { Alert, AlertProps } from "./alert";
+import { getStoryDescription, hiddenArgControl } from "../../util/storybook-utils";
 
-const intents: AlertProps['intent'][] = ['info', 'success', 'warning', 'danger'];
+const intents: AlertProps["intent"][] = ["info", "success", "warning", "danger"];
 
 const meta: Meta<typeof Alert> = {
-    title: 'Alert',
+    title: "Alert",
     component: Alert,
     parameters: {
-        layout: 'fullscreen',
-        ...getStoryDescription('Wide and big alert bar to inform user about important things'),
+        layout: "fullscreen",
+        ...getStoryDescription("Wide and big alert bar to inform user about important things"),
     },
     args: {
-        title: 'Alert Title',
-        children: 'Alert content',
-        intent: 'info',
+        title: "Alert Title",
+        children: "Alert content",
+        intent: "info",
     },
 };
 

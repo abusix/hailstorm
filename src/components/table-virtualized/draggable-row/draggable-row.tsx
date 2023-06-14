@@ -1,10 +1,10 @@
-import React, { Fragment, ReactNode, Ref } from 'react';
-import { DragSourceMonitor, useDrag, useDrop } from 'react-dnd';
-import { Row as RowType } from '@tanstack/table-core';
-import { flexRender } from '@tanstack/react-table';
-import { TableUnvirtualized } from '../../table-unvirtualized';
-import { ExpandableButtonCell } from '../expandable-button-cell/expandable-button-cell';
-import { DragHandleVerticalIcon } from '../../../icons';
+import React, { Fragment, ReactNode, Ref } from "react";
+import { DragSourceMonitor, useDrag, useDrop } from "react-dnd";
+import { Row as RowType } from "@tanstack/table-core";
+import { flexRender } from "@tanstack/react-table";
+import { TableUnvirtualized } from "../../table-unvirtualized";
+import { ExpandableButtonCell } from "../expandable-button-cell/expandable-button-cell";
+import { DragHandleVerticalIcon } from "../../../icons";
 
 export interface DraggableAndExpandableRow<TableData> {
     getExpandableContent?: (row: RowType<TableData>, index: number) => ReactNode;
@@ -23,7 +23,7 @@ export const DraggableRow = <TableData,>({
     getExpandableContent,
 }: DraggableRowProps<TableData>) => {
     const [, dropRef] = useDrop({
-        accept: 'row',
+        accept: "row",
         drop: (draggedRow: RowType<TableData>) => {
             return reorderRow(draggedRow.index, row.index);
         },
@@ -37,7 +37,7 @@ export const DraggableRow = <TableData,>({
             isDragging: monitor.isDragging(),
         }),
         item: () => row,
-        type: 'row',
+        type: "row",
         previewOptions: {
             offsetX: 16,
             offsetY: 16,
@@ -57,7 +57,7 @@ export const DraggableRow = <TableData,>({
             <TableUnvirtualized.Body.Row
                 ref={previewRef}
                 isExpanded={isExpanded}
-                className={isDragging ? 'bg-abusix-neutral-100' : undefined}
+                className={isDragging ? "bg-abusix-neutral-100" : undefined}
             >
                 <TableUnvirtualized.Body.Cell ref={dropRef}>
                     <button type="button" ref={dragRef}>
@@ -87,7 +87,10 @@ export const DraggableRow = <TableData,>({
             {isExpandableRowsEnabled && isExpanded && getExpandableContent ? (
                 <TableUnvirtualized.Body.Row key={`${row.id}-expandable-content`}>
                     <TableUnvirtualized.Body.Cell />
-                    <TableUnvirtualized.Body.Cell isTextContent={false} colSpan={row.getVisibleCells().length + 1}>
+                    <TableUnvirtualized.Body.Cell
+                        isTextContent={false}
+                        colSpan={row.getVisibleCells().length + 1}
+                    >
                         {getExpandableContent(row, row.index)}
                     </TableUnvirtualized.Body.Cell>
                 </TableUnvirtualized.Body.Row>

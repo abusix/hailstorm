@@ -1,7 +1,7 @@
-import React, { CSSProperties, ReactNode } from 'react';
-import { classNames } from '../../../../util/class-names';
+import React, { CSSProperties, ReactNode } from "react";
+import { classNames } from "../../../../util/class-names";
 
-type TableCellAlign = 'left' | 'center' | 'right';
+type TableCellAlign = "left" | "center" | "right";
 
 export interface TableHeaderCellProps {
     children: ReactNode;
@@ -12,12 +12,18 @@ export interface TableHeaderCellProps {
 }
 
 const cellAlign: Record<TableCellAlign, string> = {
-    left: 'text-left',
-    center: 'text-center',
-    right: 'text-right',
+    left: "text-left",
+    center: "text-center",
+    right: "text-right",
 };
 
-export const TableHeaderCell = ({ children, align = 'left', colSpan, style, className }: TableHeaderCellProps) => {
+export const TableHeaderCell = ({
+    children,
+    align = "left",
+    colSpan,
+    style,
+    className,
+}: TableHeaderCellProps) => {
     return (
         <th
             scope="col"

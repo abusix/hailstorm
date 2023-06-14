@@ -1,5 +1,5 @@
-import { Listbox } from '@headlessui/react';
-import React from 'react';
+import { Listbox } from "@headlessui/react";
+import React from "react";
 
 export interface ListboxOptionsProps {
     children: React.ReactNode;

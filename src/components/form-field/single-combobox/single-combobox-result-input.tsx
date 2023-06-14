@@ -1,14 +1,17 @@
-import { Combobox as HeadlessCombobox } from '@headlessui/react';
-import React from 'react';
-import { Tag } from '../../tag/tag';
-import { CaretDownIcon } from '../../../icons';
+import { Combobox as HeadlessCombobox } from "@headlessui/react";
+import React from "react";
+import { Tag } from "../../tag/tag";
+import { CaretDownIcon } from "../../../icons";
 
 export interface SingleComboboxResultInputProps {
     onUnselect: () => void;
     children: React.ReactNode;
 }
 
-export const SingleComboboxResultInput = ({ onUnselect, children }: SingleComboboxResultInputProps) => {
+export const SingleComboboxResultInput = ({
+    onUnselect,
+    children,
+}: SingleComboboxResultInputProps) => {
     return (
         <div className="relative">
             <div className="paragraph-100 flex h-8 w-full items-center rounded border border-neutral-400 py-2 pl-3 pr-8 focus-visible:border-primary-400 focus-visible:ring-2 focus-visible:ring-primary-200">

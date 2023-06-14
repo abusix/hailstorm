@@ -1,9 +1,9 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { Tag } from './tag';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Tag } from "./tag";
 
 const meta: Meta<typeof Tag> = {
-    title: 'Tag',
+    title: "Tag",
     component: Tag,
 };
 
@@ -28,7 +28,7 @@ export const Interactive: Story = {
     },
     render: () => (
         <div className="flex">
-            <Tag onClick={() => alert('You clicked me!')}>Label</Tag>
+            <Tag onClick={() => alert("You clicked me!")}>Label</Tag>
         </div>
     ),
 };

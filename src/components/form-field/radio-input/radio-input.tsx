@@ -1,6 +1,6 @@
-import { RadioGroup as HeadlessRadioGroup } from '@headlessui/react';
-import React from 'react';
-import { RadioInputOption } from './radio-input-option';
+import { RadioGroup as HeadlessRadioGroup } from "@headlessui/react";
+import React from "react";
+import { RadioInputOption } from "./radio-input-option";
 
 export interface RadioInputProps {
     id: string;

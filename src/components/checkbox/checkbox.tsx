@@ -1,5 +1,5 @@
-import React from 'react';
-import { classNames } from '../../util/class-names';
+import React from "react";
+import { classNames } from "../../util/class-names";
 
 interface CheckboxProps {
     id: string;
@@ -20,7 +20,7 @@ export const Checkbox = ({ id, label, checked, onChange, disabled = false }: Che
                 onChange={onChange}
                 disabled={disabled}
             />
-            <label className={classNames('text-sm', disabled && 'text-neutral-600')} htmlFor={id}>
+            <label className={classNames("text-sm", disabled && "text-neutral-600")} htmlFor={id}>
                 {label}
             </label>
         </div>

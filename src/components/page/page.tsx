@@ -1,6 +1,6 @@
-import React from 'react';
-import { PageDescription } from './page-description';
-import { PageTitle } from './page-title';
+import React from "react";
+import { PageDescription } from "./page-description";
+import { PageTitle } from "./page-title";
 
 interface PageProps {
     children: React.ReactNode;

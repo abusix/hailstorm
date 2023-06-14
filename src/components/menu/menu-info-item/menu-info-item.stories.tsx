@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import React from 'react';
-import { MenuInfoItem } from './menu-info-item';
+import React from "react";
+import { MenuInfoItem } from "./menu-info-item";
 
 const meta: Meta<typeof MenuInfoItem> = {
-    title: 'Menu/MenuInfoItem',
+    title: "Menu/MenuInfoItem",
     component: MenuInfoItem,
 };
 

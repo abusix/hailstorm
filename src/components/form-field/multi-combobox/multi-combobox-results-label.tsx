@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export interface MultiComboboxResultsLabelProps {
     children: React.ReactNode;

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Badge, BadgeType } from '../../badge/badge';
+import React from "react";
+import { Badge, BadgeType } from "../../badge/badge";
 
 export interface ListboxButtonBadgeValueProps {
     placeholder: string;
@@ -10,7 +10,7 @@ export interface ListboxButtonBadgeValueProps {
 export const ListboxButtonBadgeValue = ({
     placeholder,
     value,
-    badgeType = 'neutral',
+    badgeType = "neutral",
 }: ListboxButtonBadgeValueProps) => {
     if (!value) {
         return <div className="paragraph-100 text-neutral-600">{placeholder}</div>;

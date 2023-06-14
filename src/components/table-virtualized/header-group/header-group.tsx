@@ -1,7 +1,7 @@
-import React from 'react';
-import { HeaderGroup } from '@tanstack/react-table';
-import { HeaderCell } from '../header-cell/header-cell';
-import { TableUnvirtualized } from '../../table-unvirtualized/table-unvirtualized';
+import React from "react";
+import { HeaderGroup } from "@tanstack/react-table";
+import { HeaderCell } from "../header-cell/header-cell";
+import { TableUnvirtualized } from "../../table-unvirtualized/table-unvirtualized";
 
 export interface VirtualizedHeaderGroupProps<TableData> {
     group: HeaderGroup<TableData>;

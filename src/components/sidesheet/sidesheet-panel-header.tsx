@@ -1,6 +1,6 @@
-import React from 'react';
-import { SidesheetPanelHeaderActionGroup } from './sidesheet-panel-header-action-group';
-import { SidesheetPanelHeaderTitle } from './sidesheet-panel-header-title';
+import React from "react";
+import { SidesheetPanelHeaderActionGroup } from "./sidesheet-panel-header-action-group";
+import { SidesheetPanelHeaderTitle } from "./sidesheet-panel-header-title";
 
 export interface SidesheetPanelHeaderProps {
     children: React.ReactNode;

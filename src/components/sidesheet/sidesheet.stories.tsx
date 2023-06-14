@@ -1,10 +1,10 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { Sidesheet, SidesheetProps } from './sidesheet';
-import { Button } from '../button';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Sidesheet, SidesheetProps } from "./sidesheet";
+import { Button } from "../button";
 
 const meta: Meta<typeof Sidesheet> = {
-    title: 'Sidesheet',
+    title: "Sidesheet",
     component: Sidesheet,
 };
 

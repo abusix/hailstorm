@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from "react";
+import { SVGProps } from "react";
 
 const SvgChangesIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg

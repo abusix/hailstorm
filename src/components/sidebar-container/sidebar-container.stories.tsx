@@ -1,9 +1,9 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { SidebarContainer } from './sidebar-container';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { SidebarContainer } from "./sidebar-container";
 
 const meta: Meta<typeof SidebarContainer> = {
-    title: 'SidebarContainer',
+    title: "SidebarContainer",
     component: SidebarContainer,
 };
 
@@ -12,6 +12,9 @@ type Story = StoryObj<typeof SidebarContainer>;
 
 export const Header: Story = {
     render: () => (
-        <SidebarContainer sidebarContent={<div>Sidebar Content</div>} pageContent={<div>Page Content</div>} />
+        <SidebarContainer
+            sidebarContent={<div>Sidebar Content</div>}
+            pageContent={<div>Page Content</div>}
+        />
     ),
 };

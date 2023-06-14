@@ -1,4 +1,4 @@
-import './index.css';
+import "./index.css";
 
-export * from './icons';
-export * from './components';
+export * from "./icons";
+export * from "./components";

@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-export type TabType = 'primary' | 'secondary';
+export type TabType = "primary" | "secondary";
 
 interface TabContextProps {
     type: TabType;
 }
 
-const TabContext = React.createContext<TabContextProps>({ type: 'primary' });
+const TabContext = React.createContext<TabContextProps>({ type: "primary" });
 
 function useTabContext() {
     const context = React.useContext(TabContext);

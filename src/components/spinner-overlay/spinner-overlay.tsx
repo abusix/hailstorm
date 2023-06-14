@@ -1,5 +1,5 @@
-import React from 'react';
-import { Spinner } from '../spinner/spinner';
+import React from "react";
+import { Spinner } from "../spinner/spinner";
 
 export const SpinnerOverlay = () => {
     return (
