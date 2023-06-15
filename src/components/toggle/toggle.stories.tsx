@@ -6,34 +6,34 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Toggle, ToggleProps } from "./toggle";
 
 const meta: Meta<typeof Toggle> = {
-  title: "Toggle",
-  component: Toggle,
+    title: "Toggle",
+    component: Toggle,
 };
 
 export default meta;
 type Story = StoryObj<typeof Toggle>;
 
-const ToggleWithHook = (args: ToggleProps) => {
-  const [checked, setChecked] = React.useState(false);
+const ToggleWithHook = ({ checked, disabled }: ToggleProps) => {
+    const [isChecked, setIsChecked] = React.useState(false);
 
-  React.useEffect(() => {
-    setChecked(args.checked);
-  }, [args.checked]);
+    React.useEffect(() => {
+        setIsChecked(checked);
+    }, [checked]);
 
-  return (
-    <Toggle
-      checked={checked}
-      disabled={args.disabled}
-      onChange={() => setChecked(!checked)}
-      ariaLabel="Enable notifications"
-    />
-  );
+    return (
+        <Toggle
+            checked={isChecked}
+            disabled={disabled}
+            onChange={() => setIsChecked(!isChecked)}
+            ariaLabel="Enable notifications"
+        />
+    );
 };
 
 export const Default: Story = {
-  render: (args) => <ToggleWithHook {...args} />,
-  args: {
-    checked: false,
-    disabled: false,
-  },
+    render: (args) => <ToggleWithHook {...args} />,
+    args: {
+        checked: false,
+        disabled: false,
+    },
 };

@@ -8,15 +8,15 @@ import { TrayButton } from "./top-bar-tray-buttons/top-bar-tray-button";
 import { TopBarHelpButton } from "./top-bar-help-button/top-bar-help-button";
 
 interface TopBarProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 const TopBar = ({ children }: TopBarProps) => {
-  return (
-    <div className="flex h-12 min-w-[1024px] items-center justify-between bg-abusix-dusk px-4">
-      {children}
-    </div>
-  );
+    return (
+        <div className="flex h-12 min-w-[1024px] items-center justify-between bg-abusix-dusk px-4">
+            {children}
+        </div>
+    );
 };
 
 TopBar.TrayButtons = TrayButtons;

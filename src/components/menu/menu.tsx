@@ -8,15 +8,15 @@ import { MenuTitle } from "./menu-title/menu-title";
 import { MenuButton } from "./menu-button/menu-button";
 
 interface MenuProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 const Menu = ({ children }: MenuProps) => {
-  return (
-    <HeadlessMenu as="div" className="relative">
-      {children}
-    </HeadlessMenu>
-  );
+    return (
+        <HeadlessMenu as="div" className="relative">
+            {children}
+        </HeadlessMenu>
+    );
 };
 
 Menu.Button = MenuButton;

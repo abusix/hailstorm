@@ -5,11 +5,11 @@ import { TableEmptyPlaceholder } from "./table-body-placeholder/table-body-place
 import { TableBodyLoadingIndicator } from "./table-body-loading-indicator/table-body-loading-indicator";
 
 export interface TableBodyProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 const TableBody = ({ children }: TableBodyProps) => {
-  return <tbody className="bg-neutral-0">{children}</tbody>;
+    return <tbody className="bg-neutral-0">{children}</tbody>;
 };
 
 TableBody.LoadingIndicator = TableBodyLoadingIndicator;

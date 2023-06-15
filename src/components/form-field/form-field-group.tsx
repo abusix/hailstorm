@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 export interface FormFieldGroupProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 export const FormFieldGroup = ({ children }: FormFieldGroupProps) => {
-  return <div className="form-field-group group w-full flex flex-row">{children}</div>;
+    return <div className="form-field-group group flex w-full flex-row">{children}</div>;
 };

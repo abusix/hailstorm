@@ -5,12 +5,10 @@ import { SidebarMenuHeader } from "./sidebar-menu/sidebar-menu-header/sidebar-me
 import { SidebarMenuLink } from "./sidebar-menu/sidebar-menu-link/sidebar-menu-link";
 
 interface SidebarProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 const Sidebar = ({ children }: SidebarProps) => {
-  return (
-    <div className="flex min-w-[13rem] flex-col gap-5 py-5">{children}</div>
-  );
+    return <div className="flex min-w-[13rem] flex-col gap-5 py-5">{children}</div>;
 };
 
 Sidebar.Header = SidebarHeader;

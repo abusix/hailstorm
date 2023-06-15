@@ -2,9 +2,9 @@ import React from "react";
 import { Tab as HeadlessTab } from "@headlessui/react";
 
 export interface TabPanelsProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 export const TabPanels = ({ children }: TabPanelsProps) => {
-  return <HeadlessTab.Panels>{children}</HeadlessTab.Panels>;
+    return <HeadlessTab.Panels>{children}</HeadlessTab.Panels>;
 };

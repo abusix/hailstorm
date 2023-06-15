@@ -8,21 +8,17 @@ import { MultiComboboxOptions } from "./multi-combobox-options";
 import { MultiComboboxResults } from "./multi-combobox-results";
 
 export interface MultiComboboxProps<TValue> {
-  value: TValue[];
-  onChange: (value: TValue[]) => void;
-  children: React.ReactNode;
+    value: TValue[];
+    onChange: (value: TValue[]) => void;
+    children: React.ReactNode;
 }
 
-const MultiCombobox = <TValue,>({
-  value,
-  onChange,
-  children,
-}: MultiComboboxProps<TValue>) => {
-  return (
-    <HeadlessCombobox multiple value={value} onChange={onChange}>
-      <div className="relative">{children}</div>
-    </HeadlessCombobox>
-  );
+const MultiCombobox = <TValue,>({ value, onChange, children }: MultiComboboxProps<TValue>) => {
+    return (
+        <HeadlessCombobox multiple value={value} onChange={onChange}>
+            <div className="relative">{children}</div>
+        </HeadlessCombobox>
+    );
 };
 
 MultiCombobox.Input = MultiComboboxInput;

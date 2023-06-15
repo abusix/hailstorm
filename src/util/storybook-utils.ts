@@ -1,9 +1,9 @@
 import type { Parameters } from "@storybook/react";
 
 export const noControl = {
-  control: {
-    type: null,
-  },
+    control: {
+        type: null,
+    },
 };
 
 export const hiddenArgControl = { table: { disable: true } };
@@ -26,8 +26,8 @@ export const hiddenArgControl = { table: { disable: true } };
  * ```
  */
 export const getStoryDescription = (
-  text: string,
-  target: "component" | "story" = "component"
+    text: string,
+    target: "component" | "story" = "component"
 ): Parameters => ({
-  docs: { description: { [target]: text } },
+    docs: { description: { [target]: text } },
 });

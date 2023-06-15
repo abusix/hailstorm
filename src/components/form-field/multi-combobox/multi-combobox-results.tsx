@@ -5,11 +5,11 @@ import { MultiComboboxResultsTags } from "./multi-combobox-results-tags";
 import { MultiComboboxResultsText } from "./multi-combobox-results-text";
 
 export interface MultiComboboxResultsProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 const MultiComboboxResults = ({ children }: MultiComboboxResultsProps) => {
-  return <div className="flex flex-col gap-2">{children}</div>;
+    return <div className="flex flex-col gap-2">{children}</div>;
 };
 
 MultiComboboxResults.Label = MultiComboboxResultsLabel;
