@@ -16,6 +16,6 @@
     "allowSyntheticDefaultImports": true
     // "emitDeclarationOnly": true,
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "*.js", "*.cjs", ".eslintrc.cjs"],
   "exclude": ["dist", "node_modules"]
 }
