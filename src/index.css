@@ -2,51 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .headline-900 {
-        @apply font-display text-3xl font-bold;
-    }
-    .headline-800 {
-        @apply font-display text-2xl font-medium;
-    }
-    .headline-700 {
-        @apply font-display text-xl font-medium;
-    }
-    .headline-600 {
-        @apply font-display text-lg font-medium;
-    }
-    .headline-500 {
-        @apply font-display text-base font-medium;
-    }
-    .headline-400 {
-        @apply font-sans text-sm font-medium;
-    }
-    .headline-300 {
-        @apply font-sans text-xs font-medium;
-    }
-    .headline-200 {
-        @apply font-sans text-xs font-semibold;
-    }
-    .headline-100 {
-        @apply font-sans text-xs font-medium;
-    }
+.headline-900 {
+    @apply font-display text-3xl font-bold;
+}
 
-    .paragraph-300 {
-        @apply font-sans text-base font-normal;
-    }
-    .paragraph-200 {
-        @apply font-sans text-sm font-normal;
-    }
-    .paragraph-100 {
-        @apply font-sans text-xs font-normal;
-    }
+.headline-800 {
+    @apply font-display text-2xl font-medium;
+}
 
-    .inline-link {
-        @apply text-primary-600 underline hover:text-primary-900;
-    }
+.headline-700 {
+    @apply font-display text-xl font-medium;
+}
+
+.headline-600 {
+    @apply font-display text-lg font-medium;
+}
+
+.headline-500 {
+    @apply font-display text-base font-medium;
+}
+
+.headline-400 {
+    @apply font-sans text-sm font-medium;
+}
+
+.headline-300 {
+    @apply font-sans text-xs font-medium;
+}
+
+.headline-200 {
+    @apply font-sans text-xs font-semibold;
+}
+
+.headline-100 {
+    @apply font-sans text-xs font-medium;
+}
+
+.paragraph-300 {
+    @apply font-sans text-base font-normal;
+}
+
+.paragraph-200 {
+    @apply font-sans text-sm font-normal;
+}
+
+.paragraph-100 {
+    @apply font-sans text-xs font-normal;
+}
+
+.inline-link {
+    @apply text-primary-600 underline hover:text-primary-900;
 }
 
 /* Tailwind checkbox needs it to change styles of the check */
-[type='checkbox']:disabled:checked {
+[type="checkbox"]:disabled:checked {
     background-image: url('data:image/svg+xml,<svg viewBox="0 0 16 16" fill="rgb(156,155,185)" xmlns="http://www.w3.org/2000/svg"><path d="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z"/></svg>');
 }

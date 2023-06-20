@@ -3,65 +3,65 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        project: "./tsconfig.json",
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: './tsconfig.json',
     },
     extends: [
-        "airbnb",
-        "airbnb-typescript",
-        "airbnb/hooks",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:storybook/recommended",
-        "plugin:prettier/recommended",
+        'airbnb',
+        'airbnb-typescript',
+        'airbnb/hooks',
+        'plugin:react/recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:storybook/recommended',
+        'plugin:prettier/recommended',
     ],
-    plugins: ["react", "@typescript-eslint", "prettier"],
+    plugins: ['react', '@typescript-eslint', 'prettier'],
     rules: {
-        "import/prefer-default-export": "off",
-        "no-restricted-exports": ["error", {restrictDefaultExports: {direct: true}}],
-        "react/react-in-jsx-scope": "off",
-        "react/require-default-props": "off",
-        "no-alert": "off",
-        "react/function-component-definition": [
-            "error",
+        'import/prefer-default-export': 'off',
+        'no-restricted-exports': ['error', { restrictDefaultExports: { direct: true } }],
+        'react/react-in-jsx-scope': 'off',
+        'react/require-default-props': 'off',
+        'no-alert': 'off',
+        'react/function-component-definition': [
+            'error',
             {
-                namedComponents: ["arrow-function"],
-                unnamedComponents: ["arrow-function"],
+                namedComponents: ['arrow-function'],
+                unnamedComponents: ['arrow-function'],
             },
         ],
-        "react/display-name": "off",
-        "import/no-extraneous-dependencies": [
-            "error",
+        'react/display-name': 'off',
+        'import/no-extraneous-dependencies': [
+            'error',
             {
-                devDependencies: ["**/*.stories.tsx", "**/*.test.tsx", "**/*.test.ts"],
+                devDependencies: ['**/*.stories.tsx', '**/*.test.tsx', '**/*.test.ts'],
             },
         ],
     },
     overrides: [
         {
-            files: ["*.stories.tsx"],
+            files: ['*.stories.tsx'],
             rules: {
-                "no-plusplus": "off",
-                "no-restricted-exports": "off",
-                "react/no-unstable-nested-components": "off",
-                "react/jsx-props-no-spreading": "off",
+                'no-plusplus': 'off',
+                'no-restricted-exports': 'off',
+                'react/no-unstable-nested-components': 'off',
+                'react/jsx-props-no-spreading': 'off',
             },
         },
         {
-            files: ["src/icons/**/*.tsx"],
+            files: ['src/icons/**/*.tsx'],
             rules: {
-                "no-restricted-exports": "off",
-                "react/jsx-props-no-spreading": "off",
-                "import/prefer-default-export": "off",
+                'no-restricted-exports': 'off',
+                'react/jsx-props-no-spreading': 'off',
+                'import/prefer-default-export': 'off',
             }
         },
         {
-            files: ["src/util/class-names.tsx"],
+            files: ['src/util/class-names.tsx'],
             rules: {
-                "import/no-extraneous-dependencies": "off",
+                'import/no-extraneous-dependencies': 'off',
             }
         }
     ],
