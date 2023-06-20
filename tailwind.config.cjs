@@ -71,6 +71,22 @@ module.exports = {
                 100: "#FFF0C6",
                 50: "#FFF9EB",
             },
+            violet: {
+                100: "#ede9fe",
+                800: "#5b21b6",
+            },
+            teal: {
+                100: "#ccfbf1",
+                800: "#115e59"
+            },
+            orange: {
+                100: "#ffedd5",
+                800: "#9a3412"
+            },
+            pink: {
+                300: "#f9a8d4",
+                800: "#9d174d"
+            },
             black: "#000000",
             "modal-background": "rgba(67, 90, 111, 0.7)",
             transparent: "transparent",
