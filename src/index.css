@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.tw-root {
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+}
 
 .headline-900 {
     @apply font-display text-3xl font-bold;
