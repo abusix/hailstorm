@@ -21,6 +21,11 @@
   "bugs": {
     "url": "https://github.com/abusix/hailstorm/issues"
   },
+  "release": {
+    "branchTags": {
+      "preflight-issues": "portal"
+    }
+  },
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "clean": "rimraf ./dist",
@@ -34,7 +39,8 @@
     "build:rollup": "NODE_ENV=production rollup -c",
     "build:icons": "svgr -- assets/icons",
     "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build",
-    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify"
+    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify",
+    "prerelease-publish": "semantic-prerelease publish"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
@@ -52,6 +58,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.0",
+    "@progress/semantic-prerelease": "^3.0.2",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.0",
