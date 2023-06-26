@@ -2,7 +2,7 @@ name: Semantic Release CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, preflight-issues]
 
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -22,4 +22,4 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run build
-      - run: npx semantic-release
+      - run: npm run prerelease-publish
