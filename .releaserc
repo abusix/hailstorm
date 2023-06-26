@@ -1,7 +1,11 @@
 {
     "branches": [
         "main",
-        "next"
+        {
+            "name": "next",
+            "channel": "next",
+            "prerelease": true
+        }
     ],
     "debug": true,
     "ci": true,
