@@ -1,2 +1,0 @@
-const e={parameters:{actions:{argTypesRegex:"^on[A-Z].*"},layout:"centered",backgrounds:{default:"white",values:[{name:"white",value:"#FFFFFF"},{name:"light",value:"#FAFAFC"},{name:"dark",value:"#212121"}]},controls:{matchers:{color:/(background|color)$/i,date:/Date$/}},options:{storySort:{order:["Icons gallery"]}}}};export{e as default};
-//# sourceMappingURL=preview-b0da088e.js.map
