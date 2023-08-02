@@ -1,6 +1,6 @@
 import React from "react";
+import { CrossIcon, ErrorIcon, InfoSignIcon, TickCircleIcon, WarningSignIcon } from "../../icons";
 import { classNames } from "../../util/class-names";
-import { ErrorIcon, InfoSignIcon, TickCircleIcon, WarningSignIcon } from "../../icons";
 
 const toastVariants = {
     info: "border-primary-400 bg-primary-50 text-primary-600",
@@ -53,21 +53,17 @@ export const Toast = ({ title, intent, children, onClose, isClosable = true }: T
             )}
         >
             <div className="pt-0.5">
-                <Icon className={iconVariants[intent]} />
+                <Icon className={classNames(iconVariants[intent], "h-3 w-3")} />
             </div>
 
             {isClosable ? (
                 <div className="absolute right-0 top-0 hidden pr-4 pt-2 sm:block">
                     <button
                         type="button"
-                        className={classNames("rounded p-2.5", closeButtonVariants[intent])}
+                        className={classNames("rounded p-1", closeButtonVariants[intent])}
                         onClick={onClose}
                     >
-                        <span className="sr-only">Close</span>
-                        <Icon
-                            name="cross"
-                            className={classNames("h-3 w-3", closeButtonVariants[intent])}
-                        />
+                        <CrossIcon name="cross" aria-label="close" className="h-3 w-3" />
                     </button>
                 </div>
             ) : null}
