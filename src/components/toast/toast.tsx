@@ -57,7 +57,7 @@ export const Toast = ({ title, intent, children, onClose, isClosable = true }: T
             </div>
 
             {isClosable ? (
-                <div className="absolute right-0 top-0 hidden pr-4 pt-2 sm:block">
+                <div className="absolute right-0 top-0 pr-4 pt-2 sm:block">
                     <button
                         type="button"
                         className={classNames("rounded p-1", closeButtonVariants[intent])}
