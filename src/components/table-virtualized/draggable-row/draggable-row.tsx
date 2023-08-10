@@ -38,10 +38,6 @@ export const DraggableRow = <TableData,>({
         }),
         item: () => row,
         type: "row",
-        previewOptions: {
-            offsetX: 16,
-            offsetY: 16,
-        },
         isDragging: () => {
             if (row.getIsExpanded()) {
                 row.toggleExpanded();
