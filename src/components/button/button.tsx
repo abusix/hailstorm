@@ -35,6 +35,8 @@ export interface ButtonProps {
     LeftIcon?: React.ElementType;
     RightIcon?: React.ElementType;
     disabled?: boolean;
+    isSubmitButton?: boolean;
+    form?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -48,12 +50,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             RightIcon,
             disabled = false,
             type = "primary",
+            isSubmitButton,
+            form,
         },
         ref
     ) => {
         return (
             <button
-                type="button"
+                type={isSubmitButton ? "submit" : "button"}
                 className={classNames(
                     `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
                     buttonVariants[type],
@@ -61,6 +65,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 )}
                 onClick={onClick}
                 disabled={disabled}
+                form={form}
                 ref={ref}
             >
                 {loading ? <Spinner size="small" /> : null}
