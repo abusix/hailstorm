@@ -27,6 +27,9 @@ export interface TextInputProps {
     LeftIcon?: React.ElementType;
     error?: boolean;
     disabled?: boolean;
+    onBlur?: React.FocusEventHandler<HTMLInputElement>;
+    onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
+    onKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
 }
 
 export const TextInput = ({
@@ -41,6 +44,9 @@ export const TextInput = ({
     autoSelect,
     error,
     disabled,
+    onBlur,
+    onKeyDown,
+    onKeyUp,
 }: TextInputProps) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -86,6 +92,9 @@ export const TextInput = ({
                     error && !disabled && "border-danger-500"
                 )}
                 disabled={disabled}
+                onBlur={onBlur}
+                onKeyDown={onKeyDown}
+                onKeyUp={onKeyUp}
             />
         </div>
     );
