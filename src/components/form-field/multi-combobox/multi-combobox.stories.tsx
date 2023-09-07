@@ -216,11 +216,21 @@ const MultiComboboxTagWithHooks = () => {
 const MultiComboboxCustomValueWithHooks = () => {
     const [selectedPersons, setSelectedPersons] = React.useState<string[]>([]);
     const [query, setQuery] = React.useState("");
+    const [peopleCopy, setPeopleCopy] = React.useState(people);
+
+    const handleSelectedPeopleChange = (value: string[]) => {
+        const uniqueCustomValue = value.filter((valueItem) => {
+            return peopleCopy.indexOf(valueItem) === -1;
+        });
+        setQuery("");
+        setPeopleCopy([...uniqueCustomValue, ...peopleCopy]);
+        setSelectedPersons(value);
+    };
 
     const filteredPeople =
         query === ""
-            ? people
-            : people.filter((person) => {
+            ? peopleCopy
+            : peopleCopy.filter((person) => {
                   return person.toLowerCase().includes(query.toLowerCase());
               });
 
@@ -230,10 +240,7 @@ const MultiComboboxCustomValueWithHooks = () => {
                 <FormField.Label htmlFor="value">Label</FormField.Label>
                 <FormField.Description id="value-description">Description</FormField.Description>
             </FormField.LabelGroup>
-            <FormField.MultiCombobox
-                value={selectedPersons}
-                onChange={(value) => setSelectedPersons(value)}
-            >
+            <FormField.MultiCombobox value={selectedPersons} onChange={handleSelectedPeopleChange}>
                 <FormField.MultiCombobox.Input
                     id="value"
                     displayValue={query}
@@ -241,7 +248,7 @@ const MultiComboboxCustomValueWithHooks = () => {
                     onChange={(event) => setQuery(event.target.value)}
                 />
                 <FormField.MultiCombobox.Options>
-                    {query.length > 0 && people.indexOf(query) === -1 && (
+                    {query.length > 0 && peopleCopy.indexOf(query) === -1 && (
                         <FormField.MultiCombobox.CustomOption value={query}>
                             Create tag: <Tag>{query}</Tag>
                         </FormField.MultiCombobox.CustomOption>
