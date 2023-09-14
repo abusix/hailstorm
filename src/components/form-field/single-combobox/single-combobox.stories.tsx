@@ -42,7 +42,6 @@ const SingleComboboxWithHooks = () => {
         >
             <SingleCombobox.Input
                 id="value"
-                displayValue={selectedPerson}
                 placeholder="Select person..."
                 onChange={(event) => setQuery(event.target.value)}
             />
@@ -57,6 +56,56 @@ const SingleComboboxWithHooks = () => {
                 {filteredPeople.map((person) => (
                     <FormField.SingleCombobox.Option key={person} value={person}>
                         <Tag>{person}</Tag>
+                    </FormField.SingleCombobox.Option>
+                ))}
+            </FormField.SingleCombobox.Options>
+        </FormField.SingleCombobox>
+    );
+};
+
+interface Person {
+    id: number;
+    name: string;
+    short: string;
+}
+
+const peopleObjects: Person[] = [
+    { id: 1, name: "Durward Reynolds", short: "Durward" },
+    { id: 2, name: "Kenton Towne", short: "Kenton" },
+    { id: 3, name: "Therese Wunsch", short: "Therese" },
+    { id: 4, name: "Benedict Kessler", short: "Benedict" },
+    { id: 5, name: "Katelyn Rohan", short: "Katelyn" },
+];
+
+const SingleComboboxObjectValueWithHooks = () => {
+    const [selectedPerson, setSelectedPerson] = React.useState<Person>();
+    const [query, setQuery] = React.useState("");
+
+    const filteredPeople =
+        query === ""
+            ? peopleObjects
+            : peopleObjects.filter((person) => {
+                  return person.name.toLowerCase().includes(query.toLowerCase());
+              });
+
+    return (
+        <FormField.SingleCombobox
+            value={selectedPerson}
+            onChange={(value) => {
+                setQuery("");
+                setSelectedPerson(value);
+            }}
+        >
+            <SingleCombobox.Input
+                id="value"
+                placeholder="Select person..."
+                displayValue={(person: Person) => person.name}
+                onChange={(event) => setQuery(event.target.value)}
+            />
+            <FormField.SingleCombobox.Options>
+                {filteredPeople.map((person) => (
+                    <FormField.SingleCombobox.Option key={person.id} value={person}>
+                        <Tag>{person.short}</Tag>
                     </FormField.SingleCombobox.Option>
                 ))}
             </FormField.SingleCombobox.Options>
@@ -85,7 +134,6 @@ const SingleComboboxCustomValueWithHooks = () => {
         >
             <SingleCombobox.Input
                 id="value"
-                displayValue={selectedPerson}
                 placeholder="Select person..."
                 onChange={(event) => setQuery(event.target.value)}
             />
@@ -110,6 +158,14 @@ export const Default: Story = {
     render: () => (
         <div className="w-72">
             <SingleComboboxWithHooks />
+        </div>
+    ),
+};
+
+export const ObjectValue: Story = {
+    render: () => (
+        <div className="w-72">
+            <SingleComboboxObjectValueWithHooks />
         </div>
     ),
 };
