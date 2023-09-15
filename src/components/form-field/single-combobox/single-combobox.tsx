@@ -8,7 +8,7 @@ import { SingleComboboxCustomOption } from "./single-combobox-custom-option";
 import { SingleComboboxEmptyOption } from "./single-combobox-empty-option";
 
 export interface SingleComboboxProps<TValue> {
-    value: TValue;
+    value?: TValue;
     onChange: (value: TValue) => void;
     children: React.ReactNode;
     disabled?: boolean;

@@ -2,28 +2,28 @@ import { Combobox as HeadlessCombobox } from "@headlessui/react";
 import React from "react";
 import { CaretDownIcon } from "../../../icons";
 
-export interface SingleComboboxInputProps {
+export interface SingleComboboxInputProps<TValue> {
     id: string;
-    displayValue: string;
+    displayValue?(item: TValue): string;
     placeholder: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     showButton?: boolean;
 }
 
-export const SingleComboboxInput = ({
+export const SingleComboboxInput = <TValue,>({
     id,
     displayValue,
     placeholder,
     onChange,
     showButton = true,
-}: SingleComboboxInputProps) => {
+}: SingleComboboxInputProps<TValue>) => {
     return (
         <div className="relative">
             <HeadlessCombobox.Input
                 id={id}
                 name={id}
                 placeholder={placeholder}
-                displayValue={() => displayValue}
+                displayValue={displayValue}
                 onChange={onChange}
                 className="paragraph-100 flex h-8 w-full items-center rounded border border-neutral-400 py-2 pl-3 pr-8 focus-visible:border-primary-400 focus-visible:ring-2 focus-visible:ring-primary-200 disabled:bg-neutral-100 disabled:text-neutral-600 disabled:border-neutral-300"
             />
