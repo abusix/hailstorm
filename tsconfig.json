@@ -1,34 +1,33 @@
 {
-	"compilerOptions": {
-		/* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-		"target": "es2016",
-		/* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-		"esModuleInterop": true,
-		/* Ensure that casing is correct in imports. */
-		"forceConsistentCasingInFileNames": true,
-		/* Enable all strict type-checking options. */
-		"strict": true,
-		/* Skip type checking all .d.ts files. */
-		"skipLibCheck": true,
-		"jsx": "react",
-		"module": "ESNext",
-		"noEmit": true,
-		// "declaration": true,
-		// "declarationDir": "types",
-		// "emitDeclarationOnly": true,
-		"sourceMap": true,
-		"outDir": "dist",
-		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true
-	},
-	"include": [
-		"src/**/*.ts",
-		"src/**/*.tsx",
-		"*.cjs",
-		"*.js"
-	],
-	"exclude": [
-		"dist",
-		"node_modules"
-	]
+    "compilerOptions": {
+        /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+        "target": "es2016",
+        /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+        "esModuleInterop": true,
+        /* Ensure that casing is correct in imports. */
+        "forceConsistentCasingInFileNames": true,
+        /* Enable all strict type-checking options. */
+        "strict": true,
+        /* Skip type checking all .d.ts files. */
+        "skipLibCheck": true,
+        "jsx": "react",
+        "module": "ESNext",
+        "noEmit": true,
+        // "declaration": true,
+        // "declarationDir": "types",
+        // "emitDeclarationOnly": true,
+        "sourceMap": true,
+        "outDir": "dist",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "*.cjs",
+        "*.js",
+        "vite.config.ts",
+        "vitest-setup.ts"
+    ],
+    "exclude": ["dist", "node_modules"]
 }
