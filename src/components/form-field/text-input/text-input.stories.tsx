@@ -2,6 +2,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React, { useState } from "react";
 import { FormField } from "../form-field";
+import { SearchIcon } from "../../../icons";
 
 const meta: Meta<typeof FormField.TextInput> = {
     title: "Input/TextInput",
@@ -15,9 +16,11 @@ type Story = StoryObj<typeof FormField.TextInput>;
 const TextInputWithHooks = ({
     error = false,
     disabled = false,
+    hasLeftIcon = false,
 }: {
     error?: boolean;
     disabled?: boolean;
+    hasLeftIcon?: boolean;
 }) => {
     const [value, setValue] = useState("");
 
@@ -35,6 +38,7 @@ const TextInputWithHooks = ({
                 ariaDescribedBy="value-description"
                 error={error}
                 disabled={disabled}
+                LeftIcon={hasLeftIcon ? SearchIcon : undefined}
             />
             {error ? <FormField.ErrorMessage>Error message.</FormField.ErrorMessage> : null}
         </FormField>
@@ -53,6 +57,14 @@ export const WithError: Story = {
     render: () => (
         <div className="w-72">
             <TextInputWithHooks error />
+        </div>
+    ),
+};
+
+export const WithLeftIcon: Story = {
+    render: () => (
+        <div className="w-72">
+            <TextInputWithHooks hasLeftIcon error />
         </div>
     ),
 };
