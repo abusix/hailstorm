@@ -60,10 +60,10 @@ export const TextInput = ({
         <div className={classNames("relative w-full", formFieldGroupStyles)}>
             {LeftIcon ? (
                 <div
-                    className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+                    className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 z-10"
                     aria-hidden="true"
                 >
-                    <LeftIcon className="text-gray-400 h-4 w-4 fill-neutral-600" />
+                    <LeftIcon className="text-gray-400 h-3.5 w-3.5 fill-neutral-600" />
                 </div>
             ) : null}
 
@@ -88,7 +88,7 @@ export const TextInput = ({
                     disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",
                     !error &&
                         !disabled &&
-                        "hover:border-neutral-600 focus:z-10 focus:border-primary-400 focus:ring-2 focus:ring-primary-200",
+                        "hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200",
                     error && !disabled && "border-danger-500"
                 )}
                 disabled={disabled}
