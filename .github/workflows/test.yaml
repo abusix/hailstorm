@@ -8,8 +8,9 @@ jobs:
     run-tests:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
               with:
+                  ref: ${{ github.head_ref }}
                   fetch-depth: 0
                   persist-credentials: false
             - uses: actions/setup-node@v3
