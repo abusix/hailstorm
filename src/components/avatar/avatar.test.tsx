@@ -5,8 +5,9 @@ import { Avatar } from "./avatar";
 
 describe("Avatar", () => {
     it("renders an avatar with substring of child", () => {
+        const text = "Test User";
         // ARRANGE
-        render(<Avatar color="primary">Test User</Avatar>);
+        render(<Avatar color="primary">{text}</Avatar>);
 
         // ASSERT
         const alert = screen.getByRole("button");
