@@ -11,13 +11,15 @@ import { Listbox } from "./listbox/listbox";
 import { MultiCombobox } from "./multi-combobox/multi-combobox";
 import { SingleCombobox } from "./single-combobox/single-combobox";
 import { FormFieldGroup } from "./form-field-group";
+import { classNames } from "../../util/class-names";
 
 interface FormFieldProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-const FormField = ({ children }: FormFieldProps) => {
-    return <div className="w-full">{children}</div>;
+const FormField = ({ children, className }: FormFieldProps) => {
+    return <div className={classNames("w-full", className)}>{children}</div>;
 };
 
 FormField.LabelGroup = FormFieldLabelGroup;

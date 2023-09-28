@@ -1,13 +1,18 @@
 import React from "react";
+import { classNames } from "../../util/class-names";
 
 export interface FormFieldDescriptionProps {
     id: string;
     children: React.ReactNode;
+    className?: string;
 }
 
-export const FormFieldDescription = ({ id, children }: FormFieldDescriptionProps) => {
+export const FormFieldDescription = ({ id, children, className }: FormFieldDescriptionProps) => {
     return (
-        <p id={`${id}-description`} className="paragraph-100 text-neutral-700">
+        <p
+            id={`${id}-description`}
+            className={classNames("paragraph-100 text-neutral-700", className)}
+        >
             {children}
         </p>
     );
