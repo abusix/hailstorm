@@ -1,4 +1,5 @@
 import React from "react";
+import { classNames } from "../../util/class-names";
 
 const avatarVariants = {
     primary: "bg-primary-200 text-primary-500 ",
@@ -12,13 +13,18 @@ export interface AvatarProps {
     children: string;
     onClick?: () => void;
     color: keyof typeof avatarVariants;
+    className?: string;
 }
 
-export const Avatar = ({ color = "primary", children, onClick }: AvatarProps) => {
+export const Avatar = ({ color = "primary", children, onClick, className }: AvatarProps) => {
     const label = children.substring(0, 2);
     return (
         <div
-            className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-sans text-xs ${avatarVariants[color]}`}
+            className={classNames(
+                "inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-sans text-xs",
+                avatarVariants[color],
+                className
+            )}
             onClick={onClick}
             onKeyDown={onClick}
             tabIndex={0}
