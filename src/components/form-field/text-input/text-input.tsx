@@ -30,6 +30,7 @@ export interface TextInputProps {
     onBlur?: React.FocusEventHandler<HTMLInputElement>;
     onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
     onKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
+    className?: string;
 }
 
 export const TextInput = ({
@@ -47,6 +48,7 @@ export const TextInput = ({
     onBlur,
     onKeyDown,
     onKeyUp,
+    className,
 }: TextInputProps) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -89,7 +91,8 @@ export const TextInput = ({
                     !error &&
                         !disabled &&
                         "hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200",
-                    error && !disabled && "border-danger-500"
+                    error && !disabled && "border-danger-500",
+                    className
                 )}
                 disabled={disabled}
                 onBlur={onBlur}
