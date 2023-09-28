@@ -11,6 +11,7 @@ export interface TextareaProps {
     disabled?: boolean;
     rows?: number;
     cols?: number;
+    className?: string;
 }
 
 export const Textarea = ({
@@ -23,6 +24,7 @@ export const Textarea = ({
     disabled,
     rows,
     cols,
+    className,
 }: TextareaProps) => {
     return (
         <textarea
@@ -38,7 +40,8 @@ export const Textarea = ({
                 !error &&
                     !disabled &&
                     "hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200",
-                error && !disabled && "border-danger-500"
+                error && !disabled && "border-danger-500",
+                className
             )}
             disabled={disabled}
             rows={rows}
