@@ -4,12 +4,18 @@ import { classNames } from "../../../util/class-names";
 export interface TopBarNavLinkProps {
     isActive?: boolean;
     children: React.ReactNode;
+    className?: string;
 }
 
-export const TopBarNavLink = ({ isActive = false, children }: TopBarNavLinkProps) => {
+export const TopBarNavLink = ({ isActive = false, children, className }: TopBarNavLinkProps) => {
     return (
         <div>
-            <div className="group rounded px-4 py-1 hover:bg-neutral-800 group-focus:ring-2 group-focus:ring-primary-200">
+            <div
+                className={classNames(
+                    "group rounded px-4 py-1 hover:bg-neutral-800 group-focus:ring-2 group-focus:ring-primary-200",
+                    className
+                )}
+            >
                 <div
                     className={classNames(
                         "relative font-sans text-sm text-neutral-0 ",

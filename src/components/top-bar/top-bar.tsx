@@ -6,14 +6,21 @@ import { TopBarAvatarButton } from "./top-bar-avatar-button/top-bar-avatar-butto
 import { TrayButtons } from "./top-bar-tray-buttons/top-bar-try-buttons";
 import { TrayButton } from "./top-bar-tray-buttons/top-bar-tray-button";
 import { TopBarHelpButton } from "./top-bar-help-button/top-bar-help-button";
+import { classNames } from "../../util/class-names";
 
 interface TopBarProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-const TopBar = ({ children }: TopBarProps) => {
+const TopBar = ({ children, className }: TopBarProps) => {
     return (
-        <div className="flex h-12 min-w-[1024px] items-center justify-between bg-abusix-dusk px-4">
+        <div
+            className={classNames(
+                "flex h-12 min-w-[1024px] items-center justify-between bg-abusix-dusk px-4",
+                className
+            )}
+        >
             {children}
         </div>
     );
