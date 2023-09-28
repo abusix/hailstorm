@@ -1,6 +1,7 @@
 import React from "react";
 import { Combobox as HeadlessCombobox } from "@headlessui/react";
 import { CaretDownIcon } from "../../../icons";
+import { classNames } from "../../../util/class-names";
 
 export interface MultiComboboxInputProps {
     id: string;
@@ -8,6 +9,7 @@ export interface MultiComboboxInputProps {
     placeholder: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     showButton?: boolean;
+    className?: string;
 }
 
 export const MultiComboboxInput = ({
@@ -16,6 +18,7 @@ export const MultiComboboxInput = ({
     placeholder,
     onChange,
     showButton = true,
+    className,
 }: MultiComboboxInputProps) => {
     return (
         <div className="relative">
@@ -25,7 +28,10 @@ export const MultiComboboxInput = ({
                 placeholder={placeholder}
                 displayValue={() => displayValue}
                 onChange={onChange}
-                className="paragraph-100 flex h-8 w-full items-center rounded border border-neutral-400 py-2 pl-3 pr-8 focus-visible:border-primary-400 focus-visible:ring-2 focus-visible:ring-primary-200"
+                className={classNames(
+                    "paragraph-100 flex h-8 w-full items-center rounded border border-neutral-400 py-2 pl-3 pr-8 focus-visible:border-primary-400 focus-visible:ring-2 focus-visible:ring-primary-200",
+                    className
+                )}
             />
             {showButton ? (
                 <HeadlessCombobox.Button className="absolute inset-y-0 right-0 flex items-center px-1.5">
