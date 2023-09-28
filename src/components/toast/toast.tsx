@@ -38,9 +38,17 @@ export interface ToastProps {
     isClosable?: boolean;
     children: React.ReactNode;
     onClose: () => void;
+    className?: string;
 }
 
-export const Toast = ({ title, intent, children, onClose, isClosable = true }: ToastProps) => {
+export const Toast = ({
+    title,
+    intent,
+    children,
+    onClose,
+    isClosable = true,
+    className,
+}: ToastProps) => {
     const Icon = iconNames[intent];
 
     return (
@@ -49,7 +57,8 @@ export const Toast = ({ title, intent, children, onClose, isClosable = true }: T
             className={classNames(
                 "pt-4.5 relative flex flex-row gap-4 rounded-lg border px-4 py-3 text-neutral-800",
                 isClosable && "pr-14",
-                toastVariants[intent]
+                toastVariants[intent],
+                className
             )}
         >
             <div className="pt-0.5">
