@@ -3,15 +3,17 @@ import { Dialog as HeadlessDialog, Transition } from "@headlessui/react";
 import { SidesheetPanel } from "./sidesheet-panel";
 import { SidesheetPanelContent } from "./sidesheet-panel-content";
 import { SidesheetPanelHeader } from "./sidesheet-panel-header";
+import { classNames } from "../../util/class-names";
 
 export interface SidesheetProps {
     children: React.ReactNode;
     isOpen: boolean;
     onClose: () => void;
     initialFocus?: React.MutableRefObject<HTMLElement | null>;
+    className?: string;
 }
 
-const Sidesheet = ({ children, isOpen, onClose, initialFocus }: SidesheetProps) => {
+const Sidesheet = ({ children, isOpen, onClose, initialFocus, className }: SidesheetProps) => {
     return (
         <Transition appear show={isOpen} as={Fragment}>
             <HeadlessDialog onClose={onClose} initialFocus={initialFocus}>
@@ -36,7 +38,12 @@ const Sidesheet = ({ children, isOpen, onClose, initialFocus }: SidesheetProps) 
                     leaveFrom="-translate-x-0"
                     leaveTo="translate-x-full"
                 >
-                    <HeadlessDialog.Panel className="w-184 fixed inset-y-0 right-0 z-10 overflow-y-auto bg-neutral-0">
+                    <HeadlessDialog.Panel
+                        className={classNames(
+                            "w-184 fixed inset-y-0 right-0 z-10 overflow-y-auto bg-neutral-0",
+                            className
+                        )}
+                    >
                         {children}
                     </HeadlessDialog.Panel>
                 </Transition.Child>
