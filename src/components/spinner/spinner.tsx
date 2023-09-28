@@ -9,12 +9,13 @@ const spinnerVariants = {
 
 interface SpinnerProps {
     size?: keyof typeof spinnerVariants;
+    className?: string;
 }
 
-export const Spinner = ({ size = "large" }: SpinnerProps) => {
+export const Spinner = ({ size = "large", className }: SpinnerProps) => {
     return (
         <svg
-            className={classNames(`animate-spin`, spinnerVariants[size])}
+            className={classNames(`animate-spin`, spinnerVariants[size], className)}
             viewBox="0 0 40 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
