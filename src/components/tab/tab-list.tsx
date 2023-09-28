@@ -5,6 +5,7 @@ import { classNames } from "../../util/class-names";
 
 export interface TabListProps {
     children: React.ReactNode;
+    className?: string;
 }
 
 const listVariants: Record<TabType, string> = {
@@ -12,11 +13,11 @@ const listVariants: Record<TabType, string> = {
     secondary: "gap-2",
 };
 
-export const TabList = ({ children }: TabListProps) => {
+export const TabList = ({ children, className }: TabListProps) => {
     const { type } = useTabContext();
 
     return (
-        <HeadlessTab.List className={classNames("flex", listVariants[type])}>
+        <HeadlessTab.List className={(classNames("flex", listVariants[type]), className)}>
             {children}
         </HeadlessTab.List>
     );

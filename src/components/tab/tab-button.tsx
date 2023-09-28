@@ -7,6 +7,7 @@ export interface TabButtonProps<TTag extends React.ElementType>
     extends TabProps<React.ElementType> {
     children: React.ReactNode;
     as?: TTag;
+    className?: string;
 }
 
 const buttonVariants: Record<TabType, string> = {
@@ -18,6 +19,7 @@ const buttonVariants: Record<TabType, string> = {
 
 export const TabButton = <TTag extends React.ElementType>({
     children,
+    className,
     ...props
 }: TabButtonProps<TTag> &
     Omit<React.ComponentPropsWithoutRef<TTag>, keyof TabButtonProps<TTag>>) => {
@@ -29,7 +31,8 @@ export const TabButton = <TTag extends React.ElementType>({
             <div
                 className={classNames(
                     "rounded text-xs font-medium outline-none ui-selected:text-primary-500 ui-not-selected:text-neutral-700",
-                    buttonVariants[type]
+                    buttonVariants[type],
+                    className
                 )}
             >
                 {children}

@@ -9,15 +9,18 @@ import { TabPanels } from "./tab-panels";
 interface TabProps extends TabGroupProps<React.ElementType> {
     type?: TabType;
     children: React.ReactNode;
+    className?: string;
 }
 
-const Tab = ({ type = "primary", children, ...props }: TabProps) => {
+const Tab = ({ type = "primary", children, className, ...props }: TabProps) => {
     const value = React.useMemo(() => ({ type }), [type]);
 
     return (
         <TabContext.Provider value={value}>
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-            <HeadlessTab.Group {...props}>{children}</HeadlessTab.Group>
+            <HeadlessTab.Group className={className} {...props}>
+                {children}
+            </HeadlessTab.Group>
         </TabContext.Provider>
     );
 };
