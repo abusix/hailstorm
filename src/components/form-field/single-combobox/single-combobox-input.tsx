@@ -1,6 +1,7 @@
 import { Combobox as HeadlessCombobox } from "@headlessui/react";
 import React from "react";
 import { CaretDownIcon } from "../../../icons";
+import { classNames } from "../../../util/class-names";
 
 export interface SingleComboboxInputProps<TValue> {
     id: string;
@@ -8,6 +9,7 @@ export interface SingleComboboxInputProps<TValue> {
     placeholder: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     showButton?: boolean;
+    className?: string;
 }
 
 export const SingleComboboxInput = <TValue,>({
@@ -16,6 +18,7 @@ export const SingleComboboxInput = <TValue,>({
     placeholder,
     onChange,
     showButton = true,
+    className,
 }: SingleComboboxInputProps<TValue>) => {
     return (
         <div className="relative">
@@ -25,7 +28,10 @@ export const SingleComboboxInput = <TValue,>({
                 placeholder={placeholder}
                 displayValue={displayValue}
                 onChange={onChange}
-                className="paragraph-100 flex h-8 w-full items-center rounded border border-neutral-400 py-2 pl-3 pr-8 focus-visible:border-primary-400 focus-visible:ring-2 focus-visible:ring-primary-200 disabled:bg-neutral-100 disabled:text-neutral-600 disabled:border-neutral-300"
+                className={classNames(
+                    "paragraph-100 flex h-8 w-full items-center rounded border border-neutral-400 py-2 pl-3 pr-8 focus-visible:border-primary-400 focus-visible:ring-2 focus-visible:ring-primary-200 disabled:bg-neutral-100 disabled:text-neutral-600 disabled:border-neutral-300",
+                    className
+                )}
             />
             {showButton ? (
                 <HeadlessCombobox.Button className="absolute inset-y-0 right-0 flex items-center px-1.5">

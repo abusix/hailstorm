@@ -6,12 +6,14 @@ import { SingleComboboxOption } from "./single-combobox.option";
 import { SingleComboboxResultInput } from "./single-combobox-result-input";
 import { SingleComboboxCustomOption } from "./single-combobox-custom-option";
 import { SingleComboboxEmptyOption } from "./single-combobox-empty-option";
+import { classNames } from "../../../util/class-names";
 
 export interface SingleComboboxProps<TValue> {
     value?: TValue;
     onChange: (value: TValue) => void;
     children: React.ReactNode;
     disabled?: boolean;
+    className?: string;
 }
 
 const SingleCombobox = <TValue,>({
@@ -19,10 +21,11 @@ const SingleCombobox = <TValue,>({
     onChange,
     children,
     disabled,
+    className,
 }: SingleComboboxProps<TValue>) => {
     return (
         <HeadlessCombobox value={value} onChange={onChange} disabled={disabled}>
-            <div className="relative">{children}</div>
+            <div className={classNames("relative", className)}>{children}</div>
         </HeadlessCombobox>
     );
 };
