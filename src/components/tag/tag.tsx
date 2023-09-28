@@ -6,14 +6,16 @@ interface TagProps {
     children: React.ReactNode;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     disabled?: boolean;
+    className?: string;
 }
 
-export const Tag = ({ children, onClick, disabled }: TagProps) => {
+export const Tag = ({ children, onClick, disabled, className }: TagProps) => {
     return (
         <div
             className={classNames(
                 "flex items-center rounded bg-neutral-200 px-2 py-1 text-neutral-800",
-                disabled && "bg-neutral-100 text-neutral-500"
+                disabled && "bg-neutral-100 text-neutral-500",
+                className
             )}
         >
             <div className="paragraph-100">{children}</div>
