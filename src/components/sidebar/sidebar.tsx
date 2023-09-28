@@ -3,12 +3,18 @@ import { SidebarHeader } from "./sidebar-header/sidebar-header";
 import { SidebarMenu } from "./sidebar-menu/sidebar-menu";
 import { SidebarMenuHeader } from "./sidebar-menu/sidebar-menu-header/sidebar-menu-header";
 import { SidebarMenuLink } from "./sidebar-menu/sidebar-menu-link/sidebar-menu-link";
+import { classNames } from "../../util/class-names";
 
 interface SidebarProps {
     children: React.ReactNode;
+    className?: string;
 }
-const Sidebar = ({ children }: SidebarProps) => {
-    return <div className="flex min-w-[13rem] flex-col gap-5 py-5">{children}</div>;
+const Sidebar = ({ children, className }: SidebarProps) => {
+    return (
+        <div className={classNames("flex min-w-[13rem] flex-col gap-5 py-5", className)}>
+            {children}
+        </div>
+    );
 };
 
 Sidebar.Header = SidebarHeader;
