@@ -8,6 +8,7 @@ export interface MenuItemProps {
     isSelected?: boolean;
     disabled?: boolean;
     onClick?: () => void;
+    className?: string;
 }
 
 export const MenuItem = ({
@@ -16,6 +17,7 @@ export const MenuItem = ({
     isSelected = false,
     disabled = false,
     onClick,
+    className,
 }: MenuItemProps) => {
     return (
         <HeadlessMenu.Item disabled={disabled}>
@@ -25,7 +27,8 @@ export const MenuItem = ({
                     className={classNames(
                         "group relative flex w-full cursor-pointer items-center gap-4 bg-neutral-0 px-4 py-2.5 hover:bg-neutral-100 focus:ring-2 focus:ring-primary-200 active:bg-neutral-200 disabled:bg-neutral-0",
                         active && "bg-neutral-100",
-                        isSelected && "bg-primary-100 hover:bg-primary-100 active:bg-primary-100"
+                        isSelected && "bg-primary-100 hover:bg-primary-100 active:bg-primary-100",
+                        className
                     )}
                     disabled={disabled}
                     onKeyDown={onClick}

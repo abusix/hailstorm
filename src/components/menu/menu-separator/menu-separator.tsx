@@ -1,5 +1,10 @@
 import React from "react";
+import { classNames } from "../../../util/class-names";
 
-export const MenuSeparator = () => {
-    return <hr className="h-px border-none bg-neutral-300" />;
+export interface MenuSeparatorProps {
+    className?: string;
+}
+
+export const MenuSeparator = ({ className }: MenuSeparatorProps) => {
+    return <hr className={classNames("h-px border-none bg-neutral-300", className)} />;
 };

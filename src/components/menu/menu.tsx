@@ -6,14 +6,16 @@ import { MenuItems } from "./menu-items/menu-items";
 import { MenuSeparator } from "./menu-separator/menu-separator";
 import { MenuTitle } from "./menu-title/menu-title";
 import { MenuButton } from "./menu-button/menu-button";
+import { classNames } from "../../util/class-names";
 
 interface MenuProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-const Menu = ({ children }: MenuProps) => {
+const Menu = ({ children, className }: MenuProps) => {
     return (
-        <HeadlessMenu as="div" className="relative">
+        <HeadlessMenu as="div" className={classNames("relative", className)}>
             {children}
         </HeadlessMenu>
     );
