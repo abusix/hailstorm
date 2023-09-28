@@ -29,9 +29,10 @@ export interface AlertProps {
     title: string;
     intent: AlertIntent;
     children?: React.ReactNode;
+    className?: string;
 }
 
-export const Alert = ({ title, children, intent }: AlertProps) => {
+export const Alert = ({ title, children, intent, className }: AlertProps) => {
     const Icon = iconNames[intent];
 
     return (
@@ -39,7 +40,8 @@ export const Alert = ({ title, children, intent }: AlertProps) => {
             role="alert"
             className={classNames(
                 "flex flex-row gap-4 rounded-lg border px-4 py-3 text-neutral-800",
-                alertVariants[intent]
+                alertVariants[intent],
+                className
             )}
         >
             <Icon className={classNames("h-4 w-4", iconVariants[intent])} />
