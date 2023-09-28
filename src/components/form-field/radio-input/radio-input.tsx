@@ -7,11 +7,12 @@ export interface RadioInputProps {
     children: React.ReactNode;
     value: string;
     onChange: (value: string) => void;
+    className?: string;
 }
 
-const RadioInput = ({ id, children, value, onChange }: RadioInputProps) => {
+const RadioInput = ({ id, children, value, onChange, className }: RadioInputProps) => {
     return (
-        <HeadlessRadioGroup id={id} value={value} onChange={onChange}>
+        <HeadlessRadioGroup id={id} value={value} onChange={onChange} className={className}>
             {children}
         </HeadlessRadioGroup>
     );

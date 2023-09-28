@@ -6,13 +6,19 @@ export interface RadioInputOptionProps {
     children: React.ReactNode;
     value: string;
     disabled?: boolean;
+    className?: string;
 }
 
-export const RadioInputOption = ({ children, value, disabled }: RadioInputOptionProps) => {
+export const RadioInputOption = ({
+    children,
+    value,
+    disabled,
+    className,
+}: RadioInputOptionProps) => {
     return (
         <RadioGroup.Option
             value={value}
-            className="max-w-fit cursor-pointer focus:outline-none"
+            className={classNames("max-w-fit cursor-pointer focus:outline-none", className)}
             disabled={disabled}
         >
             {({ checked, disabled: optionDisabled }) => (
