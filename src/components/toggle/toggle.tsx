@@ -7,9 +7,16 @@ export interface ToggleProps {
     onChange: () => void;
     disabled?: boolean;
     ariaLabel: string;
+    className?: string;
 }
 
-export const Toggle = ({ checked = false, onChange, disabled = false, ariaLabel }: ToggleProps) => {
+export const Toggle = ({
+    checked = false,
+    onChange,
+    disabled = false,
+    ariaLabel,
+    className,
+}: ToggleProps) => {
     return (
         <HeadlessSwitch
             checked={checked}
@@ -18,7 +25,8 @@ export const Toggle = ({ checked = false, onChange, disabled = false, ariaLabel 
             className={classNames(
                 "relative inline-flex h-4 w-7 items-center rounded-full",
                 !checked && "bg-neutral-400 hover:bg-neutral-500 disabled:bg-neutral-100",
-                checked && "bg-primary-500 hover:bg-primary-600 disabled:bg-neutral-100"
+                checked && "bg-primary-500 hover:bg-primary-600 disabled:bg-neutral-100",
+                className
             )}
         >
             <span className="sr-only">{ariaLabel}</span>
