@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import React from "react";
 import { classNames } from "../../util/class-names";
 import { Spinner } from "../spinner";
@@ -14,8 +15,6 @@ const buttonVariants = {
         "bg-neutral-0 text-danger-500 border border-danger-400 hover:bg-danger-50 hover:text-danger-600 active:border-danger-700 active:text-danger-700 active:bg-danger-100 focus:ring-2 focus:ring-danger-100 focus:text-danger-600 disabled:border-danger-100 disabled:text-danger-100 disabled:bg-neutral-0 fill-danger-600 disabled:fill-danger-100",
 };
 
-export type ButtonType = keyof typeof buttonVariants;
-
 const iconVariants = {
     primary: "text-neutral-0",
     secondary:
@@ -26,60 +25,42 @@ const iconVariants = {
     "danger-secondary": "",
 };
 
-export interface ButtonProps {
-    className?: string;
-    children: string;
-    type?: ButtonType;
-    onClick: () => void;
+export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+    variant?: keyof typeof buttonVariants;
     loading?: boolean;
     LeftIcon?: React.ElementType;
     RightIcon?: React.ElementType;
-    disabled?: boolean;
-    isSubmitButton?: boolean;
-    form?: string;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    (
-        {
-            className,
-            children,
-            onClick,
-            loading,
-            LeftIcon,
-            RightIcon,
-            disabled = false,
-            type = "primary",
-            isSubmitButton,
-            form,
-        },
-        ref
-    ) => {
-        return (
-            <button
-                type={isSubmitButton ? "submit" : "button"}
-                className={classNames(
-                    `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
-                    buttonVariants[type],
-                    className
-                )}
-                onClick={onClick}
-                disabled={disabled}
-                form={form}
-                ref={ref}
-            >
-                {loading ? <Spinner size="small" /> : null}
+const Button = ({
+    variant = "primary",
+    className,
+    children,
+    loading,
+    LeftIcon,
+    RightIcon,
+    ...props
+}: ButtonProps) => {
+    return (
+        <button
+            className={classNames(
+                `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
+                buttonVariants[variant],
+                className
+            )}
+            {...props}
+        >
+            {loading ? <Spinner size="small" /> : null}
 
-                {LeftIcon && !loading ? (
-                    <LeftIcon className={`${iconVariants[type]} h-3 w-3`} />
-                ) : null}
+            {LeftIcon && !loading ? (
+                <LeftIcon className={`${iconVariants[variant]} h-3 w-3`} />
+            ) : null}
 
-                {children}
+            {children}
 
-                {RightIcon ? <RightIcon className={`${iconVariants[type]} h-3 w-3`} /> : null}
-            </button>
-        );
-    }
-);
+            {RightIcon ? <RightIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
+        </button>
+    );
+};
 
 export { Button };
