@@ -8,7 +8,11 @@ describe("Button", () => {
     it("renders a button with text and button type", () => {
         const text = "Button Type";
         // ARRANGE
-        render(<Button onClick={() => null}>{text}</Button>);
+        render(
+            <Button type="button" onClick={() => null}>
+                {text}
+            </Button>
+        );
 
         // ASSERT
         const button = screen.getByText(text);
@@ -20,7 +24,7 @@ describe("Button", () => {
         const text = "Submit Type";
         // ARRANGE
         render(
-            <Button isSubmitButton onClick={() => null}>
+            <Button type="submit" onClick={() => null}>
                 {text}
             </Button>
         );
@@ -35,7 +39,7 @@ describe("Button", () => {
         const text = "Left icon";
         // ARRANGE
         render(
-            <Button LeftIcon={AddIcon} onClick={() => null}>
+            <Button type="button" LeftIcon={AddIcon} onClick={() => null}>
                 {text}
             </Button>
         );
@@ -51,7 +55,7 @@ describe("Button", () => {
         const text = "Right icon";
         // ARRANGE
         render(
-            <Button RightIcon={AddIcon} onClick={() => null}>
+            <Button type="button" RightIcon={AddIcon} onClick={() => null}>
                 {text}
             </Button>
         );
@@ -67,7 +71,11 @@ describe("Button", () => {
         const text = "Onclick button";
         const mock = vi.fn();
         // ARRANGE
-        render(<Button onClick={mock}>{text}</Button>);
+        render(
+            <Button type="button" onClick={mock}>
+                {text}
+            </Button>
+        );
 
         // ASSERT
         const button = screen.getByText(text);
@@ -82,7 +90,7 @@ describe("Button", () => {
         const mock = vi.fn();
         // ARRANGE
         render(
-            <Button onClick={mock} disabled>
+            <Button type="button" onClick={mock} disabled>
                 {text}
             </Button>
         );
@@ -96,29 +104,12 @@ describe("Button", () => {
         expect(mock).toHaveBeenCalledTimes(0);
     });
 
-    it("renders a button with text and form", () => {
-        const text = "Form button";
-        const mock = vi.fn();
-        // ARRANGE
-        render(
-            <Button onClick={mock} form="form-test" isSubmitButton>
-                {text}
-            </Button>
-        );
-
-        // ASSERT
-        const button = screen.getByText(text);
-        expect(button).toBeInTheDocument();
-        expect(button).toHaveAttribute("type", "submit");
-        expect(button).toHaveAttribute("form", "form-test");
-    });
-
     it("renders a button with loading state", () => {
         const text = "Loading button";
         const mock = vi.fn();
         // ARRANGE
         render(
-            <Button onClick={mock} loading>
+            <Button type="button" onClick={mock} loading>
                 {text}
             </Button>
         );
