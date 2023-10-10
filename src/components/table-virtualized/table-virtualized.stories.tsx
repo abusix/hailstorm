@@ -71,7 +71,7 @@ const DefaultStory = () => {
 
             <p className="paragraph-300 mb-8">Entries: {data.length.toLocaleString()}</p>
 
-            <Button type="primary" onClick={() => setData(createExampleData())}>
+            <Button variant="primary" onClick={() => setData(createExampleData())}>
                 Recreate Data
             </Button>
         </>
@@ -124,7 +124,7 @@ export const Draggable = () => {
 
             <p className="paragraph-300 mb-8">Entries: {data.length.toLocaleString()}</p>
 
-            <Button type="primary" onClick={() => setData(createExampleData())}>
+            <Button variant="primary" onClick={() => setData(createExampleData())}>
                 Recreate Data
             </Button>
         </>
@@ -167,7 +167,7 @@ export const DraggableAndExpandable = () => {
 
             <p className="paragraph-300 mb-8">Entries: {data.length.toLocaleString()}</p>
 
-            <Button type="primary" onClick={() => setData(createExampleData())}>
+            <Button variant="primary" onClick={() => setData(createExampleData())}>
                 Recreate Data
             </Button>
         </>
@@ -209,7 +209,7 @@ export const EmptyTable = () => {
                     // +1 because of the additional drag column
                     colSpan={columnDefs.length + 1}
                 >
-                    <Button type="secondary" onClick={() => alert("clicked")}>
+                    <Button variant="secondary" onClick={() => alert("clicked")}>
                         Add New Item
                     </Button>
                 </TableUnvirtualized.Body.EmptyPlaceholder>
