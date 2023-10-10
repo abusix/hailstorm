@@ -30,7 +30,7 @@ export const SectionWithAction: Story = {
                 <Section.Title>Section Header</Section.Title>
                 <div className="mb-4 flex w-full justify-between gap-4">
                     <Section.Description>Description</Section.Description>
-                    <Button type="primary" onClick={() => alert("clicked")}>
+                    <Button variant="primary" onClick={() => alert("clicked")}>
                         Button
                     </Button>
                 </div>

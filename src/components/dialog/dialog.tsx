@@ -117,7 +117,7 @@ export const Dialog = ({
                                 {footer === undefined ? (
                                     <>
                                         <Button
-                                            type="secondary"
+                                            variant="secondary"
                                             onClick={() => handleClose(false)}
                                             disabled={!isCloseable}
                                         >
@@ -125,7 +125,7 @@ export const Dialog = ({
                                         </Button>
 
                                         <Button
-                                            type="primary"
+                                            variant="primary"
                                             LeftIcon={TickIcon}
                                             onClick={() => handleClose(true)}
                                             disabled={isCloseable}
