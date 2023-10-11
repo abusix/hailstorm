@@ -1,5 +1,4 @@
 export { Alert, AlertIntent } from "./alert";
-export { InlineAlert } from "./inline-alert";
 export { Avatar } from "./avatar";
 export { Badge } from "./badge";
 export { Button } from "./button";
@@ -8,9 +7,11 @@ export { Dialog } from "./dialog";
 export { DividerLine } from "./divider-line";
 export { FormField } from "./form-field";
 export { IconButton } from "./icon-button";
+export { InlineAlert } from "./inline-alert";
 export { LastChangedInfo } from "./last-changed-info";
 export { Menu } from "./menu";
 export { Page } from "./page";
+export { Panel } from "./panel";
 export { Section } from "./section";
 export { Sidebar } from "./sidebar";
 export { SidebarContainer } from "./sidebar-container";
