@@ -60,7 +60,7 @@ export const TextInput = ({
         <div className={classNames("relative w-full", formFieldGroupStyles)}>
             {LeftIcon ? (
                 <div
-                    className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 z-10"
+                    className="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center pl-3"
                     aria-hidden="true"
                 >
                     <LeftIcon className="text-gray-400 h-3.5 w-3.5 fill-neutral-600" />
