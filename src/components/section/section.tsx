@@ -15,6 +15,9 @@ const Section = ({ children }: SectionProps) => {
 Section.TitleGroup = SectionTitleGroup;
 Section.Title = SectionTitle;
 Section.Description = SectionDescription;
+/**
+ * @deprecated Use the dedicated Panel component
+ */
 Section.Panel = SectionPanel;
 
 export { Section };
