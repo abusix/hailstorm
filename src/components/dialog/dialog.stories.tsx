@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import React, { useState } from "react";
-import { Dialog } from "./dialog";
 import { getStoryDescription, hiddenArgControl } from "../../util/storybook-utils";
+import { Dialog } from "./dialog";
 
 const SpanFooter = () => <span>test footer 🍭</span>;
 const footerOptions = { undefined, SpanFooter: <SpanFooter /> };
@@ -39,7 +39,7 @@ const meta: Meta<typeof Dialog> = {
                 <button
                     type="button"
                     onClick={toggleBtn}
-                    className="bg-neutral-100 py-2 px-4 shadow"
+                    className="bg-neutral-100 px-4 py-2 shadow"
                 >
                     show Modal
                 </button>
