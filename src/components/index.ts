@@ -24,3 +24,4 @@ export { Tag } from "./tag";
 export { Toast } from "./toast";
 export { Toggle } from "./toggle";
 export { TopBar } from "./top-bar";
+export { Skeleton } from "./skeleton";
