@@ -22,7 +22,7 @@
         "url": "https://github.com/abusix/hailstorm/issues"
     },
     "scripts": {
-		"dev": "npm run storybook",
+        "dev": "npm run storybook",
         "storybook": "storybook dev -p 6006",
         "clean": "rimraf ./dist",
         "type-check": "tsc --project tsconfig.json",
