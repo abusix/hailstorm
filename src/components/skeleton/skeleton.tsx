@@ -10,7 +10,7 @@ export const Skeleton = ({ className, isAnimated = false }: SkeletonProps) => {
     return (
         <span
             className={classNames(
-                "block bg-neutral-100 rounded-sm",
+                "block rounded-sm bg-neutral-100",
                 isAnimated && "animate-pulse",
                 className
             )}
