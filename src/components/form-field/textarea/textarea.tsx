@@ -35,7 +35,7 @@ export const Textarea = ({
             placeholder={placeholder}
             aria-describedby={ariaDescribedBy}
             className={classNames(
-                "paragraph-100 block min-h-[32px] w-full rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
+                "paragraph-100 block min-h-[2rem] w-full rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
                 disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",
                 !error &&
                     !disabled &&
