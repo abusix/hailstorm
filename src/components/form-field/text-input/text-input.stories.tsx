@@ -17,12 +17,16 @@ const TextInputWithHooks = ({
     error = false,
     disabled = false,
     hasLeftIcon = false,
+    readOnly = false,
+    value,
 }: {
     error?: boolean;
     disabled?: boolean;
     hasLeftIcon?: boolean;
+    readOnly?: boolean;
+    value?: string;
 }) => {
-    const [value, setValue] = useState("");
+    const [inputValue, setInputValue] = useState(value);
 
     return (
         <FormField>
@@ -32,13 +36,13 @@ const TextInputWithHooks = ({
             </FormField.LabelGroup>
             <FormField.TextInput
                 id="value"
-                value={value}
-                placeholder="Placeholder"
-                onChange={(e) => setValue(e.target.value)}
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
                 ariaDescribedBy="value-description"
                 error={error}
                 disabled={disabled}
                 LeftIcon={hasLeftIcon ? SearchIcon : undefined}
+                readOnly={readOnly}
             />
             {error ? <FormField.ErrorMessage>Error message.</FormField.ErrorMessage> : null}
         </FormField>
@@ -65,6 +69,14 @@ export const WithLeftIcon: Story = {
     render: () => (
         <div className="w-72">
             <TextInputWithHooks hasLeftIcon error />
+        </div>
+    ),
+};
+
+export const ReadOnly: Story = {
+    render: () => (
+        <div className="w-72">
+            <TextInputWithHooks readOnly value="Readonly text" />
         </div>
     ),
 };

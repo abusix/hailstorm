@@ -15,28 +15,15 @@ const formFieldGroupStyles = classNames(
     `[.group.form-field-group_&:last-child_.target-field]:border-l-1 [.group.form-field-group_&:last-child_.target-field]:rounded-l-none`
 );
 
-export interface TextInputProps {
-    id: string;
-    placeholder: string;
-    value: string;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    readOnly?: boolean;
+export interface TextInputProps extends React.ComponentPropsWithoutRef<"input"> {
     type?: "text" | "password" | "email";
     autoSelect?: boolean;
     ariaDescribedBy?: string;
     LeftIcon?: React.ElementType;
     error?: boolean;
-    disabled?: boolean;
-    onBlur?: React.FocusEventHandler<HTMLInputElement>;
-    onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
-    onKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
 }
 
 export const TextInput = ({
-    id,
-    placeholder,
-    value,
-    onChange,
     ariaDescribedBy,
     type = "text",
     LeftIcon,
@@ -44,17 +31,16 @@ export const TextInput = ({
     autoSelect,
     error,
     disabled,
-    onBlur,
-    onKeyDown,
-    onKeyUp,
+    className,
+    ...props
 }: TextInputProps) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
-    function handleAutoSelection() {
+    const handleAutoSelection = () => {
         if (autoSelect && inputRef.current) {
             inputRef.current.select();
         }
-    }
+    };
 
     return (
         <div className={classNames("relative w-full", formFieldGroupStyles)}>
@@ -69,16 +55,10 @@ export const TextInput = ({
 
             <input
                 ref={inputRef}
-                id={id}
-                name={id}
-                value={value}
-                readOnly={readOnly}
-                onChange={onChange}
-                placeholder={placeholder}
                 aria-describedby={ariaDescribedBy}
-                onMouseOver={autoSelect ? handleAutoSelection : undefined}
-                onFocus={autoSelect ? handleAutoSelection : undefined}
-                onClick={autoSelect ? handleAutoSelection : undefined}
+                onMouseOver={handleAutoSelection}
+                onFocus={handleAutoSelection}
+                onClick={handleAutoSelection}
                 type={type}
                 className={classNames(
                     targetAttachmentIdentifier,
@@ -89,12 +69,12 @@ export const TextInput = ({
                     !error &&
                         !disabled &&
                         "hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200",
-                    error && !disabled && "border-danger-500"
+                    error && !disabled && "border-danger-500",
+                    className
                 )}
+                readOnly={readOnly}
                 disabled={disabled}
-                onBlur={onBlur}
-                onKeyDown={onKeyDown}
-                onKeyUp={onKeyUp}
+                {...props}
             />
         </div>
     );
