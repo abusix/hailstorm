@@ -50,7 +50,7 @@ export const SearchInput = ({
                 onClick={handleAutoSelection}
                 type="search"
                 className={classNames(
-                    "paragraph-100 relative block h-8 w-full rounded border border-neutral-400 py-2 px-9 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
+                    "paragraph-100 relative block h-8 w-full rounded border border-neutral-400 px-9 py-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
                     readOnly && "bg-neutral-100",
                     disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",
                     !error &&
@@ -77,7 +77,7 @@ export const SearchInput = ({
                             onClear();
                         }
                     }}
-                    className="absolute top-1/2 transform -translate-y-1/2 right-0 z-10 flex items-center justify-center bg-neutral-100 border border-transparent hover:border-neutral-300 mr-1.5 w-5 h-5 rounded cursor-pointer"
+                    className="absolute right-0 top-1/2 z-10 mr-1.5 flex h-5 w-5 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded border border-transparent bg-neutral-100 hover:border-neutral-300"
                     aria-label="Clear Search Input"
                     role="button"
                 >
