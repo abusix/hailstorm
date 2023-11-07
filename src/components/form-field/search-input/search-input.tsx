@@ -31,7 +31,7 @@ export const SearchInput = ({
     }, [autoSelect]);
 
     const handleKeyDown = useCallback(
-        (event: React.KeyboardEvent<HTMLDivElement>) => {
+        (event: React.KeyboardEvent<HTMLButtonElement>) => {
             if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault();
                 event.stopPropagation();
@@ -75,15 +75,16 @@ export const SearchInput = ({
             />
 
             {isClearIconShown ? (
-                <div
-                    tabIndex={0}
-                    onClick={onClear}
-                    onKeyDown={handleKeyDown}
-                    className="absolute right-0 top-1/2 z-10 mr-1.5 flex h-5 w-5 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded border border-transparent bg-neutral-100 hover:border-neutral-300"
-                    aria-label="Clear Search Input"
-                    role="button"
-                >
-                    <CrossIcon className="h-3.5 w-3.5 fill-neutral-600" />
+                <div className="absolute inset-y-0 right-0 z-10 flex items-center justify-center pr-2">
+                    <button
+                        type="button"
+                        tabIndex={0}
+                        onClick={onClear}
+                        onKeyDown={handleKeyDown}
+                        className="cursor-pointer rounded bg-neutral-100 p-0.5 hover:bg-neutral-200"
+                    >
+                        <CrossIcon className="h-3 w-3 fill-neutral-600" />
+                    </button>
                 </div>
             ) : null}
         </div>
