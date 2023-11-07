@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import { classNames } from "../../../util/class-names";
 import CrossIcon from "../../../icons/cross-icon";
 import SearchIcon from "../../../icons/search-icon";
@@ -24,15 +24,11 @@ export const SearchInput = ({
     const inputRef = useRef<HTMLInputElement>(null);
     const isClearIconShown = !readOnly && !disabled && value !== undefined && value !== "";
 
-    const isClearIconShown = useMemo(() => {
-        return !readOnly && !disabled && value?.toString().length;
-    }, [disabled, readOnly, value]);
-
-    const handleAutoSelection = () => {
+    const handleAutoSelection = useCallback(() => {
         if (autoSelect && inputRef.current) {
             inputRef.current.select();
         }
-    };
+    }, [autoSelect]);
 
     return (
         <div className={classNames("relative w-full")}>
