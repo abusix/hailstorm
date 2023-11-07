@@ -59,7 +59,7 @@ export const SearchInput = ({
                 onClick={handleAutoSelection}
                 type="search"
                 className={classNames(
-                    "paragraph-100 relative block h-8 w-full rounded border border-neutral-400 px-9 py-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
+                    "paragraph-100 relative block h-8 w-full rounded border border-neutral-400 py-2 pl-9 pr-8 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
                     readOnly && "bg-neutral-100",
                     disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",
                     !error &&
