@@ -81,7 +81,7 @@ export const SearchInput = ({
                         tabIndex={0}
                         onClick={onClear}
                         onKeyDown={handleKeyDown}
-                        className="cursor-pointer rounded bg-neutral-100 p-0.5 hover:bg-neutral-200"
+                        className="rounded bg-neutral-100 p-0.5 hover:bg-neutral-200"
                     >
                         <CrossIcon className="h-3 w-3 fill-neutral-600" />
                     </button>
