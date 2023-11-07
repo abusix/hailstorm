@@ -22,6 +22,7 @@ export const SearchInput = ({
     ...props
 }: SearchInputProps) => {
     const inputRef = useRef<HTMLInputElement>(null);
+    const isClearIconShown = !readOnly && !disabled && value !== undefined && value !== "";
 
     const isClearIconShown = useMemo(() => {
         return !readOnly && !disabled && value?.toString().length;
