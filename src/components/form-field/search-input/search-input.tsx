@@ -30,6 +30,18 @@ export const SearchInput = ({
         }
     }, [autoSelect]);
 
+    const handleKeyDown = useCallback(
+        (event: React.KeyboardEvent<HTMLDivElement>) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                event.stopPropagation();
+
+                onClear();
+            }
+        },
+        [onClear]
+    );
+
     return (
         <div className={classNames("relative w-full")}>
             <div
@@ -66,14 +78,7 @@ export const SearchInput = ({
                 <div
                     tabIndex={0}
                     onClick={onClear}
-                    onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                            e.preventDefault();
-                            e.stopPropagation();
-
-                            onClear();
-                        }
-                    }}
+                    onKeyDown={handleKeyDown}
                     className="absolute right-0 top-1/2 z-10 mr-1.5 flex h-5 w-5 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded border border-transparent bg-neutral-100 hover:border-neutral-300"
                     aria-label="Clear Search Input"
                     role="button"
