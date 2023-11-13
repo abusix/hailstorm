@@ -12,6 +12,7 @@ import { MultiCombobox } from "./multi-combobox/multi-combobox";
 import { SingleCombobox } from "./single-combobox/single-combobox";
 import { FormFieldGroup } from "./form-field-group";
 import { SearchInput } from "./search-input/search-input";
+import { RadioBox } from "./radio-box/radio-box";
 
 interface FormFieldProps {
     children: React.ReactNode;
@@ -34,5 +35,6 @@ FormField.MultiCombobox = MultiCombobox;
 FormField.SingleCombobox = SingleCombobox;
 FormField.Group = FormFieldGroup;
 FormField.SearchInput = SearchInput;
+FormField.RadioBox = RadioBox;
 
 export { FormField };
