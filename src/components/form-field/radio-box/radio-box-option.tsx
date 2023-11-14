@@ -1,19 +1,20 @@
 import { RadioGroup } from "@headlessui/react";
 import React from "react";
 import { classNames } from "../../../util/class-names";
+import { RecommendationTag } from "../../recommendation-tag/recommendation-tag";
 
 export interface RadioBoxOptionProps {
     children: React.ReactNode;
     value: string;
     disabled?: boolean;
-    highlightText?: string;
+    recommendationText?: string;
 }
 
 export const RadioBoxOption = ({
     children,
     value,
     disabled,
-    highlightText,
+    recommendationText,
 }: RadioBoxOptionProps) => {
     return (
         <RadioGroup.Option
@@ -32,10 +33,8 @@ export const RadioBoxOption = ({
                             "cursor-not-allowed bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-100"
                     )}
                 >
-                    {highlightText && (
-                        <span className="absolute right-6 top-0 z-10 -translate-y-1/2 rounded border border-primary-500 bg-primary-100 px-1 text-xs uppercase tracking-wide text-primary-500">
-                            {highlightText}
-                        </span>
+                    {recommendationText && (
+                        <RecommendationTag>{recommendationText}</RecommendationTag>
                     )}
 
                     <span

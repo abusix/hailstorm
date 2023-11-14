@@ -18,7 +18,7 @@ const RadioBoxWithHooks = () => {
     return (
         <FormField>
             <FormField.RadioBox id="value" value={value} onChange={setValue}>
-                <FormField.RadioBox.Option value="value_1" highlightText="Recommended">
+                <FormField.RadioBox.Option value="value_1" recommendationText="Recommended">
                     <div className="flex flex-col gap-2">
                         <h2 className="headline-500">Option 1</h2>
                         <p>
