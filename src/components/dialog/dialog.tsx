@@ -9,8 +9,6 @@ export interface DialogProps {
     title?: string;
     onClose?: (submitted: boolean) => void;
     isCloseable?: boolean;
-    height?: number;
-    width?: number;
     className?: string;
     children: React.ReactNode;
     footer?: React.ReactNode | null;
@@ -27,18 +25,12 @@ export const Dialog = ({
     footer,
     footerPosition = "end",
     onClose,
-    height,
-    width,
     title,
     hasBackground = true,
     position = "center",
 }: DialogProps): JSX.Element | null => {
     const handleClose = (submitted = false) => {
-        if (!isCloseable) {
-            return;
-        }
-
-        if (onClose) {
+        if (isCloseable && onClose) {
             onClose(submitted);
         }
     };
@@ -82,9 +74,7 @@ export const Dialog = ({
                     >
                         <HeadlessDialog.Panel
                             className={classNames(
-                                "flex transform flex-col overflow-y-auto rounded-md bg-neutral-0 shadow-lg transition-all",
-                                height ? `h-[${height}px]` : "max-h-full",
-                                width ? `w-[${width}px]` : "w-[592px]",
+                                "flex w-[736px] transform flex-col overflow-y-auto rounded-md bg-neutral-0 shadow-lg transition-all",
                                 !footer && "pb-8",
                                 className
                             )}
