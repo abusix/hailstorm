@@ -28,6 +28,7 @@ const iconVariants = {
 type ButtonOrLinkProps =
     | (React.ButtonHTMLAttributes<HTMLButtonElement> & {
           as?: "button";
+          href?: undefined;
       })
     | (React.AnchorHTMLAttributes<HTMLAnchorElement> & {
           as: "a";
@@ -49,37 +50,23 @@ const Button = ({
     RightIcon,
     ...props
 }: ButtonProps) => {
+    const HtmlTag = (props.as || "button") as React.ElementType;
+
     const commonClasses = classNames(
         `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
         buttonVariants[variant],
         className
     );
 
-    const content = () => {
-        return (
-            <>
-                {loading ? <Spinner size="small" /> : null}
-                {LeftIcon && !loading ? (
-                    <LeftIcon className={`${iconVariants[variant]} h-3 w-3`} />
-                ) : null}
-                {children}
-                {RightIcon ? <RightIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
-            </>
-        );
-    };
-
-    if (props.as === "a") {
-        return (
-            <a className={commonClasses} {...props}>
-                {content()}
-            </a>
-        );
-    }
-
     return (
-        <button className={commonClasses} {...props}>
-            {content()}
-        </button>
+        <HtmlTag className={commonClasses} {...props}>
+            {loading ? <Spinner size="small" /> : null}
+            {LeftIcon && !loading ? (
+                <LeftIcon className={`${iconVariants[variant]} h-3 w-3`} />
+            ) : null}
+            {children}
+            {RightIcon ? <RightIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
+        </HtmlTag>
     );
 };
 
