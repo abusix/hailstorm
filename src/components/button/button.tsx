@@ -25,12 +25,20 @@ const iconVariants = {
     "danger-secondary": "",
 };
 
-export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+type ButtonOrLinkProps =
+    | (React.ButtonHTMLAttributes<HTMLButtonElement> & {
+          as?: "button";
+      })
+    | (React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+          as: "a";
+      });
+
+export type ButtonProps = {
     variant?: keyof typeof buttonVariants;
     loading?: boolean;
     LeftIcon?: React.ElementType;
     RightIcon?: React.ElementType;
-}
+} & ButtonOrLinkProps;
 
 const Button = ({
     variant = "primary",
@@ -41,24 +49,36 @@ const Button = ({
     RightIcon,
     ...props
 }: ButtonProps) => {
+    const commonClasses = classNames(
+        `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
+        buttonVariants[variant],
+        className
+    );
+
+    const content = () => {
+        return (
+            <>
+                {loading ? <Spinner size="small" /> : null}
+                {LeftIcon && !loading ? (
+                    <LeftIcon className={`${iconVariants[variant]} h-3 w-3`} />
+                ) : null}
+                {children}
+                {RightIcon ? <RightIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
+            </>
+        );
+    };
+
+    if (props.as === "a") {
+        return (
+            <a className={commonClasses} {...props}>
+                {content()}
+            </a>
+        );
+    }
+
     return (
-        <button
-            className={classNames(
-                `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
-                buttonVariants[variant],
-                className
-            )}
-            {...props}
-        >
-            {loading ? <Spinner size="small" /> : null}
-
-            {LeftIcon && !loading ? (
-                <LeftIcon className={`${iconVariants[variant]} h-3 w-3`} />
-            ) : null}
-
-            {children}
-
-            {RightIcon ? <RightIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
+        <button className={commonClasses} {...props}>
+            {content()}
         </button>
     );
 };
