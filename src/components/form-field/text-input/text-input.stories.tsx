@@ -68,7 +68,7 @@ export const WithError: Story = {
 export const WithLeftIcon: Story = {
     render: () => (
         <div className="w-72">
-            <TextInputWithHooks hasLeftIcon error />
+            <TextInputWithHooks hasLeftIcon />
         </div>
     ),
 };
