@@ -25,12 +25,21 @@ const iconVariants = {
     "danger-secondary": "",
 };
 
-export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+type ButtonOrLinkProps =
+    | (React.ButtonHTMLAttributes<HTMLButtonElement> & {
+          as?: "button";
+          href?: undefined;
+      })
+    | (React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+          as: "a";
+      });
+
+export type ButtonProps = {
     variant?: keyof typeof buttonVariants;
     loading?: boolean;
     LeftIcon?: React.ElementType;
     RightIcon?: React.ElementType;
-}
+} & ButtonOrLinkProps;
 
 const Button = ({
     variant = "primary",
@@ -41,25 +50,23 @@ const Button = ({
     RightIcon,
     ...props
 }: ButtonProps) => {
-    return (
-        <button
-            className={classNames(
-                `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
-                buttonVariants[variant],
-                className
-            )}
-            {...props}
-        >
-            {loading ? <Spinner size="small" /> : null}
+    const HtmlTag = (props.as || "button") as React.ElementType;
 
+    const commonClasses = classNames(
+        `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
+        buttonVariants[variant],
+        className
+    );
+
+    return (
+        <HtmlTag className={commonClasses} {...props}>
+            {loading ? <Spinner size="small" /> : null}
             {LeftIcon && !loading ? (
                 <LeftIcon className={`${iconVariants[variant]} h-3 w-3`} />
             ) : null}
-
             {children}
-
             {RightIcon ? <RightIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
-        </button>
+        </HtmlTag>
     );
 };
 
