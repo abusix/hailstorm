@@ -11,8 +11,8 @@ const NavigationGroupItem = ({ children, isActive, LeftIcon }: NavigationGroupIt
     return (
         <div
             className={classNames(
-                "hover:bg-primary-900+10 relative flex items-center gap-x-3 px-4 py-3 text-sm text-neutral-0",
-                isActive && "bg-primary-900+20 hover:bg-primary-900+20 font-semibold"
+                "relative flex items-center gap-x-3 px-4 py-3 text-sm text-neutral-0 hover:bg-primary-900+10",
+                isActive && "bg-primary-900+20 font-semibold hover:bg-primary-900+20"
             )}
         >
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}

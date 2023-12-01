@@ -36,7 +36,7 @@ const Sidesheet = ({ children, isOpen, onClose, initialFocus }: SidesheetProps) 
                     leaveFrom="-translate-x-0"
                     leaveTo="translate-x-full"
                 >
-                    <HeadlessDialog.Panel className="w-184 fixed inset-y-0 right-0 z-10 overflow-y-auto bg-neutral-0">
+                    <HeadlessDialog.Panel className="fixed inset-y-0 right-0 z-10 w-184 overflow-y-auto bg-neutral-0">
                         {children}
                     </HeadlessDialog.Panel>
                 </Transition.Child>
