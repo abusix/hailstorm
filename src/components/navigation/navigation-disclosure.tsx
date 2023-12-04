@@ -2,7 +2,7 @@ import { Disclosure } from "@headlessui/react";
 import React from "react";
 import { NavigationDisclosurePanel } from "./navigation-disclosure-panel";
 
-interface NavigationDisclosureButtonProps {
+export interface NavigationDisclosureButtonProps {
     children: React.ReactNode;
     LeftIcon?: React.ElementType;
 }
