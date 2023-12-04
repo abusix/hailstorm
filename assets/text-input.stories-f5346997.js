@@ -1,0 +1,22 @@
+import{j as e}from"./jsx-runtime-94f6e698.js";import{r as k}from"./index-8db94870.js";import{F as r}from"./form-field-94ee902f.js";import{i as H}from"./zoom-to-fit-icon-acda7f0b.js";import"./_commonjsHelpers-042e6b4d.js";import"./class-names-9cb99c69.js";import"./keyboard-21395176.js";import"./focus-management-0b66a118.js";import"./disposables-253897a2.js";import"./owner-b1a1dac1.js";import"./use-flags-60d882df.js";import"./label-931945c5.js";import"./description-a328e87c.js";import"./use-text-value-786875d7.js";import"./hidden-98df968b.js";import"./bugs-8e007c11.js";import"./use-disposables-4086b7a6.js";import"./open-closed-e73c4555.js";import"./use-resolve-button-type-2af9297b.js";import"./use-outside-click-cd4630be.js";import"./badge-e8b648e9.js";import"./tag-fae1e6b9.js";const re={title:"Input/TextInput",component:r.TextInput},s=({error:c=!1,disabled:T=!1,hasLeftIcon:b=!1,readOnly:L=!1,value:S})=>{const[y,D]=k.useState(S);return e.jsxs(r,{children:[e.jsxs(r.LabelGroup,{children:[e.jsx(r.Label,{htmlFor:"value",children:"Label"}),e.jsx(r.Description,{id:"value-description",children:"Description"})]}),e.jsx(r.TextInput,{id:"value",value:y,onChange:E=>D(E.target.value),ariaDescribedBy:"value-description",error:c,disabled:T,LeftIcon:b?H:void 0,readOnly:L}),c?e.jsx(r.ErrorMessage,{children:"Error message."}):null]})},t={render:()=>e.jsx("div",{className:"w-72",children:e.jsx(s,{})})},a={render:()=>e.jsx("div",{className:"w-72",children:e.jsx(s,{error:!0})})},o={render:()=>e.jsx("div",{className:"w-72",children:e.jsx(s,{hasLeftIcon:!0})})},n={render:()=>e.jsx("div",{className:"w-72",children:e.jsx(s,{readOnly:!0,value:"Readonly text"})})},i={render:()=>e.jsx("div",{className:"w-72",children:e.jsx(s,{disabled:!0})})};var d,p,m;t.parameters={...t.parameters,docs:{...(d=t.parameters)==null?void 0:d.docs,source:{originalSource:`{
+  render: () => <div className="w-72">
+            <TextInputWithHooks />
+        </div>
+}`,...(m=(p=t.parameters)==null?void 0:p.docs)==null?void 0:m.source}}};var l,u,x;a.parameters={...a.parameters,docs:{...(l=a.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  render: () => <div className="w-72">
+            <TextInputWithHooks error />
+        </div>
+}`,...(x=(u=a.parameters)==null?void 0:u.docs)==null?void 0:x.source}}};var h,v,j;o.parameters={...o.parameters,docs:{...(h=o.parameters)==null?void 0:h.docs,source:{originalSource:`{
+  render: () => <div className="w-72">
+            <TextInputWithHooks hasLeftIcon />
+        </div>
+}`,...(j=(v=o.parameters)==null?void 0:v.docs)==null?void 0:j.source}}};var I,f,g;n.parameters={...n.parameters,docs:{...(I=n.parameters)==null?void 0:I.docs,source:{originalSource:`{
+  render: () => <div className="w-72">
+            <TextInputWithHooks readOnly value="Readonly text" />
+        </div>
+}`,...(g=(f=n.parameters)==null?void 0:f.docs)==null?void 0:g.source}}};var w,N,W;i.parameters={...i.parameters,docs:{...(w=i.parameters)==null?void 0:w.docs,source:{originalSource:`{
+  render: () => <div className="w-72">
+            <TextInputWithHooks disabled />
+        </div>
+}`,...(W=(N=i.parameters)==null?void 0:N.docs)==null?void 0:W.source}}};const se=["Default","WithError","WithLeftIcon","ReadOnly","Disabled"];export{t as Default,i as Disabled,n as ReadOnly,a as WithError,o as WithLeftIcon,se as __namedExportsOrder,re as default};
+//# sourceMappingURL=text-input.stories-f5346997.js.map
