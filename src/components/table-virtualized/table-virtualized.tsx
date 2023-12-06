@@ -183,6 +183,7 @@ export const TableVirtualized = <TableData,>({
                             {paddingBottom > 0 ? (
                                 <tr>
                                     <td
+                                        aria-hidden="true"
                                         style={{
                                             height: `${paddingBottom}px`,
                                         }}

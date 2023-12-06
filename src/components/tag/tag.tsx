@@ -18,7 +18,7 @@ export const Tag = ({ children, onClick, disabled }: TagProps) => {
         >
             <div className="paragraph-100">{children}</div>
             {onClick ? (
-                <button type="button" onClick={onClick} disabled={disabled}>
+                <button type="button" aria-label="Remove tag" onClick={onClick} disabled={disabled}>
                     <SmallCrossIcon
                         className={classNames(
                             "h-3 w-3 fill-neutral-800",

@@ -8,6 +8,7 @@ const config: StorybookConfig = {
         "@storybook/addon-essentials",
         "@storybook/addon-interactions",
         "@storybook/addon-docs",
+        "@storybook/addon-mdx-gfm",
     ],
     framework: {
         name: "@storybook/react-vite",
@@ -17,6 +18,9 @@ const config: StorybookConfig = {
     },
     docs: {
         autodocs: true,
+    },
+    core: {
+        disableTelemetry: true,
     },
 };
 export default config;

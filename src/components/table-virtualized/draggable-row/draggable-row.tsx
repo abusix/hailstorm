@@ -56,7 +56,7 @@ export const DraggableRow = <TableData,>({
                 className={isDragging ? "bg-abusix-neutral-100" : undefined}
             >
                 <TableUnvirtualized.Body.Cell ref={dropRef}>
-                    <button type="button" ref={dragRef}>
+                    <button aria-label="Drag row" type="button" ref={dragRef}>
                         <DragHandleVerticalIcon />
                     </button>
                 </TableUnvirtualized.Body.Cell>
