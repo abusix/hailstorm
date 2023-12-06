@@ -78,6 +78,7 @@ export const SearchInput = ({
                 <div className="absolute inset-y-0 right-0 z-10 flex items-center justify-center pr-2">
                     <button
                         type="button"
+                        aria-label="Clear search input"
                         tabIndex={0}
                         onClick={onClear}
                         onKeyDown={handleKeyDown}

@@ -22,6 +22,7 @@ export interface IconButtonProps {
     onClick: () => void;
     disabled?: boolean;
     className?: string;
+    ariaLabel?: string;
 }
 
 export const IconButton = ({
@@ -30,10 +31,12 @@ export const IconButton = ({
     disabled = false,
     type = "primary",
     className,
+    ariaLabel,
 }: IconButtonProps) => {
     return (
         <button
             type="button"
+            aria-label={ariaLabel}
             className={classNames(
                 `inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded focus:outline-none`,
                 iconButtonVariants[type],
