@@ -1,2 +1,0 @@
-import{j as s}from"./jsx-runtime-94f6e698.js";import{c as o}from"./class-names-9cb99c69.js";const a=({children:e,className:r})=>s.jsx("div",{className:o("rounded border border-neutral-300 bg-neutral-0 p-5",r),children:e});try{a.displayName="Panel",a.__docgenInfo={description:"",displayName:"Panel",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}}}}}catch{}export{a as P};
-//# sourceMappingURL=panel-a25594bd.js.map

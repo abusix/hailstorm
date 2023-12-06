@@ -1,0 +1,1 @@
+import{s as n}from"./keyboard-19WRbd6j.js";function t(e){return n.isServer?null:e instanceof Node?e.ownerDocument:e!=null&&e.hasOwnProperty("current")&&e.current instanceof Node?e.current.ownerDocument:document}export{t as e};
