@@ -1,7 +1,7 @@
 import { Popover } from "@headlessui/react";
 import React from "react";
 
-interface NavigationPopoverButtonProps {
+export interface NavigationPopoverButtonProps {
     LeftIcon?: React.ElementType;
     children: React.ReactNode;
 }
@@ -17,7 +17,7 @@ const NavigationPopoverButton = ({ children, LeftIcon }: NavigationPopoverButton
     );
 };
 
-interface NavigationPopoverPanelItemProps {
+export interface NavigationPopoverPanelItemProps {
     children: React.ReactNode;
 }
 
@@ -29,7 +29,7 @@ const NavigationPopoverPanelItem = ({ children }: NavigationPopoverPanelItemProp
     );
 };
 
-interface NavigationPopoverPanelProps {
+export interface NavigationPopoverPanelProps {
     children: React.ReactNode;
 }
 
@@ -43,7 +43,7 @@ const NavigationPopoverPanel = ({ children }: NavigationPopoverPanelProps) => {
 
 NavigationPopoverPanel.Item = NavigationPopoverPanelItem;
 
-interface NavigationPopoverProps {
+export interface NavigationPopoverProps {
     children: React.ReactNode;
 }
 
