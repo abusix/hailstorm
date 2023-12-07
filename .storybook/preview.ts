@@ -24,6 +24,7 @@ const preview: Preview = {
             storySort: {
                 order: ["Home", "Icons gallery"],
             },
+            showPanel: true,
         },
     },
 };
