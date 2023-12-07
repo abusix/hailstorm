@@ -95,7 +95,7 @@ export const EmptyTable = () => {
                     description="You have not added any items yet."
                     colSpan={3}
                 >
-                    <Button type="secondary" onClick={() => alert("clicked")}>
+                    <Button variant="secondary" onClick={() => alert("clicked")}>
                         Add New Item
                     </Button>
                 </TableUnvirtualized.Body.EmptyPlaceholder>

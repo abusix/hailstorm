@@ -4,7 +4,7 @@ import { Button, ButtonProps } from "./button";
 import { ChatIcon, DiagramTreeIcon, LockIcon } from "../../icons";
 import { hiddenArgControl } from "../../util/storybook-utils";
 
-const types: ButtonProps["type"][] = [
+const variants: ButtonProps["variant"][] = [
     "primary",
     "secondary",
     "minimal",
@@ -44,6 +44,12 @@ export const WithIcons: Story = {
         RightIcon: icons.LockIcon,
     },
 };
+export const AsAnchor: Story = {
+    args: {
+        as: "a",
+        href: "https://www.google.com",
+    },
+};
 export const Loading: Story = {
     args: { loading: true },
 };
@@ -55,8 +61,8 @@ export const Types: Story = {
     argTypes: { type: hiddenArgControl },
     render: ({ children, ...args }) => (
         <div className="flex flex-col gap-4">
-            {types.map((type) => (
-                <Button key={type} {...args} type={type}>
+            {variants.map((variant) => (
+                <Button key={variant} {...args} type="button" variant={variant}>
                     {children}
                 </Button>
             ))}

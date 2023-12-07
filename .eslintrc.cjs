@@ -21,7 +21,7 @@ module.exports = {
     plugins: ["react", "@typescript-eslint", "prettier"],
     rules: {
         "import/prefer-default-export": "off",
-        "no-restricted-exports": ["error", {restrictDefaultExports: {direct: true}}],
+        "no-restricted-exports": ["error", { restrictDefaultExports: { direct: true } }],
         "react/react-in-jsx-scope": "off",
         "react/require-default-props": "off",
         "no-alert": "off",
@@ -39,6 +39,7 @@ module.exports = {
                 devDependencies: ["**/*.stories.tsx", "**/*.test.tsx", "**/*.test.ts"],
             },
         ],
+        "react/jsx-props-no-spreading": "off",
     },
     overrides: [
         {
@@ -56,13 +57,13 @@ module.exports = {
                 "no-restricted-exports": "off",
                 "react/jsx-props-no-spreading": "off",
                 "import/prefer-default-export": "off",
-            }
+            },
         },
         {
             files: ["src/util/class-names.tsx"],
             rules: {
                 "import/no-extraneous-dependencies": "off",
-            }
-        }
+            },
+        },
     ],
 };

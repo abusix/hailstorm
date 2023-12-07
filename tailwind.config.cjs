@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import plugin from "tailwindcss/plugin";
+
+export default {
     content: ["./src/components/**/*.{html,js,ts,tsx}"],
     theme: {
         colors: {
@@ -21,6 +23,9 @@ module.exports = {
                 0: "#ffffff",
             },
             primary: {
+                "900+20": '#1A276C',
+                "900+10": '#1E2C7A',
+                "900+8": '#1E2D7C',
                 900: "#213187",
                 800: "#2235AB",
                 700: "#223FD3",
@@ -31,6 +36,7 @@ module.exports = {
                 200: "#C1D5FC",
                 100: "#DCE7FD",
                 50: "#EFF4FF",
+
             },
             success: {
                 900: "#114335",
@@ -101,11 +107,23 @@ module.exports = {
             },
             width: {
                 120: "30rem",
+                184: "46rem",
             },
         },
         corePlugins: {
             colors: false,
         },
     },
-    plugins: [require("@headlessui/tailwindcss"), require('@tailwindcss/forms'),],
+    plugins: [
+        require("@headlessui/tailwindcss"),
+        require('@tailwindcss/forms'),
+        plugin(function ({addBase}) {
+            addBase({
+                "[type='search']::-webkit-search-decoration": {display: "none"},
+                "[type='search']::-webkit-search-cancel-button": {display: "none"},
+                "[type='search']::-webkit-search-results-button": {display: "none"},
+                "[type='search']::-webkit-search-results-decoration": {display: "none"},
+            })
+        }),
+    ],
 };

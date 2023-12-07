@@ -8,14 +8,20 @@ import { SingleComboboxCustomOption } from "./single-combobox-custom-option";
 import { SingleComboboxEmptyOption } from "./single-combobox-empty-option";
 
 export interface SingleComboboxProps<TValue> {
-    value: TValue;
+    value?: TValue;
     onChange: (value: TValue) => void;
     children: React.ReactNode;
+    disabled?: boolean;
 }
 
-const SingleCombobox = <TValue,>({ value, onChange, children }: SingleComboboxProps<TValue>) => {
+const SingleCombobox = <TValue,>({
+    value,
+    onChange,
+    children,
+    disabled,
+}: SingleComboboxProps<TValue>) => {
     return (
-        <HeadlessCombobox value={value} onChange={onChange}>
+        <HeadlessCombobox value={value} onChange={onChange} disabled={disabled}>
             <div className="relative">{children}</div>
         </HeadlessCombobox>
     );

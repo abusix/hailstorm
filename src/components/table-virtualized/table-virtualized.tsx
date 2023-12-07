@@ -14,17 +14,15 @@ import { useVirtualizer, VirtualizerOptions } from "@tanstack/react-virtual";
 import React from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { DraggableRow } from "./draggable-row/draggable-row";
-import { VirtualizedHeaderGroup } from "./header-group/header-group";
-import { ExpandableButtonCell } from "./expandable-button-cell/expandable-button-cell";
-import { TableUnvirtualized } from "../table-unvirtualized";
 import { classNames } from "../../util/class-names";
+import { TableUnvirtualized } from "../table-unvirtualized";
+import { DraggableRow } from "./draggable-row/draggable-row";
+import { ExpandableButtonCell } from "./expandable-button-cell/expandable-button-cell";
+import { VirtualizedHeaderGroup } from "./header-group/header-group";
 
-export interface TableVirtualizedProps<TableData> {
+export interface TableVirtualizedProps<TableData, TableValue = unknown> {
     data: TableData[];
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    columnDefs: ColumnDef<TableData, any>[];
+    columnDefs: ColumnDef<TableData, TableValue>[];
     showPlaceholder?: boolean;
     placeholder?: React.ReactNode;
     isDraggableRowsEnabled?: boolean;
@@ -185,6 +183,7 @@ export const TableVirtualized = <TableData,>({
                             {paddingBottom > 0 ? (
                                 <tr>
                                     <td
+                                        aria-hidden="true"
                                         style={{
                                             height: `${paddingBottom}px`,
                                         }}
