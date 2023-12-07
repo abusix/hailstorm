@@ -35,7 +35,7 @@ export interface NavigationPopoverPanelProps {
 
 const NavigationPopoverPanel = ({ children }: NavigationPopoverPanelProps) => {
     return (
-        <Popover.Panel className="absolute bottom-0 ml-2 w-52 translate-x-[180px] rounded bg-neutral-0 p-2">
+        <Popover.Panel className="absolute bottom-0 z-20 ml-2 w-52 translate-x-[180px] rounded bg-neutral-0 p-2">
             {children}
         </Popover.Panel>
     );
@@ -53,7 +53,7 @@ const NavigationPopover = ({ children, showOverlay }: NavigationPopoverProps) =>
         <Popover>
             <>
                 {showOverlay && (
-                    <Popover.Overlay className="fixed inset-0 translate-x-[180px] bg-modal-background" />
+                    <Popover.Overlay className="fixed inset-0 z-10 translate-x-[180px] bg-modal-background" />
                 )}
                 <div className="relative">{children}</div>
             </>
