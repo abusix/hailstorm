@@ -6,6 +6,11 @@ import { CogIcon, HelpIcon, InfoSignIcon } from "../../icons";
 const meta: Meta<typeof Navigation> = {
     title: "Navigation",
     component: Navigation,
+    parameters: {
+        options: {
+            showPanel: false,
+        },
+    },
 };
 
 export default meta;
@@ -13,7 +18,7 @@ type Story = StoryObj<typeof Navigation>;
 
 export const Default: Story = {
     render: () => (
-        <div className="flex min-h-[1200px] flex-col">
+        <div className="relative flex min-h-screen w-96 flex-col">
             <Navigation>
                 <Navigation.Logo>
                     <div className="text-neutral-0">Abusix</div>
@@ -55,7 +60,25 @@ export const Default: Story = {
                         <Navigation.Group.Item>Data Channels</Navigation.Group.Item>
                     </Navigation.Group>
                     <div className="mt-auto">
-                        <Navigation.Group.Item LeftIcon={HelpIcon}>Support</Navigation.Group.Item>
+                        <Navigation.Popover>
+                            <Navigation.Popover.Button LeftIcon={HelpIcon}>
+                                Support
+                            </Navigation.Popover.Button>
+                            <Navigation.Popover.Panel>
+                                <Navigation.Popover.Panel.Item>
+                                    Documentation
+                                </Navigation.Popover.Panel.Item>
+                                <Navigation.Popover.Panel.Item>
+                                    Support request
+                                </Navigation.Popover.Panel.Item>
+                                <Navigation.Popover.Panel.Item>
+                                    System status
+                                </Navigation.Popover.Panel.Item>
+                                <Navigation.Popover.Panel.Item>
+                                    Blog posts
+                                </Navigation.Popover.Panel.Item>
+                            </Navigation.Popover.Panel>
+                        </Navigation.Popover>
                         <Navigation.Disclosure>
                             <Navigation.Disclosure.Button LeftIcon={InfoSignIcon}>
                                 Plans & Billing
