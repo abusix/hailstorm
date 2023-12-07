@@ -45,13 +45,16 @@ NavigationPopoverPanel.Item = NavigationPopoverPanelItem;
 
 export interface NavigationPopoverProps {
     children: React.ReactNode;
+    showOverlay?: boolean;
 }
 
-const NavigationPopover = ({ children }: NavigationPopoverProps) => {
+const NavigationPopover = ({ children, showOverlay }: NavigationPopoverProps) => {
     return (
         <Popover>
             <>
-                <Popover.Overlay className="absolute inset-0 translate-x-[180px] bg-modal-background" />
+                {showOverlay && (
+                    <Popover.Overlay className="fixed inset-0 translate-x-[180px] bg-modal-background" />
+                )}
                 <div className="relative">{children}</div>
             </>
         </Popover>
