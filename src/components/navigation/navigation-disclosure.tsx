@@ -16,15 +16,33 @@ const NavigationDisclosureButton = ({ children, LeftIcon }: NavigationDisclosure
     );
 };
 
+interface CloseFunction {
+    (focusableElement?: HTMLElement | React.MutableRefObject<HTMLElement | null>): void;
+}
+
+interface ChildrenType {
+    (props: { close: CloseFunction }): React.ReactNode;
+}
+
 export interface NavigationDisclosureProps {
-    children: React.ReactNode;
+    children: ChildrenType | React.ReactNode;
     defaultOpen?: boolean;
 }
+
+const renderDisclosureChildren = ({
+    children,
+    close,
+}: {
+    children: ChildrenType | React.ReactNode;
+    close: CloseFunction;
+}) => {
+    return typeof children === "function" ? children({ close }) : children;
+};
 
 const NavigationDisclosure = ({ children, defaultOpen }: NavigationDisclosureProps) => {
     return (
         <Disclosure as="div" defaultOpen={defaultOpen}>
-            {children}
+            {({ close }) => <>{renderDisclosureChildren({ children, close })}</>}
         </Disclosure>
     );
 };
