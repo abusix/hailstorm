@@ -16,7 +16,11 @@ export interface NavigationProps {
 }
 
 const Navigation = ({ children }: NavigationProps) => {
-    return <div className="flex w-[180px] grow flex-col bg-primary-900 pb-5 pt-3">{children}</div>;
+    return (
+        <div className="flex w-[180px] grow flex-col overflow-y-auto bg-primary-900 pb-5 pt-3">
+            {children}
+        </div>
+    );
 };
 
 Navigation.Logo = NavigationLogo;

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import { Navigation } from "./navigation";
 import { CogIcon, HelpIcon, InfoSignIcon } from "../../icons";
+import { Navigation } from "./navigation";
 
 const meta: Meta<typeof Navigation> = {
     title: "Navigation",
