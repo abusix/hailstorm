@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 const SvgModalIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -9,7 +9,7 @@ const SvgModalIcon = (props: SVGProps<SVGSVGElement>) => (
         className="h-4 w-4"
         {...props}
     >
-        <path d="M19 1a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h18Zm-1 4H2v12h16V5Zm-3-3h-2v2h2V2Zm3 0h-2v2h2V2Z" />
+        <path d="M19 1a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm-1 4H2v12h16zm-3-3h-2v2h2zm3 0h-2v2h2z" />
     </svg>
 );
 export default SvgModalIcon;
