@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 const SvgRectangleIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -11,7 +11,7 @@ const SvgRectangleIcon = (props: SVGProps<SVGSVGElement>) => (
     >
         <path
             fillRule="evenodd"
-            d="M1 4h18c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1Zm1 2v8h16V6H2Z"
+            d="M1 4h18c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1m1 2v8h16V6z"
             clipRule="evenodd"
         />
     </svg>

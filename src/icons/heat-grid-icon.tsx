@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 const SvgHeatGridIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -12,7 +12,7 @@ const SvgHeatGridIcon = (props: SVGProps<SVGSVGElement>) => (
     >
         <path
             fillRule="evenodd"
-            d="M14 12h6V8h-6v4zM0 12h6V8H0v4zm1-3h4v2H1V9zm-1 7c0 .55.45 1 1 1h5v-4H0v3zM19 3h-5v4h6V4c0-.55-.45-1-1-1zm0 3h-4V4h4v2zM0 4v3h6V3H1c-.55 0-1 .45-1 1zm7 3h6V3H7v4zm7 10h5c.55 0 1-.45 1-1v-3h-6v4zm-7 0h6v-4H7v4zm1-3h4v2H8v-2zm-1-2h6V8H7v4z"
+            d="M14 12h6V8h-6zM0 12h6V8H0zm1-3h4v2H1zm-1 7c0 .55.45 1 1 1h5v-4H0zM19 3h-5v4h6V4c0-.55-.45-1-1-1m0 3h-4V4h4zM0 4v3h6V3H1c-.55 0-1 .45-1 1m7 3h6V3H7zm7 10h5c.55 0 1-.45 1-1v-3h-6zm-7 0h6v-4H7zm1-3h4v2H8zm-1-2h6V8H7z"
             clipRule="evenodd"
         />
     </svg>

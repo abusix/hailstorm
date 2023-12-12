@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 const SvgRainIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -11,7 +11,7 @@ const SvgRainIcon = (props: SVGProps<SVGSVGElement>) => (
     >
         <path
             fillRule="evenodd"
-            d="M4 10a3 3 0 1 1 1.065-5.806A5.001 5.001 0 0 1 14.63 3.11 3.5 3.5 0 1 1 15.5 10H4Zm0 2a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0v-5a1 1 0 0 1 1-1Zm9 1a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Zm-7 1a1 1 0 1 0-2 0v3a1 1 0 1 0 2 0v-3Z"
+            d="M4 10a3 3 0 1 1 1.065-5.806A5.001 5.001 0 0 1 14.63 3.11 3.5 3.5 0 1 1 15.5 10H10zm0 2a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0v-5a1 1 0 0 1 1-1m9 1a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0zm3-1a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1m-7 1a1 1 0 1 0-2 0v3a1 1 0 1 0 2 0z"
             clipRule="evenodd"
         />
     </svg>

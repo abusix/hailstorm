@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 const SvgHighPriorityIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -9,7 +9,7 @@ const SvgHighPriorityIcon = (props: SVGProps<SVGSVGElement>) => (
         className="h-4 w-4"
         {...props}
     >
-        <path fillRule="evenodd" d="M12 16v4H8v-4h4Zm1-16-1 14H8L7 0h6Z" />
+        <path fillRule="evenodd" d="M12 16v4H8v-4zm1-16-1 14H8L7 0z" />
     </svg>
 );
 export default SvgHighPriorityIcon;
