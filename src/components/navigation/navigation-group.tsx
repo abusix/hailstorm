@@ -1,19 +1,24 @@
 import React from "react";
 import { classNames } from "../../util/class-names";
 
-export interface NavigationGroupItemProps {
-    children: React.ReactNode;
+export interface NavigationGroupItemProps extends React.ComponentPropsWithoutRef<"div"> {
     isActive?: boolean;
     LeftIcon?: React.ElementType;
 }
 
-const NavigationGroupItem = ({ children, isActive, LeftIcon }: NavigationGroupItemProps) => {
+const NavigationGroupItem = ({
+    children,
+    isActive,
+    LeftIcon,
+    ...props
+}: NavigationGroupItemProps) => {
     return (
         <div
             className={classNames(
                 "relative flex items-center gap-x-3 px-4 py-3 text-sm text-neutral-0 hover:bg-primary-900+10",
                 isActive && "bg-primary-900+20 font-semibold hover:bg-primary-900+20"
             )}
+            {...props}
         >
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}
             {children}
