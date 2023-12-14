@@ -5,9 +5,14 @@ import { useNavigationPopoverContext } from "./navigation-popover-context";
 export interface NavigationPopoverButtonProps {
     LeftIcon?: React.ElementType;
     children: React.ReactNode;
+    onClick?: () => void;
 }
 
-export const NavigationPopoverButton = ({ children, LeftIcon }: NavigationPopoverButtonProps) => {
+export const NavigationPopoverButton = ({
+    children,
+    LeftIcon,
+    onClick,
+}: NavigationPopoverButtonProps) => {
     const {
         popoverButton: { setReferenceElement },
     } = useNavigationPopoverContext();
@@ -16,6 +21,7 @@ export const NavigationPopoverButton = ({ children, LeftIcon }: NavigationPopove
         <Popover.Button
             ref={(el) => el && setReferenceElement(el)}
             className="flex w-full items-center gap-x-3 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold"
+            onClick={onClick}
         >
             <>
                 {LeftIcon && <LeftIcon className="h-4 w-4" />}
