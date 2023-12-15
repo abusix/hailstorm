@@ -5,11 +5,19 @@ import { NavigationDisclosurePanel } from "./navigation-disclosure-panel";
 export interface NavigationDisclosureButtonProps {
     children: React.ReactNode;
     LeftIcon?: React.ElementType;
+    onClick?: () => void;
 }
 
-const NavigationDisclosureButton = ({ children, LeftIcon }: NavigationDisclosureButtonProps) => {
+const NavigationDisclosureButton = ({
+    children,
+    LeftIcon,
+    onClick,
+}: NavigationDisclosureButtonProps) => {
     return (
-        <Disclosure.Button className="flex w-full items-center gap-x-3 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold">
+        <Disclosure.Button
+            className="flex w-full items-center gap-x-3 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold"
+            onClick={onClick}
+        >
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}
             {children}
         </Disclosure.Button>
