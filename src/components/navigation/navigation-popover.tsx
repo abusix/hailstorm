@@ -8,10 +8,9 @@ import { NavigationPopoverPanel } from "./navigation-popover-panel";
 
 export interface NavigationPopoverProps {
     children: React.ReactNode;
-    showOverlay?: boolean;
 }
 
-const NavigationPopover = ({ children, showOverlay }: NavigationPopoverProps) => {
+const NavigationPopover = ({ children }: NavigationPopoverProps) => {
     const [referenceElement, setReferenceElement] = useState<HTMLButtonElement>();
     const [popperElement, setPopperElement] = useState<HTMLDivElement>();
     const { styles, attributes } = usePopper(referenceElement, popperElement, {
@@ -31,15 +30,13 @@ const NavigationPopover = ({ children, showOverlay }: NavigationPopoverProps) =>
 
     return (
         <NavigationPopoverContextProvider value={context}>
-            <Popover>
-                {showOverlay && <NavigationPopoverOverlay />}
-                {children}
-            </Popover>
+            <Popover>{children}</Popover>
         </NavigationPopoverContextProvider>
     );
 };
 
 NavigationPopover.Button = NavigationPopoverButton;
 NavigationPopover.Panel = NavigationPopoverPanel;
+NavigationPopover.Overlay = NavigationPopoverOverlay;
 
 export { NavigationPopover };
