@@ -64,6 +64,7 @@ export const Default: Story = {
                             <Navigation.Popover.Button LeftIcon={HelpIcon}>
                                 Support
                             </Navigation.Popover.Button>
+                            <Navigation.Popover.Overlay />
                             <Navigation.Popover.Panel>
                                 <Navigation.Popover.Panel.Item>
                                     Documentation
