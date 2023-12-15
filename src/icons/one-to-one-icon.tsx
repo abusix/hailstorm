@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 const SvgOneToOneIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -11,7 +11,7 @@ const SvgOneToOneIcon = (props: SVGProps<SVGSVGElement>) => (
     >
         <path
             fillRule="evenodd"
-            d="M2 10a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm3.83-1a3.001 3.001 0 1 0 0 2h8.34a3.001 3.001 0 1 0 0-2H5.83ZM17 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"
+            d="M2 10a1 1 0 1 1 2 0 1 1 0 0 1-2 0m3.83-1a3.001 3.001 0 1 0 0 2h8.34a3.001 3.001 0 1 0 0-2zM17 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
             clipRule="evenodd"
         />
     </svg>

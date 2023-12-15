@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 const SvgLayerOutlineIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -11,7 +11,7 @@ const SvgLayerOutlineIcon = (props: SVGProps<SVGSVGElement>) => (
     >
         <path
             fillRule="evenodd"
-            d="m9.514 4.126-9 5a1 1 0 0 0 0 1.748l9 5a1 1 0 0 0 .972 0l9-5a1 1 0 0 0 0-1.748l-9-5a1 1 0 0 0-.972 0ZM10 6.144l6.94 3.855L10 13.855 3.059 9.999 10 6.144Z"
+            d="m9.514 4.126-9 5a1 1 0 0 0 0 1.748l9 5a1 1 0 0 0 .972 0l9-5a1 1 0 0 0 0-1.748l-9-5a1 1 0 0 0-.972 0M10 6.144l6.94 3.855L10 13.855 3.059 9.999z"
         />
     </svg>
 );

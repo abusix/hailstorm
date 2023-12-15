@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 const SvgSlashIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -12,7 +12,7 @@ const SvgSlashIcon = (props: SVGProps<SVGSVGElement>) => (
     >
         <path
             fillRule="evenodd"
-            d="M12 2c-.46 0-.85.32-.97.74L7.04 16.7c-.02.1-.04.2-.04.3 0 .55.45 1 1 1 .46 0 .85-.32.97-.74L12.96 3.3c.02-.1.04-.2.04-.3 0-.55-.45-1-1-1z"
+            d="M12 2c-.46 0-.85.32-.97.74L7.04 16.7c-.02.1-.04.2-.04.3 0 .55.45 1 1 1 .46 0 .85-.32.97-.74L12.96 3.3c.02-.1.04-.2.04-.3 0-.55-.45-1-1-1"
             clipRule="evenodd"
         />
     </svg>

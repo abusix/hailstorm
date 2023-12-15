@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 const SvgSmallMinusIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg
@@ -12,7 +12,7 @@ const SvgSmallMinusIcon = (props: SVGProps<SVGSVGElement>) => (
     >
         <path
             fillRule="evenodd"
-            d="M14 9H6c-.55 0-1 .45-1 1s.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1z"
+            d="M14 9H6c-.55 0-1 .45-1 1s.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1"
             clipRule="evenodd"
         />
     </svg>

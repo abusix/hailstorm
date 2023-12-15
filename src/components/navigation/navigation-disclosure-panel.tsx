@@ -2,8 +2,7 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { classNames } from "../../util/class-names";
 
-export interface NavigationDisclosurePanelItemProps
-    extends React.ComponentPropsWithoutRef<"button"> {
+export interface NavigationDisclosurePanelItemProps extends React.ComponentPropsWithoutRef<"div"> {
     isActive?: boolean;
     isIndented?: boolean;
 }
@@ -15,8 +14,7 @@ const NavigationDisclosurePanelItem = ({
     ...props
 }: NavigationDisclosurePanelItemProps) => {
     return (
-        <button
-            type="button"
+        <div
             className={classNames(
                 "relative w-full px-8 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10",
                 isIndented && "px-14",
@@ -28,7 +26,7 @@ const NavigationDisclosurePanelItem = ({
             {isActive && (
                 <div className="absolute bottom-0 left-0 top-0 h-full w-0.5 rounded-r-sm bg-neutral-0" />
             )}
-        </button>
+        </div>
     );
 };
 
