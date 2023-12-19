@@ -49,7 +49,7 @@ export const Dialog = ({
                         leaveTo="opacity-0"
                     >
                         <div
-                            className="fixed inset-0 bg-modal-background"
+                            className="fixed inset-0 z-40 bg-modal-background"
                             aria-hidden="true"
                             onClick={() => handleClose(true)}
                         />
