@@ -49,7 +49,7 @@ export const Dialog = ({
                         leaveTo="opacity-0"
                     >
                         <div
-                            className="fixed inset-0 bg-modal-background"
+                            className="fixed inset-0 z-40 bg-modal-background"
                             aria-hidden="true"
                             onClick={() => handleClose(true)}
                         />
@@ -58,7 +58,7 @@ export const Dialog = ({
 
                 <div
                     className={classNames(
-                        `fixed inset-0 flex overflow-y-auto p-8`,
+                        `fixed inset-0 z-50 flex overflow-y-auto p-8`,
                         position === "bottom-right" && "items-end justify-end",
                         position === "center" && "items-center justify-center"
                     )}
