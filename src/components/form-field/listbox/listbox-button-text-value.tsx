@@ -7,7 +7,11 @@ export interface ListboxButtonTextValueProps {
 
 export const ListboxButtonTextValue = ({ placeholder, value }: ListboxButtonTextValueProps) => {
     if (!value) {
-        return <div className="paragraph-100 text-neutral-600">{placeholder}</div>;
+        return (
+            <div className="paragraph-100 text-neutral-600 group-hover:text-neutral-700">
+                {placeholder}
+            </div>
+        );
     }
     return <div className="paragraph-100">{value}</div>;
 };
