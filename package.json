@@ -1,6 +1,10 @@
 {
     "name": "@abusix/hailstorm",
+<<<<<<< HEAD
     "version": "3.8.0-next.2",
+=======
+    "version": "3.8.0",
+>>>>>>> 30360b961697d1ef20c2a266ac0a53b4458e140d
     "description": "our own design/component library",
     "homepage": "https://github.com/abusix/hailstorm",
     "author": "abusix",
@@ -72,7 +76,7 @@
         "@storybook/react-vite": "^7.6.3",
         "@storybook/testing-library": "^0.2.2",
         "@svgr/cli": "8.1.0",
-        "@testing-library/jest-dom": "^6.1.5",
+        "@testing-library/jest-dom": "6.1.5",
         "@testing-library/react": "^14.1.2",
         "@types/react": "^18.2.42",
         "@typescript-eslint/eslint-plugin": "6.13.2",
@@ -103,7 +107,6 @@
         "rollup-plugin-dts": "^6.1.0",
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-postcss": "^4.0.2",
-        "rollup-plugin-tailwindcss": "^1.0.0",
         "semantic-release": "^22.0.10",
         "storybook": "^7.6.3",
         "tailwind-merge": "^2.1.0",
@@ -119,6 +122,9 @@
     "overrides": {
         "optionator": {
             "word-wrap@1.2.3": "1.2.5"
+        },
+        "@testing-library/jest-dom@6.1.5": {
+            "@adobe/css-tools": "4.3.2"
         }
     }
 }

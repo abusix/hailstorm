@@ -14,7 +14,7 @@ const NavigationPopover = ({ children }: NavigationPopoverProps) => {
     const [referenceElement, setReferenceElement] = useState<HTMLButtonElement>();
     const [popperElement, setPopperElement] = useState<HTMLDivElement>();
     const { styles, attributes } = usePopper(referenceElement, popperElement, {
-        placement: "bottom-start",
+        placement: "top-start",
     });
 
     const context = {
