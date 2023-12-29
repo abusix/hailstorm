@@ -30,7 +30,7 @@ export const Tooltip = ({
 
     const { styles, attributes } = usePopper(referenceElement, popperElement, {
         placement: position,
-        strategy: strategy !== "portal" ? strategy : "absolute",
+        strategy: strategy === "fixed" ? "fixed" : "absolute",
         modifiers: [{ name: "offset", options: { offset: [0, 8] } }],
     });
 
