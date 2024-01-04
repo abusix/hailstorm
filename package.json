@@ -72,7 +72,7 @@
         "@storybook/react-vite": "^7.6.3",
         "@storybook/testing-library": "^0.2.2",
         "@svgr/cli": "8.1.0",
-        "@testing-library/jest-dom": "6.1.5",
+        "@testing-library/jest-dom": "6.2.0",
         "@testing-library/react": "^14.1.2",
         "@types/react": "^18.2.42",
         "@typescript-eslint/eslint-plugin": "6.13.2",
@@ -118,9 +118,6 @@
     "overrides": {
         "optionator": {
             "word-wrap@1.2.3": "1.2.5"
-        },
-        "@testing-library/jest-dom@6.1.5": {
-            "@adobe/css-tools": "4.3.2"
         }
     }
 }
