@@ -33,8 +33,14 @@ const DisclosureButton = ({ children, ...props }: DisclosureButtonProps) => {
     );
 };
 
-const Disclosure = ({ children }: { children: React.ReactNode }) => {
-    return <HeadlessUiDisclosure>{children}</HeadlessUiDisclosure>;
+const Disclosure = ({
+    children,
+    defaultOpen = false,
+}: {
+    children: React.ReactNode;
+    defaultOpen?: boolean;
+}) => {
+    return <HeadlessUiDisclosure defaultOpen={defaultOpen}>{children}</HeadlessUiDisclosure>;
 };
 
 Disclosure.Button = DisclosureButton;

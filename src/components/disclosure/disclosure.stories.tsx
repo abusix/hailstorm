@@ -44,3 +44,22 @@ export const Stacked: Story = {
         </div>
     ),
 };
+
+export const DefaultOpen: Story = {
+    render: () => (
+        <div className="w-96">
+            <Disclosure>
+                <Disclosure.Button>Disclosure Button</Disclosure.Button>
+                <Disclosure.Panel>Disclosure Content</Disclosure.Panel>
+            </Disclosure>
+            <Disclosure defaultOpen>
+                <Disclosure.Button>Disclosure Button</Disclosure.Button>
+                <Disclosure.Panel>Disclosure Content</Disclosure.Panel>
+            </Disclosure>
+            <Disclosure>
+                <Disclosure.Button>Disclosure Button</Disclosure.Button>
+                <Disclosure.Panel>Disclosure Content</Disclosure.Panel>
+            </Disclosure>
+        </div>
+    ),
+};
