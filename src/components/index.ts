@@ -28,3 +28,4 @@ export { Toast } from "./toast";
 export { Toggle } from "./toggle";
 export { Tooltip } from "./tooltip";
 export { TopBar } from "./top-bar";
+export { Disclosure } from "./disclosure";
