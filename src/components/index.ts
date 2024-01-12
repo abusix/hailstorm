@@ -29,3 +29,4 @@ export { Toggle } from "./toggle";
 export { Tooltip } from "./tooltip";
 export { TopBar } from "./top-bar";
 export { Disclosure } from "./disclosure";
+export { ButtonGroup } from "./button-group";
