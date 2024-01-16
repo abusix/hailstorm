@@ -12,7 +12,7 @@ export interface RadioBoxOptionProps {
 }
 
 export const radioBoxContainerStyles = {
-    base: "group relative flex items-center gap-3 rounded-lg border p-4 border-neutral-300 hover:border-primary-500 hover:bg-primary-50",
+    base: "group relative flex items-center gap-3 rounded-lg bg-neutral-0 border p-4 border-neutral-300 hover:border-primary-500 hover:bg-primary-50",
     checked: "border-primary-500 bg-primary-500 hover:bg-primary-500 hover:text-neutral-0",
     disabled:
         "border-neutral-400 bg-neutral-100 group-hover:border-neutral-400 group-hover:bg-neutral-100 hover:border-neutral-400 hover:bg-neutral-100",
