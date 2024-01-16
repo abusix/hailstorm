@@ -8,6 +8,7 @@ export interface RadioBoxOptionProps {
     value: string;
     disabled?: boolean;
     recommendationText?: string;
+    className?: string;
 }
 
 export const RadioBoxOption = ({
@@ -15,6 +16,7 @@ export const RadioBoxOption = ({
     value,
     disabled,
     recommendationText,
+    className,
 }: RadioBoxOptionProps) => {
     return (
         <RadioGroup.Option
@@ -60,7 +62,8 @@ export const RadioBoxOption = ({
                         className={classNames(
                             "paragraph-200",
                             checked && "text-neutral-0",
-                            optionDisabled && "text-neutral-600"
+                            optionDisabled && "text-neutral-600",
+                            className
                         )}
                     >
                         {children}
