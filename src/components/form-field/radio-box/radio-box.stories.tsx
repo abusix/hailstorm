@@ -21,7 +21,7 @@ const RadioBoxWithHooks = () => {
                 <FormField.RadioBox.Option value="value_1" recommendationText="Recommended">
                     <div className="flex flex-col gap-2">
                         <h2 className="headline-500">Option 1</h2>
-                        <p>
+                        <p className="paragraph-200">
                             To be, or not to be, that is the question: Whether ’tis nobler in the
                             mind to suffer The slings and arrows of outrageous fortune, …
                         </p>
@@ -31,7 +31,7 @@ const RadioBoxWithHooks = () => {
                 <FormField.RadioBox.Option value="value_2">
                     <div className="flex flex-col gap-2">
                         <h2 className="headline-500">Option 2</h2>
-                        <p>
+                        <p className="paragraph-200">
                             To be, or not to be, that is the question: Whether ’tis nobler in the
                             mind to suffer The slings and arrows of outrageous fortune, …
                         </p>
@@ -41,7 +41,7 @@ const RadioBoxWithHooks = () => {
                 <FormField.RadioBox.Option value="value_3" disabled>
                     <div className="flex flex-col gap-2">
                         <h2 className="headline-500">Option 3</h2>
-                        <p>
+                        <p className="paragraph-200">
                             To be, or not to be, that is the question: Whether ’tis nobler in the
                             mind to suffer The slings and arrows of outrageous fortune, …
                         </p>
