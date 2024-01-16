@@ -11,6 +11,19 @@ export interface RadioBoxOptionProps {
     className?: string;
 }
 
+export const radioBoxContainerStyles = {
+    base: "group relative flex items-center gap-3 rounded-lg border p-4 border-neutral-300 hover:border-primary-500 hover:bg-primary-50",
+    checked: "border-primary-500 bg-primary-500 hover:bg-primary-500 hover:text-neutral-0",
+    disabled:
+        "border-neutral-400 bg-neutral-100 group-hover:border-neutral-400 group-hover:bg-neutral-100 hover:border-neutral-400 hover:bg-neutral-100",
+};
+
+export const radioBoxCircleStyles = {
+    base: "relative inline-block h-4 w-4 shrink-0 rounded-full bg-neutral-0 border border-neutral-400",
+    unchecked: "group-hover:border-primary-500 group-hover:bg-neutral-0",
+    disabled: "bg-neutral-100 group-hover:border-neutral-400 group-hover:bg-neutral-100",
+};
+
 export const RadioBoxOption = ({
     children,
     value,
@@ -27,47 +40,42 @@ export const RadioBoxOption = ({
             {({ checked, disabled: optionDisabled }) => (
                 <div
                     className={classNames(
-                        "group relative flex items-center gap-3 rounded-lg border p-4",
-                        checked
-                            ? "border-primary-500 bg-primary-500"
-                            : "border-neutral-300 hover:border-primary-500 hover:bg-primary-50",
-                        optionDisabled &&
-                            "cursor-not-allowed bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-100"
+                        radioBoxContainerStyles.base,
+                        checked && radioBoxContainerStyles.checked,
+                        optionDisabled && radioBoxContainerStyles.disabled
                     )}
                 >
                     {recommendationText && (
                         <RecommendationTag>{recommendationText}</RecommendationTag>
                     )}
 
-                    <span
+                    <div
                         className={classNames(
-                            "relative inline-block h-4 w-4 shrink-0 rounded-full bg-neutral-0",
-                            !checked &&
-                                "border border-neutral-400 group-hover:border-primary-500 group-hover:bg-neutral-0",
-                            optionDisabled &&
-                                "border border-neutral-400 bg-neutral-100 group-hover:border-neutral-400 group-hover:bg-neutral-100"
+                            radioBoxCircleStyles.base,
+                            !checked && radioBoxCircleStyles.unchecked,
+                            optionDisabled && radioBoxCircleStyles.disabled
                         )}
                     >
                         {checked && (
-                            <span
+                            <div
                                 className={classNames(
                                     "absolute inset-0 m-auto block h-2 w-2 rounded-full bg-primary-500",
                                     optionDisabled && "bg-neutral-500"
                                 )}
                             />
                         )}
-                    </span>
+                    </div>
 
-                    <p
+                    <div
                         className={classNames(
-                            "paragraph-200",
+                            "flex flex-col gap-2",
                             checked && "text-neutral-0",
                             optionDisabled && "text-neutral-600",
                             className
                         )}
                     >
                         {children}
-                    </p>
+                    </div>
                 </div>
             )}
         </RadioGroup.Option>
