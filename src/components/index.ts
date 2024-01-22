@@ -1,6 +1,6 @@
 export { Alert, AlertIntent } from "./alert";
 export { Avatar } from "./avatar";
-export { Badge } from "./badge";
+export { Badge, BadgeType } from "./badge";
 export { Button } from "./button";
 export { Checkbox } from "./checkbox";
 export { Dialog } from "./dialog";
