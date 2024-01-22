@@ -23,9 +23,9 @@ export default {
                 0: "#ffffff",
             },
             primary: {
-                "900+20": '#1A276C',
-                "900+10": '#1E2C7A',
-                "900+8": '#1E2D7C',
+                "900+20": "#1A276C",
+                "900+10": "#1E2C7A",
+                "900+8": "#1E2D7C",
                 900: "#213187",
                 800: "#2235AB",
                 700: "#223FD3",
@@ -36,7 +36,6 @@ export default {
                 200: "#C1D5FC",
                 100: "#DCE7FD",
                 50: "#EFF4FF",
-
             },
             success: {
                 900: "#114335",
@@ -80,15 +79,19 @@ export default {
             },
             teal: {
                 100: "#ccfbf1",
-                800: "#115e59"
+                800: "#115e59",
             },
             orange: {
                 100: "#ffedd5",
-                800: "#9a3412"
+                800: "#9a3412",
             },
             pink: {
                 300: "#f9a8d4",
-                800: "#9d174d"
+                800: "#9d174d",
+            },
+            purple: {
+                100: "#D8D4FF",
+                800: "#8966FF",
             },
             black: "#000000",
             "modal-background": "rgba(67, 90, 111, 0.7)",
@@ -116,14 +119,14 @@ export default {
     },
     plugins: [
         require("@headlessui/tailwindcss"),
-        require('@tailwindcss/forms'),
-        plugin(function ({addBase}) {
+        require("@tailwindcss/forms"),
+        plugin(function ({ addBase }) {
             addBase({
-                "[type='search']::-webkit-search-decoration": {display: "none"},
-                "[type='search']::-webkit-search-cancel-button": {display: "none"},
-                "[type='search']::-webkit-search-results-button": {display: "none"},
-                "[type='search']::-webkit-search-results-decoration": {display: "none"},
-            })
+                "[type='search']::-webkit-search-decoration": { display: "none" },
+                "[type='search']::-webkit-search-cancel-button": { display: "none" },
+                "[type='search']::-webkit-search-results-button": { display: "none" },
+                "[type='search']::-webkit-search-results-decoration": { display: "none" },
+            });
         }),
     ],
 };
