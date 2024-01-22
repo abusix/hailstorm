@@ -14,6 +14,7 @@ const types: BadgeProps["type"][] = [
     "orange",
     "pink",
     "red",
+    "purple",
 ];
 const shapes: BadgeProps["shape"][] = ["default", "rounded"];
 
