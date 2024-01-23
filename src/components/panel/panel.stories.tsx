@@ -33,7 +33,7 @@ export const WithComponents: Story = {
                 <Button variant="primary" onClick={noop}>
                     Button A
                 </Button>
-                <Toggle checked ariaLabel="test" onChange={noop} />
+                <Toggle.Switch checked ariaLabel="test" onChange={noop} />
                 <Button variant="secondary" onClick={noop}>
                     Button B
                 </Button>
