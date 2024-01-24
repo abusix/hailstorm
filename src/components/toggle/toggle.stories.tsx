@@ -2,8 +2,9 @@
 import React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
+import { useArgs } from "@storybook/client-api";
 
-import { Toggle, ToggleProps } from "./toggle";
+import { Toggle } from "./toggle";
 
 const meta: Meta<typeof Toggle> = {
     title: "Toggle",
@@ -11,29 +12,52 @@ const meta: Meta<typeof Toggle> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Toggle>;
 
-const ToggleWithHook = ({ checked, disabled }: ToggleProps) => {
-    const [isChecked, setIsChecked] = React.useState(false);
-
-    React.useEffect(() => {
-        setIsChecked(checked);
-    }, [checked]);
-
-    return (
-        <Toggle
-            checked={isChecked}
-            disabled={disabled}
-            onChange={() => setIsChecked(!isChecked)}
-            ariaLabel="Enable notifications"
-        />
-    );
+type ToggleWithHookProps = {
+    checked: boolean;
+    disabled: boolean;
 };
 
+type Story = StoryObj<ToggleWithHookProps>;
+
 export const Default: Story = {
-    render: (args) => <ToggleWithHook {...args} />,
+    render: (args) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const [{ checked }, updateArgs] = useArgs();
+        const handleOnChange = () => updateArgs({ checked: !checked });
+        return (
+            <Toggle>
+                <Toggle.Switch
+                    checked={args.checked}
+                    disabled={args.disabled}
+                    onChange={handleOnChange}
+                    ariaLabel="Enable notifications"
+                />
+                <Toggle.Label>notifications</Toggle.Label>
+            </Toggle>
+        );
+    },
     args: {
         checked: false,
         disabled: false,
+    },
+};
+
+export const WithoutLabel: Story = {
+    render: (args) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const [{ checked }, updateArgs] = useArgs();
+        const handleOnChange = () => updateArgs({ checked: !checked });
+        return (
+            <Toggle.Switch
+                checked={args.checked}
+                disabled={args.disabled}
+                onChange={handleOnChange}
+                ariaLabel="Enable notifications"
+            />
+        );
+    },
+    args: {
+        ...Default.args,
     },
 };

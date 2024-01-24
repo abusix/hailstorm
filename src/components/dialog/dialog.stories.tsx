@@ -111,7 +111,7 @@ export const WithLongContent: Story = {
     args: {
         children: (
             <>
-                <Toggle checked ariaLabel="test" onChange={noop} />
+                <Toggle.Switch checked ariaLabel="test" onChange={noop} />
                 <p className="py-10">Paragraph Content</p>
                 <FormField>
                     <FormField.LabelGroup>
@@ -166,7 +166,7 @@ export const WithLongContent: Story = {
                 </p>
                 <span>litipsum.com</span>
                 <Alert title="Some important information" intent="info" />
-                <Toggle checked={false} ariaLabel="test" onChange={noop} />
+                <Toggle.Switch checked={false} ariaLabel="test" onChange={noop} />
             </>
         ),
     },
