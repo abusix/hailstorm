@@ -13,15 +13,16 @@ const radioBoxContainerStyles = {
     base: "group relative flex items-center gap-3 rounded-lg bg-neutral-0 border p-4 border-neutral-300 hover:border-primary-600 hover:bg-primary-50 cursor-pointer focus:outline-none",
     checked: "border-primary-600 bg-primary-600 hover:bg-primary-600 hover:text-neutral-0",
     disabled:
-        "border-neutral-400 bg-neutral-100 group-hover:border-neutral-400 group-hover:bg-neutral-100 hover:border-neutral-400 hover:bg-neutral-100 cursor-not-allowed",
+        "bg-neutral-100 group-hover:border-neutral-300 group-hover:bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-100 cursor-not-allowed",
     active: "ring-2 ring-primary-200",
 };
 
 const radioBoxCircleStyles = {
-    base: "relative inline-block h-4 w-4 shrink-0 rounded-full bg-neutral-0 border border-neutral-400",
+    base: "relative inline-block h-4 w-4 shrink-0 rounded-full bg-neutral-0 border border-neutral-300",
     unchecked: "group-hover:border-primary-600 group-hover:bg-neutral-0",
     checked: "border-transparent",
-    disabled: "bg-neutral-100 group-hover:border-neutral-400 group-hover:bg-neutral-100",
+    disabled:
+        "bg-neutral-300 border-neutral-300 group-hover:border-neutral-300 group-hover:bg-neutral-300",
 };
 
 const Title = ({ children }: { children: React.ReactNode }) => (
