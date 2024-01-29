@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React, { useState } from "react";
-import { RecommendationTag } from "./recommendation-tag";
+import { FeaturedTag } from "./featured-tag";
 import { Panel } from "../panel";
 import { FormField } from "../form-field";
 
-const meta: Meta<typeof RecommendationTag> = {
-    title: "Input/RecommendationTag",
-    component: RecommendationTag,
+const meta: Meta<typeof FeaturedTag> = {
+    title: "Input/FeaturedTag",
+    component: FeaturedTag,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof RecommendationTag>;
+type Story = StoryObj<typeof FeaturedTag>;
 
 const RadioBoxWithRecommendationTag = () => {
     const [value, setValue] = useState("value_1");
@@ -27,7 +27,7 @@ const RadioBoxWithRecommendationTag = () => {
                     id="value"
                 >
                     <FormField.RadioBox.Option value="option_1">
-                        Option 1<RecommendationTag>Recommended!</RecommendationTag>
+                        Option 1<FeaturedTag>Recommended!</FeaturedTag>
                     </FormField.RadioBox.Option>
 
                     <FormField.RadioBox.Option value="option_2">Option 2</FormField.RadioBox.Option>
@@ -50,7 +50,7 @@ export const PanelExample: Story = {
         <div className="w-96">
             <Panel className="relative">
                 <p>This example uses a Panel component</p>
-                <RecommendationTag>Recommended!</RecommendationTag>
+                <FeaturedTag>Recommended!</FeaturedTag>
             </Panel>
         </div>
     ),
