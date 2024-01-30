@@ -32,7 +32,7 @@ const Title = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Description = ({ children }: { children: React.ReactNode }) => (
-    <p className="paragraph-200 text-neutral-800 group-[.is-checked]:text-primary-100 group-[.is-disabled]:text-neutral-500">
+    <p className="paragraph-200 text-neutral-800 group-[.is-checked]:text-neutral-0 group-[.is-disabled]:text-neutral-500">
         {children}
     </p>
 );
