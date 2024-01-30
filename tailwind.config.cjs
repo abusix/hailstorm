@@ -101,6 +101,7 @@ export default {
             fontFamily: {
                 display: ["Fabriga", "serif"],
                 sans: ["Inter", "sans-serif"],
+                mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"]
             },
             maxWidth: {
                 285: "71.25rem",
