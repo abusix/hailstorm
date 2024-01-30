@@ -22,7 +22,7 @@ const radioBoxCircleStyles = {
     unchecked: "group-hover:border-primary-600 group-hover:bg-neutral-0",
     checked: "border-transparent",
     disabled:
-        "bg-neutral-300 border-neutral-300 group-hover:border-neutral-300 group-hover:bg-neutral-300",
+        "bg-neutral-200 border-neutral-200 group-hover:border-neutral-200 group-hover:bg-neutral-200",
 };
 
 const Title = ({ children }: { children: React.ReactNode }) => (
