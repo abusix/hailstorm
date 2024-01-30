@@ -2,7 +2,7 @@ import { RadioGroup } from "@headlessui/react";
 import React, { Fragment } from "react";
 import { classNames } from "../../../util/class-names";
 
-interface RadioBoxOptionProps {
+export interface RadioBoxOptionProps {
     children: React.ReactNode;
     value: string;
     disabled?: boolean;
