@@ -15,7 +15,7 @@ const NavigationGroupItem = ({
     return (
         <div
             className={classNames(
-                "relative flex items-center gap-x-3 px-4 py-3 text-sm text-neutral-0 hover:bg-primary-900+10",
+                "relative flex cursor-pointer items-center gap-x-3 px-4 py-3 text-sm text-neutral-0 hover:bg-primary-900+10",
                 isActive && "bg-primary-900+20 font-semibold hover:bg-primary-900+20"
             )}
             {...props}

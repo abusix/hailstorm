@@ -15,7 +15,7 @@ const NavigationDisclosureButton = ({
 }: NavigationDisclosureButtonProps) => {
     return (
         <Disclosure.Button
-            className="flex w-full items-center gap-x-3 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold"
+            className="flex w-full cursor-pointer items-center gap-x-3 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold"
             onClick={onClick}
         >
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}
