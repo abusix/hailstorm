@@ -15,10 +15,11 @@ type Story = StoryObj<typeof FormField.Listbox>;
 interface Person {
     id: number;
     name: string;
+    isDead?: boolean;
 }
 
 const people: Person[] = [
-    { id: 1, name: "Durward Reynolds" },
+    { id: 1, name: "John Lennon", isDead: true },
     { id: 2, name: "Kenton Towne" },
     { id: 3, name: "Therese Wunsch" },
     { id: 4, name: "Benedict Kessler" },
@@ -43,7 +44,11 @@ const ListboxTextWithHooks = () => {
                 </FormField.Listbox.Button>
                 <FormField.Listbox.Options>
                     {people.map((person) => (
-                        <FormField.Listbox.Option value={person} key={person.id}>
+                        <FormField.Listbox.Option
+                            value={person}
+                            key={person.id}
+                            disabled={person.isDead}
+                        >
                             <FormField.Listbox.Option.TextOption>
                                 {person.name}
                             </FormField.Listbox.Option.TextOption>
