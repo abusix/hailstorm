@@ -7,11 +7,12 @@ export interface RadioBoxProps {
     children: React.ReactNode;
     value: string;
     onChange: (value: string) => void;
+    className?: string;
 }
 
-export const RadioBox = ({ id, value, children, onChange }: RadioBoxProps) => {
+export const RadioBox = ({ id, value, children, onChange, className }: RadioBoxProps) => {
     return (
-        <RadioGroup id={id} value={value} onChange={onChange} className="flex flex-col gap-2">
+        <RadioGroup id={id} value={value} onChange={onChange} className={className}>
             {children}
         </RadioGroup>
     );
