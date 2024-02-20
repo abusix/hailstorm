@@ -18,12 +18,15 @@ export interface ListboxProps<TValue> {
     children: React.ReactNode;
     value: TValue;
     onChange: (value: TValue) => void;
+    className?: string;
 }
 
-const Listbox = <TValue,>({ children, value, onChange }: ListboxProps<TValue>) => {
+const Listbox = <TValue,>({ children, value, onChange, className }: ListboxProps<TValue>) => {
     return (
         <HeadlessListbox value={value} onChange={onChange}>
-            <div className={classNames("relative w-full", formFieldGroupStyles)}>{children}</div>
+            <div className={classNames("relative w-full", formFieldGroupStyles, className)}>
+                {children}
+            </div>
         </HeadlessListbox>
     );
 };
