@@ -6,5 +6,5 @@ export interface TabPanelProps {
 }
 
 export const TabPanel = ({ children }: TabPanelProps) => {
-    return <HeadlessTab.Panel as={React.Fragment}>{children}</HeadlessTab.Panel>;
+    return <HeadlessTab.Panel>{children}</HeadlessTab.Panel>;
 };
