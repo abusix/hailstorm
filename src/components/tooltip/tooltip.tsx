@@ -66,7 +66,7 @@ export const Tooltip = ({
     );
 
     return (
-        <div>
+        <>
             <div
                 ref={(el) => el && setReferenceElement(el)}
                 onMouseEnter={() => !isControlled && setShow(true)}
@@ -79,6 +79,6 @@ export const Tooltip = ({
             ) : (
                 renderTooltipContent()
             )}
-        </div>
+        </>
     );
 };
