@@ -44,12 +44,6 @@ export const WithIcons: Story = {
         RightIcon: icons.LockIcon,
     },
 };
-export const AsAnchor: Story = {
-    args: {
-        as: "a",
-        href: "https://www.google.com",
-    },
-};
 export const Loading: Story = {
     args: { loading: true },
 };
