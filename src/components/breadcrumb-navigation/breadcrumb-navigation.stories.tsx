@@ -3,7 +3,7 @@ import React from "react";
 import { BreadcrumbNavigation } from "./breadcrumb-navigation";
 
 const meta: Meta<typeof BreadcrumbNavigation> = {
-    title: "Breadcrumb",
+    title: "Breadcrumb Navigation",
     component: BreadcrumbNavigation,
     args: {},
 };
