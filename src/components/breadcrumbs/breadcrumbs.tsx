@@ -2,11 +2,11 @@ import React from "react";
 import { BreadcrumbItem } from "./breadcrumb-item";
 import { BreadcrumbArrow } from "./breadcrumb-arrow";
 
-export interface BreadcrumbProps {
+export interface BreadcrumbsProps {
     children: React.ReactNode;
 }
 
-const Breadcrumb = ({ children }: BreadcrumbProps) => {
+const Breadcrumbs = ({ children }: BreadcrumbsProps) => {
     return (
         <nav className="flex flex-row items-center justify-center gap-1" role="navigation">
             {children}
@@ -14,7 +14,7 @@ const Breadcrumb = ({ children }: BreadcrumbProps) => {
     );
 };
 
-Breadcrumb.Item = BreadcrumbItem;
-Breadcrumb.Arrow = BreadcrumbArrow;
+Breadcrumbs.Item = BreadcrumbItem;
+Breadcrumbs.Arrow = BreadcrumbArrow;
 
-export { Breadcrumb };
+export { Breadcrumbs };

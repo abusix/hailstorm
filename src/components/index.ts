@@ -1,7 +1,7 @@
 export { Alert, AlertIntent } from "./alert";
 export { Avatar } from "./avatar";
 export { Badge, BadgeType } from "./badge";
-export { Breadcrumb } from "./breadcrumb";
+export { Breadcrumbs } from "./breadcrumbs";
 export { Button } from "./button";
 export { Checkbox } from "./checkbox";
 export { Dialog } from "./dialog";
