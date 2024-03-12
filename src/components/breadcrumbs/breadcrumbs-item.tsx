@@ -1,30 +1,21 @@
 import React from "react";
 import { classNames } from "../../util/class-names";
 
-interface BreadcrumbItemProps {
-    children: React.ReactNode;
-    className?: string;
-    href?: string;
+type BreadcrumbItemProps = AsChildProps<React.AnchorHTMLAttributes<HTMLAnchorElement>> & {
     isActive?: boolean;
-}
+};
 
-export const BreadcrumbsItem: React.FC<BreadcrumbItemProps> = ({
-    children,
-    className,
-    href,
-    isActive,
-}) => {
+export const BreadcrumbsItem: React.FC<BreadcrumbItemProps> = ({ isActive, asChild, ...props }) => {
+    const Comp = asChild ? Slot : "a";
+
     return (
-        <a
+        <Comp
             className={classNames(
                 "headline-500 text-neutral-800",
                 !isActive && "cursor-pointer underline-offset-2 hover:underline",
-                isActive && "text-black",
-                className
+                isActive && "text-black"
             )}
-            href={href}
-        >
-            {children}
-        </a>
+            {...props}
+        />
     );
 };
