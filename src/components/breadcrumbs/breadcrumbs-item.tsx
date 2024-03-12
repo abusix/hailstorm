@@ -8,7 +8,7 @@ interface BreadcrumbItemProps {
     active?: boolean;
 }
 
-export const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
+export const BreadcrumbsItem: React.FC<BreadcrumbItemProps> = ({
     children,
     className,
     href,

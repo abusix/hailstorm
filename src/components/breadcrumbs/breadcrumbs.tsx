@@ -1,6 +1,6 @@
 import React from "react";
-import { BreadcrumbItem } from "./breadcrumb-item";
-import { BreadcrumbArrow } from "./breadcrumb-arrow";
+import { BreadcrumbsItem } from "./breadcrumbs-item";
+import { BreadcrumbsArrow } from "./breadcrumbs-arrow";
 
 export interface BreadcrumbsProps {
     children: React.ReactNode;
@@ -14,7 +14,7 @@ const Breadcrumbs = ({ children }: BreadcrumbsProps) => {
     );
 };
 
-Breadcrumbs.Item = BreadcrumbItem;
-Breadcrumbs.Arrow = BreadcrumbArrow;
+Breadcrumbs.Item = BreadcrumbsItem;
+Breadcrumbs.Arrow = BreadcrumbsArrow;
 
 export { Breadcrumbs };
