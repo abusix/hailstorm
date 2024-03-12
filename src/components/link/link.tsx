@@ -1,9 +1,8 @@
-/* eslint-disable react/button-has-type */
 import React from "react";
+import { AsChildProps, Slot } from "../slot/slot";
 import { classNames } from "../../util/class-names";
-import { Spinner } from "../spinner";
 
-const buttonVariants = {
+const linkVariants = {
     primary:
         "bg-primary-500 text-neutral-0 hover:bg-primary-600 active:bg-primary-600 focus:ring-2 focus:ring-primary-200 focus:bg-primary-600 disabled:bg-primary-200 fill-neutral-0",
     secondary:
@@ -25,38 +24,52 @@ const iconVariants = {
     "danger-secondary": "",
 };
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: keyof typeof buttonVariants;
-    loading?: boolean;
+type LinkProps = AsChildProps<React.AnchorHTMLAttributes<HTMLAnchorElement>> & {
+    className?: string;
+    variant?: keyof typeof linkVariants;
     LeftIcon?: React.ElementType;
     RightIcon?: React.ElementType;
-}
+};
 
-const Button = ({
+export const Link = ({
     variant = "primary",
     className,
     children,
-    loading,
     LeftIcon,
     RightIcon,
+    asChild = false,
     ...props
-}: ButtonProps) => {
+}: LinkProps) => {
+    const Comp = asChild ? Slot : "a";
     const commonClasses = classNames(
-        `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
-        buttonVariants[variant],
+        `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed `,
+        linkVariants[variant],
         className
     );
 
+    if (React.isValidElement(children)) {
+        return React.cloneElement(children, {
+            ...children.props,
+            children: (
+                <>
+                    {LeftIcon ? <LeftIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
+                    {children.props.children}
+                    {RightIcon ? (
+                        <RightIcon className={`${iconVariants[variant]} h-3 w-3`} />
+                    ) : null}
+                </>
+            ),
+            className: commonClasses,
+        });
+    }
+
     return (
-        <button className={commonClasses} {...props}>
-            {loading ? <Spinner size="small" /> : null}
-            {LeftIcon && !loading ? (
-                <LeftIcon className={`${iconVariants[variant]} h-3 w-3`} />
-            ) : null}
-            {children}
-            {RightIcon ? <RightIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
-        </button>
+        <Comp {...props} className={commonClasses}>
+            <>
+                {LeftIcon ? <LeftIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
+                {children}
+                {RightIcon ? <RightIcon className={`${iconVariants[variant]} h-3 w-3`} /> : null}
+            </>
+        </Comp>
     );
 };
-
-export { Button };
