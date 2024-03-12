@@ -7,11 +7,7 @@ export interface BreadcrumbsProps {
 }
 
 const Breadcrumbs = ({ children }: BreadcrumbsProps) => {
-    return (
-        <nav className="flex flex-row items-center justify-center gap-1" role="navigation">
-            {children}
-        </nav>
-    );
+    return <nav className="flex flex-row items-center gap-1">{children}</nav>;
 };
 
 Breadcrumbs.Item = BreadcrumbsItem;

@@ -24,8 +24,8 @@ export const Base: Story = {
 
                 <Breadcrumbs.Arrow />
 
-                <Breadcrumbs.Item href="/" active>
-                    Book
+                <Breadcrumbs.Item asChild isActive>
+                    <a href="/">dsjkdskjdssdkj</a>
                 </Breadcrumbs.Item>
             </Breadcrumbs>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { classNames } from "../../util/class-names";
+import { AsChildProps, Slot } from "../slot/slot";
 
 type BreadcrumbItemProps = AsChildProps<React.AnchorHTMLAttributes<HTMLAnchorElement>> & {
     isActive?: boolean;
