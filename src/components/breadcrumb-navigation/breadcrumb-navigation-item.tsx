@@ -2,11 +2,15 @@ import React from "react";
 import { classNames } from "../../util/class-names";
 import { AsChildProps, Slot } from "../slot/slot";
 
-type BreadcrumbItemProps = AsChildProps<React.AnchorHTMLAttributes<HTMLAnchorElement>> & {
+type BreadcrumbNavigationItemProps = AsChildProps<React.AnchorHTMLAttributes<HTMLAnchorElement>> & {
     isActive?: boolean;
 };
 
-export const BreadcrumbsItem: React.FC<BreadcrumbItemProps> = ({ isActive, asChild, ...props }) => {
+export const BreadcrumbNavigationItem: React.FC<BreadcrumbNavigationItemProps> = ({
+    isActive,
+    asChild,
+    ...props
+}) => {
     const Comp = asChild ? Slot : "a";
 
     return (
