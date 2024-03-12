@@ -1,6 +1,6 @@
 import React from "react";
 import { BreadcrumbNavigationItem } from "./breadcrumb-navigation-item";
-import { BreadcrumbNavigationArrow } from "./breadcrumb--navigation-arrow";
+import { BreadcrumbNavigationArrow } from "./breadcrumb-navigation-arrow";
 
 export interface BreadcrumbNavigationProps {
     children: React.ReactNode;
