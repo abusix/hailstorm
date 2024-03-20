@@ -8,6 +8,7 @@ const intents: InlineAlertProps["intent"][] = ["info", "success", "warning", "da
 
 const meta: Meta<typeof InlineAlert> = {
     component: InlineAlert,
+    title: "Inline Alert",
     parameters: getStoryDescription("Inline alert text to inform user about contextual things"),
     args: {
         title: "Alert title",
