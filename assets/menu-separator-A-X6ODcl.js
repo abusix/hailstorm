@@ -1,0 +1,1 @@
+import{j as e}from"./jsx-runtime-DtaoT6pD.js";const r=()=>e.jsx("hr",{className:"h-px border-none bg-neutral-300"});r.__docgenInfo={description:"",methods:[],displayName:"MenuSeparator"};export{r as M};
