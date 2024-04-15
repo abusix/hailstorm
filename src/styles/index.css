@@ -51,7 +51,7 @@
 }
 
 .inline-link {
-    @apply text-primary-500 underline hover:text-primary-600;
+    @apply text-primary-500 underline hover:text-primary-700;
 }
 
 /* Tailwind checkbox needs it to change styles of the check */
