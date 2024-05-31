@@ -25,13 +25,13 @@ const iconNames: Record<AlertIntent, React.ElementType> = {
     danger: ErrorIcon,
 };
 
-export interface AlertProps {
+export interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
     title: string;
     intent: AlertIntent;
     children?: React.ReactNode;
 }
 
-export const Alert = ({ title, children, intent }: AlertProps) => {
+export const Alert = ({ title, children, intent, ...props }: AlertProps) => {
     const Icon = iconNames[intent];
 
     return (
@@ -41,6 +41,7 @@ export const Alert = ({ title, children, intent }: AlertProps) => {
                 "flex flex-row gap-4 rounded-lg border px-4 py-3 text-neutral-800",
                 alertVariants[intent]
             )}
+            {...props}
         >
             <Icon className={classNames("h-4 w-4 flex-shrink-0", iconVariants[intent])} />
             <div className="flex-grow">
