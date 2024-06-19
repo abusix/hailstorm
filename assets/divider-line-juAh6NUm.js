@@ -1,1 +1,0 @@
-import{j as e}from"./jsx-runtime-DtaoT6pD.js";const r=()=>e.jsx("hr",{className:"col-span-full my-8 h-px w-full border-none bg-neutral-300"});r.__docgenInfo={description:"",methods:[],displayName:"DividerLine"};export{r as D};

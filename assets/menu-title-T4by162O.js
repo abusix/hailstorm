@@ -1,1 +1,0 @@
-import{j as t}from"./jsx-runtime-DtaoT6pD.js";const s=({children:e})=>t.jsx("div",{className:"px-4 pb-2 pt-3 font-sans text-xs font-medium uppercase text-neutral-700",children:e});s.__docgenInfo={description:"",methods:[],displayName:"MenuTitle",props:{children:{required:!0,tsType:{name:"string"},description:""}}};export{s as M};
