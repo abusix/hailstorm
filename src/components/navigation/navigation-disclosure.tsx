@@ -1,6 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import React from "react";
 import { NavigationDisclosurePanel } from "./navigation-disclosure-panel";
+import { NavigationGroupItemTag } from "./navigation-group-item-tag";
 
 export interface NavigationDisclosureButtonProps {
     children: React.ReactNode;
@@ -22,11 +23,7 @@ const NavigationDisclosureButton = ({
         >
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}
             {children}
-            {tag ? (
-                <span className="ml-auto rounded border border-neutral-0 px-1.5 text-xs font-semibold uppercase text-neutral-0">
-                    {tag}
-                </span>
-            ) : null}
+            {tag ? <NavigationGroupItemTag>{tag}</NavigationGroupItemTag> : null}
         </Disclosure.Button>
     );
 };
