@@ -27,6 +27,8 @@ const preview: Preview = {
             showPanel: true,
         },
     },
+
+    tags: ["autodocs"]
 };
 
 export default preview;
