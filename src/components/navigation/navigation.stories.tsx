@@ -26,13 +26,17 @@ export const Default: Story = {
                 <nav className="flex flex-1 flex-col">
                     <Navigation.Group>
                         <Navigation.Group.Item>Home</Navigation.Group.Item>
-                        <Navigation.Group.Item isActive>Dashboard</Navigation.Group.Item>
+                        <Navigation.Group.Item isActive tag="Beta">
+                            Dashboard
+                        </Navigation.Group.Item>
                     </Navigation.Group>
                     <Navigation.Group>
                         <Navigation.Group.Item>Lookup & Delist</Navigation.Group.Item>
                         <Navigation.Group.Item>Mail Intelligence</Navigation.Group.Item>
                         <Navigation.Disclosure>
-                            <Navigation.Disclosure.Button>AbuseHQ</Navigation.Disclosure.Button>
+                            <Navigation.Disclosure.Button tag="Beta">
+                                AbuseHQ 2
+                            </Navigation.Disclosure.Button>
                             <Navigation.Disclosure.Panel>
                                 <Navigation.Disclosure.Panel.Item>
                                     Cases

@@ -1,15 +1,18 @@
 import React from "react";
 import { classNames } from "../../util/class-names";
+import { NavigationGroupItemTag } from "./navigation-group-item-tag";
 
 export interface NavigationGroupItemProps extends React.ComponentPropsWithoutRef<"div"> {
     isActive?: boolean;
     LeftIcon?: React.ElementType;
+    tag?: string;
 }
 
 const NavigationGroupItem = ({
     children,
     isActive,
     LeftIcon,
+    tag,
     ...props
 }: NavigationGroupItemProps) => {
     return (
@@ -22,6 +25,7 @@ const NavigationGroupItem = ({
         >
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}
             {children}
+            {tag ? <NavigationGroupItemTag>{tag}</NavigationGroupItemTag> : null}
             {isActive && (
                 <div className="absolute bottom-0 left-0 top-0 h-full w-0.5 rounded-r-sm bg-neutral-0" />
             )}

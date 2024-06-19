@@ -1,17 +1,20 @@
 import { Disclosure } from "@headlessui/react";
 import React from "react";
 import { NavigationDisclosurePanel } from "./navigation-disclosure-panel";
+import { NavigationGroupItemTag } from "./navigation-group-item-tag";
 
 export interface NavigationDisclosureButtonProps {
     children: React.ReactNode;
     LeftIcon?: React.ElementType;
     onClick?: () => void;
+    tag?: string;
 }
 
 const NavigationDisclosureButton = ({
     children,
     LeftIcon,
     onClick,
+    tag,
 }: NavigationDisclosureButtonProps) => {
     return (
         <Disclosure.Button
@@ -20,6 +23,7 @@ const NavigationDisclosureButton = ({
         >
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}
             {children}
+            {tag ? <NavigationGroupItemTag>{tag}</NavigationGroupItemTag> : null}
         </Disclosure.Button>
     );
 };
