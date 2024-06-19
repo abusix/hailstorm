@@ -6,12 +6,14 @@ export interface NavigationDisclosureButtonProps {
     children: React.ReactNode;
     LeftIcon?: React.ElementType;
     onClick?: () => void;
+    tag?: string;
 }
 
 const NavigationDisclosureButton = ({
     children,
     LeftIcon,
     onClick,
+    tag,
 }: NavigationDisclosureButtonProps) => {
     return (
         <Disclosure.Button
@@ -20,6 +22,11 @@ const NavigationDisclosureButton = ({
         >
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}
             {children}
+            {tag ? (
+                <span className="ml-auto rounded border border-neutral-0 px-1.5 text-xs font-semibold uppercase text-neutral-0">
+                    {tag}
+                </span>
+            ) : null}
         </Disclosure.Button>
     );
 };

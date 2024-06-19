@@ -32,7 +32,9 @@ export const Default: Story = {
                         <Navigation.Group.Item>Lookup & Delist</Navigation.Group.Item>
                         <Navigation.Group.Item>Mail Intelligence</Navigation.Group.Item>
                         <Navigation.Disclosure>
-                            <Navigation.Disclosure.Button>AbuseHQ</Navigation.Disclosure.Button>
+                            <Navigation.Disclosure.Button tag="Beta">
+                                AbuseHQ 2
+                            </Navigation.Disclosure.Button>
                             <Navigation.Disclosure.Panel>
                                 <Navigation.Disclosure.Panel.Item>
                                     Cases
