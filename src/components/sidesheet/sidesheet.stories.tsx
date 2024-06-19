@@ -65,7 +65,7 @@ export const Default: Story = {
     argTypes: {
         initialFocus: {
             control: {
-                type: null,
+                type: "text",
             },
         },
     },

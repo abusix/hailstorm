@@ -1,7 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Toast } from "./toast";
-import { noControl } from "../../util/storybook-utils";
 
 const meta: Meta<typeof Toast> = {
     title: "Toast",
@@ -9,9 +8,6 @@ const meta: Meta<typeof Toast> = {
     args: {
         title: "Title",
         isClosable: true,
-    },
-    argTypes: {
-        onClose: noControl,
     },
 };
 

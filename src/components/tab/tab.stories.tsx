@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Tab } from "./tab";
-import { getStoryDescription, noControl } from "../../util/storybook-utils";
+import { getStoryDescription } from "../../util/storybook-utils";
 import { TabType } from "./tab-context";
 
 const meta: Meta<typeof Tab> = {
@@ -90,8 +90,6 @@ export const NestedTabs: Story = {
         defaultIndex: 0,
     },
     argTypes: {
-        as: noControl,
-        refName: noControl,
         className: {
             control: {
                 type: "text",
