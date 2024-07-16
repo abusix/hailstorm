@@ -116,10 +116,5 @@
     "peerDependencies": {
         "react": ">=17.0.1",
         "react-dom": ">=17.0.1"
-    },
-    "overrides": {
-        "optionator": {
-            "word-wrap@1.2.3": "1.2.5"
-        }
     }
 }
