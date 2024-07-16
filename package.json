@@ -5,6 +5,7 @@
     "homepage": "https://github.com/abusix/hailstorm",
     "author": "abusix",
     "license": "ISC",
+    "type": "module",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/index.d.ts",
