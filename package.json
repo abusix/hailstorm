@@ -45,15 +45,13 @@
         "@headlessui/react": "^1.7.17",
         "@headlessui/tailwindcss": "^0.2.0",
         "@popperjs/core": "^2.11.8",
-        "@storybook/test": "^8.1.10",
         "@tailwindcss/forms": "^0.5.7",
         "@tanstack/react-table": "^8.10.7",
         "@tanstack/react-virtual": "^3.0.1",
         "@tanstack/table-core": "^8.10.7",
         "react-dnd": "^16.0.1",
         "react-dnd-html5-backend": "^16.0.1",
-        "react-popper": "^2.3.0",
-        "tslib": "^2.6.2"
+        "react-popper": "^2.3.0"
     },
     "devDependencies": {
         "@babel/core": "^7.23.5",
