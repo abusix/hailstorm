@@ -28,7 +28,7 @@
         "*.js",
         "vite.config.ts",
         "vitest-setup.ts",
-        "postcss.config.js"
+        "postcss.config.cjs"
     ],
     "exclude": ["dist", "node_modules"]
 }
