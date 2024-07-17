@@ -26,8 +26,9 @@ export const Default: Story = {
                 <nav className="flex flex-1 flex-col">
                     <Navigation.Group>
                         <Navigation.Group.Item>Home</Navigation.Group.Item>
+                        <Navigation.Group.Item>Dashboard</Navigation.Group.Item>
                         <Navigation.Group.Item isActive tag="Beta">
-                            Dashboard
+                            long text for this navigation menu option
                         </Navigation.Group.Item>
                     </Navigation.Group>
                     <Navigation.Group>
@@ -35,7 +36,7 @@ export const Default: Story = {
                         <Navigation.Group.Item>Mail Intelligence</Navigation.Group.Item>
                         <Navigation.Disclosure>
                             <Navigation.Disclosure.Button tag="Beta">
-                                Guardian Ops
+                                AbuseHQ
                             </Navigation.Disclosure.Button>
                             <Navigation.Disclosure.Panel>
                                 <Navigation.Disclosure.Panel.Item>
