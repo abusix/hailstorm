@@ -2,12 +2,14 @@ import { Disclosure } from "@headlessui/react";
 import React from "react";
 import { NavigationDisclosurePanel } from "./navigation-disclosure-panel";
 import { NavigationGroupItemTag } from "./navigation-group-item-tag";
+import { classNames } from "../../util/class-names";
 
 export interface NavigationDisclosureButtonProps {
     children: React.ReactNode;
     LeftIcon?: React.ElementType;
     onClick?: () => void;
     tag?: string;
+    className?: string;
 }
 
 const NavigationDisclosureButton = ({
@@ -15,10 +17,14 @@ const NavigationDisclosureButton = ({
     LeftIcon,
     onClick,
     tag,
+    className,
 }: NavigationDisclosureButtonProps) => {
     return (
         <Disclosure.Button
-            className="flex w-full cursor-pointer items-center gap-x-3 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold"
+            className={classNames(
+                "flex w-full cursor-pointer items-center gap-x-2 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold",
+                className
+            )}
             onClick={onClick}
         >
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}

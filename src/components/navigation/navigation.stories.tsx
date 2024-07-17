@@ -35,7 +35,7 @@ export const Default: Story = {
                         <Navigation.Group.Item>Mail Intelligence</Navigation.Group.Item>
                         <Navigation.Disclosure>
                             <Navigation.Disclosure.Button tag="Beta">
-                                AbuseHQ 2
+                                Guardian Ops
                             </Navigation.Disclosure.Button>
                             <Navigation.Disclosure.Panel>
                                 <Navigation.Disclosure.Panel.Item>
