@@ -31,7 +31,7 @@ export interface AlertProps extends React.ComponentPropsWithoutRef<"div"> {
     children?: React.ReactNode;
 }
 
-export const Alert = ({ title, children, intent, ...props }: AlertProps) => {
+export const Alert = ({ title, children, intent, className, ...props }: AlertProps) => {
     const Icon = iconNames[intent];
 
     return (
@@ -39,7 +39,8 @@ export const Alert = ({ title, children, intent, ...props }: AlertProps) => {
             role="alert"
             className={classNames(
                 "flex flex-row gap-4 rounded-lg border px-4 py-3 text-neutral-800",
-                alertVariants[intent]
+                alertVariants[intent],
+                className
             )}
             {...props}
         >
