@@ -1,5 +1,5 @@
+import { DisclosurePanel as HeadlessUiDisclosurePanel } from "@headlessui/react";
 import React from "react";
-import { Disclosure } from "@headlessui/react";
 import { classNames } from "../../util/class-names";
 
 export interface NavigationDisclosurePanelItemProps extends React.ComponentPropsWithoutRef<"div"> {
@@ -35,7 +35,7 @@ export interface NavigationDisclosurePanelProps {
 }
 
 const NavigationDisclosurePanel = ({ children }: NavigationDisclosurePanelProps) => {
-    return <Disclosure.Panel>{children}</Disclosure.Panel>;
+    return <HeadlessUiDisclosurePanel>{children}</HeadlessUiDisclosurePanel>;
 };
 
 NavigationDisclosurePanel.Item = NavigationDisclosurePanelItem;
