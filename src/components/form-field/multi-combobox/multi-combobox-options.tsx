@@ -1,5 +1,5 @@
+import { ComboboxOptions as HeadlessUiComboboxOptions } from "@headlessui/react";
 import React from "react";
-import { Combobox as HeadlessCombobox } from "@headlessui/react";
 import { classNames } from "../../../util/class-names";
 
 export interface MultiComboboxOptionsProps {
@@ -9,7 +9,7 @@ export interface MultiComboboxOptionsProps {
 
 const MultiComboboxOptions = ({ children, className }: MultiComboboxOptionsProps) => {
     return (
-        <HeadlessCombobox.Options
+        <HeadlessUiComboboxOptions
             hold
             className={classNames(
                 "absolute mt-1 max-h-60 w-full overflow-auto rounded-md border border-neutral-300 bg-neutral-0 shadow-md outline-none ring-0",
@@ -17,7 +17,7 @@ const MultiComboboxOptions = ({ children, className }: MultiComboboxOptionsProps
             )}
         >
             {children}
-        </HeadlessCombobox.Options>
+        </HeadlessUiComboboxOptions>
     );
 };
 
