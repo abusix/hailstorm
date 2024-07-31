@@ -1,4 +1,4 @@
-import { RadioGroup } from "@headlessui/react";
+import { Radio as HeadlessUiRadio } from "@headlessui/react";
 import React from "react";
 import { classNames } from "../../../util/class-names";
 
@@ -10,7 +10,7 @@ export interface RadioInputOptionProps {
 
 export const RadioInputOption = ({ children, value, disabled }: RadioInputOptionProps) => {
     return (
-        <RadioGroup.Option
+        <HeadlessUiRadio
             value={value}
             className="max-w-fit cursor-pointer focus:outline-none"
             disabled={disabled}
@@ -50,6 +50,6 @@ export const RadioInputOption = ({ children, value, disabled }: RadioInputOption
                     </p>
                 </div>
             )}
-        </RadioGroup.Option>
+        </HeadlessUiRadio>
     );
 };
