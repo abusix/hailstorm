@@ -1,5 +1,10 @@
+import {
+    Dialog as HeadlessUiDialog,
+    DialogPanel as HeadlessUiDialogPanel,
+    Transition as HeadlessUiTransition,
+    TransitionChild as HeadlessUiTransitionChild,
+} from "@headlessui/react";
 import React, { Fragment } from "react";
-import { Dialog as HeadlessDialog, Transition } from "@headlessui/react";
 import { SidesheetPanel } from "./sidesheet-panel";
 import { SidesheetPanelContent } from "./sidesheet-panel-content";
 import { SidesheetPanelHeader } from "./sidesheet-panel-header";
@@ -13,9 +18,9 @@ export interface SidesheetProps {
 
 const Sidesheet = ({ children, isOpen, onClose, initialFocus }: SidesheetProps) => {
     return (
-        <Transition appear show={isOpen} as={Fragment}>
-            <HeadlessDialog onClose={onClose} initialFocus={initialFocus}>
-                <Transition.Child
+        <HeadlessUiTransition appear show={isOpen} as={Fragment}>
+            <HeadlessUiDialog onClose={onClose} initialFocus={initialFocus}>
+                <HeadlessUiTransitionChild
                     as={Fragment}
                     enter="ease-out duration-300"
                     enterFrom="opacity-0 z-0"
@@ -25,9 +30,9 @@ const Sidesheet = ({ children, isOpen, onClose, initialFocus }: SidesheetProps) 
                     leaveTo="opacity-0 z-0"
                 >
                     <div className="fixed inset-0 bg-modal-background" aria-hidden="true" />
-                </Transition.Child>
+                </HeadlessUiTransitionChild>
 
-                <Transition.Child
+                <HeadlessUiTransitionChild
                     as={Fragment}
                     enter="transition ease-in-out duration-300 transform"
                     enterFrom="translate-x-full"
@@ -36,12 +41,12 @@ const Sidesheet = ({ children, isOpen, onClose, initialFocus }: SidesheetProps) 
                     leaveFrom="-translate-x-0"
                     leaveTo="translate-x-full"
                 >
-                    <HeadlessDialog.Panel className="fixed inset-y-0 right-0 z-10 w-184 overflow-y-auto bg-neutral-0">
+                    <HeadlessUiDialogPanel className="fixed inset-y-0 right-0 z-10 w-184 overflow-y-auto bg-neutral-0">
                         {children}
-                    </HeadlessDialog.Panel>
-                </Transition.Child>
-            </HeadlessDialog>
-        </Transition>
+                    </HeadlessUiDialogPanel>
+                </HeadlessUiTransitionChild>
+            </HeadlessUiDialog>
+        </HeadlessUiTransition>
     );
 };
 
