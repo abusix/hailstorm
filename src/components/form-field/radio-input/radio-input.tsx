@@ -1,4 +1,4 @@
-import { RadioGroup as HeadlessRadioGroup } from "@headlessui/react";
+import { RadioGroup as HeadlessUiRadioGroup } from "@headlessui/react";
 import React from "react";
 import { RadioInputOption } from "./radio-input-option";
 
@@ -11,9 +11,9 @@ export interface RadioInputProps {
 
 const RadioInput = ({ id, children, value, onChange }: RadioInputProps) => {
     return (
-        <HeadlessRadioGroup id={id} value={value} onChange={onChange}>
+        <HeadlessUiRadioGroup id={id} value={value} onChange={onChange}>
             {children}
-        </HeadlessRadioGroup>
+        </HeadlessUiRadioGroup>
     );
 };
 
