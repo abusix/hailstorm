@@ -1,4 +1,4 @@
-import { Combobox as HeadlessCombobox } from "@headlessui/react";
+import { Combobox as HeadlessUiCombobox } from "@headlessui/react";
 import React from "react";
 import { MultiComboboxCustomOption } from "./multi-combobox-custom-option";
 import { MultiComboboxEmptyOption } from "./multi-combobox-empty-option";
@@ -15,9 +15,9 @@ export interface MultiComboboxProps<TValue> {
 
 const MultiCombobox = <TValue,>({ value, onChange, children }: MultiComboboxProps<TValue>) => {
     return (
-        <HeadlessCombobox multiple value={value} onChange={onChange}>
+        <HeadlessUiCombobox multiple value={value} onChange={onChange}>
             <div className="relative">{children}</div>
-        </HeadlessCombobox>
+        </HeadlessUiCombobox>
     );
 };
 
