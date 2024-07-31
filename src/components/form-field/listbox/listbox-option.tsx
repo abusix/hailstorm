@@ -1,8 +1,8 @@
-import { Listbox } from "@headlessui/react";
+import { ListboxOption as HeadlessUiListboxOption } from "@headlessui/react";
 import React, { Fragment } from "react";
+import { classNames } from "../../../util/class-names";
 import { ListboxBadgeOption } from "./listbox-badge-option";
 import { ListboxTextOption } from "./listbox-text-option";
-import { classNames } from "../../../util/class-names";
 
 const listboxOptionStyles = {
     base: "relative cursor-pointer px-3 py-2 ",
@@ -20,7 +20,7 @@ export interface ListboxOptionProps<TValue> {
 
 const ListboxOption = <TValue,>({ value, disabled, children }: ListboxOptionProps<TValue>) => {
     return (
-        <Listbox.Option value={value} as={Fragment} disabled={disabled}>
+        <HeadlessUiListboxOption value={value} as={Fragment} disabled={disabled}>
             {({ active, selected }) => (
                 <li
                     className={classNames(
@@ -33,7 +33,7 @@ const ListboxOption = <TValue,>({ value, disabled, children }: ListboxOptionProp
                     {children}
                 </li>
             )}
-        </Listbox.Option>
+        </HeadlessUiListboxOption>
     );
 };
 
