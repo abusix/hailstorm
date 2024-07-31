@@ -1,8 +1,15 @@
-import { Dialog as HeadlessDialog, Transition } from "@headlessui/react";
+import {
+    Description as HeadlessDescription,
+    Dialog as HeadlessDialog,
+    DialogPanel as HeadlessDialogPanel,
+    DialogTitle as HeadlessDialogTitle,
+    Transition,
+    TransitionChild,
+} from "@headlessui/react";
 import React, { Fragment } from "react";
-import { IconButton } from "../icon-button/icon-button";
-import { classNames } from "../../util/class-names";
 import { CrossIcon } from "../../icons";
+import { classNames } from "../../util/class-names";
+import { IconButton } from "../icon-button/icon-button";
 
 export interface DialogProps {
     isShown?: boolean;
@@ -39,7 +46,7 @@ export const Dialog = ({
         <Transition show={isShown} as={Fragment}>
             <HeadlessDialog as="div" onClose={handleClose}>
                 {hasBackground ? (
-                    <Transition.Child
+                    <TransitionChild
                         as={Fragment}
                         enter="ease-out duration-300"
                         enterFrom="opacity-0"
@@ -53,7 +60,7 @@ export const Dialog = ({
                             aria-hidden="true"
                             onClick={() => handleClose(true)}
                         />
-                    </Transition.Child>
+                    </TransitionChild>
                 ) : null}
 
                 <div
@@ -63,7 +70,7 @@ export const Dialog = ({
                         position === "center" && "items-center justify-center"
                     )}
                 >
-                    <Transition.Child
+                    <TransitionChild
                         as={Fragment}
                         enter="ease-out duration-300"
                         enterFrom="opacity-0 translate-y-4"
@@ -72,7 +79,7 @@ export const Dialog = ({
                         leaveFrom="opacity-100 translate-y-0"
                         leaveTo="opacity-0 translate-y-4"
                     >
-                        <HeadlessDialog.Panel
+                        <HeadlessDialogPanel
                             className={classNames(
                                 "flex w-[736px] transform flex-col overflow-y-auto rounded-md bg-neutral-0 shadow-lg transition-all",
                                 !footer && "pb-8",
@@ -80,9 +87,9 @@ export const Dialog = ({
                             )}
                         >
                             <div className="relative mx-10 mt-10">
-                                <HeadlessDialog.Title className="mb-6 pr-12 text-lg font-semibold text-neutral-900">
+                                <HeadlessDialogTitle className="mb-6 pr-12 text-lg font-semibold text-neutral-900">
                                     {title}
-                                </HeadlessDialog.Title>
+                                </HeadlessDialogTitle>
 
                                 {isCloseable && (
                                     <IconButton
@@ -92,9 +99,7 @@ export const Dialog = ({
                                         onClick={() => handleClose(false)}
                                     />
                                 )}
-                                <HeadlessDialog.Description as="div">
-                                    {children}
-                                </HeadlessDialog.Description>
+                                <HeadlessDescription as="div">{children}</HeadlessDescription>
                             </div>
                             {!!footer && (
                                 <div
@@ -107,8 +112,8 @@ export const Dialog = ({
                                     {footer}
                                 </div>
                             )}
-                        </HeadlessDialog.Panel>
-                    </Transition.Child>
+                        </HeadlessDialogPanel>
+                    </TransitionChild>
                 </div>
             </HeadlessDialog>
         </Transition>
