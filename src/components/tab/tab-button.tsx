@@ -1,10 +1,10 @@
+import { Tab as HeadlessUiTab, TabProps as HeadlessUiTabProps } from "@headlessui/react";
 import React from "react";
-import { Tab as HeadlessTab, TabProps } from "@headlessui/react";
-import { TabType, useTabContext } from "./tab-context";
 import { classNames } from "../../util/class-names";
+import { TabType, useTabContext } from "./tab-context";
 
 export interface TabButtonProps<TTag extends React.ElementType>
-    extends TabProps<React.ElementType> {
+    extends HeadlessUiTabProps<React.ElementType> {
     children: React.ReactNode;
     as?: TTag;
 }
@@ -25,7 +25,7 @@ export const TabButton = <TTag extends React.ElementType>({
 
     return (
         // eslint-disable-next-line react/jsx-props-no-spreading, @typescript-eslint/no-explicit-any
-        <HeadlessTab {...(props as any)} className="focus-visible:outline-none">
+        <HeadlessUiTab {...(props as any)} className="focus-visible:outline-none">
             <div
                 className={classNames(
                     "rounded text-xs font-medium outline-none ui-selected:text-primary-500 ui-not-selected:text-neutral-700",
@@ -34,6 +34,6 @@ export const TabButton = <TTag extends React.ElementType>({
             >
                 {children}
             </div>
-        </HeadlessTab>
+        </HeadlessUiTab>
     );
 };
