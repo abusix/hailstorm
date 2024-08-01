@@ -1,4 +1,4 @@
-import { Tab as HeadlessTab, TabGroupProps } from "@headlessui/react";
+import { TabGroup as HeadlessUiTabGroup, TabGroupProps } from "@headlessui/react";
 import React from "react";
 import { TabButton } from "./tab-button";
 import { TabContext, TabType } from "./tab-context";
@@ -17,7 +17,7 @@ const Tab = ({ type = "primary", children, ...props }: TabProps) => {
     return (
         <TabContext.Provider value={value}>
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-            <HeadlessTab.Group {...props}>{children}</HeadlessTab.Group>
+            <HeadlessUiTabGroup {...props}>{children}</HeadlessUiTabGroup>
         </TabContext.Provider>
     );
 };

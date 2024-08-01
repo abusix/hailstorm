@@ -1,11 +1,11 @@
-import { Combobox as HeadlessCombobox } from "@headlessui/react";
+import { Combobox as HeadlessUiCombobox } from "@headlessui/react";
 import React from "react";
-import { SingleComboboxInput } from "./single-combobox-input";
-import { SingleComboboxOptions } from "./single-combobox-options";
-import { SingleComboboxOption } from "./single-combobox.option";
-import { SingleComboboxResultInput } from "./single-combobox-result-input";
 import { SingleComboboxCustomOption } from "./single-combobox-custom-option";
 import { SingleComboboxEmptyOption } from "./single-combobox-empty-option";
+import { SingleComboboxInput } from "./single-combobox-input";
+import { SingleComboboxOptions } from "./single-combobox-options";
+import { SingleComboboxResultInput } from "./single-combobox-result-input";
+import { SingleComboboxOption } from "./single-combobox.option";
 
 export interface SingleComboboxProps<TValue> {
     value?: TValue;
@@ -21,9 +21,9 @@ const SingleCombobox = <TValue,>({
     disabled,
 }: SingleComboboxProps<TValue>) => {
     return (
-        <HeadlessCombobox value={value} onChange={onChange} disabled={disabled}>
+        <HeadlessUiCombobox value={value} onChange={onChange} disabled={disabled}>
             <div className="relative">{children}</div>
-        </HeadlessCombobox>
+        </HeadlessUiCombobox>
     );
 };
 

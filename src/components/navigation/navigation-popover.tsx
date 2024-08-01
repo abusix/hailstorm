@@ -12,7 +12,7 @@ export interface NavigationPopoverProps {
 
 const NavigationPopover = ({ children }: NavigationPopoverProps) => {
     const [referenceElement, setReferenceElement] = useState<HTMLButtonElement>();
-    const [popperElement, setPopperElement] = useState<HTMLDivElement>();
+    const [popperElement, setPopperElement] = useState<HTMLElement>();
     const { styles, attributes } = usePopper(referenceElement, popperElement, {
         placement: "top-start",
     });

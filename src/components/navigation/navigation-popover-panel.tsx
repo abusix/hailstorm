@@ -1,4 +1,4 @@
-import { Popover } from "@headlessui/react";
+import { PopoverPanel as HeadlessUiPopoverPanel } from "@headlessui/react";
 import React from "react";
 import { useNavigationPopoverContext } from "./navigation-popover-context";
 
@@ -24,14 +24,14 @@ const NavigationPopoverPanel = ({ children }: NavigationPopoverPanelProps) => {
     } = useNavigationPopoverContext();
 
     return (
-        <Popover.Panel
+        <HeadlessUiPopoverPanel
             ref={(el) => el && setPopperElement(el)}
             style={styles}
             {...attributes}
             className="z-40 ml-2 w-52 rounded bg-neutral-0 py-2 shadow"
         >
             {children}
-        </Popover.Panel>
+        </HeadlessUiPopoverPanel>
     );
 };
 

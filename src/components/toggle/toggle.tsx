@@ -1,5 +1,9 @@
+import {
+    Field as HeadlessUiField,
+    Label as HeadlessUiLabel,
+    Switch as HeadlessUiSwitch,
+} from "@headlessui/react";
 import React from "react";
-import { Switch as HeadlessSwitch } from "@headlessui/react";
 import { classNames } from "../../util/class-names";
 
 interface LabelProps {
@@ -9,14 +13,14 @@ interface LabelProps {
 
 const Label = ({ children, passive = false }: LabelProps) => {
     return (
-        <HeadlessSwitch.Label
+        <HeadlessUiLabel
             className={classNames(
                 "paragraph-200 cursor-pointer text-neutral-800 ui-disabled:text-danger-600"
             )}
             passive={passive}
         >
             {children}
-        </HeadlessSwitch.Label>
+        </HeadlessUiLabel>
     );
 };
 
@@ -29,7 +33,7 @@ export interface SwitchProps {
 
 const Switch = ({ checked = false, onChange, disabled = false, ariaLabel }: SwitchProps) => {
     return (
-        <HeadlessSwitch
+        <HeadlessUiSwitch
             checked={checked}
             disabled={disabled}
             onChange={onChange}
@@ -48,7 +52,7 @@ const Switch = ({ checked = false, onChange, disabled = false, ariaLabel }: Swit
                     !checked && !disabled && "bg-neutral-0"
                 )}
             />
-        </HeadlessSwitch>
+        </HeadlessUiSwitch>
     );
 };
 
@@ -58,9 +62,9 @@ export interface ToggleProps {
 
 const Toggle = ({ children }: ToggleProps) => {
     return (
-        <HeadlessSwitch.Group>
+        <HeadlessUiField>
             <div className="flex items-center gap-3">{children}</div>
-        </HeadlessSwitch.Group>
+        </HeadlessUiField>
     );
 };
 

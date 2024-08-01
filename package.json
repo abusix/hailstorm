@@ -42,8 +42,8 @@
         "build:tailwind:scoped": "NODE_ENV=production npx tailwindcss -i ./src/styles/styles.scoped.css -o ./dist/styles/hailstorm.scoped.css --postcss -m"
     },
     "dependencies": {
-        "@headlessui/react": "^1.7.17",
-        "@headlessui/tailwindcss": "^0.2.0",
+        "@headlessui/react": "^2.1.2",
+        "@headlessui/tailwindcss": "^0.2.1",
         "@popperjs/core": "^2.11.8",
         "@tailwindcss/forms": "^0.5.7",
         "@tanstack/react-table": "^8.10.7",

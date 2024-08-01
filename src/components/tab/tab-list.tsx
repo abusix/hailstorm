@@ -1,7 +1,7 @@
+import { TabList as HeadlessUiTabList } from "@headlessui/react";
 import React from "react";
-import { Tab as HeadlessTab } from "@headlessui/react";
-import { TabType, useTabContext } from "./tab-context";
 import { classNames } from "../../util/class-names";
+import { TabType, useTabContext } from "./tab-context";
 
 export interface TabListProps {
     children: React.ReactNode;
@@ -16,8 +16,8 @@ export const TabList = ({ children }: TabListProps) => {
     const { type } = useTabContext();
 
     return (
-        <HeadlessTab.List className={classNames("flex", listVariants[type])}>
+        <HeadlessUiTabList className={classNames("flex", listVariants[type])}>
             {children}
-        </HeadlessTab.List>
+        </HeadlessUiTabList>
     );
 };

@@ -1,4 +1,4 @@
-import { Menu as HeadlessMenu } from "@headlessui/react";
+import { MenuButton as HeadlessUiMenuButton } from "@headlessui/react";
 import React from "react";
 
 export interface MenuButtonProps {
@@ -8,8 +8,8 @@ export interface MenuButtonProps {
 
 export const MenuButton = ({ children, className }: MenuButtonProps) => {
     return (
-        <HeadlessMenu.Button as="div" className={className}>
+        <HeadlessUiMenuButton as="div" className={className}>
             {children}
-        </HeadlessMenu.Button>
+        </HeadlessUiMenuButton>
     );
 };

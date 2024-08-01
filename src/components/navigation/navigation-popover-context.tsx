@@ -5,7 +5,7 @@ export const NavigationPopoverContext = createContext<{
         setReferenceElement: React.Dispatch<React.SetStateAction<HTMLButtonElement | undefined>>;
     };
     popoverPanel: {
-        setPopperElement: React.Dispatch<React.SetStateAction<HTMLDivElement | undefined>>;
+        setPopperElement: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>;
         styles: CSSProperties;
         attributes: { [key: string]: string } | undefined;
     };

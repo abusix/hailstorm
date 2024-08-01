@@ -1,4 +1,4 @@
-import { RadioGroup } from "@headlessui/react";
+import { Radio as HeadlessUiRadio } from "@headlessui/react";
 import React, { Fragment } from "react";
 import { classNames } from "../../../util/class-names";
 
@@ -10,11 +10,10 @@ export interface RadioBoxOptionProps {
 }
 
 const radioBoxContainerStyles = {
-    base: "group relative flex items-center gap-3 rounded-lg bg-neutral-0 border p-4 border-neutral-300 hover:border-primary-600 hover:bg-primary-50 cursor-pointer focus:outline-none",
+    base: "group relative flex items-center gap-3 rounded-lg bg-neutral-0 border p-4 border-neutral-300 hover:border-primary-600 hover:bg-primary-50 cursor-pointer focus:outline-none data-[focus]:outline-2 data-[focus]:outline-primary-200",
     checked: "border-primary-600 bg-primary-600 hover:bg-primary-600 hover:text-neutral-0",
     disabled:
         "bg-neutral-100 group-hover:border-neutral-300 group-hover:bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-100 cursor-not-allowed",
-    active: "ring-2 ring-primary-200",
 };
 
 const radioBoxCircleStyles = {
@@ -39,15 +38,14 @@ const Description = ({ children }: { children: React.ReactNode }) => (
 
 export const RadioBoxOption = ({ children, value, disabled, className }: RadioBoxOptionProps) => {
     return (
-        <RadioGroup.Option value={value} disabled={disabled} as={Fragment}>
-            {({ checked, disabled: optionDisabled, active }) => (
+        <HeadlessUiRadio value={value} disabled={disabled} as={Fragment}>
+            {({ checked, disabled: optionDisabled }) => (
                 <div
                     className={classNames(
                         radioBoxContainerStyles.base,
                         checked && classNames("is-checked", radioBoxContainerStyles.checked),
                         optionDisabled &&
-                            classNames("is-disabled", radioBoxContainerStyles.disabled),
-                        active && radioBoxContainerStyles.active
+                            classNames("is-disabled", radioBoxContainerStyles.disabled)
                     )}
                 >
                     <div
@@ -71,7 +69,7 @@ export const RadioBoxOption = ({ children, value, disabled, className }: RadioBo
                     <div className={classNames("flex flex-col", className)}>{children}</div>
                 </div>
             )}
-        </RadioGroup.Option>
+        </HeadlessUiRadio>
     );
 };
 

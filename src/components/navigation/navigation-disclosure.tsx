@@ -1,8 +1,11 @@
-import { Disclosure } from "@headlessui/react";
+import {
+    Disclosure as HeadlessUiDisclosure,
+    DisclosureButton as HeadlessUiDisclosureButton,
+} from "@headlessui/react";
 import React from "react";
+import { classNames } from "../../util/class-names";
 import { NavigationDisclosurePanel } from "./navigation-disclosure-panel";
 import { NavigationGroupItemTag } from "./navigation-group-item-tag";
-import { classNames } from "../../util/class-names";
 
 export interface NavigationDisclosureButtonProps {
     children: React.ReactNode;
@@ -20,7 +23,7 @@ const NavigationDisclosureButton = ({
     className,
 }: NavigationDisclosureButtonProps) => {
     return (
-        <Disclosure.Button
+        <HeadlessUiDisclosureButton
             className={classNames(
                 "flex w-full cursor-pointer items-center gap-x-2 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold",
                 className
@@ -30,7 +33,7 @@ const NavigationDisclosureButton = ({
             {LeftIcon ? <LeftIcon className="h-4 w-4" /> : null}
             {children}
             {tag ? <NavigationGroupItemTag>{tag}</NavigationGroupItemTag> : null}
-        </Disclosure.Button>
+        </HeadlessUiDisclosureButton>
     );
 };
 
@@ -59,9 +62,9 @@ const renderDisclosureChildren = ({
 
 const NavigationDisclosure = ({ children, defaultOpen }: NavigationDisclosureProps) => {
     return (
-        <Disclosure as="div" defaultOpen={defaultOpen}>
+        <HeadlessUiDisclosure as="div" defaultOpen={defaultOpen}>
             {({ close }) => <>{renderDisclosureChildren({ children, close })}</>}
-        </Disclosure>
+        </HeadlessUiDisclosure>
     );
 };
 
