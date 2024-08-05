@@ -8,14 +8,18 @@ export interface NavigationPopoverButtonProps extends ButtonProps {
     onClick?: () => void;
 }
 
-export const PopoverMenuButton = ({ onClick, ...restProps }: NavigationPopoverButtonProps) => {
+export const PopoverMenuButton = ({
+    onClick,
+    children,
+    ...restProps
+}: NavigationPopoverButtonProps) => {
     const {
         popoverButton: { setReferenceElement },
     } = usePopoverMenuContext();
 
     return (
         <HeadlessUiPopoverButton ref={(el) => el && setReferenceElement(el)} onClick={onClick}>
-            <Button {...restProps} />
+            <Button {...restProps}>{children}</Button>
         </HeadlessUiPopoverButton>
     );
 };
