@@ -3,16 +3,12 @@ import React from "react";
 import { usePopoverMenuContext } from "./popover-menu-context";
 import { Button, ButtonProps } from "../button/button";
 
-export interface NavigationPopoverButtonProps extends ButtonProps {
+export interface PopoverMenuButtonProps extends ButtonProps {
     children: React.ReactNode;
     onClick?: () => void;
 }
 
-export const PopoverMenuButton = ({
-    onClick,
-    children,
-    ...restProps
-}: NavigationPopoverButtonProps) => {
+export const PopoverMenuButton = ({ onClick, children, ...restProps }: PopoverMenuButtonProps) => {
     const {
         popoverButton: { setReferenceElement },
     } = usePopoverMenuContext();
