@@ -9,15 +9,15 @@ export interface PopoverMenuPanelItemProps {
 
 const PopoverMenuPanelItem = ({ children, onClick }: PopoverMenuPanelItemProps) => {
     return (
-        <div
-            className="flex w-full cursor-pointer items-center overflow-hidden px-4 py-2 hover:bg-neutral-100 focus:ring-2 focus:ring-primary-200"
+        <button
+            className="flex w-full cursor-pointer items-center overflow-hidden px-4 py-2 text-sm font-normal hover:bg-neutral-100 focus:ring-2 focus:ring-primary-200"
+            type="button"
+            tabIndex={0}
             onClick={onClick}
             onKeyDown={onClick}
-            tabIndex={0}
-            role="button"
         >
-            <p className="text-sm font-normal">{children}</p>
-        </div>
+            {children}
+        </button>
     );
 };
 
