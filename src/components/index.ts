@@ -12,6 +12,7 @@ export { InlineAlert } from "./inline-alert";
 export { LastChangedInfo } from "./last-changed-info";
 export { Menu } from "./menu";
 export { Navigation } from "./navigation";
+export { PopoverMenu } from "./popover-menu";
 export { Page } from "./page";
 export { Panel } from "./panel";
 export { Section } from "./section";
