@@ -1,6 +1,6 @@
 import React from "react";
 
-interface PopoverMenuPanelTitleProps {
+export interface PopoverMenuPanelTitleProps {
     children: React.ReactNode;
 }
 
