@@ -2,13 +2,14 @@ import React from "react";
 import { classNames } from "../../util/class-names";
 
 const itemIntents = {
-    neutral: "text-neutral-700 fill-neutral-700 hover:bg-primary-100",
-    danger: "text-danger-500 fill-danger-500 hover:bg-danger-100",
+    neutral: "text-neutral-700 fill-neutral-700 hover:bg-neutral-100",
+    danger: "text-danger-500 fill-danger-500 hover:bg-danger-50",
 };
 
 const selectedItemIntents = {
-    neutral: "bg-primary-100 fill-primary-400 text-primary-400 before:bg-primary-400",
-    danger: "bg-danger-100 fill-danger-400 text-danger-500 before:bg-danger-400",
+    neutral:
+        "bg-primary-100 fill-primary-400 text-primary-400 before:bg-primary-400 hover:text-primary-400 hover:fill-primary-400 hover:bg-primary-100",
+    danger: "bg-danger-100 fill-danger-700 text-danger-500 before:bg-danger-400 hover:text-danger-500 hover:fill-danger-400 hover:bg-danger-100",
 };
 
 export interface PopoverMenuPanelItemProps {
@@ -17,6 +18,7 @@ export interface PopoverMenuPanelItemProps {
     Icon?: React.ComponentType<{ className: string }>;
     variant?: keyof typeof itemIntents;
     selected?: boolean;
+    disabled?: boolean;
 }
 
 export const PopoverMenuPanelItem = ({
@@ -25,6 +27,7 @@ export const PopoverMenuPanelItem = ({
     Icon,
     variant = "neutral",
     selected,
+    disabled,
 }: PopoverMenuPanelItemProps) => {
     return (
         <div
@@ -33,11 +36,13 @@ export const PopoverMenuPanelItem = ({
                 itemIntents[variant],
                 selected && selectedItemIntents[variant],
                 selected &&
-                    "before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:rounded-r-md"
+                    "before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:rounded-r-md",
+                disabled &&
+                    "cursor-not-allowed bg-neutral-100 fill-neutral-400 text-neutral-500 hover:bg-neutral-100 hover:fill-neutral-400 hover:text-neutral-500 focus:ring-0"
             )}
-            onClick={onClick}
+            onClick={disabled ? undefined : onClick}
+            onKeyDown={disabled ? undefined : onClick}
             role="menuitem"
-            onKeyDown={onClick}
             tabIndex={0}
         >
             {Icon && <Icon className={classNames("h-3.5 w-3.5")} />}

@@ -3,7 +3,7 @@ import { PopoverButton as HeadlessUiPopoverButton } from "@headlessui/react";
 import { classNames } from "../../util/class-names";
 
 const itemIntents = {
-    neutral: "text-neutral-700 fill-neutral-700 hover:bg-primary-100",
+    neutral: "text-neutral-700 fill-neutral-700 hover:bg-neutral-100",
     danger: "text-danger-500 fill-danger-500 hover:bg-danger-100",
 };
 
@@ -18,6 +18,7 @@ export interface PopoverMenuPanelButtonProps {
     Icon?: React.ComponentType<{ className: string }>;
     variant?: keyof typeof itemIntents;
     selected?: boolean;
+    disabled?: boolean;
 }
 
 export const PopoverMenuPanelButton = ({
@@ -26,6 +27,7 @@ export const PopoverMenuPanelButton = ({
     Icon,
     variant = "neutral",
     selected,
+    disabled,
 }: PopoverMenuPanelButtonProps) => {
     return (
         <HeadlessUiPopoverButton
@@ -34,9 +36,11 @@ export const PopoverMenuPanelButton = ({
                 itemIntents[variant],
                 selected && activeItemIntents[variant],
                 selected &&
-                    "before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:rounded-r-md"
+                    "before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:rounded-r-md",
+                disabled &&
+                    "cursor-not-allowed bg-neutral-100 fill-neutral-400 text-neutral-500 hover:bg-neutral-100 hover:fill-neutral-400 hover:text-neutral-500 focus:ring-0"
             )}
-            onClick={onClick}
+            onClick={disabled ? undefined : onClick}
         >
             {Icon && <Icon className={classNames("h-3.5 w-3.5")} />}
             {children}

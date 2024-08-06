@@ -39,7 +39,9 @@ export const Default: Story = {
                             Activate Mfa
                         </PopoverMenu.Panel.Item>
 
-                        <PopoverMenu.Panel.Item Icon={ChatIcon}>Support</PopoverMenu.Panel.Item>
+                        <PopoverMenu.Panel.Item Icon={ChatIcon} disabled>
+                            Support
+                        </PopoverMenu.Panel.Item>
 
                         <PopoverMenu.Panel.Divider />
 
