@@ -17,7 +17,7 @@ export interface PopoverMenuPanelButtonProps {
     onClick?: () => void;
     Icon?: React.ComponentType<{ className: string }>;
     variant?: keyof typeof itemIntents;
-    active?: boolean;
+    selected?: boolean;
 }
 
 export const PopoverMenuPanelButton = ({
@@ -25,15 +25,15 @@ export const PopoverMenuPanelButton = ({
     onClick,
     Icon,
     variant = "neutral",
-    active,
+    selected,
 }: PopoverMenuPanelButtonProps) => {
     return (
         <HeadlessUiPopoverButton
             className={classNames(
                 "relative flex w-full cursor-pointer flex-row items-center gap-3 overflow-hidden px-4 py-2 text-sm font-normal focus:ring-2 focus:ring-primary-200",
                 itemIntents[variant],
-                active && activeItemIntents[variant],
-                active &&
+                selected && activeItemIntents[variant],
+                selected &&
                     "before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:rounded-r-md"
             )}
             onClick={onClick}
