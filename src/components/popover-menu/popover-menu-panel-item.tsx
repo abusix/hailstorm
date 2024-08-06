@@ -1,4 +1,5 @@
 import React from "react";
+import { PopoverButton as HeadlessUiPopoverButton } from "@headlessui/react";
 import { classNames } from "../../util/class-names";
 
 const itemIntents = {
@@ -17,6 +18,7 @@ export interface PopoverMenuPanelItemProps {
     Icon?: React.ComponentType<{ className: string }>;
     variant?: keyof typeof itemIntents;
     active?: boolean;
+    closeOnClick?: boolean;
 }
 
 export const PopoverMenuPanelItem = ({
@@ -25,25 +27,35 @@ export const PopoverMenuPanelItem = ({
     Icon,
     variant = "neutral",
     active,
+    closeOnClick,
 }: PopoverMenuPanelItemProps) => {
     const intentStyles = itemIntents[variant];
+    const classes = classNames(
+        "relative flex w-full cursor-pointer flex-row items-center gap-3 overflow-hidden px-4 py-2 text-sm font-normal focus:ring-2 focus:ring-primary-200",
+        intentStyles,
+        active && activeItemIntents[variant],
+        active &&
+            "before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:rounded-r-md"
+    );
 
-    return (
-        <div
-            className={classNames(
-                "relative flex w-full cursor-pointer flex-row items-center gap-3 overflow-hidden px-4 py-2 text-sm font-normal focus:ring-2 focus:ring-primary-200",
-                intentStyles,
-                active && activeItemIntents[variant],
-                active &&
-                    "before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:rounded-r-md"
-            )}
-            role="menuitem"
-            tabIndex={0}
-            onClick={onClick}
-            onKeyDown={onClick}
-        >
+    const content = (
+        <>
             {Icon && <Icon className={classNames("h-3.5 w-3.5")} />}
             {children}
+        </>
+    );
+
+    if (closeOnClick) {
+        return (
+            <HeadlessUiPopoverButton className={classes} onClick={onClick}>
+                {content}
+            </HeadlessUiPopoverButton>
+        );
+    }
+
+    return (
+        <div className={classes} onClick={onClick} role="menuitem" onKeyDown={onClick} tabIndex={0}>
+            {content}
         </div>
     );
 };

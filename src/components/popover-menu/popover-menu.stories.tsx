@@ -28,17 +28,25 @@ export const Default: Story = {
                 <PopoverMenu.Panel>
                     <PopoverMenu.Panel.Title>You</PopoverMenu.Panel.Title>
 
-                    <PopoverMenu.Panel.Item Icon={EditIcon}>Edit profile</PopoverMenu.Panel.Item>
-                    <PopoverMenu.Panel.Item Icon={ChatIcon}>Support</PopoverMenu.Panel.Item>
-                    <PopoverMenu.Panel.Item Icon={AddIcon}>Invite member</PopoverMenu.Panel.Item>
+                    <PopoverMenu.Panel.Item closeOnClick Icon={EditIcon}>
+                        Edit profile
+                    </PopoverMenu.Panel.Item>
+
+                    <PopoverMenu.Panel.Item closeOnClick Icon={ChatIcon}>
+                        Support
+                    </PopoverMenu.Panel.Item>
+
+                    <PopoverMenu.Panel.Item closeOnClick Icon={AddIcon}>
+                        Invite member
+                    </PopoverMenu.Panel.Item>
 
                     <PopoverMenu.Panel.Divider />
 
                     <PopoverMenu.Panel.Group>
                         <PopoverMenu.Panel.Title>Danger Zone</PopoverMenu.Panel.Title>
 
-                        <PopoverMenu.Panel.Item Icon={DeleteIcon} variant="danger">
-                            Item 1
+                        <PopoverMenu.Panel.Item closeOnClick Icon={DeleteIcon} variant="danger">
+                            Delete Account
                         </PopoverMenu.Panel.Item>
                     </PopoverMenu.Panel.Group>
                 </PopoverMenu.Panel>
