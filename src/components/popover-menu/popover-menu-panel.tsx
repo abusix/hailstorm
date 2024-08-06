@@ -5,6 +5,7 @@ import { PopoverMenuPanelGroup } from "./popover-menu-panel-group";
 import { PopoverMenuPanelItem } from "./popover-menu-panel-item";
 import { PopoverMenuPanelDivider } from "./popover-menu-panel-divider";
 import { PopoverMenuPanelTitle } from "./popover-menu-panel-title";
+import { PopoverMenuPanelButton } from "./popover-menu-panel-button";
 
 export interface PopoverMenuPanelProps {
     children: React.ReactNode;
@@ -28,6 +29,7 @@ const PopoverMenuPanel = ({ children }: PopoverMenuPanelProps) => {
 };
 
 PopoverMenuPanel.Item = PopoverMenuPanelItem;
+PopoverMenuPanel.Button = PopoverMenuPanelButton;
 PopoverMenuPanel.Group = PopoverMenuPanelGroup;
 PopoverMenuPanel.Divider = PopoverMenuPanelDivider;
 PopoverMenuPanel.Title = PopoverMenuPanelTitle;
