@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import { PopoverMenu } from "./popover-menu";
 import { ChatIcon, DeleteIcon, EditIcon } from "../../icons";
+import { PopoverMenu } from "./popover-menu";
 
 const meta: Meta<typeof PopoverMenu> = {
     title: "Popover Menu",
@@ -49,7 +49,7 @@ export const Default: Story = {
                             <PopoverMenu.Panel.Title>Danger Zone</PopoverMenu.Panel.Title>
 
                             <PopoverMenu.Panel.Button Icon={DeleteIcon} variant="danger">
-                                Close this Dialog
+                                Close Dialog
                             </PopoverMenu.Panel.Button>
                         </PopoverMenu.Panel.Group>
                     </PopoverMenu.Panel>
