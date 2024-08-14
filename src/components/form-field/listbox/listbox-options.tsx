@@ -7,7 +7,7 @@ export interface ListboxOptionsProps {
 
 export const ListboxOptions = ({ children }: ListboxOptionsProps) => {
     return (
-        <HeadlessUiListboxOptions className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md border border-neutral-300 bg-neutral-0 shadow-md outline-none ring-0">
+        <HeadlessUiListboxOptions className="absolute mt-1 max-h-60 w-full list-none overflow-auto rounded-md border border-neutral-300 bg-neutral-0 shadow-md outline-none ring-0">
             {children}
         </HeadlessUiListboxOptions>
     );
