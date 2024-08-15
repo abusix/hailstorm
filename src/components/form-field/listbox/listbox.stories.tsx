@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
+import React, { FC } from "react";
 import { FormField } from "../form-field";
 
 const meta: Meta<typeof FormField.Listbox> = {
@@ -60,7 +60,7 @@ const ListboxTextWithHooks = () => {
     );
 };
 
-const ListboxBadgeWithHooks = () => {
+const ListboxBadgeWithHooks: FC<{ disabled?: boolean }> = ({ disabled }) => {
     const [selectedPerson, setSelectedPerson] = React.useState<null | Person>(null);
 
     return (
@@ -69,13 +69,15 @@ const ListboxBadgeWithHooks = () => {
                 <FormField.Label htmlFor="value">Label</FormField.Label>
                 <FormField.Description id="value-description">Description</FormField.Description>
             </FormField.LabelGroup>
+
             <FormField.Listbox value={selectedPerson} onChange={setSelectedPerson}>
-                <FormField.Listbox.Button>
+                <FormField.Listbox.Button disabled={disabled}>
                     <FormField.Listbox.Button.BadgeValue
                         value={selectedPerson?.name ?? null}
-                        placeholder="Select..."
+                        placeholder="Select …"
                     />
                 </FormField.Listbox.Button>
+
                 <FormField.Listbox.Options>
                     {people.map((person) => (
                         <FormField.Listbox.Option value={person} key={person.id}>
@@ -102,6 +104,14 @@ export const Badge: Story = {
     render: () => (
         <div className="w-72">
             <ListboxBadgeWithHooks />
+        </div>
+    ),
+};
+
+export const Disabled: Story = {
+    render: () => (
+        <div className="w-72">
+            <ListboxBadgeWithHooks disabled />
         </div>
     ),
 };
