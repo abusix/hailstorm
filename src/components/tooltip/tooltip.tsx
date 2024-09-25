@@ -6,7 +6,7 @@ import { classNames } from "../../util/class-names";
 import { TooltipPortal } from "./tooltip-portal";
 
 interface TooltipProps {
-    children: React.ReactNode;
+    children: React.ReactElement;
     title: React.ReactNode;
     position?: Placement;
     className?: string;
@@ -32,6 +32,12 @@ export const Tooltip = ({
         placement: position,
         strategy: strategy === "fixed" ? "fixed" : "absolute",
         modifiers: [{ name: "offset", options: { offset: [0, 8] } }],
+    });
+
+    const childrenWithRef = React.cloneElement(children, {
+        ref: (el: HTMLDivElement) => setReferenceElement(el),
+        onMouseEnter: () => !isControlled && setShow(true),
+        onMouseLeave: () => !isControlled && setShow(false),
     });
 
     useEffect(() => {
@@ -67,13 +73,7 @@ export const Tooltip = ({
 
     return (
         <>
-            <div
-                ref={(el) => el && setReferenceElement(el)}
-                onMouseEnter={() => !isControlled && setShow(true)}
-                onMouseLeave={() => !isControlled && setShow(false)}
-            >
-                {children}
-            </div>
+            {childrenWithRef}
             {strategy === "portal" ? (
                 <TooltipPortal>{renderTooltipContent()}</TooltipPortal>
             ) : (
