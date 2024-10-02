@@ -16,34 +16,21 @@ const iconButtonVariants = {
         "bg-neutral-0 text-danger-500 border border-danger-500 hover:bg-danger-50 hover:text-danger-600 active:border-danger-700 active:text-danger-700 active:bg-danger-100 focus:ring-2 focus:ring-danger-100 focus:text-danger-600 disabled:border-danger-100 disabled:text-danger-100 disabled:bg-neutral-0 fill-danger-600",
 };
 
-export interface IconButtonProps {
+export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     Icon: React.ElementType;
-    type: keyof typeof iconButtonVariants;
-    onClick: () => void;
-    disabled?: boolean;
-    className?: string;
-    ariaLabel?: string;
+    variant?: keyof typeof iconButtonVariants;
 }
 
-export const IconButton = ({
-    Icon,
-    onClick,
-    disabled = false,
-    type = "primary",
-    className,
-    ariaLabel,
-}: IconButtonProps) => {
+export const IconButton = ({ Icon, variant = "primary", className, ...props }: IconButtonProps) => {
     return (
         <button
             type="button"
-            aria-label={ariaLabel}
             className={classNames(
                 `inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded focus:outline-none`,
-                iconButtonVariants[type],
+                iconButtonVariants[variant],
                 className
             )}
-            onClick={onClick}
-            disabled={disabled}
+            {...props}
         >
             <Icon className="h-3 w-3" />
         </button>

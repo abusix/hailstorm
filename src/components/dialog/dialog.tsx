@@ -95,7 +95,7 @@ export const Dialog = ({
                                     <IconButton
                                         className="absolute right-0 top-0"
                                         Icon={CrossIcon}
-                                        type="minimal"
+                                        variant="minimal"
                                         onClick={() => handleClose(false)}
                                     />
                                 )}

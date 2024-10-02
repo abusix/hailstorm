@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { IconButton, IconButtonProps } from "./icon-button";
 import { WalkIcon } from "../../icons";
 
-const IconTypes: IconButtonProps["type"][] = [
+const VariantTypes: IconButtonProps["variant"][] = [
     "primary",
     "secondary",
     "minimal",
@@ -15,12 +15,12 @@ const meta: Meta<typeof IconButton> = {
     title: "IconButton",
     component: IconButton,
     args: {
-        type: "primary",
+        variant: "primary",
         disabled: false,
         Icon: WalkIcon,
     },
     argTypes: {
-        type: { options: IconTypes },
+        variant: { options: VariantTypes },
     },
 };
 
