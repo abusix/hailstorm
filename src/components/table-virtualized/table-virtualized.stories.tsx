@@ -107,7 +107,7 @@ export const Draggable = () => {
                 width: 80,
             },
             cell: (row) => (
-                <IconButton onClick={() => row.getValue()} Icon={TrashIcon} type="danger" />
+                <IconButton onClick={() => row.getValue()} Icon={TrashIcon} variant="danger" />
             ),
         }),
     ];
