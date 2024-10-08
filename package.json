@@ -34,12 +34,11 @@
         "lint:write": "eslint src --ext .ts,.tsx --fix",
         "format:check": "prettier --check src",
         "format:write": "prettier --write src",
-        "build": "npm run clean && npm run build:rollup && npm run build:tailwind:scoped",
+        "build": "npm run clean && npm run build:rollup && npm run build:tailwind",
         "build:rollup": "NODE_ENV=production rollup -c",
         "build:icons": "svgr -- assets/icons",
         "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build",
-        "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify",
-        "build:tailwind:scoped": "NODE_ENV=production npx tailwindcss -i ./src/styles/styles.scoped.css -o ./dist/styles/hailstorm.scoped.css --postcss -m"
+        "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/styles/index.css --minify"
     },
     "dependencies": {
         "@headlessui/react": "^2.1.2",
