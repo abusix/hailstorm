@@ -8,7 +8,7 @@ export interface RowProps extends HTMLProps<HTMLTableRowElement> {
 }
 
 const TableBodyRow = forwardRef<HTMLTableRowElement, RowProps>(
-    ({ children, className, isExpanded, style }, ref) => {
+    ({ children, className, isExpanded, style, ...props }, ref) => {
         return (
             <tr
                 className={classNames(
@@ -17,6 +17,7 @@ const TableBodyRow = forwardRef<HTMLTableRowElement, RowProps>(
                 )}
                 ref={ref}
                 style={style}
+                {...props}
             >
                 {children}
             </tr>
