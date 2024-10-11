@@ -17,7 +17,6 @@
         // "declarationDir": "types",
         // "emitDeclarationOnly": true,
         "sourceMap": true,
-        "outDir": "dist",
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true
     },
