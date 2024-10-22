@@ -46,7 +46,7 @@ const Switch = ({ checked = false, onChange, disabled = false, ariaLabel }: Swit
                 className={classNames(
                     "inline-block h-3 w-3 transform rounded-full transition",
                     checked ? "translate-x-3.5" : "translate-x-0.5",
-                    checked && disabled && "bg-neutral-400 ",
+                    checked && disabled && "bg-neutral-400",
                     checked && !disabled && "bg-neutral-0",
                     !checked && disabled && "bg-neutral-400",
                     !checked && !disabled && "bg-neutral-0"
