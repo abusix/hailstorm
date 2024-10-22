@@ -5,5 +5,5 @@ export interface PageDescriptionProps {
 }
 
 export const PageDescription = ({ children }: PageDescriptionProps) => {
-    return <p className="paragraph-200  text-neutral-800">{children}</p>;
+    return <p className="paragraph-200 text-neutral-800">{children}</p>;
 };
