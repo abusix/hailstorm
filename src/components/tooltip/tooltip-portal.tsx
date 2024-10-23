@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import ReactDOM from "react-dom";
+import { createPortal } from "react-dom";
 
 interface TooltipPortalProps {
     children: React.ReactNode;
@@ -16,5 +16,5 @@ export const TooltipPortal = ({ children }: TooltipPortalProps) => {
         }
     }, []);
 
-    return mounted && ref.current ? ReactDOM.createPortal(children, ref.current) : null;
+    return mounted && ref.current ? createPortal(children, ref.current) : null;
 };
