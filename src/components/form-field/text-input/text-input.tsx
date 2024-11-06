@@ -16,7 +16,7 @@ const formFieldGroupStyles = classNames(
 );
 
 export interface TextInputProps extends React.ComponentPropsWithoutRef<"input"> {
-    type?: "text" | "password" | "email" | "date";
+    type?: "text" | "password" | "email" | "date" | "datetime-local";
     autoSelect?: boolean;
     ariaDescribedBy?: string;
     LeftIcon?: React.ElementType;
