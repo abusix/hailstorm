@@ -1,7 +1,8 @@
 import React from "react";
 import { classNames } from "../../util/class-names";
 
-interface TableKeyValuePairHeaderProps extends React.HTMLAttributes<HTMLTableSectionElement> {
+export interface TableKeyValuePairHeaderProps
+    extends React.HTMLAttributes<HTMLTableSectionElement> {
     colSpan?: number;
 }
 

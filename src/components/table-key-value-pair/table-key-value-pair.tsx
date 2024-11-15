@@ -3,7 +3,7 @@ import { classNames } from "../../util/class-names";
 import { TableKeyValuePairHeader } from "./table-key-value-pair-header";
 import { TableKeyValuePairBody } from "./table-key-value-pair-body";
 
-type TableKeyValuePairProps = React.DetailedHTMLProps<
+export type TableKeyValuePairProps = React.DetailedHTMLProps<
     React.TableHTMLAttributes<HTMLTableElement>,
     HTMLTableElement
 >;

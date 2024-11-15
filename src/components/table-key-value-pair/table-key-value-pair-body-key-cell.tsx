@@ -1,7 +1,7 @@
 import React from "react";
 import { classNames } from "../../util/class-names";
 
-type TableKeyValuePairBodyKeyProps = React.DetailedHTMLProps<
+export type TableKeyValuePairBodyKeyProps = React.DetailedHTMLProps<
     React.TdHTMLAttributes<HTMLTableCellElement>,
     HTMLTableCellElement
 >;

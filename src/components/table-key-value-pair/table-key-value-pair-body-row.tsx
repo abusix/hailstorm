@@ -1,7 +1,7 @@
 import React from "react";
 import { classNames } from "../../util/class-names";
 
-type TableKeyValuePairBodyProps = React.TableHTMLAttributes<HTMLTableRowElement>;
+export type TableKeyValuePairBodyProps = React.TableHTMLAttributes<HTMLTableRowElement>;
 
 export const TableKeyValuePairBodyRow = ({
     children,
