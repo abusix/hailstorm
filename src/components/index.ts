@@ -25,6 +25,7 @@ export { SpinnerOverlay } from "./spinner-overlay";
 export { Tab } from "./tab";
 export { TableUnvirtualized } from "./table-unvirtualized";
 export { TableVirtualized, TableVirtualizedProps } from "./table-virtualized";
+export { TableKeyValuePair } from "./table-key-value-pair";
 export { Tag } from "./tag";
 export { Toast } from "./toast";
 export { Toggle } from "./toggle";
