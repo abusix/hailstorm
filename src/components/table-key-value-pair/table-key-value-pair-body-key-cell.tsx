@@ -14,7 +14,7 @@ export const TableKeyValuePairBodyKeyCell = ({
     return (
         <td
             className={classNames(
-                "headline-400 border-b border-r border-neutral-300 px-2.5 text-neutral-900 first:border-l",
+                "headline-400 border-b border-r border-neutral-300 bg-neutral-0 px-2.5 text-neutral-900 first:border-l",
                 className
             )}
             {...props}
