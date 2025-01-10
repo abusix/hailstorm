@@ -1,17 +1,20 @@
-import { PopoverPanel as HeadlessUiPopoverPanel } from "@headlessui/react";
+import {
+    PopoverPanel as HeadlessUiPopoverPanel,
+    PopoverPanelProps as HeadlessUiPopoverPanelProps,
+} from "@headlessui/react";
 import React from "react";
 import { usePopoverMenuContext } from "./popover-menu-context";
+import { PopoverMenuPanelButton } from "./popover-menu-panel-button";
+import { PopoverMenuPanelDivider } from "./popover-menu-panel-divider";
 import { PopoverMenuPanelGroup } from "./popover-menu-panel-group";
 import { PopoverMenuPanelItem } from "./popover-menu-panel-item";
-import { PopoverMenuPanelDivider } from "./popover-menu-panel-divider";
 import { PopoverMenuPanelTitle } from "./popover-menu-panel-title";
-import { PopoverMenuPanelButton } from "./popover-menu-panel-button";
 
-export interface PopoverMenuPanelProps {
+export interface PopoverMenuPanelProps extends HeadlessUiPopoverPanelProps {
     children: React.ReactNode;
 }
 
-const PopoverMenuPanel = ({ children }: PopoverMenuPanelProps) => {
+const PopoverMenuPanel = ({ children, ...rest }: PopoverMenuPanelProps) => {
     const {
         popoverPanel: { setPopperElement, styles, attributes },
     } = usePopoverMenuContext();
@@ -22,6 +25,7 @@ const PopoverMenuPanel = ({ children }: PopoverMenuPanelProps) => {
             style={styles}
             {...attributes}
             className="z-40 w-52 rounded bg-neutral-0 py-2 shadow"
+            {...rest}
         >
             {children}
         </HeadlessUiPopoverPanel>
