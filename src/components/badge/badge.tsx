@@ -26,9 +26,16 @@ export interface BadgeProps {
     shape?: keyof typeof shapeVariants;
     children: ReactNode;
     onClick?: () => void;
+    className?: string;
 }
 
-export const Badge = ({ type = "primary", shape = "default", children, onClick }: BadgeProps) => {
+export const Badge = ({
+    type = "primary",
+    shape = "default",
+    children,
+    onClick,
+    className,
+}: BadgeProps) => {
     const interactiveVariant = onClick ? "cursor-pointer" : "pointer-events-none";
 
     return (
@@ -40,7 +47,8 @@ export const Badge = ({ type = "primary", shape = "default", children, onClick }
                 "inline-flex h-4 items-center px-2 text-xs font-semibold uppercase tracking-wide",
                 buttonVariants[type],
                 shapeVariants[shape],
-                interactiveVariant
+                interactiveVariant,
+                className
             )}
             onClick={onClick}
             onKeyDown={onClick}
