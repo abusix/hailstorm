@@ -54,3 +54,7 @@ export const TypesAndShapes: Story = {
         </div>
     ),
 };
+
+export const CustomClassName: Story = {
+    render: ({ children }) => <Badge className="bg-neutral-600 text-neutral-0">{children}</Badge>,
+};
