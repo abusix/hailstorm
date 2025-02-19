@@ -1,17 +1,15 @@
 import {
+    DisclosurePanelProps,
     Disclosure as HeadlessUiDisclosure,
     DisclosureButton as HeadlessUiDisclosureButton,
+    DisclosurePanel as HeadlessUiDisclosurePanel,
 } from "@headlessui/react";
 import React from "react";
 import { ChevronDownIcon } from "../../icons";
 import { classNames } from "../../util/class-names";
 
-interface DisclosurePanelProps extends React.ComponentPropsWithoutRef<"div"> {
-    children: React.ReactNode;
-}
-
-const DisclosurePanel = ({ children, ...props }: DisclosurePanelProps) => {
-    return <HeadlessUiDisclosure.Panel {...props}>{children}</HeadlessUiDisclosure.Panel>;
+const DisclosurePanel = ({ children, ...props }: Omit<DisclosurePanelProps, "ref">) => {
+    return <HeadlessUiDisclosurePanel {...props}>{children}</HeadlessUiDisclosurePanel>;
 };
 
 interface DisclosureButtonProps extends React.ComponentPropsWithoutRef<"button"> {
