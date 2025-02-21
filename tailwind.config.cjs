@@ -96,12 +96,98 @@ export default {
             black: "#000000",
             "modal-background": "rgba(67, 90, 111, 0.7)",
             transparent: "transparent",
+
+            // New colors / Design tokens implementation
+            background: {
+                page: "var(--bg-page)",
+                primary: {
+                    DEFAULT: "var(--bg-primary-default)",
+                    hover: "var(--bg-primary-hover)",
+                    pressed: "var(--bg-primary-pressed)",
+                    selected: "var(--bg-primary-selected)",
+                },
+                secondary: {
+                    DEFAULT: "var(--bg-secondary-default)",
+                    hover: "var(--bg-secondary-hover)",
+                    pressed: "var(--bg-secondary-pressed)",
+                    selected: "var(--bg-secondary-selected)",
+                },
+                tertiary: {
+                    DEFAULT: "var(--bg-tertiary-default)",
+                },
+                brand: {
+                    DEFAULT: "var(--bg-brand-default)",
+                    subtle: "var(--bg-brand-subtle)",
+                    hover: "var(--bg-brand-hover)",
+                    pressed: "var(--bg-brand-pressed)",
+                    disabled: "var(--bg-brand-disabled)",
+                },
+                danger: {
+                    DEFAULT: "var(--bg-danger-default)",
+                    pressed: "var(--bg-danger-pressed)",
+                    hover: "var(--bg-danger-hover)",
+                    disabled: "var(--bg-danger-disabled)",
+                },
+                success: {
+                    subtle: "var(--bg-success-subtle)",
+                },
+            },
+            text: {
+                primary: {
+                    DEFAULT: "var(--text-primary)",
+                },
+                secondary: {
+                    DEFAULT: "var(--text-secondary-default)",
+                    hover: "var(--text-secondary-hover)",
+                    pressed: "var(--text-secondary-pressed)",
+                },
+                disabled: "var(--text-disabled)",
+                inverse: "var(--text-inverse)",
+                success: "var(--text-success)",
+            },
+            border: {
+                primary: {
+                    DEFAULT: "var(--border-primary-default)",
+                },
+                secondary: {
+                    DEFAULT: "var(--border-secondary-default)",
+                    hover: "var(--border-secondary-hover)",
+                    pressed: "var(--border-secondary-pressed)",
+                },
+                brand: "var(--border-brand-default)",
+                disabled: "var(--border-disabled)",
+            },
+            icon: {
+                primary: "var(--icon-primary-default)",
+                success: "var(--icon-success)",
+            },
+
+            // component tokens
+            sidebar: {
+                background: {
+                    primary: {
+                        DEFAULT: "var(--components-sidebar-primary-default)",
+                        hover: "var(--components-sidebar-primary-hover)",
+                        pressed: "var(--components-sidebar-primary-pressed)",
+                        selected: "var(--components-sidebar-primary-selected)",
+                    },
+                },
+            },
         },
         extend: {
             fontFamily: {
                 display: ["Fabriga", "serif"],
                 sans: ["Inter", "sans-serif"],
-                mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"]
+                mono: [
+                    "ui-monospace",
+                    "SFMono-Regular",
+                    "Menlo",
+                    "Monaco",
+                    "Consolas",
+                    "Liberation Mono",
+                    "Courier New",
+                    "monospace",
+                ],
             },
             maxWidth: {
                 285: "71.25rem",

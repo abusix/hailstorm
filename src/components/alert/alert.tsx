@@ -1,6 +1,6 @@
 import React from "react";
-import { classNames } from "../../util/class-names";
 import { ErrorIcon, InfoSignIcon, TickCircleIcon, WarningSignIcon } from "../../icons";
+import { classNames } from "../../util/class-names";
 
 export type AlertIntent = "success" | "info" | "warning" | "danger";
 
@@ -8,7 +8,8 @@ const alertVariants: Record<AlertIntent, string> = {
     info: "border-primary-400 bg-primary-50 text-primary-600",
     danger: "border-danger-400 bg-danger-50 text-danger-500",
     warning: "border-warning-500 bg-warning-50 text-warning-600",
-    success: "border-success-400 bg-success-50 text-success-500",
+    // success: "border-success-400 bg-success-50 text-success-500",
+    success: "bg-background-success-subtle text-text-success border-border-success",
 };
 
 const iconVariants: Record<AlertIntent, string> = {
@@ -47,7 +48,7 @@ export const Alert = ({ title, children, intent, className, ...props }: AlertPro
             <Icon className={classNames("h-4 w-4 flex-shrink-0", iconVariants[intent])} />
             <div className="flex-grow">
                 <div className="text-sm font-medium">{title}</div>
-                {children && <div className="pt-1 text-sm text-neutral-800">{children}</div>}
+                {children && <div className="pt-1 text-sm text-text-primary">{children}</div>}
             </div>
         </div>
     );

@@ -1,15 +1,24 @@
+import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
 import "tailwindcss/tailwind.css";
 import "../src/styles/index.css";
 
 const preview: Preview = {
+    decorators: [
+        withThemeByDataAttribute({
+            themes: {
+                light: "light",
+                dark: "dark",
+            },
+            defaultTheme: "light",
+        }),
+    ],
     parameters: {
         actions: { argTypesRegex: "^on[A-Z].*" },
         layout: "centered", // "centered" | "fullscreen"
         backgrounds: {
             default: "white",
             values: [
-                { name: "white", value: "#FFFFFF" },
                 { name: "light", value: "#FAFAFC" },
                 { name: "dark", value: "#212121" },
             ],
@@ -27,8 +36,7 @@ const preview: Preview = {
             showPanel: true,
         },
     },
-
-    tags: ["autodocs"]
+    tags: ["autodocs"],
 };
 
 export default preview;
