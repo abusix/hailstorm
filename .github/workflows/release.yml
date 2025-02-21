@@ -2,7 +2,7 @@ name: Semantic Release CI
 
 on:
     push:
-        branches: [main]
+        branches: [main, beta]
 
 env:
     GH_TOKEN: ${{ secrets.GH_TOKEN }}

@@ -25,7 +25,7 @@ const NavigationDisclosureButton = ({
     return (
         <HeadlessUiDisclosureButton
             className={classNames(
-                "flex w-full cursor-pointer items-center gap-x-2 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold",
+                "flex w-full cursor-pointer items-center gap-x-2 px-4 py-3 text-left text-sm text-text-inverse hover:bg-sidebar-background-primary ui-open:bg-sidebar-background-primary-pressed ui-open:font-semibold",
                 className
             )}
             onClick={onClick}

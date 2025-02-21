@@ -1,11 +1,12 @@
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
-import packageJson from "./package.json" assert { type: "json" };
-import postcss from "rollup-plugin-postcss";
+import resolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import typescript from "@rollup/plugin-typescript";
+import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import postcss from "rollup-plugin-postcss";
+import packageJson from "./package.json" assert { type: "json" };
 
 export default [
     {
@@ -42,6 +43,11 @@ export default [
                 },
             }),
             terser(),
+            copy({
+                targets: [
+                    { src: 'preset-hailstorm.cjs', dest: 'dist' }
+                ]
+            })
         ],
         external: ["react", "react-dom"],
     },

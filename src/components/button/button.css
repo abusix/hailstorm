@@ -1,0 +1,56 @@
+.btn {
+    &-primary {
+        @apply bg-background-brand text-text-inverse;
+        &:hover {
+            @apply bg-background-brand-hover;
+        }
+        &:focus {
+            @apply ring-2;
+        }
+        &:active {
+            @apply bg-background-brand-pressed;
+        }
+        &:disabled {
+            @apply bg-background-brand-disabled;
+        }
+    }
+
+    &-secondary {
+        @apply border border-border-secondary text-text-secondary;
+        &:hover {
+            @apply border-border-secondary-hover text-text-secondary-hover;
+        }
+        &:active {
+            @apply border-border-secondary-pressed bg-background-secondary-pressed;
+        }
+        &:disabled {
+            @apply border-border-disabled text-text-disabled;
+        }
+    }
+
+    &-minimal {
+        @apply text-text-secondary underline;
+        &:hover {
+            @apply text-text-secondary-hover;
+        }
+        &:active {
+            @apply bg-background-secondary-pressed;
+        }
+        &:disabled {
+            @apply text-text-disabled;
+        }
+    }
+
+    &-danger {
+        @apply bg-background-danger text-text-inverse;
+        &:hover {
+            @apply bg-background-danger-hover;
+        }
+        &:active {
+            @apply bg-background-danger-pressed;
+        }
+        &:disabled {
+            @apply bg-background-danger-disabled;
+        }
+    }
+}

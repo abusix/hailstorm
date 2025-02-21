@@ -1,20 +1,35 @@
 {
-  "branches": ["main"],
-  "debug": true,
-  "ci": true,
-  "dryRun": false,
-  "plugins":
-    [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      ["@semantic-release/npm", { "npmPublish": true, "tarballDir": "dist" }],
-      "@semantic-release/github",
-      [
-        "@semantic-release/git",
+    "branches": [
+        "main",
         {
-          "assets": ["package.json", "package-lock.json", "CHANGELOG.md"],
-          "message": "chore(release): ${nextRelease.version} [skip ci]",
-        },
-      ],
+            "name": "beta",
+            "prerelease": true
+        }
     ],
+    "debug": true,
+    "ci": true,
+    "dryRun": false,
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        [
+            "@semantic-release/npm",
+            {
+                "npmPublish": true,
+                "tarballDir": "dist"
+            }
+        ],
+        "@semantic-release/github",
+        [
+            "@semantic-release/git",
+            {
+                "assets": [
+                    "package.json",
+                    "package-lock.json",
+                    "CHANGELOG.md"
+                ],
+                "message": "chore(release): ${nextRelease.version} [skip ci]"
+            }
+        ]
+    ]
 }
