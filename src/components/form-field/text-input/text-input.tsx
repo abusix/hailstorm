@@ -62,7 +62,7 @@ export const TextInput = ({
                 type={type}
                 className={classNames(
                     targetAttachmentIdentifier,
-                    "paragraph-100 relative block h-8 w-full rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
+                    "paragraph-100 relative block h-8 w-full rounded border border-border-secondary bg-background-primary py-2 pl-3 pr-2 placeholder:text-neutral-600 focus:outline-none",
                     LeftIcon && "pl-9",
                     readOnly && "bg-primary-50",
                     disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",

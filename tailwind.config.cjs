@@ -147,7 +147,7 @@ export default {
             },
             border: {
                 primary: {
-                    DEFAULT: "var(--border-primary-default)",
+                    DEFAULT: "var(--border-primary)",
                 },
                 secondary: {
                     DEFAULT: "var(--border-secondary-default)",

@@ -7,7 +7,12 @@ interface PanelProps {
 }
 
 export const Panel: FC<PanelProps> = ({ children, className }) => (
-    <div className={classNames("rounded border border-neutral-300 bg-neutral-0 p-5", className)}>
+    <div
+        className={classNames(
+            "rounded border border-border-primary bg-background-primary p-5",
+            className
+        )}
+    >
         {children}
     </div>
 );
