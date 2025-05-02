@@ -14,6 +14,12 @@ Hailstorm is available as an npm package. To install it, run the following comma
 npm install @abusix/hailstorm
 ```
 
+or if you are using PNPM:
+
+```
+pnpm install @abusix/hailstorm
+```
+
 ## Documentation
 
 The documentation for Hailstorm will be available soon.
