@@ -15,9 +15,11 @@ jobs:
                   fetch-depth: 0
                   persist-credentials: false
             - uses: pnpm/action-setup@v4
+              with:
+                  version: 9.12.1
             - uses: actions/setup-node@v4
               with:
-                  node-version: 18
+                  node-version: 20.19.3
                   cache: "pnpm"
             - run: pnpm install --frozen-lockfile
             - run: pnpm run type-check

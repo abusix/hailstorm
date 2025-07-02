@@ -13,6 +13,8 @@ jobs:
         with:
           persist-credentials: false
       - uses: pnpm/action-setup@v4
+        with:
+            version: 9.12.1
       - name: Install and Build 🔧
         run: | # Install npm packages and build the Storybook files
           pnpm install
