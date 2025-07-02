@@ -90,13 +90,13 @@ export const Default: Story = {
                                 Plans & Billing
                             </Navigation.Disclosure.Button>
                             <Navigation.Disclosure.Panel>
-                                <Navigation.Disclosure.Panel.Item isIndented>
+                                <Navigation.Disclosure.Panel.Item>
                                     Subscriptions
                                 </Navigation.Disclosure.Panel.Item>
-                                <Navigation.Disclosure.Panel.Item isIndented>
+                                <Navigation.Disclosure.Panel.Item>
                                     Billing
                                 </Navigation.Disclosure.Panel.Item>
-                                <Navigation.Disclosure.Panel.Item isIndented>
+                                <Navigation.Disclosure.Panel.Item>
                                     Invoices
                                 </Navigation.Disclosure.Panel.Item>
                             </Navigation.Disclosure.Panel>
@@ -106,13 +106,13 @@ export const Default: Story = {
                                 Settings
                             </Navigation.Disclosure.Button>
                             <Navigation.Disclosure.Panel>
-                                <Navigation.Disclosure.Panel.Item isIndented>
+                                <Navigation.Disclosure.Panel.Item>
                                     Profile
                                 </Navigation.Disclosure.Panel.Item>
-                                <Navigation.Disclosure.Panel.Item isIndented>
+                                <Navigation.Disclosure.Panel.Item>
                                     Team
                                 </Navigation.Disclosure.Panel.Item>
-                                <Navigation.Disclosure.Panel.Item isIndented>
+                                <Navigation.Disclosure.Panel.Item>
                                     Sign out
                                 </Navigation.Disclosure.Panel.Item>
                             </Navigation.Disclosure.Panel>

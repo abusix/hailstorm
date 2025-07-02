@@ -4,6 +4,7 @@ import { classNames } from "../../util/class-names";
 
 export interface NavigationDisclosurePanelItemProps extends React.ComponentPropsWithoutRef<"div"> {
     isActive?: boolean;
+    /** @deprecated isIndented should no longer be used and will be removed in a future release. */
     isIndented?: boolean;
 }
 
