@@ -1,0 +1,14 @@
+{
+	"name": "Hailstorm Development Environment",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bradlc.vscode-tailwindcss",
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"vitest.explorer"
+			]
+		}
+	}
+}
