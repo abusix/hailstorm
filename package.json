@@ -1,6 +1,6 @@
 {
     "name": "@abusix/hailstorm",
-    "version": "5.17.0",
+    "version": "0.0.0",
     "description": "our own design/component library",
     "homepage": "https://github.com/abusix/hailstorm",
     "author": "abusix",
@@ -62,7 +62,6 @@
         "@rollup/plugin-node-resolve": "^15.3.0",
         "@rollup/plugin-terser": "^0.4.4",
         "@rollup/plugin-typescript": "^12.1.1",
-        "@semantic-release/git": "^10.0.1",
         "@storybook/addon-essentials": "^8.3.6",
         "@storybook/addon-interactions": "^8.3.6",
         "@storybook/addon-links": "^8.3.6",
