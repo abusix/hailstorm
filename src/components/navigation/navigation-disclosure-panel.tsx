@@ -4,7 +4,11 @@ import { classNames } from "../../util/class-names";
 
 export interface NavigationDisclosurePanelItemProps extends React.ComponentPropsWithoutRef<"div"> {
     isActive?: boolean;
-    /** @deprecated isIndented should no longer be used and will be removed in a future release. */
+    /**
+     * Give this navigation item extra indentation of width consistent with the `LeftIcon` of a `NavigationGroup`.
+     * This should be used if the parent has an icon and the child item does not to make the margins consistent.
+     * i.e. the child item intents on the text of the parent item, not the icon.
+     */
     isIndented?: boolean;
 }
 
