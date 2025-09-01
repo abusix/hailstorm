@@ -35,4 +35,6 @@ jobs:
             - name: Release to Github registry
               run: |
                 echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
-                pnpm publish --registry=https://npm.pkg.github.com
+                # We disable git checks because semantic release above has bumped the version in the package.json
+                # so we are expecting the git state to be dirty
+                pnpm publish --registry=https://npm.pkg.github.com --no-git-checks
