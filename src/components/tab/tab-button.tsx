@@ -7,6 +7,7 @@ export interface TabButtonProps<TTag extends React.ElementType>
     extends HeadlessUiTabProps<React.ElementType> {
     children: React.ReactNode;
     as?: TTag;
+    hasIndicator?: boolean;
 }
 
 const buttonVariants: Record<TabType, string> = {
@@ -18,6 +19,7 @@ const buttonVariants: Record<TabType, string> = {
 
 export const TabButton = <TTag extends React.ElementType>({
     children,
+    hasIndicator = false,
     ...props
 }: TabButtonProps<TTag> &
     Omit<React.ComponentPropsWithoutRef<TTag>, keyof TabButtonProps<TTag>>) => {
@@ -32,7 +34,10 @@ export const TabButton = <TTag extends React.ElementType>({
                     buttonVariants[type]
                 )}
             >
-                {children}
+                <div className="flex items-center gap-2">
+                    {children}
+                    {hasIndicator && <div className="h-2 w-2 rounded-full bg-danger-500" />}
+                </div>
             </div>
         </HeadlessUiTab>
     );
