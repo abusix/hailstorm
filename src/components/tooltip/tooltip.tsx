@@ -60,7 +60,7 @@ export const Tooltip = ({
             <div
                 ref={(el) => el && setPopperElement(el)}
                 className={classNames(
-                    "rounded-lg bg-neutral-900 p-4 px-4 py-2 text-xs text-neutral-0 shadow",
+                    "text-neutral-0 rounded-lg bg-neutral-900 p-4 px-4 py-2 text-xs shadow-sm",
                     className
                 )}
                 style={styles.popper}

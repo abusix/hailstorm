@@ -17,7 +17,7 @@ export interface NavigationProps {
 
 const Navigation = ({ children }: NavigationProps) => {
     return (
-        <div className="flex w-[180px] grow flex-col overflow-y-auto bg-primary-900 pb-5 pt-3">
+        <div className="bg-primary-900 flex w-[180px] grow flex-col overflow-y-auto pt-3 pb-5">
             {children}
         </div>
     );

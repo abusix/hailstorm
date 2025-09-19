@@ -57,7 +57,7 @@ const ExampleListbox = () => {
 
 export const Default = () => {
     return (
-        <div className="min-h-[30rem]">
+        <div className="min-h-120">
             <TableKeyValuePair>
                 <TableKeyValuePair.Header colSpan={4}>Details</TableKeyValuePair.Header>
 

@@ -15,7 +15,7 @@ const Label = ({ children, passive = false }: LabelProps) => {
     return (
         <HeadlessUiLabel
             className={classNames(
-                "paragraph-200 cursor-pointer text-neutral-800 ui-disabled:text-danger-600"
+                "paragraph-200 ui-disabled:text-danger-600 cursor-pointer text-neutral-800"
             )}
             passive={passive}
         >
@@ -38,7 +38,7 @@ const Switch = ({ checked = false, onChange, disabled = false, ariaLabel }: Swit
             disabled={disabled}
             onChange={onChange}
             className={classNames(
-                "relative inline-flex h-4 w-7 items-center rounded-full ui-checked:bg-primary-500 ui-checked:hover:bg-primary-600 ui-checked:disabled:bg-neutral-100 ui-not-checked:bg-neutral-400 ui-not-checked:hover:bg-neutral-500 ui-not-checked:disabled:bg-neutral-100"
+                "ui-checked:bg-primary-500 hover:ui-checked:bg-primary-600 disabled:ui-checked:bg-neutral-100 ui-not-checked:bg-neutral-400 hover:ui-not-checked:bg-neutral-500 disabled:ui-not-checked:bg-neutral-100 relative inline-flex h-4 w-7 items-center rounded-full"
             )}
         >
             <span className="sr-only">{ariaLabel}</span>

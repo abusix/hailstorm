@@ -6,7 +6,7 @@ export interface MenuItemsProps {
 }
 export const MenuItems = ({ children }: MenuItemsProps) => {
     return (
-        <HeadlessUiMenuItems className="absolute right-0 z-10 mt-2 flex w-52 flex-col rounded-md bg-neutral-0 py-2 shadow-md outline-none">
+        <HeadlessUiMenuItems className="bg-neutral-0 absolute right-0 z-10 mt-2 flex w-52 flex-col rounded-md py-2 shadow-md outline-hidden">
             {children}
         </HeadlessUiMenuItems>
     );

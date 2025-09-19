@@ -44,8 +44,8 @@ export const Alert = ({ title, children, intent, className, ...props }: AlertPro
             )}
             {...props}
         >
-            <Icon className={classNames("h-4 w-4 flex-shrink-0", iconVariants[intent])} />
-            <div className="flex-grow">
+            <Icon className={classNames("h-4 w-4 shrink-0", iconVariants[intent])} />
+            <div className="grow">
                 <div className="text-sm font-medium">{title}</div>
                 {children && <div className="pt-1 text-sm text-neutral-800">{children}</div>}
             </div>

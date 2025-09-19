@@ -43,7 +43,7 @@ export const NumberInput = ({
                     className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
                     aria-hidden="true"
                 >
-                    <LeftIcon className="text-gray-400 h-4 w-4 fill-neutral-600" />
+                    <LeftIcon className="h-4 w-4 fill-neutral-600 text-gray-400" />
                 </div>
             ) : null}
 
@@ -59,14 +59,14 @@ export const NumberInput = ({
                 min={min}
                 max={max}
                 className={classNames(
-                    "paragraph-100 block w-full rounded border border-neutral-400 py-2 pl-3 pr-2 text-neutral-800 placeholder:text-neutral-600 focus:outline-none",
+                    "paragraph-100 block w-full rounded-sm border border-neutral-400 py-2 pr-2 pl-3 text-neutral-800 placeholder:text-neutral-600 focus:outline-hidden",
                     textAlignVariants[textAlign],
                     LeftIcon && "pl-9",
                     readOnly && "bg-neutral-100",
                     disabled && "cursor-not-allowed bg-neutral-100 text-neutral-600",
                     !error &&
                         !disabled &&
-                        "hover:border-neutral-600 focus:border-primary-400 focus:ring-2 focus:ring-primary-200",
+                        "focus:border-primary-400 focus:ring-primary-200 hover:border-neutral-600 focus:ring-2",
                     error && !disabled && "border-danger-500"
                 )}
                 disabled={disabled}
