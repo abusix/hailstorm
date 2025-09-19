@@ -9,12 +9,12 @@ export interface TopBarNavLinkProps {
 export const TopBarNavLink = ({ isActive = false, children }: TopBarNavLinkProps) => {
     return (
         <div>
-            <div className="group rounded px-4 py-1 hover:bg-neutral-800 group-focus:ring-2 group-focus:ring-primary-200">
+            <div className="group group-focus:ring-primary-200 rounded-sm px-4 py-1 group-focus:ring-2 hover:bg-neutral-800">
                 <div
                     className={classNames(
-                        "relative font-sans text-sm text-neutral-0",
+                        "text-neutral-0 relative font-sans text-sm",
                         isActive &&
-                            "after:absolute after:left-0 after:right-0 after:top-7 after:block after:h-0.5 after:bg-neutral-0"
+                            "after:bg-neutral-0 after:absolute after:top-7 after:right-0 after:left-0 after:block after:h-0.5"
                     )}
                 >
                     {children}

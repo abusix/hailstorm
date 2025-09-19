@@ -10,7 +10,7 @@ export interface RadioBoxOptionProps {
 }
 
 const radioBoxContainerStyles = {
-    base: "group relative flex items-center gap-3 rounded-lg bg-neutral-0 border p-4 border-neutral-300 hover:border-primary-600 hover:bg-primary-50 cursor-pointer focus:outline-none data-[focus]:outline-2 data-[focus]:outline-primary-200",
+    base: "group relative flex items-center gap-3 rounded-lg bg-neutral-0 border p-4 border-neutral-300 hover:border-primary-600 hover:bg-primary-50 cursor-pointer focus:outline-hidden data-focus:outline-2 data-focus:outline-primary-200",
     checked: "border-primary-600 bg-primary-600 hover:bg-primary-600 hover:text-neutral-0",
     disabled:
         "bg-neutral-100 group-hover:border-neutral-300 group-hover:bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-100 cursor-not-allowed",
@@ -25,13 +25,13 @@ const radioBoxCircleStyles = {
 };
 
 const Title = ({ children }: { children: React.ReactNode }) => (
-    <h2 className="headline-500 text-neutral-900 group-[.is-checked]:text-neutral-0 group-[.is-disabled]:text-neutral-500">
+    <h2 className="headline-500 group-[.is-checked]:text-neutral-0 text-neutral-900 group-[.is-disabled]:text-neutral-500">
         {children}
     </h2>
 );
 
 const Description = ({ children }: { children: React.ReactNode }) => (
-    <p className="paragraph-200 text-neutral-800 group-[.is-checked]:text-neutral-0 group-[.is-disabled]:text-neutral-500">
+    <p className="paragraph-200 group-[.is-checked]:text-neutral-0 text-neutral-800 group-[.is-disabled]:text-neutral-500">
         {children}
     </p>
 );
@@ -59,7 +59,7 @@ export const RadioBoxOption = ({ children, value, disabled, className }: RadioBo
                         {checked && (
                             <div
                                 className={classNames(
-                                    "absolute inset-0 m-auto block h-2 w-2 rounded-full bg-primary-600",
+                                    "bg-primary-600 absolute inset-0 m-auto block h-2 w-2 rounded-full",
                                     optionDisabled && "bg-neutral-500"
                                 )}
                             />
