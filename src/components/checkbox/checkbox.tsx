@@ -14,7 +14,7 @@ export const Checkbox = ({ id, label, checked, onChange, disabled = false }: Che
         <div className="flex items-center gap-3">
             <input
                 id={id}
-                className="h-4 w-4 rounded border-neutral-400 outline-none checked:border-none checked:bg-primary-400 hover:border-neutral-600 checked:hover:bg-primary-500 focus:ring-0 focus:ring-transparent active:border-neutral-500 active:bg-neutral-100 checked:active:bg-primary-600 disabled:border-none disabled:bg-neutral-100 disabled:checked:fill-neutral-500 disabled:hover:bg-neutral-100"
+                className="checked:bg-primary-400 checked:hover:bg-primary-500 checked:active:bg-primary-600 h-4 w-4 rounded-sm border-neutral-400 outline-hidden checked:border-none hover:border-neutral-600 focus:ring-0 focus:ring-transparent active:border-neutral-500 active:bg-neutral-100 disabled:border-none disabled:bg-neutral-100 disabled:checked:fill-neutral-500 disabled:hover:bg-neutral-100"
                 type="checkbox"
                 checked={checked}
                 onChange={onChange}
