@@ -19,7 +19,7 @@ interface DisclosureButtonProps extends React.ComponentPropsWithoutRef<"button">
 const DisclosureButton = ({ children, ...props }: DisclosureButtonProps) => {
     return (
         <HeadlessUiDisclosureButton
-            className="headline-300 flex w-full items-center justify-between border-b border-t border-b-neutral-300 border-t-transparent bg-neutral-50 py-3 pl-3 pr-5 text-left text-neutral-900 focus:outline focus:outline-2 focus:outline-offset-0 focus:outline-primary-200"
+            className="headline-300 focus:outline-primary-200 flex w-full items-center justify-between border-t border-b border-t-transparent border-b-neutral-300 bg-neutral-50 py-3 pr-5 pl-3 text-left text-neutral-900 focus:outline-2 focus:outline-offset-0 focus:outline-solid"
             {...props}
         >
             {({ open }) => (

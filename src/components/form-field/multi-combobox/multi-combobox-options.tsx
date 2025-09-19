@@ -12,7 +12,7 @@ const MultiComboboxOptions = ({ children, className }: MultiComboboxOptionsProps
         <HeadlessUiComboboxOptions
             hold
             className={classNames(
-                "absolute mt-1 max-h-60 w-full overflow-auto rounded-md border border-neutral-300 bg-neutral-0 shadow-md outline-none ring-0",
+                "bg-neutral-0 absolute mt-1 max-h-60 w-full overflow-auto rounded-md border border-neutral-300 shadow-md ring-0 outline-hidden",
                 className
             )}
         >

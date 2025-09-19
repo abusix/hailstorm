@@ -10,7 +10,7 @@ export const FeaturedTag = ({ children, className }: FeaturedTagProps) => {
     return (
         <span
             className={classNames(
-                "absolute right-4 top-0 z-10 -translate-y-1/2 rounded border border-primary-600 bg-primary-50 px-1 text-xs font-medium uppercase tracking-wide text-primary-600",
+                "border-primary-600 bg-primary-50 text-primary-600 absolute top-0 right-4 z-10 -translate-y-1/2 rounded-sm border px-1 text-xs font-medium tracking-wide uppercase",
                 className
             )}
         >

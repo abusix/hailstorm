@@ -13,10 +13,10 @@ describe("Badge", () => {
         const badge = screen.getByText(text);
         expect(badge).toBeInTheDocument();
         expect(badge).toHaveAttribute("role", "button");
-        expect(badge).toHaveClass("rounded");
+        expect(badge).toHaveClass("rounded-sm");
     });
 
-    it("renders a badge with rounded appearance and passed string", () => {
+    it("renders a badge with rounded-sm appearance and passed string", () => {
         const text = "Rounded Badge";
         // ARRANGE
         render(<Badge shape="rounded">{text}</Badge>);

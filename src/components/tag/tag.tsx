@@ -12,7 +12,7 @@ export const Tag = ({ children, onClick, disabled }: TagProps) => {
     return (
         <div
             className={classNames(
-                "flex items-center rounded bg-neutral-200 px-2 py-1 text-neutral-800",
+                "flex items-center rounded-sm bg-neutral-200 px-2 py-1 text-neutral-800",
                 disabled && "bg-neutral-100 text-neutral-500"
             )}
         >

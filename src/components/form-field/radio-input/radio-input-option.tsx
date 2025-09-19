@@ -12,7 +12,7 @@ export const RadioInputOption = ({ children, value, disabled }: RadioInputOption
     return (
         <HeadlessUiRadio
             value={value}
-            className="max-w-fit cursor-pointer focus:outline-none"
+            className="max-w-fit cursor-pointer focus:outline-hidden"
             disabled={disabled}
         >
             {({ checked, disabled: optionDisabled }) => (
@@ -20,14 +20,14 @@ export const RadioInputOption = ({ children, value, disabled }: RadioInputOption
                     {checked ? (
                         <span
                             className={classNames(
-                                "relative inline-block h-4 w-4 rounded-full bg-primary-400 hover:bg-primary-500 active:bg-primary-600",
+                                "bg-primary-400 hover:bg-primary-500 active:bg-primary-600 relative inline-block h-4 w-4 rounded-full",
                                 optionDisabled &&
                                     "bg-neutral-100 hover:bg-neutral-100 active:bg-neutral-100"
                             )}
                         >
                             <span
                                 className={classNames(
-                                    "absolute inset-0 m-auto block h-2 w-2 rounded-full bg-neutral-0",
+                                    "bg-neutral-0 absolute inset-0 m-auto block h-2 w-2 rounded-full",
                                     optionDisabled && "bg-neutral-500"
                                 )}
                             />

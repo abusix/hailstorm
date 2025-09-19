@@ -16,7 +16,7 @@ const buttonVariants = {
 
 const shapeVariants = {
     rounded: "rounded-full",
-    default: "rounded",
+    default: "rounded-sm",
 };
 
 export type BadgeType = keyof typeof buttonVariants;
@@ -44,7 +44,7 @@ export const Badge = ({
             role="button"
             aria-label="Badge"
             className={classNames(
-                "inline-flex h-4 items-center px-2 text-xs font-semibold uppercase tracking-wide",
+                "inline-flex h-4 items-center px-2 text-xs font-semibold tracking-wide uppercase",
                 buttonVariants[type],
                 shapeVariants[shape],
                 interactiveVariant,

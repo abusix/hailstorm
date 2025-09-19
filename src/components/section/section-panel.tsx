@@ -10,7 +10,7 @@ export interface SectionPanelProps {
  */
 export const SectionPanel = ({ children }: SectionPanelProps) => {
     return (
-        <div className="relative rounded border border-neutral-300 bg-neutral-0 p-5">
+        <div className="bg-neutral-0 relative rounded-sm border border-neutral-300 p-5">
             {children}
         </div>
     );

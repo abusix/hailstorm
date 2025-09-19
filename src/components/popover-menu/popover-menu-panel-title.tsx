@@ -6,6 +6,6 @@ export interface PopoverMenuPanelTitleProps {
 
 export const PopoverMenuPanelTitle = ({ children }: PopoverMenuPanelTitleProps) => {
     return (
-        <p className="px-4 pb-2 pt-3 text-xs font-normal uppercase text-neutral-700">{children}</p>
+        <p className="px-4 pt-3 pb-2 text-xs font-normal text-neutral-700 uppercase">{children}</p>
     );
 };

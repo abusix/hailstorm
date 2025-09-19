@@ -42,7 +42,7 @@ const Button = ({
     ...props
 }: ButtonProps) => {
     const commonClasses = classNames(
-        `group flex h-8 items-center gap-2 whitespace-nowrap rounded px-4 text-xs font-semibold focus:outline-none disabled:cursor-not-allowed`,
+        `group flex h-8 items-center gap-2 whitespace-nowrap rounded-sm px-4 text-xs font-semibold focus:outline-hidden disabled:cursor-not-allowed`,
         buttonVariants[variant],
         className
     );

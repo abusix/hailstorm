@@ -61,7 +61,7 @@ export const Default = () => {
                         </TableUnvirtualized.Body.Cell>
 
                         <TableUnvirtualized.Body.Cell align="right">
-                            <span className="whitespace-nowrap font-mono">
+                            <span className="font-mono whitespace-nowrap">
                                 $ {item.price.toFixed(2)}
                             </span>
                         </TableUnvirtualized.Body.Cell>
@@ -142,7 +142,7 @@ export const LoadingTable = () => {
                                 {row.description}
                             </TableUnvirtualized.Body.Cell>
                             <TableUnvirtualized.Body.Cell align="right">
-                                <span className="whitespace-nowrap font-mono">
+                                <span className="font-mono whitespace-nowrap">
                                     $ {row.price.toFixed(2)}
                                 </span>
                             </TableUnvirtualized.Body.Cell>

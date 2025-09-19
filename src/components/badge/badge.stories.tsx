@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import React from "react";
-import { Badge, BadgeProps } from "./badge";
 import { hiddenArgControl } from "../../util/storybook-utils";
+import { Badge, BadgeProps } from "./badge";
 
 const types: BadgeProps["type"][] = [
     "primary",
@@ -56,5 +56,5 @@ export const TypesAndShapes: Story = {
 };
 
 export const CustomClassName: Story = {
-    render: ({ children }) => <Badge className="bg-neutral-600 text-neutral-0">{children}</Badge>,
+    render: ({ children }) => <Badge className="text-neutral-0 bg-neutral-600">{children}</Badge>,
 };

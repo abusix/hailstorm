@@ -24,7 +24,7 @@ const PopoverMenuPanel = ({ children, ...rest }: PopoverMenuPanelProps) => {
             ref={(el) => el && setPopperElement(el)}
             style={styles}
             {...attributes}
-            className="z-40 w-52 rounded bg-neutral-0 py-2 shadow"
+            className="bg-neutral-0 z-40 w-52 rounded-sm py-2 shadow-sm"
             {...rest}
         >
             {children}

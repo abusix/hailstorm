@@ -18,7 +18,7 @@
         // "emitDeclarationOnly": true,
         "sourceMap": true,
         "outDir": "dist",
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "allowSyntheticDefaultImports": true
     },
     "include": [
