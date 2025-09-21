@@ -107,6 +107,42 @@ export const WithFooterButtons: Story = {
     },
 };
 
+export const WithoutCloseButton: Story = {
+    args: {
+        hasCloseButton: false,
+        footer: <IconFooters />,
+    },
+    argTypes: {
+        footer: hiddenArgControl,
+    },
+    render: ({ children, ...args }) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const [isShown, setIsShown] = useState(false);
+        const toggleBtn = () => setIsShown((val) => !val);
+
+        return (
+            <div className="body-font">
+                <button
+                    type="button"
+                    onClick={toggleBtn}
+                    className="bg-neutral-100 px-4 py-2 shadow"
+                >
+                    show Modal (without X button)
+                </button>
+
+                <Dialog
+                    {...args}
+                    footer={<IconFooters onClose={() => setIsShown(false)} />}
+                    isShown={isShown}
+                    onClose={toggleBtn}
+                >
+                    {children}
+                </Dialog>
+            </div>
+        );
+    },
+};
+
 export const WithLongContent: Story = {
     args: {
         children: (

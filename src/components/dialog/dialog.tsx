@@ -16,6 +16,7 @@ export interface DialogProps {
     title?: string;
     onClose?: (submitted: boolean) => void;
     isCloseable?: boolean;
+    hasCloseButton?: boolean;
     className?: string;
     children: React.ReactNode;
     footer?: React.ReactNode | null;
@@ -29,6 +30,7 @@ export const Dialog = ({
     children,
     className,
     isCloseable = true,
+    hasCloseButton = true,
     footer,
     footerPosition = "end",
     onClose,
@@ -91,7 +93,7 @@ export const Dialog = ({
                                     {title}
                                 </HeadlessDialogTitle>
 
-                                {isCloseable && (
+                                {isCloseable && hasCloseButton && (
                                     <IconButton
                                         className="absolute right-0 top-0"
                                         Icon={CrossIcon}
