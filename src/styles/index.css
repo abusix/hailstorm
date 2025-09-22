@@ -1,6 +1,113 @@
 @import "tailwindcss";
 
-@config '../../tailwind.config.cjs';
+@config "../../tailwind.config.cjs";
+
+/* Custom color palette */
+@theme {
+  /* Abusix brand colors */
+  --color-abusix-black-pearl: #07123A;
+  --color-abusix-dusk: #09174C;
+
+  /* Neutral colors */
+  --color-neutral-900: #504E61;
+  --color-neutral-800: #5F5D76;
+  --color-neutral-700: #747191;
+  --color-neutral-600: #8784A7;
+  --color-neutral-500: #9C9BB9;
+  --color-neutral-400: #B0B1C9;
+  --color-neutral-300: #C1C4D6;
+  --color-neutral-200: #DDDFE8;
+  --color-neutral-100: #ECEEF3;
+  --color-neutral-50: #F5F6F8;
+  --color-neutral-0: #ffffff;
+
+  /* Primary colors */
+  --color-primary-900-plus-20: #1A276C;
+  --color-primary-900-plus-10: #1E2C7A;
+  --color-primary-900-plus-8: #1E2D7C;
+  --color-primary-900: #213187;
+  --color-primary-800: #2235AB;
+  --color-primary-700: #223FD3;
+  --color-primary-600: #3259E7;
+  --color-primary-500: #4072F1;
+  --color-primary-400: #6497F6;
+  --color-primary-300: #96BBFA;
+  --color-primary-200: #C1D5FC;
+  --color-primary-100: #DCE7FD;
+  --color-primary-50: #EFF4FF;
+
+  /* Success colors */
+  --color-success-900: #114335;
+  --color-success-800: #14513F;
+  --color-success-700: #16664E;
+  --color-success-600: #1B805F;
+  --color-success-500: #2A9F76;
+  --color-success-400: #52BD94;
+  --color-success-300: #80D5B1;
+  --color-success-200: #B3E7CE;
+  --color-success-100: #D7F4E4;
+  --color-success-50: #EFFAF5;
+
+  /* Danger colors */
+  --color-danger-900: #772525;
+  --color-danger-800: #8F2525;
+  --color-danger-700: #AC2929;
+  --color-danger-600: #D14343;
+  --color-danger-500: #E15252;
+  --color-danger-400: #ED7C7C;
+  --color-danger-300: #F5ACAC;
+  --color-danger-200: #FACECE;
+  --color-danger-100: #FCE4E4;
+  --color-danger-50: #FDF3F3;
+
+  /* Warning colors */
+  --color-warning-900: #7A2C0D;
+  --color-warning-800: #94350C;
+  --color-warning-700: #B74606;
+  --color-warning-600: #DD6702;
+  --color-warning-500: #F98D07;
+  --color-warning-400: #FFB020;
+  --color-warning-300: #FFC74A;
+  --color-warning-200: #FFDE88;
+  --color-warning-100: #FFF0C6;
+  --color-warning-50: #FFF9EB;
+
+  /* Additional colors */
+  --color-violet-100: #ede9fe;
+  --color-violet-800: #5b21b6;
+  --color-teal-100: #ccfbf1;
+  --color-teal-800: #115e59;
+  --color-orange-100: #ffedd5;
+  --color-orange-800: #9a3412;
+  --color-pink-300: #f9a8d4;
+  --color-pink-800: #9d174d;
+  --color-purple-100: #D8D4FF;
+  --color-purple-800: #8966FF;
+
+  /* Special colors */
+  --color-black: #000000;
+  --color-modal-background: rgba(67, 90, 111, 0.7);
+  --color-transparent: transparent;
+
+  /* Font families */
+  --font-display: "Fabriga", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+
+  /* Custom spacing/sizing - corrected for v4 */
+  --size-120: 30rem;
+  --size-184: 46rem;
+  --size-285: 71.25rem;
+  --size-736: 736px;
+}
+
+/* Hide webkit search decorations */
+[type='search']::-webkit-search-decoration,
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-results-button,
+[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -16,7 +123,13 @@
     ::before,
     ::backdrop,
     ::file-selector-button {
-        border-color: var(--color-gray-200, currentcolor);
+        border-color: var(--color-neutral-200, currentcolor);
+    }
+
+    /* In tailwind v4 buttons now use cursor: default instead of cursor: pointer to match the default browser behavior. */
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
     }
 }
 

@@ -21,9 +21,9 @@ const NavigationDisclosurePanelItem = ({
     return (
         <div
             className={classNames(
-                "text-neutral-0 hover:bg-primary-900+10 relative w-full cursor-pointer py-3 pr-1 pl-8 text-left text-sm",
+                "text-neutral-0 hover:bg-primary-900-plus-10 relative w-full cursor-pointer py-3 pr-1 pl-8 text-left text-sm",
                 isIndented && "pl-14",
-                isActive && "bg-primary-900+20 hover:bg-primary-900+20 font-semibold"
+                isActive && "bg-primary-900-plus-20 hover:bg-primary-900-plus-20 font-semibold"
             )}
             {...props}
         >
