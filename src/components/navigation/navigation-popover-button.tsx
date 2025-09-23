@@ -20,7 +20,7 @@ export const NavigationPopoverButton = ({
     return (
         <HeadlessUiPopoverButton
             ref={(el) => el && setReferenceElement(el)}
-            className="flex w-full cursor-pointer items-center gap-x-3 px-4 py-3 text-left text-sm text-neutral-0 hover:bg-primary-900+10 ui-open:bg-primary-900+8 ui-open:font-semibold"
+            className="text-neutral-0 hover:bg-primary-900-plus-10 ui-open:bg-primary-900-plus-8 ui-open:font-semibold flex w-full cursor-pointer items-center gap-x-3 px-4 py-3 text-left text-sm"
             onClick={onClick}
         >
             <>

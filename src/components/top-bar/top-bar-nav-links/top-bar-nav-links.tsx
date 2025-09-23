@@ -5,5 +5,5 @@ export interface TopBarNavLinksProps {
 }
 
 export const TopBarNavLinks = ({ children }: TopBarNavLinksProps) => {
-    return <div className="flex grow gap-12 pl-20 pr-6">{children}</div>;
+    return <div className="flex grow gap-12 pr-6 pl-20">{children}</div>;
 };

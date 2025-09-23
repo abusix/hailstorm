@@ -26,7 +26,7 @@ export const IconButton = ({ Icon, variant = "primary", className, ...props }: I
         <button
             type="button"
             className={classNames(
-                `inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded focus:outline-none`,
+                `inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-sm focus:outline-hidden`,
                 iconButtonVariants[variant],
                 className
             )}

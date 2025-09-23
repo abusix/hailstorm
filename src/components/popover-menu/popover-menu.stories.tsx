@@ -22,7 +22,7 @@ export const Default: Story = {
         const [isActive, setIsActive] = React.useState(false);
 
         return (
-            <div className="relative flex min-h-screen min-w-736 flex-col">
+            <div className="relative flex min-h-screen min-w-[736px] flex-col">
                 <PopoverMenu>
                     <PopoverMenu.Button variant="secondary">Open Popover Menu</PopoverMenu.Button>
 

@@ -1,6 +1,139 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@config "../../tailwind.config.cjs";
+
+/* Custom color palette */
+@theme {
+    /* Abusix brand colors */
+    --color-abusix-black-pearl: #07123a;
+    --color-abusix-dusk: #09174c;
+
+    /* Neutral colors */
+    --color-neutral-900: #504e61;
+    --color-neutral-800: #5f5d76;
+    --color-neutral-700: #747191;
+    --color-neutral-600: #8784a7;
+    --color-neutral-500: #9c9bb9;
+    --color-neutral-400: #b0b1c9;
+    --color-neutral-300: #c1c4d6;
+    --color-neutral-200: #dddfe8;
+    --color-neutral-100: #eceef3;
+    --color-neutral-50: #f5f6f8;
+    --color-neutral-0: #ffffff;
+
+    /* Primary colors */
+    --color-primary-900-plus-20: #1a276c;
+    --color-primary-900-plus-10: #1e2c7a;
+    --color-primary-900-plus-8: #1e2d7c;
+    --color-primary-900: #213187;
+    --color-primary-800: #2235ab;
+    --color-primary-700: #223fd3;
+    --color-primary-600: #3259e7;
+    --color-primary-500: #4072f1;
+    --color-primary-400: #6497f6;
+    --color-primary-300: #96bbfa;
+    --color-primary-200: #c1d5fc;
+    --color-primary-100: #dce7fd;
+    --color-primary-50: #eff4ff;
+
+    /* Success colors */
+    --color-success-900: #114335;
+    --color-success-800: #14513f;
+    --color-success-700: #16664e;
+    --color-success-600: #1b805f;
+    --color-success-500: #2a9f76;
+    --color-success-400: #52bd94;
+    --color-success-300: #80d5b1;
+    --color-success-200: #b3e7ce;
+    --color-success-100: #d7f4e4;
+    --color-success-50: #effaf5;
+
+    /* Danger colors */
+    --color-danger-900: #772525;
+    --color-danger-800: #8f2525;
+    --color-danger-700: #ac2929;
+    --color-danger-600: #d14343;
+    --color-danger-500: #e15252;
+    --color-danger-400: #ed7c7c;
+    --color-danger-300: #f5acac;
+    --color-danger-200: #facece;
+    --color-danger-100: #fce4e4;
+    --color-danger-50: #fdf3f3;
+
+    /* Warning colors */
+    --color-warning-900: #7a2c0d;
+    --color-warning-800: #94350c;
+    --color-warning-700: #b74606;
+    --color-warning-600: #dd6702;
+    --color-warning-500: #f98d07;
+    --color-warning-400: #ffb020;
+    --color-warning-300: #ffc74a;
+    --color-warning-200: #ffde88;
+    --color-warning-100: #fff0c6;
+    --color-warning-50: #fff9eb;
+
+    /* Additional colors */
+    --color-violet-100: #ede9fe;
+    --color-violet-800: #5b21b6;
+    --color-teal-100: #ccfbf1;
+    --color-teal-800: #115e59;
+    --color-orange-100: #ffedd5;
+    --color-orange-800: #9a3412;
+    --color-pink-300: #f9a8d4;
+    --color-pink-800: #9d174d;
+    --color-purple-100: #d8d4ff;
+    --color-purple-800: #8966ff;
+
+    /* Special colors */
+    --color-black: #000000;
+    --color-modal-background: rgba(67, 90, 111, 0.7);
+    --color-transparent: transparent;
+
+    /* Font families */
+    --font-display: "Fabriga", serif;
+    --font-sans: "Inter", sans-serif;
+    --font-mono:
+        ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono",
+        "Courier New", monospace;
+
+    /* Custom spacing/sizing - corrected for v4 */
+    --size-120: 30rem;
+    --size-184: 46rem;
+    --size-285: 71.25rem;
+    --size-736: 736px;
+}
+
+/* Hide webkit search decorations */
+[type="search"]::-webkit-search-decoration,
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-results-button,
+[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-neutral-200, currentcolor);
+    }
+
+    /* In tailwind v4 buttons now use cursor: default instead of cursor: pointer to match the default browser behavior. */
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+}
 
 .headline-900 {
     @apply font-display text-3xl font-bold;
@@ -51,7 +184,7 @@
 }
 
 .inline-link {
-    @apply text-primary-500 underline hover:text-primary-700;
+    @apply text-primary-500 hover:text-primary-700 underline;
 }
 
 /* Tailwind checkbox needs it to change styles of the check */

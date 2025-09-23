@@ -29,7 +29,7 @@ const Sidesheet = ({ children, isOpen, onClose, initialFocus }: SidesheetProps) 
                     leaveFrom="opacity-100 z-10"
                     leaveTo="opacity-0 z-0"
                 >
-                    <div className="fixed inset-0 bg-modal-background" aria-hidden="true" />
+                    <div className="bg-modal-background fixed inset-0" aria-hidden="true" />
                 </HeadlessUiTransitionChild>
 
                 <HeadlessUiTransitionChild
@@ -41,7 +41,7 @@ const Sidesheet = ({ children, isOpen, onClose, initialFocus }: SidesheetProps) 
                     leaveFrom="-translate-x-0"
                     leaveTo="translate-x-full"
                 >
-                    <HeadlessUiDialogPanel className="fixed inset-y-0 right-0 z-10 w-184 overflow-y-auto bg-neutral-0">
+                    <HeadlessUiDialogPanel className="bg-neutral-0 fixed inset-y-0 right-0 z-10 w-184 overflow-y-auto">
                         {children}
                     </HeadlessUiDialogPanel>
                 </HeadlessUiTransitionChild>

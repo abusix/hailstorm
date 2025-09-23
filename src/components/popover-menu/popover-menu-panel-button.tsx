@@ -32,11 +32,11 @@ export const PopoverMenuPanelButton = ({
     return (
         <HeadlessUiPopoverButton
             className={classNames(
-                "relative flex w-full cursor-pointer flex-row items-center gap-3 overflow-hidden px-4 py-2 text-sm font-normal focus:ring-2 focus:ring-primary-200",
+                "focus:ring-primary-200 relative flex w-full cursor-pointer flex-row items-center gap-3 overflow-hidden px-4 py-2 text-sm font-normal focus:ring-2",
                 itemIntents[variant],
                 selected && activeItemIntents[variant],
                 selected &&
-                    "before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:rounded-r-md",
+                    "before:absolute before:top-0 before:left-0 before:h-full before:w-0.5 before:rounded-r-md",
                 disabled &&
                     "cursor-not-allowed bg-neutral-100 fill-neutral-400 text-neutral-500 hover:bg-neutral-100 hover:fill-neutral-400 hover:text-neutral-500 focus:ring-0"
             )}

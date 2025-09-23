@@ -5,5 +5,5 @@ export interface MultiComboboxEmptyOptionProps {
 }
 
 export const MultiComboboxEmptyOption = ({ children }: MultiComboboxEmptyOptionProps) => {
-    return <div className="px-3 py-2 ui-selected:bg-primary-100">{children}</div>;
+    return <div className="ui-selected:bg-primary-100 px-3 py-2">{children}</div>;
 };

@@ -47,7 +47,7 @@ export const Toast = ({ title, intent, children, onClose, isClosable = true }: T
         <div
             role="alert"
             className={classNames(
-                "pt-4.5 relative flex flex-row gap-4 rounded-lg border px-4 py-3 text-neutral-800",
+                "relative flex flex-row gap-4 rounded-lg border px-4 py-3 pt-4.5 text-neutral-800",
                 isClosable && "pr-14",
                 toastVariants[intent]
             )}
@@ -57,10 +57,10 @@ export const Toast = ({ title, intent, children, onClose, isClosable = true }: T
             </div>
 
             {isClosable ? (
-                <div className="absolute right-0 top-0 pr-4 pt-2 sm:block">
+                <div className="absolute top-0 right-0 pt-2 pr-4 sm:block">
                     <button
                         type="button"
-                        className={classNames("rounded p-1", closeButtonVariants[intent])}
+                        className={classNames("rounded-sm p-1", closeButtonVariants[intent])}
                         onClick={onClose}
                     >
                         <CrossIcon name="cross" aria-label="close" className="h-3 w-3" />

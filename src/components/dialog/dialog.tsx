@@ -56,7 +56,7 @@ export const Dialog = ({
                         leaveTo="opacity-0"
                     >
                         <div
-                            className="fixed inset-0 z-40 bg-modal-background"
+                            className="bg-modal-background fixed inset-0 z-40"
                             aria-hidden="true"
                             onClick={() => handleClose(true)}
                         />
@@ -81,7 +81,7 @@ export const Dialog = ({
                     >
                         <HeadlessDialogPanel
                             className={classNames(
-                                "flex w-[736px] transform flex-col overflow-y-auto rounded-md bg-neutral-0 shadow-lg transition-all",
+                                "bg-neutral-0 flex w-[736px] transform flex-col overflow-y-auto rounded-md shadow-lg transition-all",
                                 !footer && "pb-8",
                                 className
                             )}
@@ -93,7 +93,7 @@ export const Dialog = ({
 
                                 {isCloseable && (
                                     <IconButton
-                                        className="absolute right-0 top-0"
+                                        className="absolute top-0 right-0"
                                         Icon={CrossIcon}
                                         variant="minimal"
                                         onClick={() => handleClose(false)}
@@ -105,7 +105,7 @@ export const Dialog = ({
                                 <div
                                     id="dialog-footer"
                                     className={classNames(
-                                        "sticky bottom-0 left-0 flex flex-row gap-2 bg-neutral-0 px-10 pb-8 pt-8",
+                                        "bg-neutral-0 sticky bottom-0 left-0 flex flex-row gap-2 px-10 pt-8 pb-8",
                                         footerPosition === "end" ? "justify-end" : "justify-start"
                                     )}
                                 >
