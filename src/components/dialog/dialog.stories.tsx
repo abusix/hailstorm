@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getStoryDescription, hiddenArgControl } from "../../util/storybook-utils";
 import { Dialog } from "./dialog";
 import { Button } from "../button/button";
@@ -101,6 +101,60 @@ export const WithFooterButtons: Story = {
                     onClose={toggleBtn}
                 >
                     {children}
+                </Dialog>
+            </div>
+        );
+    },
+};
+
+export const DarkMode: Story = {
+    args: {
+        footer: <IconFooters />,
+    },
+    argTypes: {
+        footer: hiddenArgControl,
+    },
+    render: ({ children, ...args }) => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const [isShown, setIsShown] = useState(false);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const [theme, setTheme] = useState<"light" | "dark">("light");
+        const toggleBtn = () => setIsShown((val) => !val);
+
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+            document.documentElement.classList.remove("light", "dark");
+            document.documentElement.classList.add(theme);
+        }, [theme]);
+
+        return (
+            <div className="body-font bg-background min-h-[200px] p-4">
+                <div className="flex gap-2 mb-4">
+                    <button
+                        type="button"
+                        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                        className="bg-background-tertiary text-foreground px-4 py-2 shadow-sm rounded border border-border"
+                    >
+                        Toggle {theme === "light" ? "Dark" : "Light"} Mode
+                    </button>
+                    <button
+                        type="button"
+                        onClick={toggleBtn}
+                        className="bg-background-tertiary text-foreground px-4 py-2 shadow-sm rounded border border-border"
+                    >
+                        Show Dialog
+                    </button>
+                </div>
+
+                <Dialog
+                    {...args}
+                    footer={<IconFooters onClose={() => setIsShown(false)} />}
+                    isShown={isShown}
+                    onClose={toggleBtn}
+                >
+                    <p className="text-foreground">
+                        This dialog supports both light and dark modes! Toggle the theme to see how it adapts.
+                    </p>
                 </Dialog>
             </div>
         );
