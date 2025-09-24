@@ -87,7 +87,7 @@ export const Dialog = ({
                             )}
                         >
                             <div className="relative mx-10 mt-10">
-                                <HeadlessDialogTitle className="mb-6 pr-12 text-lg font-semibold text-foreground">
+                                <HeadlessDialogTitle className="text-foreground mb-6 pr-12 text-lg font-semibold">
                                     {title}
                                 </HeadlessDialogTitle>
 

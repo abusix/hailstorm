@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button, ButtonProps } from "./button";
 import { ChatIcon, DiagramTreeIcon, LockIcon } from "../../icons";
 import { hiddenArgControl } from "../../util/storybook-utils";
@@ -62,4 +62,101 @@ export const Types: Story = {
             ))}
         </div>
     ),
+};
+
+export const DarkMode: Story = {
+    argTypes: {
+        variant: hiddenArgControl,
+        LeftIcon: hiddenArgControl,
+        RightIcon: hiddenArgControl,
+        loading: hiddenArgControl,
+    },
+    render: () => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const [theme, setTheme] = useState<"light" | "dark">("light");
+
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+            document.documentElement.classList.remove("light", "dark");
+            document.documentElement.classList.add(theme);
+        }, [theme]);
+
+        return (
+            <div className="bg-background min-h-[400px] p-8">
+                <div className="mb-6">
+                    <button
+                        type="button"
+                        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                        className="bg-background-tertiary text-foreground border-border rounded border px-4 py-2 shadow-sm"
+                    >
+                        Toggle {theme === "light" ? "Dark" : "Light"} Mode
+                    </button>
+                </div>
+
+                <div className="space-y-4">
+                    <div>
+                        <h3 className="text-foreground mb-2 font-semibold">Primary Buttons</h3>
+                        <div className="flex gap-2">
+                            <Button variant="primary">Primary</Button>
+                            <Button variant="primary" LeftIcon={ChatIcon}>
+                                With Icon
+                            </Button>
+                            <Button variant="primary" loading>
+                                Loading
+                            </Button>
+                            <Button variant="primary" disabled>
+                                Disabled
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 className="text-foreground mb-2 font-semibold">Secondary Buttons</h3>
+                        <div className="flex gap-2">
+                            <Button variant="secondary">Secondary</Button>
+                            <Button variant="secondary" LeftIcon={DiagramTreeIcon}>
+                                With Icon
+                            </Button>
+                            <Button variant="secondary" loading>
+                                Loading
+                            </Button>
+                            <Button variant="secondary" disabled>
+                                Disabled
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 className="text-foreground mb-2 font-semibold">Minimal Buttons</h3>
+                        <div className="flex gap-2">
+                            <Button variant="minimal">Minimal</Button>
+                            <Button variant="minimal" LeftIcon={LockIcon}>
+                                With Icon
+                            </Button>
+                            <Button variant="minimal" loading>
+                                Loading
+                            </Button>
+                            <Button variant="minimal" disabled>
+                                Disabled
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 className="text-foreground mb-2 font-semibold">Danger Buttons</h3>
+                        <div className="flex gap-2">
+                            <Button variant="danger">Danger</Button>
+                            <Button variant="danger" LeftIcon={ChatIcon}>
+                                Delete
+                            </Button>
+                            <Button variant="danger-secondary">Cancel</Button>
+                            <Button variant="danger-secondary" disabled>
+                                Disabled
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    },
 };

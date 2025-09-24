@@ -129,18 +129,18 @@ export const DarkMode: Story = {
 
         return (
             <div className="body-font bg-background min-h-[200px] p-4">
-                <div className="flex gap-2 mb-4">
+                <div className="mb-4 flex gap-2">
                     <button
                         type="button"
                         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                        className="bg-background-tertiary text-foreground px-4 py-2 shadow-sm rounded border border-border"
+                        className="bg-background-tertiary text-foreground border-border rounded border px-4 py-2 shadow-sm"
                     >
                         Toggle {theme === "light" ? "Dark" : "Light"} Mode
                     </button>
                     <button
                         type="button"
                         onClick={toggleBtn}
-                        className="bg-background-tertiary text-foreground px-4 py-2 shadow-sm rounded border border-border"
+                        className="bg-background-tertiary text-foreground border-border rounded border px-4 py-2 shadow-sm"
                     >
                         Show Dialog
                     </button>
@@ -153,7 +153,8 @@ export const DarkMode: Story = {
                     onClose={toggleBtn}
                 >
                     <p className="text-foreground">
-                        This dialog supports both light and dark modes! Toggle the theme to see how it adapts.
+                        This dialog supports both light and dark modes! Toggle the theme to see how
+                        it adapts.
                     </p>
                 </Dialog>
             </div>
