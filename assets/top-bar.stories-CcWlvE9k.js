@@ -1,0 +1,29 @@
+import{j as e}from"./jsx-runtime-DiklIkkE.js";import{c as _}from"./class-names-AhVFtEzo.js";import{l as g,d8 as f,a1 as y}from"./zoom-to-fit-icon-BI_77R5n.js";import{A as B}from"./avatar-Zf3yNdes.js";import{a}from"./menu-DexhzPK2.js";import"./index-DRjF_FHU.js";import"./use-resolve-button-type-anS-OQ-j.js";import"./keyboard-BXsyG9-6.js";import"./use-sync-refs-4PSbzubZ.js";import"./index-C-39nNrC.js";import"./use-text-value-B9Q3k_m4.js";import"./portal-Cg6DHy_v.js";import"./focus-management-CtIqEZ7d.js";import"./use-server-handoff-complete-D6bOsrEP.js";import"./floating-B5xy_Q8r.js";import"./use-inert-others-IK0ZZMzA.js";import"./open-closed-yLnem6BE.js";import"./bugs-DpEN4NTH.js";import"./description-ZkavqmAj.js";import"./label-mZgg-6rf.js";import"./menu-info-item-D2bjAAx2.js";import"./menu-separator-BFaN24RN.js";import"./menu-title-B5kFuFh0.js";const s=({src:r})=>e.jsx("img",{src:r,alt:"logo"});try{s.displayName="TopBarLogo",s.__docgenInfo={description:"",displayName:"TopBarLogo",props:{src:{defaultValue:null,description:"",name:"src",required:!0,type:{name:"string"}}}}}catch{}const i=({children:r})=>e.jsx("div",{className:"flex grow gap-12 pr-6 pl-20",children:r});try{i.displayName="TopBarNavLinks",i.__docgenInfo={description:"",displayName:"TopBarNavLinks",props:{}}}catch{}const p=({isActive:r=!1,children:o})=>e.jsx("div",{children:e.jsx("div",{className:"group group-focus:ring-primary-200 rounded-sm px-4 py-1 group-focus:ring-2 hover:bg-neutral-800",children:e.jsx("div",{className:_("text-neutral-0 relative font-sans text-sm",r&&"after:bg-neutral-0 after:absolute after:top-7 after:right-0 after:left-0 after:block after:h-0.5"),children:o})})});try{p.displayName="TopBarNavLink",p.__docgenInfo={description:"",displayName:"TopBarNavLink",props:{isActive:{defaultValue:{value:"false"},description:"",name:"isActive",required:!1,type:{name:"boolean"}}}}}catch{}const c=({children:r})=>e.jsxs(a.Button,{className:"hover:bg-primary-900 focus:ring-primary-200 flex items-center gap-1 rounded-sm px-1 py-1 focus:ring-2 focus:outline-hidden",children:[e.jsx(B,{color:"primary",children:r}),e.jsx(g,{className:"h-4 w-4 fill-neutral-400"})]});try{c.displayName="TopBarAvatarButton",c.__docgenInfo={description:"",displayName:"TopBarAvatarButton",props:{}}}catch{}const l=({children:r})=>e.jsx("div",{className:"flex items-center gap-2 px-2",children:r});try{l.displayName="TrayButtons",l.__docgenInfo={description:"",displayName:"TrayButtons",props:{}}}catch{}const m=({onClick:r,id:o,children:v})=>e.jsx("div",{role:"button",id:o,tabIndex:-1,onClick:r,onKeyDown:r,className:"hover:bg-primary-900 focus:ring-primary-200 cursor-pointer rounded-sm p-3 focus:ring-2 focus:outline-hidden",children:v});try{m.displayName="TrayButton",m.__docgenInfo={description:"",displayName:"TrayButton",props:{id:{defaultValue:null,description:"",name:"id",required:!1,type:{name:"string"}},onClick:{defaultValue:null,description:"",name:"onClick",required:!1,type:{name:"(() => void)"}}}}}catch{}const N=()=>e.jsxs("div",{className:"flex gap-1",children:[e.jsx(f,{className:"fill-primary-200 h-4 w-4"}),e.jsx(g,{className:"h-4 w-4 fill-neutral-400"})]}),t=({children:r})=>e.jsx("div",{className:"bg-abusix-dusk flex h-12 min-w-[1024px] items-center justify-between px-4",children:r});t.TrayButtons=l;t.TrayButton=m;t.Logo=s;t.NavLinks=i;t.NavLink=p;t.AvatarButton=c;t.HelpButton=N;try{t.displayName="TopBar",t.__docgenInfo={description:"",displayName:"TopBar",props:{}}}catch{}const F={title:"TopBar",component:t,parameters:{layout:"fullscreen"}},n={render:()=>e.jsxs(t,{children:[e.jsx(t.Logo,{src:"https://placekitten.com/80/80"}),e.jsxs(t.NavLinks,{children:[e.jsx(t.NavLink,{isActive:!0,children:"Dashboard"}),e.jsx(t.NavLink,{children:"Cases"}),e.jsx(t.NavLink,{children:"Events"}),e.jsx(t.NavLink,{children:"Statistics"}),e.jsx(t.NavLink,{children:"Mailbox"})]}),e.jsxs(a,{children:[e.jsx(t.AvatarButton,{children:"DS"}),e.jsxs(a.Items,{children:[e.jsx(a.InfoItem,{title:"Abusix",subtitle:"john.doe@abusix.com"}),e.jsx(a.Separator,{}),e.jsx(a.Item,{LeftIcon:y,children:"Portal"}),e.jsx(a.Separator,{}),e.jsx(a.Item,{children:"Account Settings"}),e.jsx(a.Item,{children:"Plans & billing"}),e.jsx(a.Item,{children:"Team members"}),e.jsx(a.Item,{children:"My profile"}),e.jsx(a.Separator,{}),e.jsx(a.Item,{children:"User Settings"}),e.jsx(a.Separator,{}),e.jsx(a.Item,{children:"Sign out"})]})]})]})};var u,d,x;n.parameters={...n.parameters,docs:{...(u=n.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  render: () => <TopBar>
+            <TopBar.Logo src="https://placekitten.com/80/80" />
+            <TopBar.NavLinks>
+                <TopBar.NavLink isActive>Dashboard</TopBar.NavLink>
+                <TopBar.NavLink>Cases</TopBar.NavLink>
+                <TopBar.NavLink>Events</TopBar.NavLink>
+                <TopBar.NavLink>Statistics</TopBar.NavLink>
+                <TopBar.NavLink>Mailbox</TopBar.NavLink>
+            </TopBar.NavLinks>
+            <Menu>
+                <TopBar.AvatarButton>DS</TopBar.AvatarButton>
+                <Menu.Items>
+                    <Menu.InfoItem title="Abusix" subtitle="john.doe@abusix.com" />
+                    <Menu.Separator />
+                    <Menu.Item LeftIcon={ArrowTopRightIcon}>Portal</Menu.Item>
+                    <Menu.Separator />
+                    <Menu.Item>Account Settings</Menu.Item>
+                    <Menu.Item>Plans & billing</Menu.Item>
+                    <Menu.Item>Team members</Menu.Item>
+                    <Menu.Item>My profile</Menu.Item>
+                    <Menu.Separator />
+                    <Menu.Item>User Settings</Menu.Item>
+                    <Menu.Separator />
+                    <Menu.Item>Sign out</Menu.Item>
+                </Menu.Items>
+            </Menu>
+        </TopBar>
+}`,...(x=(d=n.parameters)==null?void 0:d.docs)==null?void 0:x.source}}};const G=["Default"];export{n as Default,G as __namedExportsOrder,F as default};
