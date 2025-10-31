@@ -28,7 +28,7 @@ jobs:
                   cache: "pnpm"
             - run: pnpm install --frozen-lockfile
             - run: pnpm run build
-            - run: pnpm dlx semantic-release
+            - run: pnpm dlx semantic-release@24
             
             # We also release to the github registry, this is because other internal @abusix packages are hosted
             # there, and pnpm does not let you mix and match registries within a scope
