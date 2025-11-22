@@ -27,6 +27,7 @@ export { TableUnvirtualized } from "./table-unvirtualized";
 export { TableVirtualized, TableVirtualizedProps } from "./table-virtualized";
 export { TableKeyValuePair } from "./table-key-value-pair";
 export { Tag } from "./tag";
+export { ThemeProvider, useTheme } from "./theme-provider/theme-provider";
 export { Toast } from "./toast";
 export { Toggle } from "./toggle";
 export { Tooltip } from "./tooltip";
