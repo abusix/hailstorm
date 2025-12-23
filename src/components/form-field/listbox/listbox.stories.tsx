@@ -60,7 +60,7 @@ const ListboxTextWithHooks = () => {
     );
 };
 
-const ListboxTextWithMultipleWithHooks = () => {
+const ListboxTextWithMultiplePropWithHooks = () => {
     const [selectedPeople, setSelectedPeople] = React.useState<Person[]>([]);
 
     return (
@@ -157,7 +157,7 @@ export const Disabled: Story = {
 export const Multiple: Story = {
     render: () => (
         <div className="w-72">
-            <ListboxTextWithMultipleWithHooks />
+            <ListboxTextWithMultiplePropWithHooks />
         </div>
     ),
 };
