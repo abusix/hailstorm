@@ -60,6 +60,44 @@ const ListboxTextWithHooks = () => {
     );
 };
 
+const ListboxTextWithMultiplePropWithHooks = () => {
+    const [selectedPeople, setSelectedPeople] = React.useState<Person[]>([]);
+
+    return (
+        <FormField>
+            <FormField.LabelGroup>
+                <FormField.Label htmlFor="value">Label</FormField.Label>
+                <FormField.Description id="value-description">Description</FormField.Description>
+            </FormField.LabelGroup>
+            <FormField.Listbox<Person> value={selectedPeople} onChange={setSelectedPeople} multiple>
+                <FormField.Listbox.Button>
+                    <FormField.Listbox.Button.TextValue
+                        value={
+                            selectedPeople.length > 0
+                                ? selectedPeople.map((person) => person.name).join(", ")
+                                : null
+                        }
+                        placeholder="Select..."
+                    />
+                </FormField.Listbox.Button>
+                <FormField.Listbox.Options>
+                    {people.map((person) => (
+                        <FormField.Listbox.Option
+                            value={person}
+                            key={person.id}
+                            disabled={person.isDead}
+                        >
+                            <FormField.Listbox.Option.TextOption>
+                                {person.name}
+                            </FormField.Listbox.Option.TextOption>
+                        </FormField.Listbox.Option>
+                    ))}
+                </FormField.Listbox.Options>
+            </FormField.Listbox>
+        </FormField>
+    );
+};
+
 const ListboxBadgeWithHooks: FC<{ disabled?: boolean }> = ({ disabled }) => {
     const [selectedPerson, setSelectedPerson] = React.useState<null | Person>(null);
 
@@ -112,6 +150,14 @@ export const Disabled: Story = {
     render: () => (
         <div className="w-72">
             <ListboxBadgeWithHooks disabled />
+        </div>
+    ),
+};
+
+export const Multiple: Story = {
+    render: () => (
+        <div className="w-72">
+            <ListboxTextWithMultiplePropWithHooks />
         </div>
     ),
 };

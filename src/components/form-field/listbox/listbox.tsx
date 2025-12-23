@@ -14,16 +14,35 @@ const formFieldGroupStyles = classNames(
     "[.group.form-field-group_&:last-child_button]:rounded-l-none"
 );
 
-export interface ListboxProps<TValue> {
+interface ListboxPropsBase<TValue> {
     children: React.ReactNode;
+    className?: string;
     value: TValue;
     onChange: (value: TValue) => void;
-    className?: string;
 }
 
-const Listbox = <TValue,>({ children, value, onChange, className }: ListboxProps<TValue>) => {
+interface ListboxPropsSingle<TValue> extends ListboxPropsBase<TValue> {
+    multiple?: false;
+}
+
+interface ListboxPropsMultiple<TValue>
+    extends Omit<ListboxPropsBase<TValue>, "value" | "onChange"> {
+    multiple: true;
+    value: TValue[];
+    onChange: (value: TValue[]) => void;
+}
+
+export type ListboxProps<TValue> = ListboxPropsSingle<TValue> | ListboxPropsMultiple<TValue>;
+
+const Listbox = <TValue,>({
+    children,
+    value,
+    onChange,
+    className,
+    multiple,
+}: ListboxProps<TValue>) => {
     return (
-        <HeadlessListbox value={value} onChange={onChange}>
+        <HeadlessListbox value={value} onChange={onChange} multiple={multiple}>
             <div className={classNames("relative w-full", formFieldGroupStyles, className)}>
                 {children}
             </div>
