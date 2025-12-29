@@ -81,13 +81,13 @@ export const Dialog = ({
                     >
                         <HeadlessDialogPanel
                             className={classNames(
-                                "bg-neutral-0 flex w-[736px] transform flex-col overflow-y-auto rounded-md shadow-lg transition-all",
+                                "bg-bg-base flex w-[736px] transform flex-col overflow-y-auto rounded-md shadow-lg transition-all",
                                 !footer && "pb-8",
                                 className
                             )}
                         >
                             <div className="relative mx-10 mt-10">
-                                <HeadlessDialogTitle className="mb-6 pr-12 text-lg font-semibold text-neutral-900">
+                                <HeadlessDialogTitle className="mb-6 pr-12 text-lg font-semibold text-text-base">
                                     {title}
                                 </HeadlessDialogTitle>
 
@@ -105,7 +105,7 @@ export const Dialog = ({
                                 <div
                                     id="dialog-footer"
                                     className={classNames(
-                                        "bg-neutral-0 sticky bottom-0 left-0 flex flex-row gap-2 px-10 pt-8 pb-8",
+                                        "bg-bg-base sticky bottom-0 left-0 flex flex-row gap-2 px-10 pt-8 pb-8",
                                         footerPosition === "end" ? "justify-end" : "justify-start"
                                     )}
                                 >
