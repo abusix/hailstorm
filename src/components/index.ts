@@ -35,3 +35,5 @@ export { Disclosure } from "./disclosure";
 export { ButtonGroup } from "./button-group";
 export { FeaturedTag } from "./featured-tag";
 export { Link } from "./link";
+export { ThemeProvider, useTheme } from "./theme";
+export type { ThemeProviderProps, Theme, ResolvedTheme, ThemeContextValue } from "./theme";
