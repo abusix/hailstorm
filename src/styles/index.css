@@ -101,6 +101,103 @@
     --size-184: 46rem;
     --size-285: 71.25rem;
     --size-736: 736px;
+
+    /* Semantic tokens for Tailwind utilities */
+    --color-bg-base: var(--color-neutral-0);
+    --color-bg-subtle: var(--color-neutral-50);
+    --color-bg-muted: var(--color-neutral-100);
+    --color-bg-emphasis: var(--color-neutral-900);
+    --color-bg-primary: var(--color-primary-500);
+    --color-bg-primary-hover: var(--color-primary-600);
+    --color-bg-success: var(--color-success-100);
+    --color-bg-danger: var(--color-danger-100);
+    --color-bg-warning: var(--color-warning-100);
+    --color-bg-info: var(--color-primary-50);
+
+    --color-text-base: var(--color-neutral-900);
+    --color-text-muted: var(--color-neutral-600);
+    --color-text-subtle: var(--color-neutral-500);
+    --color-text-inverse: var(--color-neutral-0);
+    --color-text-primary: var(--color-primary-600);
+    --color-text-success: var(--color-success-600);
+    --color-text-danger: var(--color-danger-500);
+    --color-text-warning: var(--color-warning-600);
+
+    --color-border-default: var(--color-neutral-300);
+    --color-border-muted: var(--color-neutral-200);
+    --color-border-emphasis: var(--color-neutral-400);
+    --color-border-primary: var(--color-primary-400);
+    --color-border-success: var(--color-success-400);
+    --color-border-danger: var(--color-danger-400);
+    --color-border-warning: var(--color-warning-500);
+}
+
+/* Semantic color tokens - these switch between light and dark themes */
+:root {
+    /* Backgrounds */
+    --color-bg-base: var(--color-neutral-0);
+    --color-bg-subtle: var(--color-neutral-50);
+    --color-bg-muted: var(--color-neutral-100);
+    --color-bg-emphasis: var(--color-neutral-900);
+    --color-bg-primary: var(--color-primary-500);
+    --color-bg-primary-hover: var(--color-primary-600);
+    --color-bg-success: var(--color-success-100);
+    --color-bg-danger: var(--color-danger-100);
+    --color-bg-warning: var(--color-warning-100);
+    --color-bg-info: var(--color-primary-50);
+
+    /* Text */
+    --color-text-base: var(--color-neutral-900);
+    --color-text-muted: var(--color-neutral-600);
+    --color-text-subtle: var(--color-neutral-500);
+    --color-text-inverse: var(--color-neutral-0);
+    --color-text-primary: var(--color-primary-600);
+    --color-text-success: var(--color-success-600);
+    --color-text-danger: var(--color-danger-500);
+    --color-text-warning: var(--color-warning-600);
+
+    /* Borders */
+    --color-border-default: var(--color-neutral-300);
+    --color-border-muted: var(--color-neutral-200);
+    --color-border-emphasis: var(--color-neutral-400);
+    --color-border-primary: var(--color-primary-400);
+    --color-border-success: var(--color-success-400);
+    --color-border-danger: var(--color-danger-400);
+    --color-border-warning: var(--color-warning-500);
+}
+
+/* Dark theme overrides */
+.dark {
+    /* Backgrounds */
+    --color-bg-base: var(--color-neutral-900);
+    --color-bg-subtle: var(--color-neutral-800);
+    --color-bg-muted: var(--color-neutral-700);
+    --color-bg-emphasis: var(--color-neutral-100);
+    --color-bg-primary: var(--color-primary-400);
+    --color-bg-primary-hover: var(--color-primary-300);
+    --color-bg-success: var(--color-success-900);
+    --color-bg-danger: var(--color-danger-900);
+    --color-bg-warning: var(--color-warning-900);
+    --color-bg-info: var(--color-primary-900);
+
+    /* Text */
+    --color-text-base: var(--color-neutral-100);
+    --color-text-muted: var(--color-neutral-300);
+    --color-text-subtle: var(--color-neutral-400);
+    --color-text-inverse: var(--color-neutral-900);
+    --color-text-primary: var(--color-primary-300);
+    --color-text-success: var(--color-success-400);
+    --color-text-danger: var(--color-danger-400);
+    --color-text-warning: var(--color-warning-400);
+
+    /* Borders */
+    --color-border-default: var(--color-neutral-600);
+    --color-border-muted: var(--color-neutral-700);
+    --color-border-emphasis: var(--color-neutral-500);
+    --color-border-primary: var(--color-primary-600);
+    --color-border-success: var(--color-success-600);
+    --color-border-danger: var(--color-danger-600);
+    --color-border-warning: var(--color-warning-600);
 }
 
 /* Hide webkit search decorations */
