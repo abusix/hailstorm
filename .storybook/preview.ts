@@ -1,15 +1,42 @@
 import type { Preview } from "@storybook/react";
+import React from "react";
 import "../src/styles/index.css";
 
 const preview: Preview = {
+    globalTypes: {
+        theme: {
+            description: "Global theme for components",
+            toolbar: {
+                title: "Theme",
+                icon: "circlehollow",
+                items: [
+                    { value: "light", icon: "sun", title: "Light" },
+                    { value: "dark", icon: "moon", title: "Dark" },
+                ],
+                dynamicTitle: true,
+            },
+        },
+    },
+    initialGlobals: {
+        theme: "light",
+    },
+    decorators: [
+        (Story, context) => {
+            const theme = context.globals.theme || "light";
+            document.documentElement.classList.remove("light", "dark");
+            document.documentElement.classList.add(theme);
+            return React.createElement(Story);
+        },
+    ],
     parameters: {
         actions: { argTypesRegex: "^on[A-Z].*" },
-        layout: "centered", // "centered" | "fullscreen"
+        layout: "centered",
         backgrounds: {
-            default: "white",
+            default: "themed",
             values: [
+                { name: "themed", value: "var(--color-bg-base)" },
+                { name: "subtle", value: "var(--color-bg-subtle)" },
                 { name: "white", value: "#FFFFFF" },
-                { name: "light", value: "#FAFAFC" },
                 { name: "dark", value: "#212121" },
             ],
         },
@@ -26,8 +53,7 @@ const preview: Preview = {
             showPanel: true,
         },
     },
-
-    tags: ["autodocs"]
+    tags: ["autodocs"],
 };
 
 export default preview;
