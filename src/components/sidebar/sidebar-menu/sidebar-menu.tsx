@@ -5,5 +5,5 @@ export interface SidebarMenuProps {
 }
 
 export const SidebarMenu = ({ children }: SidebarMenuProps) => {
-    return <div className="flex flex-col">{children}</div>;
+    return <div className="flex flex-col text-text-primary">{children}</div>;
 };

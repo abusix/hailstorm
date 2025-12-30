@@ -33,8 +33,10 @@ export const ThemeProvider = ({
         const root = document.documentElement;
 
         const applyTheme = (resolved: ResolvedTheme) => {
+            // Support both class-based and data-attribute-based theming
             root.classList.remove("light", "dark");
             root.classList.add(resolved);
+            root.setAttribute("data-theme", resolved);
             setResolvedTheme(resolved);
         };
 

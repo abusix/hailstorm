@@ -23,8 +23,10 @@ const preview: Preview = {
     decorators: [
         (Story, context) => {
             const theme = context.globals.theme || "light";
+            // Support both class-based and data-attribute-based theming
             document.documentElement.classList.remove("light", "dark");
             document.documentElement.classList.add(theme);
+            document.documentElement.setAttribute("data-theme", theme);
             return React.createElement(Story);
         },
     ],
@@ -34,8 +36,9 @@ const preview: Preview = {
         backgrounds: {
             default: "themed",
             values: [
-                { name: "themed", value: "var(--color-bg-base)" },
-                { name: "subtle", value: "var(--color-bg-subtle)" },
+                { name: "themed", value: "var(--color-bg-primary)" },
+                { name: "page", value: "var(--color-bg-page)" },
+                { name: "secondary", value: "var(--color-bg-secondary)" },
                 { name: "white", value: "#FFFFFF" },
                 { name: "dark", value: "#212121" },
             ],
@@ -48,7 +51,12 @@ const preview: Preview = {
         },
         options: {
             storySort: {
-                order: ["Home", "Icons gallery"],
+                method: "alphabetical",
+                order: [
+                    "Foundations",
+                    ["Introduction", "Colors", "Typography", "Theming"],
+                    "*",
+                ],
             },
             showPanel: true,
         },

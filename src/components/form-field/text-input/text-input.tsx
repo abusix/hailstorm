@@ -49,7 +49,7 @@ export const TextInput = ({
                     className="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center pl-3"
                     aria-hidden="true"
                 >
-                    <LeftIcon className="h-3.5 w-3.5 fill-text-muted text-text-muted" />
+                    <LeftIcon className="h-3.5 w-3.5 fill-icon-primary text-icon-primary" />
                 </div>
             ) : null}
 
@@ -62,14 +62,14 @@ export const TextInput = ({
                 type={type}
                 className={classNames(
                     targetAttachmentIdentifier,
-                    "paragraph-100 relative block h-8 w-full rounded-sm border border-border-emphasis py-2 pr-2 pl-3 text-text-base bg-bg-base placeholder:text-text-muted focus:outline-hidden",
+                    "paragraph-100 relative block h-8 w-full rounded-sm border border-border-secondary py-2 pr-2 pl-3 text-text-primary bg-bg-primary placeholder:text-text-placeholder focus:outline-hidden",
                     LeftIcon && "pl-9",
-                    readOnly && "bg-bg-info",
-                    disabled && "cursor-not-allowed bg-bg-muted text-text-muted",
+                    readOnly && "bg-bg-secondary",
+                    disabled && "cursor-not-allowed bg-bg-disabled text-text-disabled",
                     !error &&
                         !disabled &&
-                        "focus:border-primary-400 focus:ring-primary-200 hover:border-neutral-600 focus:ring-2",
-                    error && !disabled && "border-danger-500",
+                        "focus:border-border-brand hover:border-border-secondary-hover focus:ring-brand-light-purple-200 focus:ring-2",
+                    error && !disabled && "border-border-danger",
                     className
                 )}
                 readOnly={readOnly}

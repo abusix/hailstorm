@@ -8,7 +8,7 @@ export interface FormFieldLabelProps {
 
 export const FormFieldLabel = ({ htmlFor, children, optional }: FormFieldLabelProps) => {
     return (
-        <div className="flex items-baseline gap-1 text-neutral-800">
+        <div className="flex items-baseline gap-1 text-text-primary">
             <label htmlFor={htmlFor} className="headline-400">
                 {children}
             </label>
