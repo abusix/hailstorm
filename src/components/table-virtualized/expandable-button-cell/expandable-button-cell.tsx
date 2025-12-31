@@ -17,9 +17,9 @@ export const ExpandableButtonCell = ({ expanded, onClick }: ExpandableButtonCell
                 tabIndex={0}
             >
                 {expanded ? (
-                    <ChevronUpIcon className="fill-neutral-600" />
+                    <ChevronUpIcon className="fill-icon-secondary" />
                 ) : (
-                    <ChevronDownIcon className="fill-neutral-600" />
+                    <ChevronDownIcon className="fill-icon-secondary" />
                 )}
             </button>
         </TableUnvirtualized.Body.Cell>

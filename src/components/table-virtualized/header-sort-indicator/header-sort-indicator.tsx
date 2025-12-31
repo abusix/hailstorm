@@ -8,7 +8,7 @@ export interface SortIndicatorProps {
 }
 
 export const SortIndicator = ({ direction }: SortIndicatorProps) => {
-    const iconClassName = "ml-1 w-3.5 fill-neutral-600";
+    const iconClassName = "ml-1 w-3.5 fill-icon-secondary";
     const Icon =
         direction === "asc" ? (
             <CaretUpIcon className={iconClassName} />

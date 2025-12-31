@@ -5,5 +5,9 @@ import {
 import React from "react";
 
 export const TabPanel = ({ children, ...props }: HeadlessUiTabPanelProps) => {
-    return <HeadlessUiTabPanel {...props}>{children}</HeadlessUiTabPanel>;
+    return (
+        <HeadlessUiTabPanel {...props} className="text-text-primary">
+            {children}
+        </HeadlessUiTabPanel>
+    );
 };

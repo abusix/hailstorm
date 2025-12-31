@@ -1,0 +1,187 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+The typography system uses two font families and a set of predefined text styles.
+
+## Font Families
+
+| Token          | Font             | Usage                             |
+| -------------- | ---------------- | --------------------------------- |
+| `font-display` | Fabriga          | Headlines, titles, prominent text |
+| `font-sans`    | Inter            | Body text, UI elements            |
+| `font-mono`    | System monospace | Code, technical data              |
+
+```tsx
+<h1 className="font-display">Display heading</h1>
+<p className="font-sans">Body text</p>
+<code className="font-mono">Code snippet</code>
+```
+
+---
+
+## Headline Styles
+
+Headlines use the `font-display` (Fabriga) font family.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+  <div style={{ borderBottom: '1px solid var(--color-slate-200)', paddingBottom: '16px' }}>
+    <div className="headline-900" style={{ marginBottom: '8px' }}>Headline 900</div>
+    <code style={{ fontSize: '12px', color: 'var(--color-slate-500)' }}>.headline-900 → font-display text-3xl font-bold</code>
+  </div>
+
+<div style={{ borderBottom: "1px solid var(--color-slate-200)", paddingBottom: "16px" }}>
+    <div className="headline-800" style={{ marginBottom: "8px" }}>
+        Headline 800
+    </div>
+    <code style={{ fontSize: "12px", color: "var(--color-slate-500)" }}>
+        .headline-800 → font-display text-2xl font-medium
+    </code>
+</div>
+
+<div style={{ borderBottom: "1px solid var(--color-slate-200)", paddingBottom: "16px" }}>
+    <div className="headline-700" style={{ marginBottom: "8px" }}>
+        Headline 700
+    </div>
+    <code style={{ fontSize: "12px", color: "var(--color-slate-500)" }}>
+        .headline-700 → font-display text-xl font-medium
+    </code>
+</div>
+
+<div style={{ borderBottom: "1px solid var(--color-slate-200)", paddingBottom: "16px" }}>
+    <div className="headline-600" style={{ marginBottom: "8px" }}>
+        Headline 600
+    </div>
+    <code style={{ fontSize: "12px", color: "var(--color-slate-500)" }}>
+        .headline-600 → font-display text-lg font-medium
+    </code>
+</div>
+
+<div style={{ borderBottom: "1px solid var(--color-slate-200)", paddingBottom: "16px" }}>
+    <div className="headline-500" style={{ marginBottom: "8px" }}>
+        Headline 500
+    </div>
+    <code style={{ fontSize: "12px", color: "var(--color-slate-500)" }}>
+        .headline-500 → font-display text-base font-medium
+    </code>
+</div>
+
+<div style={{ borderBottom: "1px solid var(--color-slate-200)", paddingBottom: "16px" }}>
+    <div className="headline-400" style={{ marginBottom: "8px" }}>
+        Headline 400
+    </div>
+    <code style={{ fontSize: "12px", color: "var(--color-slate-500)" }}>
+        .headline-400 → font-sans text-sm font-medium
+    </code>
+</div>
+
+<div style={{ borderBottom: "1px solid var(--color-slate-200)", paddingBottom: "16px" }}>
+    <div className="headline-300" style={{ marginBottom: "8px" }}>
+        Headline 300
+    </div>
+    <code style={{ fontSize: "12px", color: "var(--color-slate-500)" }}>
+        .headline-300 → font-sans text-xs font-medium
+    </code>
+</div>
+
+<div style={{ borderBottom: "1px solid var(--color-slate-200)", paddingBottom: "16px" }}>
+    <div className="headline-200" style={{ marginBottom: "8px" }}>
+        Headline 200
+    </div>
+    <code style={{ fontSize: "12px", color: "var(--color-slate-500)" }}>
+        .headline-200 → font-sans text-xs font-semibold
+    </code>
+</div>
+
+  <div>
+    <div className="headline-100" style={{ marginBottom: '8px' }}>Headline 100</div>
+    <code style={{ fontSize: '12px', color: 'var(--color-slate-500)' }}>.headline-100 → font-sans text-xs font-medium</code>
+  </div>
+</div>
+
+---
+
+## Paragraph Styles
+
+Paragraph styles use the `font-sans` (Inter) font family.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+  <div style={{ borderBottom: '1px solid var(--color-slate-200)', paddingBottom: '16px' }}>
+    <div className="paragraph-300" style={{ marginBottom: '8px' }}>Paragraph 300 - The quick brown fox jumps over the lazy dog.</div>
+    <code style={{ fontSize: '12px', color: 'var(--color-slate-500)' }}>.paragraph-300 → font-sans text-base font-normal</code>
+  </div>
+
+<div style={{ borderBottom: "1px solid var(--color-slate-200)", paddingBottom: "16px" }}>
+    <div className="paragraph-200" style={{ marginBottom: "8px" }}>
+        Paragraph 200 - The quick brown fox jumps over the lazy dog.
+    </div>
+    <code style={{ fontSize: "12px", color: "var(--color-slate-500)" }}>
+        .paragraph-200 → font-sans text-sm font-normal
+    </code>
+</div>
+
+  <div>
+    <div className="paragraph-100" style={{ marginBottom: '8px' }}>Paragraph 100 - The quick brown fox jumps over the lazy dog.</div>
+    <code style={{ fontSize: '12px', color: 'var(--color-slate-500)' }}>.paragraph-100 → font-sans text-xs font-normal</code>
+  </div>
+</div>
+
+---
+
+## Link Styles
+
+<div style={{ marginBottom: "32px" }}>
+    <a href="#" className="inline-link">
+        This is an inline link
+    </a>
+    <div style={{ marginTop: "8px" }}>
+        <code style={{ fontSize: "12px", color: "var(--color-slate-500)" }}>
+            .inline-link → text-text-link hover:text-text-link-hover underline
+        </code>
+    </div>
+</div>
+
+---
+
+## Usage Guidelines
+
+### Headlines
+
+- Use `headline-900` for page titles
+- Use `headline-700` or `headline-600` for section headings
+- Use `headline-400` or `headline-300` for card titles and labels
+
+### Paragraphs
+
+- Use `paragraph-300` for main body content
+- Use `paragraph-200` for secondary content and descriptions
+- Use `paragraph-100` for captions, helper text, and metadata
+
+### Best Practices
+
+1. **Maintain hierarchy** - Use consistent headline sizes to create clear visual hierarchy
+2. **Pair with semantic text colors** - Combine typography classes with text color tokens
+3. **Consider context** - Use smaller sizes for dense UI, larger for marketing pages
+
+```tsx
+// Page title
+<h1 className="headline-900 text-text-tertiary">Dashboard</h1>
+
+// Section heading
+<h2 className="headline-600 text-text-primary">Recent Activity</h2>
+
+// Card title
+<h3 className="headline-400 text-text-primary">User Settings</h3>
+
+// Body text
+<p className="paragraph-200 text-text-secondary">
+  Configure your account preferences and notification settings.
+</p>
+
+// Caption
+<span className="paragraph-100 text-text-secondary">
+  Last updated 5 minutes ago
+</span>
+```

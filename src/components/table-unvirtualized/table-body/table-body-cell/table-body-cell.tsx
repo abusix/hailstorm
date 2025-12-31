@@ -29,7 +29,12 @@ const TableBodyCell = forwardRef<HTMLTableCellElement, CellProps>(
                 colSpan={colSpan}
             >
                 {isTextContent ? (
-                    <div className={classNames("paragraph-100", cellAlignStyles[align])}>
+                    <div
+                        className={classNames(
+                            "paragraph-100 text-text-primary",
+                            cellAlignStyles[align]
+                        )}
+                    >
                         {children}
                     </div>
                 ) : (
