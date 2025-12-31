@@ -155,7 +155,7 @@ export const TableVirtualized = <TableData,>({
         <div
             ref={virtualContainerRef}
             className={classNames(
-                "bg-bg-primary h-full overflow-y-auto rounded-lg border border-border-secondary"
+                "bg-bg-primary border-border-secondary h-full overflow-y-auto rounded-lg border"
             )}
         >
             <TableUnvirtualized

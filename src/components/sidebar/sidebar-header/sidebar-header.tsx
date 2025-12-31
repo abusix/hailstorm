@@ -5,5 +5,5 @@ export interface SidebarHeaderProps {
 }
 
 export const SidebarHeader = ({ children }: SidebarHeaderProps) => {
-    return <h2 className="font-display pl-4 text-2xl font-bold text-text-inverse">{children}</h2>;
+    return <h2 className="font-display text-text-inverse pl-4 text-2xl font-bold">{children}</h2>;
 };

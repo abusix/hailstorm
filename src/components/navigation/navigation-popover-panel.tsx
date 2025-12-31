@@ -8,7 +8,7 @@ export interface NavigationPopoverPanelItemProps {
 
 const NavigationPopoverPanelItem = ({ children }: NavigationPopoverPanelItemProps) => {
     return (
-        <div className="flex w-full cursor-pointer items-center overflow-hidden px-4 py-2 text-text-inverse hover:bg-sidebar-bg-hover focus:ring-2 focus:ring-border-brand">
+        <div className="text-text-inverse hover:bg-sidebar-bg-hover focus:ring-border-brand flex w-full cursor-pointer items-center overflow-hidden px-4 py-2 focus:ring-2">
             <p className="text-sm font-normal">{children}</p>
         </div>
     );

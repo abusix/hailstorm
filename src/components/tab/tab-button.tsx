@@ -3,8 +3,9 @@ import React from "react";
 import { classNames } from "../../util/class-names";
 import { TabType, useTabContext } from "./tab-context";
 
-export interface TabButtonProps<TTag extends React.ElementType>
-    extends HeadlessUiTabProps<React.ElementType> {
+export interface TabButtonProps<
+    TTag extends React.ElementType,
+> extends HeadlessUiTabProps<React.ElementType> {
     children: React.ReactNode;
     as?: TTag;
     hasIndicator?: boolean;

@@ -9,7 +9,7 @@ export interface TopBarNavLinkProps {
 export const TopBarNavLink = ({ isActive = false, children }: TopBarNavLinkProps) => {
     return (
         <div>
-            <div className="group group-focus:ring-border-brand rounded-sm px-4 py-1 group-focus:ring-2 hover:bg-sidebar-bg-hover">
+            <div className="group group-focus:ring-border-brand hover:bg-sidebar-bg-hover rounded-sm px-4 py-1 group-focus:ring-2">
                 <div
                     className={classNames(
                         "text-text-inverse relative font-sans text-sm",

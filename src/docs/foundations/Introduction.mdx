@@ -1,0 +1,119 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Foundations/Introduction" />
+
+# Hailstorm Design System
+
+Welcome to the Hailstorm Design System documentation. This design system provides a consistent set of design tokens, components, and patterns for building Abusix products.
+
+## Core Principles
+
+- **Consistency** - Use semantic tokens to ensure visual consistency across all components
+- **Accessibility** - Support for light and dark themes with proper contrast ratios
+- **Flexibility** - Tokens are designed to be easily customizable and extensible
+
+## Design Tokens
+
+Design tokens are the visual design atoms of the design system. They are named entities that store visual design attributes.
+
+### Token Categories
+
+<div style={{ display: "grid", gap: "16px", marginTop: "16px" }}>
+    <div
+        style={{
+            display: "grid",
+            gridTemplateColumns: "120px 1fr 200px",
+            gap: "16px",
+            padding: "12px 16px",
+            background: "var(--color-slate-100)",
+            borderRadius: "4px",
+            fontWeight: "600",
+            fontSize: "14px",
+        }}
+    >
+        <div>Category</div>
+        <div>Description</div>
+        <div>Example</div>
+    </div>
+    <div
+        style={{
+            display: "grid",
+            gridTemplateColumns: "120px 1fr 200px",
+            gap: "16px",
+            padding: "12px 16px",
+            borderBottom: "1px solid var(--color-slate-200)",
+        }}
+    >
+        <div style={{ fontWeight: "600" }}>Colors</div>
+        <div>Background, text, border, and icon colors</div>
+        <div>
+            <code>bg-bg-primary</code>, <code>text-text-primary</code>
+        </div>
+    </div>
+    <div
+        style={{
+            display: "grid",
+            gridTemplateColumns: "120px 1fr 200px",
+            gap: "16px",
+            padding: "12px 16px",
+            borderBottom: "1px solid var(--color-slate-200)",
+        }}
+    >
+        <div style={{ fontWeight: "600" }}>Typography</div>
+        <div>Font families, sizes, and weights</div>
+        <div>
+            <code>font-display</code>, <code>headline-600</code>
+        </div>
+    </div>
+    <div
+        style={{
+            display: "grid",
+            gridTemplateColumns: "120px 1fr 200px",
+            gap: "16px",
+            padding: "12px 16px",
+        }}
+    >
+        <div style={{ fontWeight: "600" }}>Spacing</div>
+        <div>Consistent spacing scale</div>
+        <div>
+            <code>p-4</code>, <code>gap-2</code>
+        </div>
+    </div>
+</div>
+
+## Theming
+
+The design system supports light and dark themes. Theme switching is handled via:
+
+- CSS class (`.dark`) on the `<html>` element
+- Data attribute (`data-theme="dark"`) on the `<html>` element
+
+Both methods are supported for maximum flexibility.
+
+### Using the Theme
+
+```tsx
+import { ThemeProvider, useTheme } from "@abusix/hailstorm";
+
+function App() {
+    return (
+        <ThemeProvider defaultTheme="system">
+            <YourApp />
+        </ThemeProvider>
+    );
+}
+
+function ThemeToggle() {
+    const { theme, setTheme } = useTheme();
+
+    return (
+        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>Toggle theme</button>
+    );
+}
+```
+
+## Getting Started
+
+1. Browse the **Foundations** section to understand the design tokens
+2. Explore the **Components** section to see available components
+3. Use the theme toggle in the Storybook toolbar to preview dark mode

@@ -11,7 +11,7 @@ export const TopBarAvatarButton = ({ children }: TopBarAvatarButtonProps) => {
     return (
         <Menu.Button className="hover:bg-sidebar-bg-hover focus:ring-border-brand flex items-center gap-1 rounded-sm px-1 py-1 focus:ring-2 focus:outline-hidden">
             <Avatar color="primary">{children}</Avatar>
-            <ChevronDownIcon className="h-4 w-4 fill-icon-inverse" />
+            <ChevronDownIcon className="fill-icon-inverse h-4 w-4" />
         </Menu.Button>
     );
 };

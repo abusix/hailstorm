@@ -14,7 +14,7 @@ const TableHeader = forwardRef(
                 ref={ref}
                 className={classNames(
                     "bg-bg-secondary sticky top-0 overflow-hidden rounded-lg",
-                    "after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-border-secondary"
+                    "after:bg-border-secondary after:absolute after:bottom-0 after:left-0 after:h-px after:w-full"
                 )}
             >
                 {children}

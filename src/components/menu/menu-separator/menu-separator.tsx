@@ -1,5 +1,5 @@
 import React from "react";
 
 export const MenuSeparator = () => {
-    return <hr className="h-px border-none bg-border-primary" />;
+    return <hr className="bg-border-primary h-px border-none" />;
 };

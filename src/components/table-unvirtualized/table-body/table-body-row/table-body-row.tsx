@@ -13,7 +13,7 @@ const TableBodyRow = forwardRef<HTMLTableRowElement, RowProps>(
             <tr
                 className={classNames(
                     className,
-                    isExpanded ? "bg-bg-brand-subtle" : "border-b border-b-border-secondary"
+                    isExpanded ? "bg-bg-brand-subtle" : "border-b-border-secondary border-b"
                 )}
                 ref={ref}
                 style={style}

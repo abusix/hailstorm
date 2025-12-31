@@ -11,7 +11,7 @@ export const TableKeyValuePairBodyRow = ({
     return (
         <tr
             className={classNames(
-                "h-12 [&:last-child_>_td:first-child]:rounded-bl-md [&:last-child_>_td:first-child]:border-l [&:last-child_>_td:first-child]:border-border-secondary [&:last-child_>_td:last-child]:rounded-br-md",
+                "[&:last-child_>_td:first-child]:border-border-secondary h-12 [&:last-child_>_td:first-child]:rounded-bl-md [&:last-child_>_td:first-child]:border-l [&:last-child_>_td:last-child]:rounded-br-md",
                 className
             )}
             {...props}

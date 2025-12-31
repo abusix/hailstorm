@@ -1,0 +1,215 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Foundations/Theming" />
+
+# Theming & Dark Mode
+
+The design system supports light and dark themes through semantic color tokens that automatically adapt based on the active theme.
+
+## How Theming Works
+
+The theme system works by:
+
+1. **Setting a theme indicator** on the `<html>` element (either a CSS class or data attribute)
+2. **CSS variables** automatically resolve to the correct values based on the theme
+3. **Semantic tokens** in Tailwind classes use these CSS variables
+
+### Theme Indicators
+
+Both methods are supported and can be used interchangeably:
+
+```html
+<!-- Class-based (recommended) -->
+<html class="dark">
+    <!-- Data attribute-based -->
+    <html data-theme="dark"></html>
+</html>
+```
+
+---
+
+## Using ThemeProvider
+
+The `ThemeProvider` component manages theme state and provides a React context for accessing and changing the theme.
+
+### Basic Setup
+
+```tsx
+import { ThemeProvider } from "@abusix/hailstorm";
+
+function App() {
+    return (
+        <ThemeProvider defaultTheme="system">
+            <YourApp />
+        </ThemeProvider>
+    );
+}
+```
+
+### Props
+
+| Prop           | Type                            | Default             | Description                      |
+| -------------- | ------------------------------- | ------------------- | -------------------------------- |
+| `defaultTheme` | `'light' \| 'dark' \| 'system'` | `'system'`          | Initial theme                    |
+| `storageKey`   | `string`                        | `'hailstorm-theme'` | localStorage key for persistence |
+| `children`     | `ReactNode`                     | required            | App content                      |
+
+### Theme Values
+
+| Value      | Behavior                                               |
+| ---------- | ------------------------------------------------------ |
+| `'light'`  | Always use light theme                                 |
+| `'dark'`   | Always use dark theme                                  |
+| `'system'` | Follow OS preference (respects `prefers-color-scheme`) |
+
+---
+
+## Using useTheme Hook
+
+The `useTheme` hook provides access to the current theme and a function to change it.
+
+```tsx
+import { useTheme } from "@abusix/hailstorm";
+
+function ThemeToggle() {
+    const { theme, resolvedTheme, setTheme } = useTheme();
+
+    return (
+        <div>
+            <p>Current setting: {theme}</p>
+            <p>Resolved theme: {resolvedTheme}</p>
+
+            <button onClick={() => setTheme("light")}>Light</button>
+            <button onClick={() => setTheme("dark")}>Dark</button>
+            <button onClick={() => setTheme("system")}>System</button>
+        </div>
+    );
+}
+```
+
+### Return Values
+
+| Property        | Type                            | Description                                                      |
+| --------------- | ------------------------------- | ---------------------------------------------------------------- |
+| `theme`         | `'light' \| 'dark' \| 'system'` | Current theme setting                                            |
+| `resolvedTheme` | `'light' \| 'dark'`             | Actual applied theme (resolved from system preference if needed) |
+| `setTheme`      | `(theme) => void`               | Function to change the theme                                     |
+
+---
+
+## Theme-Aware Components
+
+All components using semantic tokens automatically adapt to the current theme.
+
+### Example: Panel Component
+
+```tsx
+// This Panel automatically adapts to light/dark theme
+<Panel>
+    <h3 className="headline-400">Settings</h3>
+    <p className="paragraph-200 text-text-secondary">Configure your preferences</p>
+</Panel>
+```
+
+**Light Mode:**
+
+- Background: `bg-bg-primary` → white (slate-0)
+- Text: `text-text-primary` → dark gray (slate-600)
+- Border: `border-border-primary` → light gray (slate-300)
+
+**Dark Mode:**
+
+- Background: `bg-bg-primary` → dark blue-gray (slate-800)
+- Text: `text-text-primary` → light gray (slate-300)
+- Border: `border-border-primary` → dark gray (slate-700)
+
+---
+
+## Building Theme-Aware Components
+
+When building new components, always use semantic tokens instead of primitive colors.
+
+### Do This ✅
+
+```tsx
+function Card({ children }) {
+    return (
+        <div className="bg-bg-primary text-text-primary border-border-primary rounded-lg border p-4">
+            {children}
+        </div>
+    );
+}
+```
+
+### Don't Do This ❌
+
+```tsx
+function Card({ children }) {
+    return (
+        // Hardcoded colors won't adapt to dark mode!
+        <div className="rounded-lg border border-slate-300 bg-white p-4 text-slate-900">
+            {children}
+        </div>
+    );
+}
+```
+
+---
+
+## State Tokens
+
+Use state-based tokens for interactive elements:
+
+```tsx
+<button className="
+  bg-bg-brand
+  hover:bg-bg-brand-hover
+  active:bg-bg-brand-pressed
+  disabled:bg-bg-brand-disabled
+  text-text-inverse
+">
+  Primary Button
+</button>
+
+<button className="
+  bg-bg-primary
+  hover:bg-bg-primary-hover
+  active:bg-bg-primary-pressed
+  text-text-primary
+  border border-border-secondary
+  hover:border-border-secondary-hover
+">
+  Secondary Button
+</button>
+```
+
+---
+
+## Testing Themes in Storybook
+
+Use the theme toggle in the Storybook toolbar to preview components in both light and dark modes.
+
+1. Look for the theme dropdown in the toolbar (sun/moon icons)
+2. Select "Light" or "Dark" to switch themes
+3. All stories will update to reflect the selected theme
+
+---
+
+## CSS Variable Reference
+
+If you need to access theme values directly in CSS:
+
+```css
+/* These variables automatically change based on theme */
+.custom-element {
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-primary);
+}
+```
+
+Or in JavaScript:
+
+```ts
+const bgColor = getComputedStyle(document.documentElement).getPropertyValue("--color-bg-primary");
+```

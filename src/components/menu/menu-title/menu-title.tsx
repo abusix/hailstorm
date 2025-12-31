@@ -6,7 +6,7 @@ export interface MenuTitleProps {
 
 export const MenuTitle = ({ children }: MenuTitleProps) => {
     return (
-        <div className="px-4 pt-3 pb-2 font-sans text-xs font-medium text-text-secondary uppercase">
+        <div className="text-text-secondary px-4 pt-3 pb-2 font-sans text-xs font-medium uppercase">
             {children}
         </div>
     );

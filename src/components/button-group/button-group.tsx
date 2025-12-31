@@ -14,7 +14,7 @@ const Button = ({ children, type, isActive, ...props }: ButtonProps) => {
             // eslint-disable-next-line react/button-has-type
             type={type}
             className={classNames(
-                "bg-bg-primary focus:outline-border-brand disabled:bg-bg-primary relative -ml-px inline-flex px-4 py-2 font-medium text-text-primary ring-1 ring-border-secondary ring-inset hover:bg-bg-primary-hover hover:text-text-secondary-hover focus:z-10 focus:outline-2 focus:outline-offset-0 focus:outline-solid active:bg-bg-primary-pressed disabled:text-text-disabled",
+                "bg-bg-primary focus:outline-border-brand disabled:bg-bg-primary text-text-primary ring-border-secondary hover:bg-bg-primary-hover hover:text-text-secondary-hover active:bg-bg-primary-pressed disabled:text-text-disabled relative -ml-px inline-flex px-4 py-2 font-medium ring-1 ring-inset focus:z-10 focus:outline-2 focus:outline-offset-0 focus:outline-solid",
                 isActive &&
                     "bg-bg-brand-subtle text-text-inverse hover:bg-bg-brand-subtle hover:text-text-inverse active:bg-bg-brand-subtle disabled:bg-bg-disabled disabled:text-text-disabled"
             )}
