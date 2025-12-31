@@ -8,7 +8,7 @@ interface SidebarProps {
     children: React.ReactNode;
 }
 const Sidebar = ({ children }: SidebarProps) => {
-    return <div className="flex min-w-52 flex-col gap-5 py-5 text-text-primary">{children}</div>;
+    return <div className="flex min-w-52 flex-col gap-5 py-5 text-text-inverse">{children}</div>;
 };
 
 Sidebar.Header = SidebarHeader;

@@ -13,7 +13,7 @@ interface TopBarProps {
 
 const TopBar = ({ children }: TopBarProps) => {
     return (
-        <div className="bg-abusix-dusk flex h-12 min-w-[1024px] items-center justify-between px-4">
+        <div className="bg-sidebar-bg flex h-12 min-w-[1024px] items-center justify-between px-4">
             {children}
         </div>
     );

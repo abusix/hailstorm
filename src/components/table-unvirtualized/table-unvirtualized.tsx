@@ -19,8 +19,8 @@ const TableUnvirtualized = ({
     return (
         <div
             className={classNames(
-                "bg-neutral-0 rounded-lg",
-                isContainerBordersShown && "overflow-y-auto rounded-lg border border-neutral-300"
+                "bg-bg-primary rounded-lg",
+                isContainerBordersShown && "overflow-y-auto rounded-lg border border-border-secondary"
             )}
             style={{ height }}
         >

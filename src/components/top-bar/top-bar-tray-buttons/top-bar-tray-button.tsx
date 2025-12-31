@@ -14,7 +14,7 @@ export const TrayButton = ({ onClick, id, children }: TrayButtonProps) => {
             tabIndex={-1}
             onClick={onClick}
             onKeyDown={onClick}
-            className="hover:bg-primary-900 focus:ring-primary-200 cursor-pointer rounded-sm p-3 focus:ring-2 focus:outline-hidden"
+            className="hover:bg-sidebar-bg-hover focus:ring-border-brand cursor-pointer rounded-sm p-3 focus:ring-2 focus:outline-hidden"
         >
             {children}
         </div>

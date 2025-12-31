@@ -5,24 +5,24 @@ import { Spinner } from "../spinner";
 
 const buttonVariants = {
     primary:
-        "bg-primary-500 text-neutral-0 hover:bg-primary-600 active:bg-primary-600 focus:ring-2 focus:ring-primary-200 focus:bg-primary-600 disabled:bg-primary-200 fill-neutral-0",
+        "bg-bg-brand text-text-inverse hover:bg-bg-brand-hover active:bg-bg-brand-pressed focus:ring-2 focus:ring-border-brand focus:bg-bg-brand-hover disabled:bg-bg-brand-disabled disabled:text-text-inverse-disabled fill-icon-inverse",
     secondary:
-        "text-neutral-700 bg-neutral-0 border border-neutral-400 hover:border-neutral-600 hover:text-neutral-800 active:bg-neutral-100 focus:ring-2 focus:ring-primary-200 focus:text-neutral-800 disabled:text-neutral-500 disabled:border-neutral-300 disabled:bg-neutral-0 fill-neutral-0",
+        "text-text-primary bg-bg-primary border border-border-secondary hover:border-border-secondary-hover hover:text-text-secondary-hover active:bg-bg-primary-pressed focus:ring-2 focus:ring-border-brand focus:text-text-secondary-hover disabled:text-text-disabled disabled:border-border-disabled disabled:bg-bg-primary fill-icon-primary",
     minimal:
-        "text-neutral-700 hover:bg-neutral-100 hover:text-neutral-800 active:bg-neutral-200 focus:ring-2 focus:ring-primary-200 focus:text-neutral-800 disabled:text-neutral-500 disabled:bg-neutral-0 fill-neutral-0 underline",
-    danger: "text-neutral-0 bg-danger-500 hover:bg-danger-500 active:bg-danger-700 focus:ring-2 focus:ring-danger-100 focus:bg-danger-600 disabled:bg-danger-100 fill-neutral-0",
+        "text-text-primary hover:bg-bg-primary-hover hover:text-text-secondary-hover active:bg-bg-primary-pressed focus:ring-2 focus:ring-border-brand focus:text-text-secondary-hover disabled:text-text-disabled disabled:bg-bg-primary fill-icon-primary underline",
+    danger: "text-text-inverse bg-bg-danger hover:bg-bg-danger-hover active:bg-bg-danger-pressed focus:ring-2 focus:ring-border-danger focus:bg-bg-danger-hover disabled:bg-bg-danger-disabled disabled:text-text-inverse-disabled fill-icon-inverse",
     "danger-secondary":
-        "bg-neutral-0 text-danger-500 border border-danger-400 hover:bg-danger-50 hover:text-danger-600 active:border-danger-700 active:text-danger-700 active:bg-danger-100 focus:ring-2 focus:ring-danger-100 focus:text-danger-600 disabled:border-danger-100 disabled:text-danger-100 disabled:bg-neutral-0 fill-danger-600 disabled:fill-danger-100",
+        "bg-bg-primary text-text-danger border border-border-danger hover:bg-bg-danger-subtle hover:text-text-danger active:border-border-danger active:text-text-danger active:bg-bg-danger-subtle focus:ring-2 focus:ring-border-danger focus:text-text-danger disabled:border-border-disabled disabled:text-text-disabled disabled:bg-bg-primary fill-icon-danger disabled:fill-icon-disabled",
 };
 
 const iconVariants = {
-    primary: "text-neutral-0",
+    primary: "text-text-inverse",
     secondary:
-        "fill-neutral-600 group-hover:text-neutral-700 group-focus:text-neutral-700 group-disabled:text-neutral-400",
+        "fill-icon-primary group-hover:text-icon-primary-hover group-focus:text-icon-primary-hover group-disabled:text-icon-disabled",
     minimal:
-        "fill-neutral-600 group-hover:text-neutral-700 group-focus:text-neutral-700 group-disabled:text-neutral-400",
-    danger: "",
-    "danger-secondary": "",
+        "fill-icon-primary group-hover:text-icon-primary-hover group-focus:text-icon-primary-hover group-disabled:text-icon-disabled",
+    danger: "text-text-inverse",
+    "danger-secondary": "fill-icon-danger group-disabled:fill-icon-disabled",
 };
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

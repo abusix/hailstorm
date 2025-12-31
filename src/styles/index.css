@@ -302,7 +302,7 @@
     --bg-tertiary-default: var(--color-slate-1000);
     --bg-disabled: var(--color-slate-700);
     --bg-brand-default: var(--color-brand-light-purple-500);
-    --bg-brand-subtle: var(--color-brand-light-purple-500);
+    --bg-brand-subtle: var(--color-brand-light-purple-900);
     --bg-brand-hover: var(--color-brand-light-purple-400);
     --bg-brand-pressed: var(--color-brand-light-purple-300);
     --bg-brand-disabled: var(--color-slate-800);
@@ -324,7 +324,7 @@
     --text-disabled: var(--color-slate-500);
     --text-inverse: var(--color-slate-100);
     --text-inverse-disabled: var(--color-slate-700);
-    --text-brand-default: var(--color-brand-light-purple-500);
+    --text-brand-default: var(--color-brand-light-purple-300);
     --text-link: var(--color-brand-light-purple-400);
     --text-link-hover: var(--color-brand-light-purple-400);
     --text-success: var(--color-green-200);

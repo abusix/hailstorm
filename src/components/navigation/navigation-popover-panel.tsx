@@ -8,7 +8,7 @@ export interface NavigationPopoverPanelItemProps {
 
 const NavigationPopoverPanelItem = ({ children }: NavigationPopoverPanelItemProps) => {
     return (
-        <div className="focus:ring-primary-200 flex w-full cursor-pointer items-center overflow-hidden px-4 py-2 hover:bg-neutral-100 focus:ring-2">
+        <div className="flex w-full cursor-pointer items-center overflow-hidden px-4 py-2 text-text-inverse hover:bg-sidebar-bg-hover focus:ring-2 focus:ring-border-brand">
             <p className="text-sm font-normal">{children}</p>
         </div>
     );
@@ -28,7 +28,7 @@ const NavigationPopoverPanel = ({ children }: NavigationPopoverPanelProps) => {
             ref={(el) => el && setPopperElement(el)}
             style={styles}
             {...attributes}
-            className="bg-neutral-0 z-40 ml-2 w-52 rounded-sm py-2 shadow-sm"
+            className="bg-sidebar-bg z-40 ml-2 w-52 rounded-sm py-2 shadow-sm"
         >
             {children}
         </HeadlessUiPopoverPanel>

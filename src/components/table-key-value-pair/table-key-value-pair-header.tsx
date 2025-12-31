@@ -16,7 +16,7 @@ export const TableKeyValuePairHeader = ({
         <thead className={classNames(className)} {...props}>
             <tr>
                 <th
-                    className="headline-400 rounded-t-md border border-neutral-300 bg-neutral-50 px-2.5 py-4 text-left text-neutral-900"
+                    className="headline-400 rounded-t-md border border-border-secondary bg-bg-secondary px-2.5 py-4 text-left text-text-primary"
                     colSpan={colSpan}
                 >
                     {children}

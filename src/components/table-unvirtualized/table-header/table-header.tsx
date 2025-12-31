@@ -13,8 +13,8 @@ const TableHeader = forwardRef(
             <thead
                 ref={ref}
                 className={classNames(
-                    "bg-abusix-neutral-100 sticky top-0 overflow-hidden rounded-lg",
-                    "after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-neutral-300"
+                    "bg-bg-secondary sticky top-0 overflow-hidden rounded-lg",
+                    "after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-border-secondary"
                 )}
             >
                 {children}
