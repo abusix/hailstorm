@@ -1,1 +1,1 @@
-export { Panel } from "./panel";
+export { Panel } from './panel'

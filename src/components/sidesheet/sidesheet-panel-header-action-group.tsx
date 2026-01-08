@@ -1,11 +1,11 @@
-import React from "react";
+import type { ReactNode } from 'react'
 
 export interface SidesheetPanelHeaderActionGroupProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 export const SidesheetPanelHeaderActionGroup = ({
-    children,
+  children,
 }: SidesheetPanelHeaderActionGroupProps) => {
-    return <div className="flex gap-4">{children}</div>;
-};
+  return <div className='flex gap-4'>{children}</div>
+}

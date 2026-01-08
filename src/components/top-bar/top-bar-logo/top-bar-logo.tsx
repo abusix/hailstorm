@@ -1,9 +1,7 @@
-import React from "react";
-
 export interface TopBarLogoProps {
-    src: string;
+  src: string
 }
 
 export const TopBarLogo = ({ src }: TopBarLogoProps) => {
-    return <img src={src} alt="logo" />;
-};
+  return <img src={src} alt='logo' />
+}

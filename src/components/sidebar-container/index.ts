@@ -1,1 +1,1 @@
-export { SidebarContainer } from "./sidebar-container";
+export { SidebarContainer } from './sidebar-container'

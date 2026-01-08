@@ -1,10 +1,10 @@
-import { DialogPanel as HeadlessUiDialogPanel } from "@headlessui/react";
-import React from "react";
+import type { ReactNode } from 'react'
+import { DialogPanel as HeadlessUiDialogPanel } from '@headlessui/react'
 
 export interface SidesheetPanelProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 export const SidesheetPanel = ({ children }: SidesheetPanelProps) => {
-    return <HeadlessUiDialogPanel>{children}</HeadlessUiDialogPanel>;
-};
+  return <HeadlessUiDialogPanel>{children}</HeadlessUiDialogPanel>
+}

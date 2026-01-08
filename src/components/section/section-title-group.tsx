@@ -1,9 +1,9 @@
-import React from "react";
+import type { ReactNode } from 'react'
 
 export interface SectionTitleGroupProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 export const SectionTitleGroup = ({ children }: SectionTitleGroupProps) => {
-    return <div className="flex flex-col gap-2">{children}</div>;
-};
+  return <div className='flex flex-col gap-2'>{children}</div>
+}

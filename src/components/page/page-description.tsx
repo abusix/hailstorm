@@ -1,9 +1,9 @@
-import React from "react";
+import type { ReactNode } from 'react'
 
 export interface PageDescriptionProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 export const PageDescription = ({ children }: PageDescriptionProps) => {
-    return <p className="paragraph-200 text-neutral-800">{children}</p>;
-};
+  return <p className='paragraph-200 text-neutral-800'>{children}</p>
+}

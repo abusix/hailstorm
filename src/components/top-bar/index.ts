@@ -1,1 +1,1 @@
-export { TopBar } from "./top-bar";
+export { TopBar } from './top-bar'

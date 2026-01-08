@@ -1,9 +1,9 @@
-import React from "react";
+import type { ReactNode } from 'react'
 
 export interface SidebarMenuProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 export const SidebarMenu = ({ children }: SidebarMenuProps) => {
-    return <div className="flex flex-col">{children}</div>;
-};
+  return <div className='flex flex-col'>{children}</div>
+}
