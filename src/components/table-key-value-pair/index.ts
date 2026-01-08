@@ -1,1 +1,1 @@
-export { TableKeyValuePair } from "./table-key-value-pair";
+export { TableKeyValuePair } from './table-key-value-pair'

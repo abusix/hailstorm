@@ -1,1 +1,1 @@
-export { TableVirtualized, TableVirtualizedProps } from "./table-virtualized";
+export { TableVirtualized, TableVirtualizedProps } from './table-virtualized'
