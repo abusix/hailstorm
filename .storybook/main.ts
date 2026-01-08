@@ -1,30 +1,33 @@
-import type { StorybookConfig } from "@storybook/react-vite";
+import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
-    stories: ["../src/**/*.stories.@(ts|tsx)", "../src/**/*.@(mdx|stories.@(md))"],
-    staticDirs: ["../assets"],
+  stories: [
+    '../src/**/*.stories.@(ts|tsx)',
+    '../src/**/*.@(mdx|stories.@(md))',
+  ],
+  staticDirs: ['../assets'],
 
-    addons: [
-        "@storybook/addon-links",
-        "@storybook/addon-essentials",
-        "@storybook/addon-interactions",
-    ],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-a11y',
+    '@storybook/addon-designs',
+    '@storybook/addon-docs',
+    '@storybook/addon-vitest',
+  ],
 
-    framework: {
-        name: "@storybook/react-vite",
-        options: {
-            strictMode: true,
-        },
+  framework: {
+    name: '@storybook/react-vite',
+    options: {
+      strictMode: true,
     },
+  },
 
-    docs: {},
+  core: {
+    disableTelemetry: true,
+  },
 
-    core: {
-        disableTelemetry: true,
-    },
-
-    typescript: {
-        reactDocgen: "react-docgen-typescript",
-    },
-};
-export default config;
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+  },
+}
+export default config

@@ -1,6 +1,4 @@
 {
-  "prettier.configPath": ".prettierrc.cjs",
-  "cSpell.words": [
-    "headlessui"
-  ]
+  "prettier.configPath": ".prettierrc.json",
+  "cSpell.words": ["headlessui"]
 }
