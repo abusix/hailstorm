@@ -1,42 +1,40 @@
-import { Popover, PopoverProps } from "@headlessui/react";
-import React, { useState } from "react";
-import { usePopper } from "react-popper";
-import { PopoverMenuButton } from "./popover-menu-button";
-import { PopoverMenuContextProvider } from "./popover-menu-context";
-import { PopoverMenuOverlay } from "./popover-menu-overlay";
-import { PopoverMenuPanel } from "./popover-menu-panel";
+import type { ReactNode } from 'react'
+import { Popover, PopoverProps } from '@headlessui/react'
+import { autoUpdate, useFloating } from '@floating-ui/react'
+import { PopoverMenuButton } from './popover-menu-button'
+import { PopoverMenuContextProvider } from './popover-menu-context'
+import { PopoverMenuOverlay } from './popover-menu-overlay'
+import { PopoverMenuPanel } from './popover-menu-panel'
 
 export interface PopoverMenuProps extends PopoverProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 const PopoverMenu = ({ children, ...rest }: PopoverMenuProps) => {
-    const [referenceElement, setReferenceElement] = useState<HTMLButtonElement>();
-    const [popperElement, setPopperElement] = useState<HTMLElement>();
-    const { styles, attributes } = usePopper(referenceElement, popperElement, {
-        placement: "top-start",
-    });
+  const { refs, floatingStyles } = useFloating({
+    placement: 'top-start',
+    whileElementsMounted: autoUpdate,
+  })
 
-    const context = {
-        popoverButton: {
-            setReferenceElement,
-        },
-        popoverPanel: {
-            setPopperElement,
-            styles: styles.popper,
-            attributes: attributes.popper,
-        },
-    };
+  const context = {
+    popoverButton: {
+      setReferenceElement: refs.setReference,
+    },
+    popoverPanel: {
+      setFloatingElement: refs.setFloating,
+      styles: floatingStyles,
+    },
+  }
 
-    return (
-        <PopoverMenuContextProvider value={context}>
-            <Popover {...rest}>{children}</Popover>
-        </PopoverMenuContextProvider>
-    );
-};
+  return (
+    <PopoverMenuContextProvider value={context}>
+      <Popover {...rest}>{children}</Popover>
+    </PopoverMenuContextProvider>
+  )
+}
 
-PopoverMenu.Button = PopoverMenuButton;
-PopoverMenu.Panel = PopoverMenuPanel;
-PopoverMenu.Overlay = PopoverMenuOverlay;
+PopoverMenu.Button = PopoverMenuButton
+PopoverMenu.Panel = PopoverMenuPanel
+PopoverMenu.Overlay = PopoverMenuOverlay
 
-export { PopoverMenu };
+export { PopoverMenu }

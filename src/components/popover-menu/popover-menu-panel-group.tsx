@@ -1,9 +1,9 @@
-import React from "react";
+import type { ReactNode } from 'react'
 
 export interface PopoverMenuGroupProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 export const PopoverMenuPanelGroup = ({ children }: PopoverMenuGroupProps) => {
-    return <div className="flex flex-col">{children}</div>;
-};
+  return <div className='flex flex-col'>{children}</div>
+}
