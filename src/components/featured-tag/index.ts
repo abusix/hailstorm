@@ -1,1 +1,1 @@
-export { FeaturedTag } from "./featured-tag";
+export { FeaturedTag } from './featured-tag'

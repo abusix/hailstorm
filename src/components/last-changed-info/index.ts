@@ -1,1 +1,1 @@
-export { LastChangedInfo } from "./last-changed-info";
+export { LastChangedInfo } from './last-changed-info'

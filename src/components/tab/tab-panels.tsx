@@ -1,11 +1,13 @@
-import { TabPanels as HeadlessUiTabPanels } from "@headlessui/react";
-import React from "react";
+import type { ReactNode } from 'react'
+import { TabPanels as HeadlessUiTabPanels } from '@headlessui/react'
 
 export interface TabPanelsProps {
-    children: React.ReactNode;
-    className?: string;
+  children: ReactNode
+  className?: string
 }
 
 export const TabPanels = ({ children, className }: TabPanelsProps) => {
-    return <HeadlessUiTabPanels className={className}>{children}</HeadlessUiTabPanels>;
-};
+  return (
+    <HeadlessUiTabPanels className={className}>{children}</HeadlessUiTabPanels>
+  )
+}

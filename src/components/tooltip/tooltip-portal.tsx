@@ -1,20 +1,15 @@
-import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { useState } from 'react'
+import type { ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 
 interface TooltipPortalProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 export const TooltipPortal = ({ children }: TooltipPortalProps) => {
-    const ref = useRef<Element | null>(null);
-    const [mounted, setMounted] = useState(false);
+  const [container] = useState<Element | null>(() =>
+    typeof document === 'undefined' ? null : document.body,
+  )
 
-    useEffect(() => {
-        if (document) {
-            ref.current = document.body;
-            setMounted(true);
-        }
-    }, []);
-
-    return mounted && ref.current ? createPortal(children, ref.current) : null;
-};
+  return container ? createPortal(children, container) : null
+}

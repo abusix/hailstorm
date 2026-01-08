@@ -1,1 +1,1 @@
-export { DividerLine } from "./divider-line";
+export { DividerLine } from './divider-line'
