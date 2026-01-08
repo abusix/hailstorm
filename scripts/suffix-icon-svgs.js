@@ -1,20 +1,16 @@
-const { readdirSync, rename } = require("fs");
+import { readdir, rename } from 'node:fs/promises'
 
-const imageDirPath = "./assets/icons";
+const imageDirUrl = new URL('../assets/icons/', import.meta.url)
+const files = await readdir(imageDirUrl)
 
-const files = readdirSync(imageDirPath);
-
-files.forEach((file) => {
-  if (file.endsWith(".svg" && !file.includes("-icon.svg"))) {
-    const newFileName = file.replace(/\.svg$/, "-icon.svg");
-    rename(
-      imageDirPath + `/${file}`,
-      imageDirPath + `/${newFileName}`,
-      (err) => {
-        if (err) {
-          console.log(err);
-        }
-      }
-    );
-  }
-});
+await Promise.all(
+  files
+    .filter((file) => file.endsWith('.svg') && !file.endsWith('-icon.svg'))
+    .map((file) => {
+      const newFileName = file.replace(/\.svg$/, '-icon.svg')
+      return rename(
+        new URL(file, imageDirUrl),
+        new URL(newFileName, imageDirUrl),
+      )
+    }),
+)
