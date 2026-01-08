@@ -123,6 +123,55 @@ const ListboxBadgeWithHooks: FC<{
   )
 }
 
+const ListboxMultiWithHooks = ({
+  label,
+  description,
+  placeholder,
+}: {
+  label: string
+  description: string
+  placeholder: string
+}) => {
+  const [selectedPeople, setSelectedPeople] = useState<Person[]>([])
+  const selectedLabels = selectedPeople.map((person) => person.name).join(', ')
+
+  return (
+    <FormField>
+      <FormField.LabelGroup>
+        <FormField.Label htmlFor='value'>{label}</FormField.Label>
+        <FormField.Description id='value-description'>
+          {description}
+        </FormField.Description>
+      </FormField.LabelGroup>
+      <FormField.Listbox
+        value={selectedPeople}
+        onChange={setSelectedPeople}
+        multiple
+      >
+        <FormField.Listbox.Button>
+          <FormField.Listbox.Button.TextValue
+            value={selectedLabels || null}
+            placeholder={placeholder}
+          />
+        </FormField.Listbox.Button>
+        <FormField.Listbox.Options>
+          {people.map((person) => (
+            <FormField.Listbox.Option
+              value={person}
+              key={person.id}
+              disabled={person.isDead}
+            >
+              <FormField.Listbox.Option.TextOption>
+                {person.name}
+              </FormField.Listbox.Option.TextOption>
+            </FormField.Listbox.Option>
+          ))}
+        </FormField.Listbox.Options>
+      </FormField.Listbox>
+    </FormField>
+  )
+}
+
 export const Default: Story = {
   render: ({ label, description, placeholder, width }) => (
     <div style={{ width }}>
@@ -156,6 +205,18 @@ export const Disabled: Story = {
         description={description}
         placeholder={placeholder}
         disabled
+      />
+    </div>
+  ),
+}
+
+export const Multiple: Story = {
+  render: ({ label, description, placeholder, width }) => (
+    <div style={{ width }}>
+      <ListboxMultiWithHooks
+        label={label}
+        description={description}
+        placeholder={placeholder}
       />
     </div>
   ),

@@ -18,6 +18,7 @@ export interface ListboxProps<TValue> {
   children: ReactNode
   value: TValue
   onChange: (value: TValue) => void
+  multiple?: boolean
   className?: string
 }
 
@@ -25,10 +26,11 @@ const Listbox = <TValue,>({
   children,
   value,
   onChange,
+  multiple,
   className,
 }: ListboxProps<TValue>) => {
   return (
-    <HeadlessListbox value={value} onChange={onChange}>
+    <HeadlessListbox value={value} onChange={onChange} multiple={multiple}>
       <div
         className={classNames(
           'relative w-full',
