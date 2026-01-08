@@ -1,17 +1,22 @@
-import { Meta, Title, IconGallery, IconItem } from "@storybook/blocks";
+import {
+  Meta,
+  Title,
+  IconGallery,
+  IconItem,
+} from '@storybook/addon-docs/blocks'
 
-import * as Icons from ".";
+import * as Icons from '.'
 
-<Meta title="Icons gallery" />
+<Meta title='Assets/Icons' />
 
 # Icons Gallery
 
 List of available icons
 
 <IconGallery>
-    {Object.entries(Icons).map(([name, Icon]) => (
-        <IconItem name={name} key={name}>
-            <Icon className="h-6 w-6" />
-        </IconItem>
-    ))}
+  {Object.entries(Icons).map(([name, Icon]) => (
+    <IconItem name={name} key={name}>
+      <Icon className='h-6 w-6' />
+    </IconItem>
+  ))}
 </IconGallery>

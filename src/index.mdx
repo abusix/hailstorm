@@ -1,33 +1,59 @@
-import { Meta } from "@storybook/blocks";
+import { Meta } from '@storybook/addon-docs/blocks'
 
-<Meta title="Home" />
+<Meta title='Home' />
 
 # Hailstorm
 
-## Introduction
+## Overview
 
-Hailstorm is a design system for Abusix. It is a collection of reusable components, guidelines, and best practices that can be used to build consistent user interfaces across all of our products.
+Hailstorm is the Abusix design system: React 19 components, design tokens, and
+Storybook documentation that keep UI consistent, accessible, and fast to ship.
+The system emphasizes predictable APIs, token-driven styling, and WCAG-aligned
+patterns.
 
-## Getting Started
+## What this system optimizes for
 
-### Installation
+- Reusable components with stable, typed props.
+- Token-first styling (semantic color, spacing, typography).
+- Figma Variables-to-production alignment with a clear token pipeline.
+- Accessibility-first UI patterns (WCAG 2.2 AA, keyboard, ARIA, focus states).
+- Documentation that scales with product velocity (Storybook + MDX).
+- Reliable QA with unit tests, a11y checks, and Storybook examples.
 
-Hailstorm is available as an npm package. To install it, run the following command in your project's root directory:
+## Modernization focus
+
+This release brings the legacy system forward with a full stack refresh:
+React 19, Tailwind v4 tokens, Storybook 10, and Vitest-based testing. The goal
+is to keep component APIs stable while upgrading the delivery pipeline, token
+strategy, and accessibility defaults (WCAG 2.2 AA aligned). The modernization
+also strengthens governance: clearer API contracts, predictable releases, and
+component-level coverage across the public surface.
+
+## Stack
+
+- React 19 + TypeScript
+- Tailwind CSS v4 tokens in `src/styles/index.css`
+- Headless UI for accessible primitives
+- Storybook 10 + MDX for docs and component demos
+- Vitest + Testing Library + Playwright browser mode for component tests
+- Rollup library builds with Vite for local dev
+
+## Quick start
 
 ```bash
-npm install @abusix/hailstorm
+pnpm install
+pnpm storybook
 ```
 
-or if you are using PNPM:
+## Development
 
+```bash
+pnpm test
+pnpm lint
+pnpm run build
 ```
-pnpm install @abusix/hailstorm
-```
 
-## Documentation
+## Docs
 
-The documentation for Hailstorm will be available soon.
-
-## License
-
-Hailstorm is licensed under the [MIT License](LICENSE).
+Core documentation and examples live in Storybook. Look under `Assets/Icons`
+for the icons gallery and `Foundations` for global styles and tokens.
