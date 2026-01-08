@@ -14,7 +14,11 @@ jobs:
           persist-credentials: false
       - uses: pnpm/action-setup@v4
         with:
-            version: 9.12.1
+          version: 10.27.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
       - name: Install and Build 🔧
         run: | # Install npm packages and build the Storybook files
           pnpm install
@@ -26,5 +30,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          BRANCH: gh-pages-storybook # The branch the action should deploy to.
-          FOLDER: storybook-static # The folder that the build-storybook script generates files.
+          branch: gh-pages-storybook
+          folder: storybook-static

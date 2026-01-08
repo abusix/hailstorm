@@ -3,23 +3,23 @@ name: Type Check
 on: push
 
 env:
-    GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
-    format-check:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-              with:
-                  fetch-depth: 0
-                  persist-credentials: false
-            - uses: pnpm/action-setup@v4
-              with:
-                  version: 9.12.1
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 20.19.3
-                  cache: "pnpm"
-            - run: pnpm install --frozen-lockfile
-            - run: pnpm run type-check
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.27.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run type-check

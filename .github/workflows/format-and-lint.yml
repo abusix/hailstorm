@@ -16,11 +16,11 @@ jobs:
           persist-credentials: false
       - uses: pnpm/action-setup@v4
         with:
-            version: 9.12.1
+          version: 10.27.0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.19.3
-          cache: "pnpm"
+          node-version: 22
+          cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
       - run: pnpm run format:check

@@ -1,40 +1,40 @@
 name: Semantic Release CI
 
 on:
-    push:
-        branches: [main, beta]
+  push:
+    branches: [main, beta]
 
 env:
-    GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 permissions:
-    packages: write
+  packages: write
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-              with:
-                  fetch-depth: 0
-                  persist-credentials: false
-            - uses: pnpm/action-setup@v4
-              with:
-                  version: 9.12.1
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 20.19.3
-                  cache: "pnpm"
-            - run: pnpm install --frozen-lockfile
-            - run: pnpm run build
-            - run: pnpm dlx semantic-release@24
-            
-            # We also release to the github registry, this is because other internal @abusix packages are hosted
-            # there, and pnpm does not let you mix and match registries within a scope
-            - name: Release to Github registry
-              run: |
-                echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
-                # We disable git checks because semantic release above has bumped the version in the package.json
-                # so we are expecting the git state to be dirty
-                pnpm publish --registry=https://npm.pkg.github.com --no-git-checks
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.27.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - run: pnpm dlx semantic-release@24
+
+      # We also release to the github registry, this is because other internal @abusix packages are hosted
+      # there, and pnpm does not let you mix and match registries within a scope
+      - name: Release to Github registry
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
+          # We disable git checks because semantic release above has bumped the version in the package.json
+          # so we are expecting the git state to be dirty
+          pnpm publish --registry=https://npm.pkg.github.com --no-git-checks
