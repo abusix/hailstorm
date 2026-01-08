@@ -5,9 +5,13 @@ import { Tag } from '../../tag/tag'
 import { FormField } from '../form-field'
 import { SingleCombobox } from './single-combobox'
 
-const meta: Meta<typeof SingleCombobox> = {
+type SingleComboboxStoryArgs = {
+  placeholder: string
+  width: number
+}
+
+const meta: Meta<SingleComboboxStoryArgs> = {
   title: 'Input/SingleCombobox',
-  component: SingleCombobox,
   args: {
     placeholder: 'Select person...',
     width: 288,
@@ -19,7 +23,7 @@ const meta: Meta<typeof SingleCombobox> = {
 }
 
 export default meta
-type Story = StoryObj<typeof SingleCombobox>
+type Story = StoryObj<SingleComboboxStoryArgs>
 
 const people = [
   'Durward Reynolds',

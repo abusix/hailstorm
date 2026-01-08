@@ -3,9 +3,14 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { FormFieldGroup } from './form-field-group'
 import { FormField } from './form-field'
 
-const meta: Meta<typeof FormFieldGroup> = {
+type FormFieldGroupStoryArgs = {
+  error: boolean
+  disabled: boolean
+  groupWidth: number
+}
+
+const meta: Meta<FormFieldGroupStoryArgs> = {
   title: 'Input / Combined Fields',
-  component: FormFieldGroup,
   args: {
     error: false,
     disabled: false,
@@ -20,7 +25,7 @@ const meta: Meta<typeof FormFieldGroup> = {
 
 export default meta
 
-type Story = StoryObj<typeof FormFieldGroup>
+type Story = StoryObj<FormFieldGroupStoryArgs>
 
 const TextInputFields = ({
   error = false,

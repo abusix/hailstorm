@@ -1,7 +1,29 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { TableUnvirtualized } from '../components/table-unvirtualized/table-unvirtualized'
 
-const meta: Meta = {
+type GlobalStylesStoryArgs = {
+  sampleText: string
+  linkLabel: string
+  linkRest: string
+  linkHref: string
+  formLabel: string
+  formDescription: string
+  textPlaceholder: string
+  searchPlaceholder: string
+  disabledPlaceholder: string
+  selectOptionOne: string
+  selectOptionTwo: string
+  textareaPlaceholder: string
+  borderSampleOne: string
+  borderSampleTwo: string
+  buttonLabel: string
+  disabledButtonLabel: string
+  swatchSize: number
+  sizeBarHeight: number
+  sizeLabelWidth: number
+}
+
+const meta: Meta<GlobalStylesStoryArgs> = {
   title: 'Global CSS Style Classes',
   args: {
     sampleText: 'The quick brown fox jumps over the lazy dog',
@@ -49,7 +71,7 @@ const meta: Meta = {
 }
 
 export default meta
-type Story = StoryObj<object>
+type Story = StoryObj<GlobalStylesStoryArgs>
 
 const colorGroups = [
   {
