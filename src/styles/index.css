@@ -101,6 +101,34 @@
     --size-184: 46rem;
     --size-285: 71.25rem;
     --size-736: 736px;
+
+    /* Semantic theme colors - Light mode (default) */
+    --color-background: var(--color-neutral-0);
+    --color-background-secondary: var(--color-neutral-50);
+    --color-background-tertiary: var(--color-neutral-100);
+    --color-foreground: var(--color-neutral-900);
+    --color-foreground-muted: var(--color-neutral-700);
+    --color-foreground-subtle: var(--color-neutral-600);
+    --color-border: var(--color-neutral-200);
+    --color-border-hover: var(--color-neutral-300);
+    --color-border-focus: var(--color-primary-500);
+}
+
+/* Dark mode theme colors */
+.dark {
+    --color-background: #0a0a0a;
+    --color-background-secondary: #1a1a1a;
+    --color-background-tertiary: #262626;
+    --color-foreground: #fafafa;
+    --color-foreground-muted: #a3a3a3;
+    --color-foreground-subtle: #737373;
+    --color-border: #404040;
+    --color-border-hover: #525252;
+    --color-border-focus: var(--color-primary-400);
+
+    /* Adjust primary colors for dark mode */
+    --color-primary-500: var(--color-primary-400);
+    --color-primary-700: var(--color-primary-300);
 }
 
 /* Hide webkit search decorations */
