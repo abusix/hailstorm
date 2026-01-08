@@ -1,1 +1,1 @@
-export { SpinnerOverlay } from "./spinner-overlay";
+export { SpinnerOverlay } from './spinner-overlay'

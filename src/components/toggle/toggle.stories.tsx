@@ -1,63 +1,83 @@
+import { useState, useEffect } from 'react'
 /* eslint-disable react/jsx-props-no-spreading */
-import React from "react";
 
-import type { Meta, StoryObj } from "@storybook/react";
-import { useArgs } from "@storybook/preview-api";
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { Toggle } from "./toggle";
+import { Toggle } from './toggle'
 
 const meta: Meta<typeof Toggle> = {
-    title: "Toggle",
-    component: Toggle,
-};
+  title: 'Toggle',
+  component: Toggle,
+}
 
-export default meta;
+export default meta
 
 type ToggleWithHookProps = {
-    checked: boolean;
-    disabled: boolean;
-};
+  checked: boolean
+  disabled: boolean
+}
 
-type Story = StoryObj<ToggleWithHookProps>;
+type Story = StoryObj<ToggleWithHookProps>
+
+const useControlledToggle = (checked: boolean) => {
+  const [isChecked, setIsChecked] = useState(checked)
+
+  useEffect(() => {
+    setIsChecked(checked)
+  }, [checked])
+
+  const handleOnChange = () => setIsChecked((prev) => !prev)
+
+  return { isChecked, handleOnChange }
+}
+
+const ToggleWithLabelStory = ({ checked, disabled }: ToggleWithHookProps) => {
+  const { isChecked, handleOnChange } = useControlledToggle(checked)
+
+  return (
+    <Toggle>
+      <Toggle.Switch
+        checked={isChecked}
+        disabled={disabled}
+        onChange={handleOnChange}
+        ariaLabel='Enable notifications'
+      />
+      <Toggle.Label>notifications</Toggle.Label>
+    </Toggle>
+  )
+}
+
+const ToggleWithoutLabelStory = ({
+  checked,
+  disabled,
+}: ToggleWithHookProps) => {
+  const { isChecked, handleOnChange } = useControlledToggle(checked)
+
+  return (
+    <Toggle.Switch
+      checked={isChecked}
+      disabled={disabled}
+      onChange={handleOnChange}
+      ariaLabel='Enable notifications'
+    />
+  )
+}
 
 export const Default: Story = {
-    render: (args) => {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        const [{ checked }, updateArgs] = useArgs();
-        const handleOnChange = () => updateArgs({ checked: !checked });
-        return (
-            <Toggle>
-                <Toggle.Switch
-                    checked={args.checked}
-                    disabled={args.disabled}
-                    onChange={handleOnChange}
-                    ariaLabel="Enable notifications"
-                />
-                <Toggle.Label>notifications</Toggle.Label>
-            </Toggle>
-        );
-    },
-    args: {
-        checked: false,
-        disabled: false,
-    },
-};
+  render: (args) => {
+    return <ToggleWithLabelStory {...args} />
+  },
+  args: {
+    checked: false,
+    disabled: false,
+  },
+}
 
 export const WithoutLabel: Story = {
-    render: (args) => {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        const [{ checked }, updateArgs] = useArgs();
-        const handleOnChange = () => updateArgs({ checked: !checked });
-        return (
-            <Toggle.Switch
-                checked={args.checked}
-                disabled={args.disabled}
-                onChange={handleOnChange}
-                ariaLabel="Enable notifications"
-            />
-        );
-    },
-    args: {
-        ...Default.args,
-    },
-};
+  render: (args) => {
+    return <ToggleWithoutLabelStory {...args} />
+  },
+  args: {
+    ...Default.args,
+  },
+}

@@ -1,1 +1,1 @@
-export { Alert, AlertIntent } from "./alert";
+export { Alert, AlertIntent } from './alert'
