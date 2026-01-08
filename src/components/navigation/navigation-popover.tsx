@@ -1,42 +1,40 @@
-import { Popover } from "@headlessui/react";
-import React, { useState } from "react";
-import { usePopper } from "react-popper";
-import { NavigationPopoverButton } from "./navigation-popover-button";
-import { NavigationPopoverContextProvider } from "./navigation-popover-context";
-import { NavigationPopoverOverlay } from "./navigation-popover-overlay";
-import { NavigationPopoverPanel } from "./navigation-popover-panel";
+import type { ReactNode } from 'react'
+import { Popover } from '@headlessui/react'
+import { autoUpdate, useFloating } from '@floating-ui/react'
+import { NavigationPopoverButton } from './navigation-popover-button'
+import { NavigationPopoverContextProvider } from './navigation-popover-context'
+import { NavigationPopoverOverlay } from './navigation-popover-overlay'
+import { NavigationPopoverPanel } from './navigation-popover-panel'
 
 export interface NavigationPopoverProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 const NavigationPopover = ({ children }: NavigationPopoverProps) => {
-    const [referenceElement, setReferenceElement] = useState<HTMLButtonElement>();
-    const [popperElement, setPopperElement] = useState<HTMLElement>();
-    const { styles, attributes } = usePopper(referenceElement, popperElement, {
-        placement: "top-start",
-    });
+  const { refs, floatingStyles } = useFloating({
+    placement: 'top-start',
+    whileElementsMounted: autoUpdate,
+  })
 
-    const context = {
-        popoverButton: {
-            setReferenceElement,
-        },
-        popoverPanel: {
-            setPopperElement,
-            styles: styles.popper,
-            attributes: attributes.popper,
-        },
-    };
+  const context = {
+    popoverButton: {
+      setReferenceElement: refs.setReference,
+    },
+    popoverPanel: {
+      setFloatingElement: refs.setFloating,
+      styles: floatingStyles,
+    },
+  }
 
-    return (
-        <NavigationPopoverContextProvider value={context}>
-            <Popover>{children}</Popover>
-        </NavigationPopoverContextProvider>
-    );
-};
+  return (
+    <NavigationPopoverContextProvider value={context}>
+      <Popover>{children}</Popover>
+    </NavigationPopoverContextProvider>
+  )
+}
 
-NavigationPopover.Button = NavigationPopoverButton;
-NavigationPopover.Panel = NavigationPopoverPanel;
-NavigationPopover.Overlay = NavigationPopoverOverlay;
+NavigationPopover.Button = NavigationPopoverButton
+NavigationPopover.Panel = NavigationPopoverPanel
+NavigationPopover.Overlay = NavigationPopoverOverlay
 
-export { NavigationPopover };
+export { NavigationPopover }

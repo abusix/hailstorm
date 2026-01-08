@@ -1,1 +1,1 @@
-export { BreadcrumbNavigation } from "./breadcrumb-navigation";
+export { BreadcrumbNavigation } from './breadcrumb-navigation'
