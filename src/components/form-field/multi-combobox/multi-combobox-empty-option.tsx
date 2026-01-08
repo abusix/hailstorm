@@ -1,9 +1,11 @@
-import React from "react";
+import type { ReactNode } from 'react'
 
 export interface MultiComboboxEmptyOptionProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
-export const MultiComboboxEmptyOption = ({ children }: MultiComboboxEmptyOptionProps) => {
-    return <div className="ui-selected:bg-primary-100 px-3 py-2">{children}</div>;
-};
+export const MultiComboboxEmptyOption = ({
+  children,
+}: MultiComboboxEmptyOptionProps) => {
+  return <div className='ui-selected:bg-primary-100 px-3 py-2'>{children}</div>
+}

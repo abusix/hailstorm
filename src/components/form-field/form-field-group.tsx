@@ -1,9 +1,13 @@
-import React from "react";
+import type { ReactNode } from 'react'
 
 export interface FormFieldGroupProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
 export const FormFieldGroup = ({ children }: FormFieldGroupProps) => {
-    return <div className="form-field-group group flex w-full flex-row">{children}</div>;
-};
+  return (
+    <div className='form-field-group group flex w-full flex-row'>
+      {children}
+    </div>
+  )
+}

@@ -1,15 +1,14 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { FormField } from '../form-field'
 import { hiddenArgControl } from '../../../util/storybook-utils'
 import {
-  MultiComboboxTextStory,
+  MultiComboboxTagStory,
   multiComboboxArgTypes,
   multiComboboxArgs,
 } from './multi-combobox.story-helpers'
 
 const meta: Meta = {
-  title: 'Input/MultiCombobox',
+  title: 'Input/MultiCombobox/Tags',
   component: FormField.MultiCombobox,
   args: multiComboboxArgs,
   argTypes: {
@@ -29,10 +28,10 @@ export default meta
 
 type Story = StoryObj<typeof FormField.MultiCombobox>
 
-export const Default: Story = {
+export const Tags: Story = {
   render: ({ label, description, placeholder, width }) => (
     <div style={{ width }}>
-      <MultiComboboxTextStory
+      <MultiComboboxTagStory
         label={label as string}
         description={description as string}
         placeholder={placeholder as string}

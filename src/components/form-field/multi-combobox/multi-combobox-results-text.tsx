@@ -1,9 +1,11 @@
-import React from "react";
+import type { ReactNode } from 'react'
 
 export interface MultiComboboxResultsTextProps {
-    children: React.ReactNode;
+  children: ReactNode
 }
 
-export const MultiComboboxResultsText = ({ children }: MultiComboboxResultsTextProps) => {
-    return <div className="paragraph-100">{children}</div>;
-};
+export const MultiComboboxResultsText = ({
+  children,
+}: MultiComboboxResultsTextProps) => {
+  return <div className='paragraph-100'>{children}</div>
+}
