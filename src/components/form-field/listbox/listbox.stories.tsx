@@ -3,9 +3,16 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { FC, useState } from 'react'
 import { FormField } from '../form-field'
 
-const meta: Meta<typeof FormField.Listbox> = {
+type ListboxStoryArgs = {
+  label: string
+  description: string
+  placeholder: string
+  width: number
+  disabled: boolean
+}
+
+const meta: Meta<ListboxStoryArgs> = {
   title: 'Input/Listbox',
-  component: FormField.Listbox,
   args: {
     label: 'Label',
     description: 'Description',
@@ -24,7 +31,7 @@ const meta: Meta<typeof FormField.Listbox> = {
 
 export default meta
 
-type Story = StoryObj<typeof FormField.Listbox>
+type Story = StoryObj<ListboxStoryArgs>
 
 interface Person {
   id: number
