@@ -30,7 +30,7 @@ export const TableHeaderCell = ({
             colSpan={colSpan}
             style={style}
             className={classNames(
-                `headline-100 bg-neutral-50 py-4 pr-6 text-neutral-700 uppercase first:pl-6`,
+                `headline-100 bg-bg-secondary text-text-secondary py-4 pr-6 uppercase first:pl-6`,
                 cellAlign[align],
                 className
             )}

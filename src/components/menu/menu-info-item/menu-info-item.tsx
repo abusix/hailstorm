@@ -7,11 +7,11 @@ export interface MenuInfoItemProps {
 
 export const MenuInfoItem = ({ title, subtitle }: MenuInfoItemProps) => {
     return (
-        <div className="bg-abusix-neutral-0 px-4 py-3">
-            <div className="mb-1 truncate font-semibold" title={title}>
+        <div className="bg-bg-primary px-4 py-3">
+            <div className="text-text-primary mb-1 truncate font-semibold" title={title}>
                 {title}
             </div>
-            <div className="truncate text-sm text-neutral-600" title={subtitle}>
+            <div className="text-text-secondary truncate text-sm" title={subtitle}>
                 {subtitle}
             </div>
         </div>

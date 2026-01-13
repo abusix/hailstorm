@@ -25,8 +25,10 @@ interface ListboxPropsSingle<TValue> extends ListboxPropsBase<TValue> {
     multiple?: false;
 }
 
-interface ListboxPropsMultiple<TValue>
-    extends Omit<ListboxPropsBase<TValue>, "value" | "onChange"> {
+interface ListboxPropsMultiple<TValue> extends Omit<
+    ListboxPropsBase<TValue>,
+    "value" | "onChange"
+> {
     multiple: true;
     value: TValue[];
     onChange: (value: TValue[]) => void;

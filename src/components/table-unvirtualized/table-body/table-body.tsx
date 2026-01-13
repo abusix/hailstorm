@@ -9,7 +9,7 @@ export interface TableBodyProps {
 }
 
 const TableBody = ({ children }: TableBodyProps) => {
-    return <tbody className="bg-neutral-0">{children}</tbody>;
+    return <tbody className="bg-bg-primary">{children}</tbody>;
 };
 
 TableBody.LoadingIndicator = TableBodyLoadingIndicator;

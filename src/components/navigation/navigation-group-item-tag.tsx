@@ -6,7 +6,7 @@ interface NavigationGroupItemTagProps {
 
 const NavigationGroupItemTag = ({ children }: NavigationGroupItemTagProps) => {
     return (
-        <div className="border-neutral-0 text-neutral-0 ml-auto rounded-sm border px-1.5 text-xs font-semibold uppercase">
+        <div className="border-text-inverse text-text-inverse ml-auto rounded-sm border px-1.5 text-xs font-semibold uppercase">
             {children}
         </div>
     );

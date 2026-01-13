@@ -21,15 +21,15 @@ const NavigationDisclosurePanelItem = ({
     return (
         <div
             className={classNames(
-                "text-neutral-0 hover:bg-primary-900-plus-10 relative w-full cursor-pointer py-3 pr-1 pl-8 text-left text-sm",
+                "text-text-inverse hover:bg-sidebar-bg-hover relative w-full cursor-pointer py-3 pr-1 pl-8 text-left text-sm",
                 isIndented && "pl-14",
-                isActive && "bg-primary-900-plus-20 hover:bg-primary-900-plus-20 font-semibold"
+                isActive && "bg-sidebar-bg-selected hover:bg-sidebar-bg-selected font-semibold"
             )}
             {...props}
         >
             {children}
             {isActive && (
-                <div className="bg-neutral-0 absolute top-0 bottom-0 left-0 h-full w-0.5 rounded-r-sm" />
+                <div className="bg-text-inverse absolute top-0 bottom-0 left-0 h-full w-0.5 rounded-r-sm" />
             )}
         </div>
     );

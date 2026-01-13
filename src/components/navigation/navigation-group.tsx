@@ -18,8 +18,8 @@ const NavigationGroupItem = ({
     return (
         <div
             className={classNames(
-                "text-neutral-0 hover:bg-primary-900-plus-10 relative flex cursor-pointer items-center gap-x-2 px-4 py-3 text-sm",
-                isActive && "bg-primary-900-plus-20 hover:bg-primary-900-plus-20 font-semibold"
+                "text-text-inverse hover:bg-sidebar-bg-hover relative flex cursor-pointer items-center gap-x-2 px-4 py-3 text-sm",
+                isActive && "bg-sidebar-bg-selected hover:bg-sidebar-bg-selected font-semibold"
             )}
             {...props}
         >
@@ -27,7 +27,7 @@ const NavigationGroupItem = ({
             {children}
             {tag ? <NavigationGroupItemTag>{tag}</NavigationGroupItemTag> : null}
             {isActive && (
-                <div className="bg-neutral-0 absolute top-0 bottom-0 left-0 h-full w-0.5 rounded-r-sm" />
+                <div className="bg-text-inverse absolute top-0 bottom-0 left-0 h-full w-0.5 rounded-r-sm" />
             )}
         </div>
     );

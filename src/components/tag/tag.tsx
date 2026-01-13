@@ -12,8 +12,8 @@ export const Tag = ({ children, onClick, disabled }: TagProps) => {
     return (
         <div
             className={classNames(
-                "flex items-center rounded-sm bg-neutral-200 px-2 py-1 text-neutral-800",
-                disabled && "bg-neutral-100 text-neutral-500"
+                "bg-bg-secondary text-text-primary flex items-center rounded-sm px-2 py-1",
+                disabled && "bg-bg-disabled text-text-disabled"
             )}
         >
             <div className="paragraph-100">{children}</div>
@@ -21,8 +21,8 @@ export const Tag = ({ children, onClick, disabled }: TagProps) => {
                 <button type="button" aria-label="Remove tag" onClick={onClick} disabled={disabled}>
                     <SmallCrossIcon
                         className={classNames(
-                            "h-3 w-3 fill-neutral-800",
-                            disabled && "fill-neutral-500"
+                            "fill-icon-primary h-3 w-3",
+                            disabled && "fill-icon-disabled"
                         )}
                     />
                 </button>
