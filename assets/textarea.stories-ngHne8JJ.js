@@ -1,0 +1,13 @@
+import{j as r}from"./jsx-runtime-DiklIkkE.js";import{r as g}from"./index-DRjF_FHU.js";import{F as e}from"./form-field-BXPj22sD.js";import"./zoom-to-fit-icon-Dqg1CN93.js";import"./class-names-AhVFtEzo.js";import"./use-resolve-button-type-anS-OQ-j.js";import"./keyboard-BXsyG9-6.js";import"./use-sync-refs-4PSbzubZ.js";import"./form-fields-1LEl5PRn.js";import"./index-Dpua5abt.js";import"./hidden-BTT1K2UY.js";import"./description-UtBE_P3b.js";import"./label-zIhhX7O3.js";import"./bugs-DpEN4NTH.js";import"./focus-management-DGm9imjo.js";import"./use-text-value-CV0VHA7E.js";import"./portal-DBQB_4M5.js";import"./use-server-handoff-complete-D6bOsrEP.js";import"./floating-BTGXEKZb.js";import"./use-inert-others-DOoaFBKu.js";import"./open-closed-yLnem6BE.js";import"./badge-C1bKFyFk.js";import"./index-79_Hx86Q.js";import"./use-event-listener-BepRZUYA.js";import"./active-element-history-Cq_XTmYl.js";import"./tag-BjN8aZXv.js";const K={title:"Input/Textarea",component:e.Textarea},t=({error:i=!1,disabled:v=!1})=>{const[j,b]=g.useState("");return r.jsxs(e,{children:[r.jsxs(e.LabelGroup,{children:[r.jsx(e.Label,{htmlFor:"value",children:"Label"}),r.jsx(e.Description,{id:"value-description",children:"Description"})]}),r.jsx(e.Textarea,{id:"value",value:j,placeholder:"Placeholder",onChange:f=>b(f.target.value),ariaDescribedBy:"value-description",error:i,disabled:v}),i?r.jsx(e.ErrorMessage,{children:"Error message."}):null]})},s={render:()=>r.jsx("div",{className:"w-72",children:r.jsx(t,{})})},a={render:()=>r.jsx("div",{className:"w-72",children:r.jsx(t,{error:!0})})},o={render:()=>r.jsx("div",{className:"w-72",children:r.jsx(t,{disabled:!0})})};var m,p,d;s.parameters={...s.parameters,docs:{...(m=s.parameters)==null?void 0:m.docs,source:{originalSource:`{
+  render: () => <div className="w-72">
+            <TextareaWithHooks />
+        </div>
+}`,...(d=(p=s.parameters)==null?void 0:p.docs)==null?void 0:d.source}}};var n,c,l;a.parameters={...a.parameters,docs:{...(n=a.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  render: () => <div className="w-72">
+            <TextareaWithHooks error />
+        </div>
+}`,...(l=(c=a.parameters)==null?void 0:c.docs)==null?void 0:l.source}}};var u,x,h;o.parameters={...o.parameters,docs:{...(u=o.parameters)==null?void 0:u.docs,source:{originalSource:`{
+  render: () => <div className="w-72">
+            <TextareaWithHooks disabled />
+        </div>
+}`,...(h=(x=o.parameters)==null?void 0:x.docs)==null?void 0:h.source}}};const Q=["Default","WithError","Disabled"];export{s as Default,o as Disabled,a as WithError,Q as __namedExportsOrder,K as default};
