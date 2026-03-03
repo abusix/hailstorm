@@ -53,7 +53,7 @@ export const DraggableRow = <TableData,>({
             <TableUnvirtualized.Body.Row
                 ref={previewRef}
                 isExpanded={isExpanded}
-                className={isDragging ? "bg-abusix-neutral-100" : undefined}
+                className={isDragging ? "bg-bg-secondary" : undefined}
             >
                 <TableUnvirtualized.Body.Cell ref={dropRef}>
                     <button aria-label="Drag row" type="button" ref={dragRef}>
