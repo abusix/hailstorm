@@ -28,13 +28,37 @@ jobs:
                   cache: "pnpm"
             - run: pnpm install --frozen-lockfile
             - run: pnpm run build
+
+            # semantic-release rewrites package.json's version in the workspace when it
+            # publishes, but never commits it (there is no @semantic-release/git plugin).
+            # Comparing the version before and after is therefore how we detect whether a
+            # release actually happened — needed to gate the Github Packages step below.
+            - name: Record version before release
+              id: before
+              run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
             - run: pnpm dlx semantic-release@24
-            
+
+            - name: Record version after release
+              id: after
+              run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
             # We also release to the github registry, this is because other internal @abusix packages are hosted
-            # there, and pnpm does not let you mix and match registries within a scope
+            # there, and pnpm does not let you mix and match registries within a scope.
+            # Skipped when semantic-release published nothing, otherwise this would retry an
+            # already-published version and fail with a 409.
             - name: Release to Github registry
+              if: steps.before.outputs.version != steps.after.outputs.version
               run: |
                 echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
+                # Match the dist-tag semantic-release used on npm. Without this, publishing
+                # from a prerelease branch would move the Github registry's `latest` tag to a
+                # prerelease for the whole beta window.
+                if [ "${GITHUB_REF_NAME}" = "main" ]; then
+                  DIST_TAG="latest"
+                else
+                  DIST_TAG="${GITHUB_REF_NAME}"
+                fi
                 # We disable git checks because semantic release above has bumped the version in the package.json
                 # so we are expecting the git state to be dirty
-                pnpm publish --registry=https://npm.pkg.github.com --no-git-checks
+                pnpm publish --registry=https://npm.pkg.github.com --no-git-checks --tag "${DIST_TAG}"
