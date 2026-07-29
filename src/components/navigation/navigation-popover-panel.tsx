@@ -25,7 +25,9 @@ const NavigationPopoverPanel = ({ children }: NavigationPopoverPanelProps) => {
 
     return (
         <HeadlessUiPopoverPanel
-            ref={(el) => el && setPopperElement(el)}
+            ref={(el) => {
+                setPopperElement(el);
+            }}
             style={styles}
             {...attributes}
             className="bg-neutral-0 z-40 ml-2 w-52 rounded-sm py-2 shadow-sm"

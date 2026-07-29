@@ -5,8 +5,17 @@ import { usePopper } from "react-popper";
 import { classNames } from "../../util/class-names";
 import { TooltipPortal } from "./tooltip-portal";
 
+/**
+ * The tooltip clones its child to attach a ref and hover handlers, so the child
+ * must accept those props. In React 19 `ref` is a regular prop, which is why it
+ * belongs in this element type rather than being passed separately.
+ */
+type TooltipChild = React.ReactElement<
+    React.HTMLAttributes<HTMLElement> & { ref?: React.Ref<HTMLDivElement> }
+>;
+
 interface TooltipProps {
-    children: React.ReactElement;
+    children: TooltipChild;
     title: React.ReactNode;
     position?: Placement;
     className?: string;
@@ -23,8 +32,8 @@ export const Tooltip = ({
     open,
     strategy = "absolute",
 }: TooltipProps) => {
-    const [referenceElement, setReferenceElement] = useState<HTMLDivElement>();
-    const [popperElement, setPopperElement] = useState<HTMLDivElement>();
+    const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
+    const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
     const [show, setShow] = useState(false);
     const [isControlled, setIsControlled] = useState(false);
 
@@ -58,7 +67,9 @@ export const Tooltip = ({
             leaveTo="opacity-0"
         >
             <div
-                ref={(el) => el && setPopperElement(el)}
+                ref={(el) => {
+                    setPopperElement(el);
+                }}
                 className={classNames(
                     "text-neutral-0 rounded-lg bg-neutral-900 p-4 px-4 py-2 text-xs shadow-sm",
                     className

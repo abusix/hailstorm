@@ -2,10 +2,10 @@ import { CSSProperties, createContext, useContext } from "react";
 
 export const NavigationPopoverContext = createContext<{
     popoverButton: {
-        setReferenceElement: React.Dispatch<React.SetStateAction<HTMLButtonElement | undefined>>;
+        setReferenceElement: React.Dispatch<React.SetStateAction<HTMLButtonElement | null>>;
     };
     popoverPanel: {
-        setPopperElement: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>;
+        setPopperElement: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
         styles: CSSProperties;
         attributes: { [key: string]: string } | undefined;
     };

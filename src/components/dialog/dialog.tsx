@@ -35,7 +35,7 @@ export const Dialog = ({
     title,
     hasBackground = true,
     position = "center",
-}: DialogProps): JSX.Element | null => {
+}: DialogProps): React.JSX.Element | null => {
     const handleClose = (submitted = false) => {
         if (isCloseable && onClose) {
             onClose(submitted);
