@@ -14,7 +14,12 @@ export const PopoverMenuButton = ({ onClick, children, ...restProps }: PopoverMe
     } = usePopoverMenuContext();
 
     return (
-        <HeadlessUiPopoverButton ref={(el) => el && setReferenceElement(el)} onClick={onClick}>
+        <HeadlessUiPopoverButton
+            ref={(el) => {
+                setReferenceElement(el);
+            }}
+            onClick={onClick}
+        >
             <Button {...restProps}>{children}</Button>
         </HeadlessUiPopoverButton>
     );

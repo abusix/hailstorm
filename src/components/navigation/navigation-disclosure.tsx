@@ -38,6 +38,13 @@ const NavigationDisclosureButton = ({
 };
 
 interface CloseFunction {
+    /**
+     * Keep `MutableRefObject` here, even though React 19 marks it deprecated and tooling will
+     * suggest `RefObject`. This signature reaches consumers through the exported
+     * `NavigationDisclosureProps`, and `RefObject.current` is readonly in @types/react 18 but
+     * writable in 19 — switching would break consumers still on React 18, which
+     * peerDependencies still supports. `MutableRefObject` is identical in both majors.
+     */
     (focusableElement?: HTMLElement | React.MutableRefObject<HTMLElement | null>): void;
 }
 

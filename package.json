@@ -75,8 +75,8 @@
         "@testing-library/dom": "^10.4.0",
         "@testing-library/jest-dom": "6.6.2",
         "@testing-library/react": "^16.0.1",
-        "@types/react": "^18.3.12",
-        "@types/react-dom": "^18.3.1",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
         "@typescript-eslint/eslint-plugin": "6.13.2",
         "@typescript-eslint/parser": "^6.13.2",
         "@vitejs/plugin-react": "^4.3.3",
@@ -97,9 +97,8 @@
         "jsdom": "^25.0.1",
         "prettier": "^3.3.3",
         "prettier-plugin-tailwindcss": "0.6.14",
-        "prop-types": "^15.8.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
         "rimraf": "^6.1.0",
         "rollup": "^4.24.0",
         "rollup-plugin-dts": "^6.1.1",
@@ -123,7 +122,7 @@
         }
     },
     "peerDependencies": {
-        "react": ">=17.0.1",
-        "react-dom": ">=17.0.1"
+        "react": "^18.0.0 || ^19.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0"
     }
 }
