@@ -11,7 +11,7 @@ export const Slot = ({
 }: React.HTMLAttributes<HTMLElement> & {
     children?: React.ReactNode;
 }) => {
-    if (React.isValidElement(children)) {
+    if (React.isValidElement<React.HTMLAttributes<HTMLElement>>(children)) {
         return React.cloneElement(children, {
             ...props,
             ...children.props,

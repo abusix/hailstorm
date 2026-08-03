@@ -13,6 +13,14 @@ export interface SidesheetProps {
     children: React.ReactNode;
     isOpen: boolean;
     onClose: () => void;
+    /**
+     * Keep this as `MutableRefObject`, even though React 19 marks it deprecated and tooling
+     * will suggest `RefObject`. This type is part of the published API, and `RefObject.current`
+     * is readonly in @types/react 18 but writable in 19 — so switching would emit TS2540
+     * ("cannot assign to 'current'") for consumers still on React 18, which peerDependencies
+     * still supports. `MutableRefObject` means the same thing in both majors, and matches the
+     * type @headlessui/react declares for the Dialog `initialFocus` prop this is forwarded to.
+     */
     initialFocus?: React.MutableRefObject<HTMLElement | null>;
 }
 

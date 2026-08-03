@@ -10,7 +10,7 @@
         "strict": true,
         /* Skip type checking all .d.ts files. */
         "skipLibCheck": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "module": "ESNext",
         "noEmit": true,
         // "declaration": true,

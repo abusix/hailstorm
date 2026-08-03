@@ -51,12 +51,24 @@ export const DraggableRow = <TableData,>({
     return (
         <Fragment key={row.id}>
             <TableUnvirtualized.Body.Row
-                ref={previewRef}
+                ref={(el) => {
+                    previewRef(el);
+                }}
                 isExpanded={isExpanded}
                 className={isDragging ? "bg-abusix-neutral-100" : undefined}
             >
-                <TableUnvirtualized.Body.Cell ref={dropRef}>
-                    <button aria-label="Drag row" type="button" ref={dragRef}>
+                <TableUnvirtualized.Body.Cell
+                    ref={(el) => {
+                        dropRef(el);
+                    }}
+                >
+                    <button
+                        aria-label="Drag row"
+                        type="button"
+                        ref={(el) => {
+                            dragRef(el);
+                        }}
+                    >
                         <DragHandleVerticalIcon />
                     </button>
                 </TableUnvirtualized.Body.Cell>

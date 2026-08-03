@@ -47,7 +47,7 @@ export const Link = ({
         className
     );
 
-    if (React.isValidElement(children)) {
+    if (React.isValidElement<React.HTMLAttributes<HTMLElement>>(children)) {
         return React.cloneElement(children, {
             ...children.props,
             children: (

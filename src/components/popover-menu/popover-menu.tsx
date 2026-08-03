@@ -11,8 +11,8 @@ export interface PopoverMenuProps extends PopoverProps {
 }
 
 const PopoverMenu = ({ children, ...rest }: PopoverMenuProps) => {
-    const [referenceElement, setReferenceElement] = useState<HTMLButtonElement>();
-    const [popperElement, setPopperElement] = useState<HTMLElement>();
+    const [referenceElement, setReferenceElement] = useState<HTMLButtonElement | null>(null);
+    const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
     const { styles, attributes } = usePopper(referenceElement, popperElement, {
         placement: "top-start",
     });

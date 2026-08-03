@@ -21,7 +21,9 @@ const PopoverMenuPanel = ({ children, ...rest }: PopoverMenuPanelProps) => {
 
     return (
         <HeadlessUiPopoverPanel
-            ref={(el) => el && setPopperElement(el)}
+            ref={(el) => {
+                setPopperElement(el);
+            }}
             style={styles}
             {...attributes}
             className="bg-neutral-0 z-40 w-52 rounded-sm py-2 shadow-sm"
