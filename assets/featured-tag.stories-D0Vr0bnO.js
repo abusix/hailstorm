@@ -1,0 +1,12 @@
+import{j as e}from"./jsx-runtime-BjG_zV1W.js";import{r as x}from"./index-oDw0kwBO.js";import{F as a}from"./featured-tag-BlPZ3-0I.js";import{P as h}from"./panel-Ir_YnB-G.js";import{F as r}from"./form-field-CPbzvg-y.js";import"./class-names-AhVFtEzo.js";import"./zoom-to-fit-icon-CaTjC61y.js";import"./use-resolve-button-type-DB6Fv9TB.js";import"./keyboard-ChrVBe96.js";import"./use-sync-refs-xcRx9wD9.js";import"./form-fields-DML1hDbW.js";import"./index-CpffeHkY.js";import"./hidden-KcK_b_IW.js";import"./description-BPbhi4fZ.js";import"./label-bLHx63JR.js";import"./bugs-DpEN4NTH.js";import"./focus-management-CPm9osNM.js";import"./use-text-value-DoCg-T4n.js";import"./portal-BS0Za0vB.js";import"./use-server-handoff-complete-BsoFekGB.js";import"./floating-Bk4LsZRD.js";import"./use-inert-others-BR8wKiUH.js";import"./open-closed-DQ7NvTye.js";import"./badge-tobNnLLG.js";import"./index-BNJD55tH.js";import"./use-event-listener-C2ldw-R9.js";import"./active-element-history-BxTjm_gQ.js";import"./tag-BbMCVf7F.js";const K={title:"Input/FeaturedTag",component:a},j=()=>{const[c,l]=x.useState("value_1");return e.jsx("div",{className:"w-96",children:e.jsx(r,{children:e.jsxs(r.RadioBox,{value:c,onChange:u=>{l(u)},id:"value",children:[e.jsxs(r.RadioBox.Option,{value:"option_1",children:["Option 1",e.jsx(a,{children:"Recommended!"})]}),e.jsx(r.RadioBox.Option,{value:"option_2",children:"Option 2"}),e.jsx(r.RadioBox.Option,{value:"option_3",children:"Option 3"})]})})})},o={render:()=>e.jsx(j,{})},t={render:()=>e.jsx("div",{className:"w-96",children:e.jsxs(h,{className:"relative",children:[e.jsx("p",{children:"This example uses a Panel component"}),e.jsx(a,{children:"Recommended!"})]})})};var i,n,m;o.parameters={...o.parameters,docs:{...(i=o.parameters)==null?void 0:i.docs,source:{originalSource:`{
+  render: () => {
+    return <RadioBoxWithRecommendationTag />;
+  }
+}`,...(m=(n=o.parameters)==null?void 0:n.docs)==null?void 0:m.source}}};var s,p,d;t.parameters={...t.parameters,docs:{...(s=t.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  render: () => <div className="w-96">
+            <Panel className="relative">
+                <p>This example uses a Panel component</p>
+                <FeaturedTag>Recommended!</FeaturedTag>
+            </Panel>
+        </div>
+}`,...(d=(p=t.parameters)==null?void 0:p.docs)==null?void 0:d.source}}};const L=["Default","PanelExample"];export{o as Default,t as PanelExample,L as __namedExportsOrder,K as default};

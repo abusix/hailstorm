@@ -1,1 +1,0 @@
-import{j as r}from"./jsx-runtime-DiklIkkE.js";const t=({children:e})=>r.jsx("div",{className:"px-4 pt-3 pb-2 font-sans text-xs font-medium text-neutral-700 uppercase",children:e});try{t.displayName="MenuTitle",t.__docgenInfo={description:"",displayName:"MenuTitle",props:{}}}catch{}export{t as M};
