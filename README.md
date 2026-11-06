@@ -1,5 +1,11 @@
 # Hailstorm - Abusix Design System
 
+> [!WARNING]
+> **This repository is archived and no longer maintained.**
+>
+> Hailstorm will receive no further updates, bug fixes or security patches. The `@abusix/hailstorm` npm package
+> is deprecated and should not be used in new projects.
+
 ## Introduction
 
 Hailstorm is a design system for Abusix. It is a collection of reusable components, guidelines, and best practices that can be used to build consistent user interfaces across all of our products.
@@ -22,7 +28,7 @@ pnpm install @abusix/hailstorm
 
 ## Documentation
 
-The documentation for Hailstorm will be available soon.
+No further documentation is planned, as the project is archived.
 
 ## License
 
